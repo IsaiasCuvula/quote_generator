@@ -1,0 +1,8 @@
+{
+    "app_title": "Quote Generator",
+    "@BOTTOMNAVIGATIONBAR": {},
+    "nav_bar_home": "Home",
+    "nav_bar_create_quote": "Create Quote",
+    "nav_bar_search": "Search",
+    "@END_OF_FILE": {}
+}
