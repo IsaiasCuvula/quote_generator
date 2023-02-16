@@ -32,32 +32,13 @@ flutter:
   uses-material-design: true
 
   fonts:
-    - family: Ubuntu
+    - family: Dosis
       fonts:
-        - asset: assets/fonts/Roboto-Black.ttf
-          weight: 700
-        - asset: assets/fonts/Roboto-BlackItalic.ttf
-          weight: 700
-        - asset: assets/fonts/Roboto-Bold.ttf
-          weight: 700
-        - asset: assets/fonts/Roboto-BoldItalic.ttf
-          weight: 700
-          style: italic
-        - asset: assets/fonts/Roboto-Italic.ttf
-          style: italic
-        - asset: assets/fonts/Roboto-Light.ttf
-          weight: 300
-        - asset: assets/fonts/Roboto-LightItalic.ttf
-          weight: 300
-          style: italic
-        - asset: assets/fonts/Roboto-Medium.ttf
-          weight: 500
-        - asset: assets/fonts/Roboto-MediumItalic.ttf
-          weight: 500
-          style: italic
-        - asset: assets/fonts/Roboto-Regular.ttf
-          weight: 400
-        - asset: assets/fonts/Roboto-Thin.ttf
-          weight: 300
-        - asset: assets/fonts/Roboto-ThinItalic.ttf
-          weight: 300
+        - asset: assets/fonts/Dosis-Bold.ttf
+        - asset: assets/fonts/Dosis-ExtraBold.ttf
+        - asset: assets/fonts/Dosis-Light.ttf
+        - asset: assets/fonts/Dosis-ExtraLight.ttf
+        - asset: assets/fonts/Dosis-Medium.ttf
+        - asset: assets/fonts/Dosis-Regular.ttf
+        - asset: assets/fonts/Dosis-SemiBold.ttf
+      
