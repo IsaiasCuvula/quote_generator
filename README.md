@@ -1,16 +1,15 @@
 # Quote Generator App
 
-A new Flutter project.
+This app is a quote generator that displays quote by categories every time it's opened. It also includes a feature where users can generate a new random quote by tapping a button.
 
-## Getting Started
+## Features
 
-This project is a starting point for a Flutter application.
+Randomly generated quotes: The app fetches quotes from APIs and displays it by category included the one you've created.
+Generate new quotes: Users can tap a button to generate a new random quote if they want.
+Save favorite quotes: The app has a feature where users can save their favorite quotes to a list that they can refer back to later.
+Share quotes: The app includes a share button that allows users to share the current quote on social media or through messaging apps.
 
-A few resources to get you started if this is your first Flutter project:
+## Technology Stack
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+- Flutter: a UI toolkit for building natively compiled applications for mobile, web, and desktop from a single codebase.
+- Dart: a client-optimized programming language for fast apps on multiple platforms.
