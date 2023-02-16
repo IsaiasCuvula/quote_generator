@@ -29,7 +29,7 @@ dev_dependencies:
   flutter_lints: ^2.0.0
 
 flutter:
-
+  generate: true
   uses-material-design: true
 
   # To add assets to your application, add an assets section, like this:
