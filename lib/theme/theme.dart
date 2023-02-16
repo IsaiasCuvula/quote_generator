@@ -5,11 +5,7 @@ class QuoteGeneratorTheme {
     useMaterial3: true,
     colorScheme: _ColorScheme._lightColorScheme,
     textTheme: _TextTheme._textTheme,
-<<<<<<< HEAD
     fontFamily: 'Dosis',
-=======
-    fontFamily: 'Roboto',
->>>>>>> main
     appBarTheme: _AppBarTheme._appBarTheme,
     scaffoldBackgroundColor: _ColorScheme._lightColorScheme.background,
   );
