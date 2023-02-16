@@ -12,8 +12,15 @@ class MainScreen extends StatelessWidget {
       ),
       body: Column(
         children: [
+<<<<<<< HEAD
           Text(context.l10n.nav_bar_home,
               style: Theme.of(context).textTheme.headlineLarge),
+=======
+          Text(
+            context.l10n.nav_bar_home,
+            style: Theme.of(context).textTheme.headlineLarge,
+          ),
+>>>>>>> main
         ],
       ),
     );
