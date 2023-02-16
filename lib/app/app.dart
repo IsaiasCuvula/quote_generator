@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:quote_generator/screens/screens.dart';
+import 'package:quote_generator/theme/theme.dart';
 import 'package:quote_generator/translations/translations.dart';
 
 class QuoteGeneratorApp extends StatelessWidget {
@@ -7,15 +9,18 @@ class QuoteGeneratorApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Quote Generator APP',
-      theme: ThemeData(
-        primarySwatch: Colors.green,
-      ),
-      localizationsDelegates: AppLocalizations.localizationsDelegates,
-      supportedLocales: AppLocalizations.supportedLocales,
-      home: const MainScreen(),
+    return ScreenUtilInit(
+      designSize: const Size(375, 812),
+      builder: (context, child) {
+        return MaterialApp(
+          debugShowCheckedModeBanner: false,
+          title: 'Quote Generator APP',
+          theme: QuoteGeneratorTheme.lightTheme,
+          localizationsDelegates: AppLocalizations.localizationsDelegates,
+          supportedLocales: AppLocalizations.supportedLocales,
+          home: const MainScreen(),
+        );
+      },
     );
   }
 }
