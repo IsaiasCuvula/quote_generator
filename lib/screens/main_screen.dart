@@ -8,11 +8,14 @@ class MainScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Main Screen'),
+        title: const Text('Main screen'),
       ),
       body: Column(
         children: [
-          Text(context.l10n.nav_bar_home),
+          Text(
+            context.l10n.nav_bar_home,
+            style: Theme.of(context).textTheme.headlineLarge,
+          ),
         ],
       ),
     );
