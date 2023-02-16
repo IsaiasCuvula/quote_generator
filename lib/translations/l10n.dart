@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:quote_generator/translations/app_localizations.dart';
 
-class L10n {
-  static final all = [
-    const Locale('en'),
-    const Locale('pt'),
-  ];
+extension QuoteGeneratorLocalizations on BuildContext {
+  AppLocalizations get l10n => AppLocalizations.of(this);
 }
