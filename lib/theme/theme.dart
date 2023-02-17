@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+@immutable
 class QuoteGeneratorTheme {
   static final lightTheme = ThemeData(
     useMaterial3: true,
@@ -11,6 +13,7 @@ class QuoteGeneratorTheme {
   );
 }
 
+@immutable
 class _AppBarTheme {
   static const _appBarTheme = AppBarTheme(
     toolbarHeight: 50,
@@ -22,6 +25,7 @@ class _AppBarTheme {
   );
 }
 
+@immutable
 class _ColorScheme {
   static const _lightColorScheme = ColorScheme(
     brightness: Brightness.light,
@@ -40,95 +44,97 @@ class _ColorScheme {
   );
 }
 
+@immutable
 class _TextTheme {
-  static const _textTheme = TextTheme(
+  static final _textTheme = TextTheme(
     ///DISPLAY
     displayLarge: TextStyle(
-      fontSize: 32,
+      fontSize: 32.sp,
       fontWeight: FontWeight.w700,
       color: _QuoteGeneratorColors.brown,
     ),
     displayMedium: TextStyle(
-      fontSize: 28,
+      fontSize: 28.sp,
       fontWeight: FontWeight.w700,
       color: _QuoteGeneratorColors.brown,
     ),
     displaySmall: TextStyle(
-      fontSize: 24,
+      fontSize: 24.sp,
       fontWeight: FontWeight.w700,
       color: _QuoteGeneratorColors.brown,
     ),
 
     //HEADLINE
     headlineLarge: TextStyle(
-      fontSize: 24,
+      fontSize: 24.sp,
       fontWeight: FontWeight.w700,
       color: _QuoteGeneratorColors.brown,
     ),
     headlineMedium: TextStyle(
-      fontSize: 21,
+      fontSize: 21.sp,
       fontWeight: FontWeight.w700,
       color: _QuoteGeneratorColors.brown,
     ),
     headlineSmall: TextStyle(
-      fontSize: 18,
+      fontSize: 18.sp,
       fontWeight: FontWeight.w700,
       color: _QuoteGeneratorColors.brown,
     ),
 
     //TITLE
     titleLarge: TextStyle(
-      fontSize: 16,
+      fontSize: 16.sp,
       fontWeight: FontWeight.w700,
       color: _QuoteGeneratorColors.brown,
     ),
     titleMedium: TextStyle(
-      fontSize: 14,
+      fontSize: 14.sp,
       fontWeight: FontWeight.w700,
       color: _QuoteGeneratorColors.brown,
     ),
     titleSmall: TextStyle(
-      fontSize: 12,
+      fontSize: 12.sp,
       fontWeight: FontWeight.w700,
       color: _QuoteGeneratorColors.brown,
     ),
 
     //BODY
     bodyLarge: TextStyle(
-      fontSize: 14,
+      fontSize: 20.sp,
       fontWeight: FontWeight.w400,
       color: _QuoteGeneratorColors.brown,
     ),
     bodyMedium: TextStyle(
-      fontSize: 12,
+      fontSize: 18.sp,
       fontWeight: FontWeight.w400,
       color: _QuoteGeneratorColors.brown,
     ),
     bodySmall: TextStyle(
-      fontSize: 10,
+      fontSize: 16.sp,
       fontWeight: FontWeight.w400,
       color: _QuoteGeneratorColors.brown,
     ),
 
     //LABEL
     labelLarge: TextStyle(
-      fontSize: 14,
+      fontSize: 14.sp,
       fontWeight: FontWeight.w400,
       color: _QuoteGeneratorColors.brown,
     ),
     labelMedium: TextStyle(
-      fontSize: 12,
+      fontSize: 12.sp,
       fontWeight: FontWeight.w400,
       color: _QuoteGeneratorColors.brown,
     ),
     labelSmall: TextStyle(
-      fontSize: 10,
+      fontSize: 10.sp,
       fontWeight: FontWeight.w400,
       color: _QuoteGeneratorColors.brown,
     ),
   );
 }
 
+@immutable
 class _QuoteGeneratorColors {
   static const Color lightPink = Color(0xffF0CAC0);
   static const Color lightOrange = Color(0xffF0CAC0);
