@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:quote_generator/constants/constants.dart';
+import 'package:quote_generator/theme/dimensions.dart';
 
 class BottomNavBar extends StatelessWidget {
   const BottomNavBar({super.key, required this.items});
@@ -13,7 +12,7 @@ class BottomNavBar extends StatelessWidget {
       shape: const StadiumBorder(),
       clipBehavior: Clip.hardEdge,
       child: Padding(
-        padding: Constants.kPadding10,
+        padding: Dimensions.kPaddingAllMedium,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           crossAxisAlignment: CrossAxisAlignment.center,

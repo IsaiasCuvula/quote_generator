@@ -3,7 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:go_router/go_router.dart';
 import 'package:quote_generator/theme/dimensions.dart';
-import 'package:quote_generator/widgets/bottom_nav_bar/bottom_nav_bar.dart';
+import 'package:quote_generator/widgets/widgets.dart';
 
 //This is the Bottom Navigation Bar Shell
 class MainScreen extends StatelessWidget {
