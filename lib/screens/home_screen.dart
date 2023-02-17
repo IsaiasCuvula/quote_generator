@@ -1,7 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class HomeScreen extends StatelessWidget {
-  //static HomeScreen builder() => const HomeScreen();
+  static HomeScreen builder(
+    BuildContext context,
+    GoRouterState state,
+  ) =>
+      const HomeScreen();
 
   const HomeScreen({super.key});
 
