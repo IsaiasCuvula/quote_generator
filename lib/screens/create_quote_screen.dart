@@ -13,9 +13,9 @@ class CreateQuoteScreen extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Create your quote'),
+    return const Scaffold(
+      body: Center(
+        child: Text('Create your quote'),
       ),
     );
   }

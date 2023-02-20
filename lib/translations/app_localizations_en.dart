@@ -8,6 +8,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get app_title => 'Quote Generator';
 
   @override
+  String get explore => 'Explore';
+
+  @override
   String get nav_bar_home => 'Home';
 
   @override
@@ -15,4 +18,13 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get nav_bar_search => 'Search';
+
+  @override
+  String get tab_bar_create_by_you => 'Created by you';
+
+  @override
+  String get tab_bar_favorite => 'Favorites';
+
+  @override
+  String get tab_bar_latest => 'Latest';
 }

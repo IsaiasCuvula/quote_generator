@@ -99,6 +99,12 @@ abstract class AppLocalizations {
   /// **'Quote Generator'**
   String get app_title;
 
+  /// No description provided for @explore.
+  ///
+  /// In en, this message translates to:
+  /// **'Explore'**
+  String get explore;
+
   /// No description provided for @nav_bar_home.
   ///
   /// In en, this message translates to:
@@ -116,6 +122,24 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Search'**
   String get nav_bar_search;
+
+  /// No description provided for @tab_bar_create_by_you.
+  ///
+  /// In en, this message translates to:
+  /// **'Created by you'**
+  String get tab_bar_create_by_you;
+
+  /// No description provided for @tab_bar_favorite.
+  ///
+  /// In en, this message translates to:
+  /// **'Favorites'**
+  String get tab_bar_favorite;
+
+  /// No description provided for @tab_bar_latest.
+  ///
+  /// In en, this message translates to:
+  /// **'Latest'**
+  String get tab_bar_latest;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

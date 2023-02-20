@@ -1,8 +1,13 @@
 {
     "app_title": "Quote Generator",
+    "explore": "Explorar",
     "@BOTTOMNAVIGATIONBAR": {},
     "nav_bar_home": "Pagina Inicial",
     "nav_bar_create_quote": "Criar Quote",
     "nav_bar_search": "Pesquisar",
+    "@TABBAR": {},
+    "tab_bar_create_by_you": "Criado por você",
+    "tab_bar_favorite": "Favoritos",
+    "tab_bar_latest": "Mais recente",
     "@END_OF_FILE": {}
 }
