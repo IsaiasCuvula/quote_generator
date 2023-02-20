@@ -37,7 +37,7 @@ class MainScreen extends StatelessWidget {
         children: [
           child,
           Padding(
-            padding: const EdgeInsets.only(bottom: 20).w,
+            padding: const EdgeInsets.only(bottom: 0).w,
             child: Align(
               alignment: Alignment.bottomCenter,
               child: BottomNavBar(

@@ -9,10 +9,9 @@ class BottomNavBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return Material(
       type: MaterialType.canvas,
-      shape: const StadiumBorder(),
       clipBehavior: Clip.hardEdge,
       child: Padding(
-        padding: Dimensions.kPaddingAllMedium,
+        padding: Dimensions.kPaddingBottomNavBar,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           crossAxisAlignment: CrossAxisAlignment.center,

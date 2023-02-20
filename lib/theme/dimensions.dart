@@ -10,6 +10,11 @@ class Dimensions {
   static final kPaddingAllMedium = const EdgeInsets.all(10.0).w;
   static final kPaddingAllSmall = const EdgeInsets.all(8.0).w;
 
+  static final kPaddingBottomNavBar = const EdgeInsets.only(
+    bottom: 20.0,
+    top: 10,
+  ).w;
+
   //BorderRadius
   static final kBorderRadiusAllLarger = BorderRadius.circular(50).w;
   static final kBorderRadiusAllLarge = BorderRadius.circular(30).w;
