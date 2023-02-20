@@ -1,20 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-class SearchScreen extends StatelessWidget {
-  static SearchScreen builder(
+class LatestScreen extends StatelessWidget {
+  static LatestScreen builder(
     BuildContext context,
     GoRouterState state,
   ) =>
-      const SearchScreen();
+      const LatestScreen();
 
-  const SearchScreen({super.key});
+  const LatestScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
       body: Center(
-        child: Text('Search Quote'),
+        child: Text('Latest Screen'),
       ),
     );
   }

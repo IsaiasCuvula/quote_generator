@@ -33,7 +33,7 @@ class _ColorScheme {
     onPrimary: _QuoteGeneratorColors.lightOrange,
     secondary: _QuoteGeneratorColors.veryLightPink,
     onSecondary: _QuoteGeneratorColors.veryLightPink,
-    tertiaryContainer: _QuoteGeneratorColors.white,
+    tertiaryContainer: _QuoteGeneratorColors.brown,
     onTertiaryContainer: _QuoteGeneratorColors.white,
     error: _QuoteGeneratorColors.red,
     onError: _QuoteGeneratorColors.white,
