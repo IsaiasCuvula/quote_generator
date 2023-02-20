@@ -15,4 +15,13 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get nav_bar_search => 'Search';
+
+  @override
+  String get tab_bar_create_by_you => 'Created By You';
+
+  @override
+  String get tab_bar_favorite => 'Favorites';
+
+  @override
+  String get tab_bar_latest => 'Latest';
 }

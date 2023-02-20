@@ -116,6 +116,24 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Search'**
   String get nav_bar_search;
+
+  /// No description provided for @tab_bar_create_by_you.
+  ///
+  /// In en, this message translates to:
+  /// **'Created By You'**
+  String get tab_bar_create_by_you;
+
+  /// No description provided for @tab_bar_favorite.
+  ///
+  /// In en, this message translates to:
+  /// **'Favorites'**
+  String get tab_bar_favorite;
+
+  /// No description provided for @tab_bar_latest.
+  ///
+  /// In en, this message translates to:
+  /// **'Latest'**
+  String get tab_bar_latest;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {
