@@ -126,7 +126,7 @@ abstract class AppLocalizations {
   /// No description provided for @tab_bar_create_by_you.
   ///
   /// In en, this message translates to:
-  /// **'Created By You'**
+  /// **'Created by you'**
   String get tab_bar_create_by_you;
 
   /// No description provided for @tab_bar_favorite.

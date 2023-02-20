@@ -20,7 +20,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get nav_bar_search => 'Search';
 
   @override
-  String get tab_bar_create_by_you => 'Created By You';
+  String get tab_bar_create_by_you => 'Created by you';
 
   @override
   String get tab_bar_favorite => 'Favorites';
