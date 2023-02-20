@@ -8,6 +8,9 @@ class AppLocalizationsPt extends AppLocalizations {
   String get app_title => 'Quote Generator';
 
   @override
+  String get explore => 'Explorar';
+
+  @override
   String get nav_bar_home => 'Pagina Inicial';
 
   @override

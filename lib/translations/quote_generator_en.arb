@@ -1,5 +1,6 @@
 {
     "app_title": "Quote Generator",
+    "explore": "Explore",
     "@BOTTOMNAVIGATIONBAR": {},
     "nav_bar_home": "Home",
     "nav_bar_create_quote": "Create Quote",

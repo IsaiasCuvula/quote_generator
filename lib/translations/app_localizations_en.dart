@@ -8,6 +8,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get app_title => 'Quote Generator';
 
   @override
+  String get explore => 'Explore';
+
+  @override
   String get nav_bar_home => 'Home';
 
   @override

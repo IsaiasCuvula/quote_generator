@@ -99,6 +99,12 @@ abstract class AppLocalizations {
   /// **'Quote Generator'**
   String get app_title;
 
+  /// No description provided for @explore.
+  ///
+  /// In en, this message translates to:
+  /// **'Explore'**
+  String get explore;
+
   /// No description provided for @nav_bar_home.
   ///
   /// In en, this message translates to:
