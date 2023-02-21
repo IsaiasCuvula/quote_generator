@@ -5,7 +5,7 @@ final routes = [
   ShellRoute(
     pageBuilder: (context, state, child) {
       return NoTransitionPage(
-        child: MainScreen.builder(
+        child: BottomNavBarShell.builder(
           context,
           state,
           child,
