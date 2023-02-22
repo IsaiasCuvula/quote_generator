@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:quote_generator/theme/dimensions.dart';
 
 class SearchScreen extends StatelessWidget {
   static SearchScreen builder(
@@ -12,9 +13,32 @@ class SearchScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Center(
-        child: Text('Search Quote'),
+    return Scaffold(
+      body: SafeArea(
+        child: Container(
+          width: double.infinity,
+          height: double.infinity,
+          padding: Dimensions.kPaddingAllLarge,
+          child: Column(
+            mainAxisSize: MainAxisSize.max,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              const Text('Search Quote'),
+              ElevatedButton(
+                onPressed: () => context.push('/home/createdByYou'),
+                child: const Text('go to by you'),
+              ),
+              ElevatedButton(
+                onPressed: () => context.go('/home/latest'),
+                child: const Text('go to latest'),
+              ),
+              ElevatedButton(
+                onPressed: () => context.go('/home/favorites'),
+                child: const Text('go to favorite'),
+              ),
+            ],
+          ),
+        ),
       ),
     );
   }

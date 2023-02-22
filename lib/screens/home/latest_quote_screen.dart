@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-class LatestScreen extends StatelessWidget {
-  static LatestScreen builder(
+class LatestQuoteScreen extends StatelessWidget {
+  static LatestQuoteScreen builder(
     BuildContext context,
     GoRouterState state,
   ) =>
-      const LatestScreen();
+      const LatestQuoteScreen();
 
-  const LatestScreen({super.key});
+  const LatestQuoteScreen({super.key});
 
   @override
   Widget build(BuildContext context) {

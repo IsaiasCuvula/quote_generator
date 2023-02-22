@@ -56,7 +56,7 @@ class HomeScreen extends StatelessWidget {
           body: const TabBarView(
             children: [
               CreatedByYouScreen(),
-              LatestScreen(),
+              LatestQuoteScreen(),
               FavoriteScreen(),
             ],
           ),
