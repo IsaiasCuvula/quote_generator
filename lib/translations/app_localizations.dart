@@ -140,6 +140,18 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Latest'**
   String get tab_bar_latest;
+
+  /// No description provided for @empty_card_created_by_you.
+  ///
+  /// In en, this message translates to:
+  /// **'You haven\'t created any quotes yet'**
+  String get empty_card_created_by_you;
+
+  /// No description provided for @empty_card_favorite_quote.
+  ///
+  /// In en, this message translates to:
+  /// **'You haven\'t added any quotes to your favorites yet'**
+  String get empty_card_favorite_quote;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

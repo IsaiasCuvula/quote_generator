@@ -9,5 +9,8 @@
     "tab_bar_create_by_you": "Created by you",
     "tab_bar_favorite": "Favorites",
     "tab_bar_latest": "Latest",
+    "@EMPTYQUOTELIST": {},
+    "empty_card_created_by_you": "You haven't created any quotes yet",
+    "empty_card_favorite_quote": "You haven't added any quotes to your favorites yet",
     "@END_OF_FILE": {}
 }

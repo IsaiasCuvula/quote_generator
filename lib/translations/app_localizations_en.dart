@@ -27,4 +27,10 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get tab_bar_latest => 'Latest';
+
+  @override
+  String get empty_card_created_by_you => 'You haven\'t created any quotes yet';
+
+  @override
+  String get empty_card_favorite_quote => 'You haven\'t added any quotes to your favorites yet';
 }
