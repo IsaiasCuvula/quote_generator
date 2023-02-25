@@ -29,10 +29,8 @@ class AppLocalizationsPt extends AppLocalizations {
   String get tab_bar_latest => 'Mais recente';
 
   @override
-  String get empty_card_created_by_you =>
-      'Você ainda não criou nenhuma citação';
+  String get empty_card_created_by_you => 'Você ainda não criou nenhuma citação';
 
   @override
-  String get empty_card_favorite_quote =>
-      'Você ainda não adicionou nenhuma citação aos seus favoritos';
+  String get empty_card_favorite_quote => 'Você ainda não adicionou nenhuma citação aos seus favoritos';
 }

@@ -32,6 +32,5 @@ class AppLocalizationsEn extends AppLocalizations {
   String get empty_card_created_by_you => 'You haven\'t created any quotes yet';
 
   @override
-  String get empty_card_favorite_quote =>
-      'You haven\'t added any quotes to your favorites yet';
+  String get empty_card_favorite_quote => 'You haven\'t added any quotes to your favorites yet';
 }
