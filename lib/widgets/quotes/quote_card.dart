@@ -6,13 +6,21 @@ class QuoteCard extends StatelessWidget {
     super.key,
     required this.quoteText,
     required this.backgroundColor,
+    required this.author,
   });
 
   final String quoteText;
+  final String author;
   final Color backgroundColor;
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context).textTheme;
+    final autherTextStyle = theme.labelLarge?.copyWith(
+      letterSpacing: 3,
+    );
+    final quoteTextSyle = theme.bodyMedium;
+
     return Container(
       width: double.infinity,
       decoration: BoxDecoration(
@@ -29,6 +37,14 @@ class QuoteCard extends StatelessWidget {
             Text(
               quoteText,
               textAlign: TextAlign.center,
+              style: quoteTextSyle,
+            ),
+            Dimensions.kVerticalSpaceMedium,
+            Text(
+              '- $author',
+              textAlign: TextAlign.center,
+              maxLines: 1,
+              style: autherTextStyle,
             ),
           ],
         ),
