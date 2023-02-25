@@ -1,1 +1,2 @@
-export 'bottom_nav_bar/bottom_nav_bar.dart';
+export 'bottom_navigation/bottom_navigation.dart';
+export 'quotes/quotes.dart';

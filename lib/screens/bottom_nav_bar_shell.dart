@@ -5,19 +5,18 @@ import 'package:go_router/go_router.dart';
 import 'package:quote_generator/theme/dimensions.dart';
 import 'package:quote_generator/widgets/widgets.dart';
 
-//This is the Bottom Navigation Bar Shell
-class MainScreen extends StatelessWidget {
-  static MainScreen builder(
+class BottomNavBarShell extends StatelessWidget {
+  static BottomNavBarShell builder(
     BuildContext context,
     GoRouterState state,
     Widget child,
   ) =>
-      MainScreen(
+      BottomNavBarShell(
         currentRoute: state.location,
         child: child,
       );
 
-  const MainScreen({
+  const BottomNavBarShell({
     super.key,
     required this.child,
     required this.currentRoute,

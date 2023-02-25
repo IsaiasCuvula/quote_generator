@@ -26,8 +26,9 @@ class Dimensions {
   static final kVerticalSpaceLarger = SizedBox(height: 50.h);
   static final kVerticalSpaceLarge = SizedBox(height: 30.h);
   static final kVerticalSpaceMedium = SizedBox(height: 20.h);
-  static final kVerticalSpaceSmall = SizedBox(height: 10.h);
-  static final kVerticalSpaceSmaller = SizedBox(height: 8.h);
+  static final kVerticalSpaceSmall = SizedBox(height: 16.h);
+  static final kVerticalSpaceSmaller = SizedBox(height: 10.h);
+  static final kVerticalSpaceSmallest = SizedBox(height: 8.h);
 
   //Horizontal Space
   static final kHorizontalSpaceLargest = SizedBox(width: 30.w);
@@ -42,8 +43,17 @@ class Dimensions {
   static final kScreenHeight50 = 0.5.sh;
 
   // Size
+  static final double iconSizeLargest = 80.h;
   static final double iconSizeLarger = 48.h;
   static final double iconSizeLarge = 36.h;
   static final double iconSizeMedium = 30.h;
   static final double iconSizeSmall = 24.h;
+
+  static final double sizeLargest = 50.h;
+  static final double sizeLarger = 20.h;
+  static final double sizeLarge = 18.h;
+  static final double sizeMedium = 16.h;
+  static final double sizeSmall = 12.h;
+  static final double sizeSmaller = 8.h;
+  static final double sizeSmallest = 6.h;
 }

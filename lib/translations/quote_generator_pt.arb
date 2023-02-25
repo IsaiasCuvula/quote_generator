@@ -9,5 +9,8 @@
     "tab_bar_create_by_you": "Criado por você",
     "tab_bar_favorite": "Favoritos",
     "tab_bar_latest": "Mais recente",
+    "@EMPTYQUOTELIST": {},
+    "empty_card_created_by_you": "Você ainda não criou nenhuma citação",
+    "empty_card_favorite_quote": "Você ainda não adicionou nenhuma citação aos seus favoritos",
     "@END_OF_FILE": {}
 }

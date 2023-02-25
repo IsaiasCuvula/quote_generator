@@ -26,8 +26,9 @@ class HomeScreen extends StatelessWidget {
               SliverAppBar(
                 floating: true,
                 pinned: true,
+                centerTitle: false,
                 title: Padding(
-                  padding: Dimensions.kPaddingAllMedium,
+                  padding: Dimensions.kPaddingAllLarge,
                   child: Text(
                     context.l10n.explore,
                     style: theme.textTheme.displayMedium,
@@ -40,13 +41,13 @@ class HomeScreen extends StatelessWidget {
                   unselectedLabelColor: theme.colorScheme.tertiaryContainer,
                   tabs: [
                     _TabBarLabel(
-                      label: context.l10n.tab_bar_create_by_you,
+                      label: context.l10n.tab_bar_create_by_you.toUpperCase(),
                     ),
                     _TabBarLabel(
-                      label: context.l10n.tab_bar_latest,
+                      label: context.l10n.tab_bar_latest.toUpperCase(),
                     ),
                     _TabBarLabel(
-                      label: context.l10n.tab_bar_favorite,
+                      label: context.l10n.tab_bar_favorite.toUpperCase(),
                     ),
                   ],
                 ),
@@ -56,7 +57,7 @@ class HomeScreen extends StatelessWidget {
           body: const TabBarView(
             children: [
               CreatedByYouScreen(),
-              LatestScreen(),
+              LatestQuoteScreen(),
               FavoriteScreen(),
             ],
           ),
