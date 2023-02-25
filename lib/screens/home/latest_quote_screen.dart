@@ -15,7 +15,10 @@ class LatestQuoteScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-      body: ListOfQuotes(items: QuoteModel.items),
+      body: ListOfQuotes(
+        key: Key('LatestQuoteScreen'),
+        items: QuoteModel.items,
+      ),
     );
   }
 }
