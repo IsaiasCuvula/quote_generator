@@ -47,8 +47,11 @@ class Dimensions {
   static final double iconSizeMedium = 30.h;
   static final double iconSizeSmall = 24.h;
 
+  static final double sizeLargest = 50.h;
   static final double sizeLarger = 20.h;
   static final double sizeLarge = 18.h;
   static final double sizeMedium = 16.h;
   static final double sizeSmall = 12.h;
+  static final double sizeSmaller = 8.h;
+  static final double sizeSmallest = 6.h;
 }
