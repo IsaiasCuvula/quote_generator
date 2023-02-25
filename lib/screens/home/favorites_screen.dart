@@ -4,7 +4,7 @@ import 'package:go_router/go_router.dart';
 import 'package:quote_generator/models/models.dart';
 import 'package:quote_generator/theme/dimensions.dart';
 import 'package:quote_generator/translations/l10n.dart';
-import 'package:quote_generator/widgets/widgets.dart';
+import 'package:quote_generator/widgets/quotes/quotes.dart';
 
 class FavoriteScreen extends StatelessWidget {
   static FavoriteScreen builder(
