@@ -53,6 +53,7 @@ class _EmptyQuoteCardState extends State<EmptyQuoteCard>
               scale: _animation,
               child: Icon(
                 widget.displayIcon,
+                color: theme.colorScheme.primary,
                 size: Dimensions.iconSizeLargest,
               ),
             ),
