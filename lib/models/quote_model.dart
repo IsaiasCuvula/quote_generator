@@ -3,6 +3,7 @@ import '../widgets/widgets.dart';
 
 @immutable
 class QuoteModel {
+  static const itemsFav = <QuoteCard>[];
   static const items = [
     QuoteCard(
       backgroundColor: Colors.purple,
