@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:quote_generator/models/models.dart';
+import 'package:quote_generator/widgets/widgets.dart';
 
 class FavoriteScreen extends StatelessWidget {
   static FavoriteScreen builder(
@@ -13,9 +15,7 @@ class FavoriteScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-      body: Center(
-        child: Text('Favorite Screen '),
-      ),
+      body: ListOfQuotes(items: QuoteModel.items),
     );
   }
 }

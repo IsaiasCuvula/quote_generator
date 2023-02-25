@@ -15,7 +15,7 @@ class CreateQuoteScreen extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     return const Scaffold(
       body: Center(
-        child: Text('Create your quote'),
+        child: Text('Create Quote Screen'),
       ),
     );
   }

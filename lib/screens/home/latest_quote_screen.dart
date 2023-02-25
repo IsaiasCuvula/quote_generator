@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:quote_generator/models/models.dart';
+import 'package:quote_generator/widgets/widgets.dart';
 
 class LatestQuoteScreen extends StatelessWidget {
   static LatestQuoteScreen builder(
@@ -13,9 +15,7 @@ class LatestQuoteScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-      body: Center(
-        child: Text('Latest Screen'),
-      ),
+      body: ListOfQuotes(items: QuoteModel.items),
     );
   }
 }
