@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:quote_generator/translations/translations.dart';
 import 'package:quote_generator/theme/theme.dart';
 
-class ColorPickerPallet extends StatelessWidget {
-  const ColorPickerPallet({
+class ColorPickerPalette extends StatelessWidget {
+  const ColorPickerPalette({
     super.key,
     required this.selectedColor,
     required this.onColorChanged,

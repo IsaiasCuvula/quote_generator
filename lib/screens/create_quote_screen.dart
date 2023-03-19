@@ -65,7 +65,7 @@ class _CreateQuoteScreenState extends State<CreateQuoteScreen> {
                 child: Container(),
               ),
             ),
-            ColorPickerPallet(
+            ColorPickerPalette(
               selectedColor: selectedColor,
               onColorChanged: (Color color) {
                 setState(() => selectedColor = color);
