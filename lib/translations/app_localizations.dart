@@ -152,6 +152,30 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'You haven\'t added any quotes to your favorites yet'**
   String get empty_card_favorite_quote;
+
+  /// No description provided for @create_your_quote.
+  ///
+  /// In en, this message translates to:
+  /// **'Create Your Quote'**
+  String get create_your_quote;
+
+  /// No description provided for @done.
+  ///
+  /// In en, this message translates to:
+  /// **'Done'**
+  String get done;
+
+  /// No description provided for @background_color.
+  ///
+  /// In en, this message translates to:
+  /// **'Select Background Color'**
+  String get background_color;
+
+  /// No description provided for @select_color_shade.
+  ///
+  /// In en, this message translates to:
+  /// **'Select color shade'**
+  String get select_color_shade;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

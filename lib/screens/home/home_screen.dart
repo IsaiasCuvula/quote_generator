@@ -3,6 +3,7 @@ import 'package:go_router/go_router.dart';
 import 'package:quote_generator/screens/screens.dart';
 import 'package:quote_generator/theme/dimensions.dart';
 import 'package:quote_generator/translations/l10n.dart';
+import 'package:quote_generator/widgets/widgets.dart';
 
 class HomeScreen extends StatelessWidget {
   static HomeScreen builder(
@@ -40,13 +41,13 @@ class HomeScreen extends StatelessWidget {
                   labelStyle: tabLabelTextStyle,
                   unselectedLabelColor: theme.colorScheme.tertiaryContainer,
                   tabs: [
-                    _TabBarLabel(
+                    TabBarLabel(
                       label: context.l10n.tab_bar_create_by_you.toUpperCase(),
                     ),
-                    _TabBarLabel(
+                    TabBarLabel(
                       label: context.l10n.tab_bar_latest.toUpperCase(),
                     ),
-                    _TabBarLabel(
+                    TabBarLabel(
                       label: context.l10n.tab_bar_favorite.toUpperCase(),
                     ),
                   ],
@@ -62,25 +63,6 @@ class HomeScreen extends StatelessWidget {
             ],
           ),
         ),
-      ),
-    );
-  }
-}
-
-class _TabBarLabel extends StatelessWidget {
-  const _TabBarLabel({
-    Key? key,
-    required this.label,
-  }) : super(key: key);
-
-  final String label;
-
-  @override
-  Widget build(BuildContext context) {
-    return Tab(
-      child: FittedBox(
-        fit: BoxFit.fitWidth,
-        child: Text(label),
       ),
     );
   }

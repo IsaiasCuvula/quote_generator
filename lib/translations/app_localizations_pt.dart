@@ -33,4 +33,16 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String get empty_card_favorite_quote => 'Você ainda não adicionou nenhuma citação aos seus favoritos';
+
+  @override
+  String get create_your_quote => 'Crie seu Quote';
+
+  @override
+  String get done => 'Feito';
+
+  @override
+  String get background_color => 'Selecione a cor de fundo';
+
+  @override
+  String get select_color_shade => 'Selecione a tonalidade da cor';
 }

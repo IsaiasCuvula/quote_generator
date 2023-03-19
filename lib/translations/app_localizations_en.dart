@@ -33,4 +33,16 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get empty_card_favorite_quote => 'You haven\'t added any quotes to your favorites yet';
+
+  @override
+  String get create_your_quote => 'Create Your Quote';
+
+  @override
+  String get done => 'Done';
+
+  @override
+  String get background_color => 'Select Background Color';
+
+  @override
+  String get select_color_shade => 'Select color shade';
 }

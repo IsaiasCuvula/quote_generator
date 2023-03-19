@@ -15,6 +15,14 @@ class Dimensions {
     top: 10,
   ).w;
 
+  static final kPaddingSymetricHorizontal = const EdgeInsets.symmetric(
+    horizontal: 16.0,
+  ).w;
+
+  static final kPaddingSymetricVertical = const EdgeInsets.symmetric(
+    vertical: 16.0,
+  ).w;
+
   //BorderRadius
   static final kBorderRadiusAllLarger = BorderRadius.circular(50).w;
   static final kBorderRadiusAllLarge = BorderRadius.circular(30).w;
@@ -56,4 +64,9 @@ class Dimensions {
   static final double sizeSmall = 12.h;
   static final double sizeSmaller = 8.h;
   static final double sizeSmallest = 6.h;
+
+  //Color pallet size
+  static final double colorPalletWidth = 44.w;
+  static final double colorPalletHight = 44.h;
+  static final double colorPalletBorder = 22.h;
 }
