@@ -72,7 +72,6 @@ class _CreateQuoteScreenState extends State<CreateQuoteScreen> {
             ),
           ],
         ),
-        resizeToAvoidBottomInset: true,
         body: SingleChildScrollView(
           physics: const AlwaysScrollableScrollPhysics(),
           padding: Dimensions.kPaddingAllLarge,
