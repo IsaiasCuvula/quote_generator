@@ -176,6 +176,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Select color shade'**
   String get select_color_shade;
+
+  /// No description provided for @write_your_quote_here.
+  ///
+  /// In en, this message translates to:
+  /// **'Start writing your quote here ...'**
+  String get write_your_quote_here;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

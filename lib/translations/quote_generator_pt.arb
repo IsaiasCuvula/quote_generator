@@ -3,7 +3,7 @@
     "explore": "Explorar",
     "@BOTTOMNAVIGATIONBAR": {},
     "nav_bar_home": "Pagina Inicial",
-    "nav_bar_create_quote": "Criar Quote",
+    "nav_bar_create_quote": "Criar Citação",
     "nav_bar_search": "Pesquisar",
     "@TABBAR": {},
     "tab_bar_create_by_you": "Criado por você",
@@ -13,9 +13,10 @@
     "empty_card_created_by_you": "Você ainda não criou nenhuma citação",
     "empty_card_favorite_quote": "Você ainda não adicionou nenhuma citação aos seus favoritos",
     "@CREATEQUOTE": {},
-    "create_your_quote": "Crie seu Quote",
+    "create_your_quote": "Crie sua Citação",
     "done": "Feito",
     "background_color": "Selecione a cor de fundo",
     "select_color_shade": "Selecione a tonalidade da cor",
+    "write_your_quote_here": "Comece a escrever sua citação aqui ...",
     "@END_OF_FILE": {}
 }

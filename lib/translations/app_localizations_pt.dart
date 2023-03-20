@@ -14,7 +14,7 @@ class AppLocalizationsPt extends AppLocalizations {
   String get nav_bar_home => 'Pagina Inicial';
 
   @override
-  String get nav_bar_create_quote => 'Criar Quote';
+  String get nav_bar_create_quote => 'Criar Citação';
 
   @override
   String get nav_bar_search => 'Pesquisar';
@@ -35,7 +35,7 @@ class AppLocalizationsPt extends AppLocalizations {
   String get empty_card_favorite_quote => 'Você ainda não adicionou nenhuma citação aos seus favoritos';
 
   @override
-  String get create_your_quote => 'Crie seu Quote';
+  String get create_your_quote => 'Crie sua Citação';
 
   @override
   String get done => 'Feito';
@@ -45,4 +45,7 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String get select_color_shade => 'Selecione a tonalidade da cor';
+
+  @override
+  String get write_your_quote_here => 'Comece a escrever sua citação aqui ...';
 }

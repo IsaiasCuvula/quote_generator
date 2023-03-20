@@ -17,5 +17,6 @@
     "done": "Done",
     "background_color": "Select Background Color",
     "select_color_shade": "Select color shade",
+    "write_your_quote_here": "Start writing your quote here ...",
     "@END_OF_FILE": {}
 }

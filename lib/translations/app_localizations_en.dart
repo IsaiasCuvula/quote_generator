@@ -45,4 +45,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get select_color_shade => 'Select color shade';
+
+  @override
+  String get write_your_quote_here => 'Start writing your quote here ...';
 }

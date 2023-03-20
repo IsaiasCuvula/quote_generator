@@ -18,61 +18,118 @@ class CreateQuoteScreen extends StatefulWidget {
 
 class _CreateQuoteScreenState extends State<CreateQuoteScreen> {
   late Color selectedColor;
+  late TextEditingController _quoteTextController;
+  late TextAlign quoteTextAlign;
+  late Color quoteTextColor;
+  late double quoteTextFontSize;
+  late FontWeight quoteTextFontWeight;
+  late FontStyle quoteTextFontStyle;
+  late double quoteTextWordSpacing;
+  late double quoteTextLetterSpacing;
 
   @override
   void initState() {
     super.initState();
     selectedColor = Colors.green;
+    _quoteTextController = TextEditingController();
+    quoteTextAlign = TextAlign.center;
+    quoteTextColor = Colors.white;
+    quoteTextFontSize = Dimensions.quoteTextFontSizeMedium;
+    quoteTextFontWeight = FontWeight.bold;
+    quoteTextFontStyle = FontStyle.italic;
+    quoteTextWordSpacing = Dimensions.quoteTextWordSpacingSmall;
+    quoteTextLetterSpacing = Dimensions.quoteTextLetterSpacingNone;
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+    _quoteTextController.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     final textTheme = theme.textTheme;
-    return Scaffold(
-      appBar: AppBar(
-        actions: [
-          TextButton(
-            onPressed: () {},
-            child: Text(
-              context.l10n.done.toUpperCase(),
-              style: textTheme.titleLarge?.copyWith(
-                color: theme.colorScheme.primary,
-              ),
-            ),
-          ),
-        ],
-      ),
-      body: SingleChildScrollView(
-        physics: const AlwaysScrollableScrollPhysics(),
-        padding: Dimensions.kPaddingAllLarge,
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            Text(
-              context.l10n.create_your_quote,
-              style: textTheme.displayMedium,
-            ),
-            Padding(
-              padding: Dimensions.kPaddingSymetricVertical,
-              child: Container(
-                width: Dimensions.kScreenWidth50,
-                height: Dimensions.kScreenHeight50,
-                decoration: BoxDecoration(
-                  color: selectedColor,
-                  borderRadius: Dimensions.kBorderRadiusAllSmall,
-                ),
-                child: Container(),
-              ),
-            ),
-            ColorPickerPalette(
-              selectedColor: selectedColor,
-              onColorChanged: (Color color) {
-                setState(() => selectedColor = color);
+    return GestureDetector(
+      onTap: () {
+        FocusManager.instance.primaryFocus?.unfocus();
+      },
+      child: Scaffold(
+        appBar: AppBar(
+          actions: [
+            TextButton(
+              onPressed: () {
+                //melhorar esse codigo adicionar dentro do method salvar
+                FocusManager.instance.primaryFocus?.unfocus();
               },
+              child: Text(
+                context.l10n.done.toUpperCase(),
+                style: textTheme.titleLarge?.copyWith(
+                  color: theme.colorScheme.primary,
+                ),
+              ),
             ),
-            Dimensions.kVerticalSpaceLargest,
           ],
+        ),
+        resizeToAvoidBottomInset: true,
+        body: SingleChildScrollView(
+          physics: const AlwaysScrollableScrollPhysics(),
+          padding: Dimensions.kPaddingAllLarge,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              Text(
+                context.l10n.create_your_quote,
+                style: textTheme.displayMedium,
+              ),
+              Padding(
+                padding: Dimensions.kPaddingSymetricVertical,
+                child: Container(
+                  width: Dimensions.kScreenWidth50,
+                  height: Dimensions.kScreenHeight40,
+                  padding: Dimensions.kPaddingAllLarge,
+                  decoration: BoxDecoration(
+                    color: selectedColor,
+                    borderRadius: Dimensions.kBorderRadiusAllSmall,
+                  ),
+                  child: Expanded(
+                    child: TextField(
+                      controller: _quoteTextController,
+                      decoration: InputDecoration.collapsed(
+                        hintText: context.l10n.write_your_quote_here,
+                        hintStyle: textTheme.bodyMedium?.copyWith(
+                          color: theme.colorScheme.background,
+                        ),
+                      ),
+                      expands: true,
+                      maxLines: null,
+                      textAlignVertical: TextAlignVertical.center,
+                      scrollPadding: Dimensions.kPaddingAllLarge,
+                      autofocus: true,
+                      keyboardType: TextInputType.multiline,
+                      textAlign: quoteTextAlign,
+                      style: TextStyle(
+                        color: quoteTextColor,
+                        fontSize: quoteTextFontSize,
+                        fontWeight: quoteTextFontWeight,
+                        fontStyle: quoteTextFontStyle,
+                        wordSpacing: quoteTextWordSpacing,
+                        letterSpacing: quoteTextLetterSpacing,
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              ColorPickerPalette(
+                selectedColor: selectedColor,
+                onColorChanged: (Color color) {
+                  setState(() => selectedColor = color);
+                },
+              ),
+              Dimensions.kVerticalSpaceLargest,
+            ],
+          ),
         ),
       ),
     );

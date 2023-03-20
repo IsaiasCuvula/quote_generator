@@ -49,6 +49,7 @@ class Dimensions {
   //Screen Size
   static final kScreenWidth50 = 0.5.sw;
   static final kScreenHeight50 = 0.5.sh;
+  static final kScreenHeight40 = 0.4.sh;
 
   // Size
   static final double iconSizeLargest = 80.h;
@@ -65,8 +66,25 @@ class Dimensions {
   static final double sizeSmaller = 8.h;
   static final double sizeSmallest = 6.h;
 
-  //Color pallet size
+  //Color palette size
   static final double colorPalletWidth = 44.w;
   static final double colorPalletHight = 44.h;
   static final double colorPalletBorder = 22.h;
+
+  //Quote Text Word Spacing
+  static final double quoteTextWordSpacingLarge = 9.w;
+  static final double quoteTextWordSpacingMedium = 6.w;
+  static final double quoteTextWordSpacingSmall = 3.w;
+  static final double quoteTextWordSpacingNone = 0.w;
+
+  //Quote Text letter Spacing
+  static final double quoteTextLetterSpacingLarge = 9.w;
+  static final double quoteTextLetterSpacingMedium = 6.w;
+  static final double quoteTextLetterSpacingSmall = 3.w;
+  static final double quoteTextLetterSpacingNone = 0.w;
+
+  //Quote Text font size
+  static final double quoteTextFontSizeLarge = 24.sp;
+  static final double quoteTextFontSizeMedium = 20.sp;
+  static final double quoteTextFontSizeSmall = 16.sp;
 }
