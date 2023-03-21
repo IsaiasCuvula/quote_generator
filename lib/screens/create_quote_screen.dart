@@ -92,34 +92,33 @@ class _CreateQuoteScreenState extends State<CreateQuoteScreen> {
                     color: selectedColor,
                     borderRadius: Dimensions.kBorderRadiusAllSmall,
                   ),
-                  child: Expanded(
-                    child: TextField(
-                      controller: _quoteTextController,
-                      decoration: InputDecoration.collapsed(
-                        hintText: context.l10n.write_your_quote_here,
-                        hintStyle: textTheme.bodyMedium?.copyWith(
-                          color: theme.colorScheme.background,
-                        ),
+                  child: TextField(
+                    controller: _quoteTextController,
+                    decoration: InputDecoration.collapsed(
+                      hintText: context.l10n.write_your_quote_here,
+                      hintStyle: textTheme.bodyMedium?.copyWith(
+                        color: theme.colorScheme.background,
                       ),
-                      expands: true,
-                      maxLines: null,
-                      textAlignVertical: TextAlignVertical.center,
-                      scrollPadding: Dimensions.kPaddingAllLarge,
-                      autofocus: true,
-                      keyboardType: TextInputType.multiline,
-                      textAlign: quoteTextAlign,
-                      style: TextStyle(
-                        color: quoteTextColor,
-                        fontSize: quoteTextFontSize,
-                        fontWeight: quoteTextFontWeight,
-                        fontStyle: quoteTextFontStyle,
-                        wordSpacing: quoteTextWordSpacing,
-                        letterSpacing: quoteTextLetterSpacing,
-                      ),
+                    ),
+                    expands: true,
+                    maxLines: null,
+                    textAlignVertical: TextAlignVertical.center,
+                    scrollPadding: Dimensions.kPaddingAllLarge,
+                    autofocus: true,
+                    keyboardType: TextInputType.multiline,
+                    textAlign: quoteTextAlign,
+                    style: TextStyle(
+                      color: quoteTextColor,
+                      fontSize: quoteTextFontSize,
+                      fontWeight: quoteTextFontWeight,
+                      fontStyle: quoteTextFontStyle,
+                      wordSpacing: quoteTextWordSpacing,
+                      letterSpacing: quoteTextLetterSpacing,
                     ),
                   ),
                 ),
               ),
+              const QuoteTextSettings(),
               ColorPickerPalette(
                 selectedColor: selectedColor,
                 onColorChanged: (Color color) {

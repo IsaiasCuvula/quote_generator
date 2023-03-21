@@ -18,7 +18,7 @@ class CreatedByYouScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: QuoteModel.items.isEmpty
+      body: QuoteModel.itemsFav.isEmpty
           ? Center(
               child: Padding(
                 padding: Dimensions.kPaddingAllLarge,

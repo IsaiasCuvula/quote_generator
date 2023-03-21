@@ -28,6 +28,7 @@ class Dimensions {
   static final kBorderRadiusAllLarge = BorderRadius.circular(30).w;
   static final kBorderRadiusAllMedium = BorderRadius.circular(20).w;
   static final kBorderRadiusAllSmall = BorderRadius.circular(16).w;
+  static final kBorderRadiusAllSmallest = BorderRadius.circular(10).w;
 
   //VerticalSpace
   static final kVerticalSpaceLargest = SizedBox(height: 100.h);
@@ -50,6 +51,7 @@ class Dimensions {
   static final kScreenWidth50 = 0.5.sw;
   static final kScreenHeight50 = 0.5.sh;
   static final kScreenHeight40 = 0.4.sh;
+  static final kQuoteTextSettingHeight = 0.055.sh;
 
   // Size
   static final double iconSizeLargest = 80.h;
@@ -67,9 +69,9 @@ class Dimensions {
   static final double sizeSmallest = 6.h;
 
   //Color palette size
-  static final double colorPalletWidth = 44.w;
-  static final double colorPalletHight = 44.h;
-  static final double colorPalletBorder = 22.h;
+  static final double colorPaletteWidth = 44.w;
+  static final double colorPaletteHight = 44.h;
+  static final double colorPaleteBorder = 22.h;
 
   //Quote Text Word Spacing
   static final double quoteTextWordSpacingLarge = 9.w;
