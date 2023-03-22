@@ -80,7 +80,7 @@ class Dimensions {
   static final double quoteTextWordSpacingNone = 0.w;
 
   //Quote Text letter Spacing
-  static final double quoteTextLetterSpacingLarge = 9.w;
+  static final double quoteTextLetterSpacingLarge = 10.w;
   static final double quoteTextLetterSpacingMedium = 6.w;
   static final double quoteTextLetterSpacingSmall = 3.w;
   static final double quoteTextLetterSpacingNone = 0.w;

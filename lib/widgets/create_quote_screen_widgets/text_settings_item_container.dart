@@ -21,12 +21,14 @@ class TextSettingItemContainer extends StatelessWidget {
       onTap: onTap,
       borderRadius: Dimensions.kBorderRadiusAllMedium,
       child: Container(
-        padding: Dimensions.kPaddingAllMedium,
+        padding: Dimensions.kPaddingAllSmall,
         decoration: BoxDecoration(
           borderRadius: Dimensions.kBorderRadiusAllSmallest,
           color: color,
         ),
-        child: child,
+        child: Center(
+          child: child,
+        ),
       ),
     );
   }
