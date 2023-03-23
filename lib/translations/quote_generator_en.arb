@@ -15,8 +15,15 @@
     "@CREATEQUOTE": {},
     "create_your_quote": "Create Your Quote",
     "done": "Done",
-    "background_color": "Select Background Color",
+    "background_color": "Select background color",
     "select_color_shade": "Select color shade",
     "write_your_quote_here": "Start writing your quote here ...",
+    "none": "None",
+    "small": "Small",
+    "medium": "Medium",
+    "large": "Large",
+    "letter_spacing": "Letter spacing",
+    "font_size": "Font size",
+    "word_spacing": "Word spacing",
     "@END_OF_FILE": {}
 }

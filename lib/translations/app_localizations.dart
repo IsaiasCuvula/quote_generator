@@ -168,7 +168,7 @@ abstract class AppLocalizations {
   /// No description provided for @background_color.
   ///
   /// In en, this message translates to:
-  /// **'Select Background Color'**
+  /// **'Select background color'**
   String get background_color;
 
   /// No description provided for @select_color_shade.
@@ -182,6 +182,48 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Start writing your quote here ...'**
   String get write_your_quote_here;
+
+  /// No description provided for @none.
+  ///
+  /// In en, this message translates to:
+  /// **'None'**
+  String get none;
+
+  /// No description provided for @small.
+  ///
+  /// In en, this message translates to:
+  /// **'Small'**
+  String get small;
+
+  /// No description provided for @medium.
+  ///
+  /// In en, this message translates to:
+  /// **'Medium'**
+  String get medium;
+
+  /// No description provided for @large.
+  ///
+  /// In en, this message translates to:
+  /// **'Large'**
+  String get large;
+
+  /// No description provided for @letter_spacing.
+  ///
+  /// In en, this message translates to:
+  /// **'Letter spacing'**
+  String get letter_spacing;
+
+  /// No description provided for @font_size.
+  ///
+  /// In en, this message translates to:
+  /// **'Font size'**
+  String get font_size;
+
+  /// No description provided for @word_spacing.
+  ///
+  /// In en, this message translates to:
+  /// **'Word spacing'**
+  String get word_spacing;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

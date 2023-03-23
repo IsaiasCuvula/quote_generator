@@ -18,5 +18,12 @@
     "background_color": "Selecione a cor de fundo",
     "select_color_shade": "Selecione a tonalidade da cor",
     "write_your_quote_here": "Comece a escrever sua citação aqui ...",
+    "none": "Nenhum",
+    "small": "Pequeno",
+    "medium": "Médio",
+    "large": "Grande",
+    "letter_spacing": "Espaçamento entre letras",
+    "font_size": "Tamanho da fonte",
+    "word_spacing": "Espaçamento entre palavras",
     "@END_OF_FILE": {}
 }

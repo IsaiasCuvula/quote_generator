@@ -3,11 +3,11 @@ import 'package:quote_generator/theme/theme.dart';
 
 class TextSettingItemContainer extends StatelessWidget {
   const TextSettingItemContainer({
-    super.key,
+    Key? key,
     required this.child,
     this.onTap,
     required this.isSelected,
-  });
+  }) : super(key: key);
 
   final Widget child;
   final VoidCallback? onTap;

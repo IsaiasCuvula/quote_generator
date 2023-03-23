@@ -1,37 +1,49 @@
 import 'package:flutter/material.dart';
-import 'package:quote_generator/theme/theme.dart';
+import 'package:quote_generator/theme/dimensions.dart';
+import 'package:quote_generator/translations/translations.dart';
 import 'package:quote_generator/widgets/widgets.dart';
 
-class QuoteWordSpacingSizes extends StatefulWidget {
-  const QuoteWordSpacingSizes({
-    super.key,
-  });
+class TextSizeSelector extends StatefulWidget {
+  const TextSizeSelector({
+    Key? key,
+  }) : super(key: key);
 
   @override
-  State<QuoteWordSpacingSizes> createState() => _QuoteWordSpacingSizesState();
+  State<TextSizeSelector> createState() => _TextSizeSelectorState();
 }
 
-class _QuoteWordSpacingSizesState extends State<QuoteWordSpacingSizes> {
+class _TextSizeSelectorState extends State<TextSizeSelector> {
   int _isSelected = 0;
-  final _wordSpaces = const [
-    'None',
-    'Small',
-    'Medium',
-    'Large',
-  ];
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+
+    final fontSizes = [
+      Text(
+        context.l10n.small,
+        style: theme.textTheme.bodySmall,
+      ),
+      Text(
+        context.l10n.medium,
+        style: theme.textTheme.bodyMedium,
+      ),
+      Text(
+        context.l10n.large,
+        style: theme.textTheme.bodyLarge,
+      ),
+    ];
+
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        const SettingsDisplayTitle(title: 'Word Spacing'),
+        SettingTitle(title: context.l10n.font_size),
         SizedBox(
           height: Dimensions.kQuoteTextSettingHeight,
           child: ListView.separated(
             scrollDirection: Axis.horizontal,
             itemBuilder: (ctx, index) {
-              final space = _wordSpaces[index];
+              final fontSize = fontSizes[index];
               return TextSettingItemContainer(
                 onTap: () {
                   setState(() {
@@ -39,13 +51,13 @@ class _QuoteWordSpacingSizesState extends State<QuoteWordSpacingSizes> {
                   });
                 },
                 isSelected: _isSelected == index,
-                child: Text(space),
+                child: fontSize,
               );
             },
             separatorBuilder: (ctx, index) {
               return Dimensions.kHorizontalSpaceMedium;
             },
-            itemCount: _wordSpaces.length,
+            itemCount: fontSizes.length,
           ),
         ),
       ],

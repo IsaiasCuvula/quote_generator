@@ -41,11 +41,32 @@ class AppLocalizationsEn extends AppLocalizations {
   String get done => 'Done';
 
   @override
-  String get background_color => 'Select Background Color';
+  String get background_color => 'Select background color';
 
   @override
   String get select_color_shade => 'Select color shade';
 
   @override
   String get write_your_quote_here => 'Start writing your quote here ...';
+
+  @override
+  String get none => 'None';
+
+  @override
+  String get small => 'Small';
+
+  @override
+  String get medium => 'Medium';
+
+  @override
+  String get large => 'Large';
+
+  @override
+  String get letter_spacing => 'Letter spacing';
+
+  @override
+  String get font_size => 'Font size';
+
+  @override
+  String get word_spacing => 'Word spacing';
 }

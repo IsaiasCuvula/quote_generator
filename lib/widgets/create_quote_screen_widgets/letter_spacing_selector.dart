@@ -1,40 +1,40 @@
 import 'package:flutter/material.dart';
 import 'package:quote_generator/theme/theme.dart';
+import 'package:quote_generator/translations/translations.dart';
 import 'package:quote_generator/widgets/widgets.dart';
 
-class QuoteLetterSpacingSizes extends StatefulWidget {
-  const QuoteLetterSpacingSizes({
-    super.key,
-  });
+class LetterSpacingSelector extends StatefulWidget {
+  const LetterSpacingSelector({
+    Key? key,
+  }) : super(key: key);
 
   @override
-  State<QuoteLetterSpacingSizes> createState() =>
-      _QuoteLetterSpacingSizesState();
+  State<LetterSpacingSelector> createState() => _LetterSpacingSelectorState();
 }
 
-class _QuoteLetterSpacingSizesState extends State<QuoteLetterSpacingSizes> {
+class _LetterSpacingSelectorState extends State<LetterSpacingSelector> {
   int _isSelected = 0;
 
   @override
   Widget build(BuildContext context) {
     final spaces = [
-      const Text(
-        'None',
+      Text(
+        context.l10n.none,
       ),
       Text(
-        'Small',
+        context.l10n.small,
         style: TextStyle(
           letterSpacing: Dimensions.quoteTextLetterSpacingSmall,
         ),
       ),
       Text(
-        'Medium',
+        context.l10n.medium,
         style: TextStyle(
           letterSpacing: Dimensions.quoteTextLetterSpacingMedium,
         ),
       ),
       Text(
-        'Large',
+        context.l10n.large,
         style: TextStyle(
           letterSpacing: Dimensions.quoteTextLetterSpacingLarge,
         ),
@@ -44,7 +44,7 @@ class _QuoteLetterSpacingSizesState extends State<QuoteLetterSpacingSizes> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        const SettingsDisplayTitle(title: 'Letter Spacing'),
+        SettingTitle(title: context.l10n.letter_spacing),
         SizedBox(
           height: Dimensions.kQuoteTextSettingHeight,
           child: ListView.separated(

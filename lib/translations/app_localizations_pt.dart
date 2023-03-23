@@ -48,4 +48,25 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String get write_your_quote_here => 'Comece a escrever sua citação aqui ...';
+
+  @override
+  String get none => 'Nenhum';
+
+  @override
+  String get small => 'Pequeno';
+
+  @override
+  String get medium => 'Médio';
+
+  @override
+  String get large => 'Grande';
+
+  @override
+  String get letter_spacing => 'Espaçamento entre letras';
+
+  @override
+  String get font_size => 'Tamanho da fonte';
+
+  @override
+  String get word_spacing => 'Espaçamento entre palavras';
 }

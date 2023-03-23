@@ -118,7 +118,7 @@ class _CreateQuoteScreenState extends State<CreateQuoteScreen> {
                   ),
                 ),
               ),
-              const QuoteTextSettings(),
+              const TextSettings(),
               ColorPickerPalette(
                 selectedColor: selectedColor,
                 onColorChanged: (Color color) {

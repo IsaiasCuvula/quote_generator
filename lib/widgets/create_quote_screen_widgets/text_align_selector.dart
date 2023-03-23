@@ -3,16 +3,14 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:quote_generator/theme/dimensions.dart';
 import 'package:quote_generator/widgets/widgets.dart';
 
-class QuoteTextAlign extends StatefulWidget {
-  const QuoteTextAlign({
-    super.key,
-  });
+class TextAlignSelector extends StatefulWidget {
+  const TextAlignSelector({Key? key}) : super(key: key);
 
   @override
-  State<QuoteTextAlign> createState() => _QuoteTextAlignState();
+  State<TextAlignSelector> createState() => _TextAlignSelectorState();
 }
 
-class _QuoteTextAlignState extends State<QuoteTextAlign> {
+class _TextAlignSelectorState extends State<TextAlignSelector> {
   int _isSelected = 0;
 
   final _textAlignListIcons = const [
@@ -33,7 +31,6 @@ class _QuoteTextAlignState extends State<QuoteTextAlign> {
             shrinkWrap: true,
             itemBuilder: (ctx, index) {
               final textAlignIcon = _textAlignListIcons[index];
-              final isSelected = _isSelected == index;
 
               return TextSettingItemContainer(
                 onTap: () {
@@ -41,9 +38,8 @@ class _QuoteTextAlignState extends State<QuoteTextAlign> {
                     _isSelected = index;
                   });
                 },
-                isSelected: isSelected,
+                isSelected: _isSelected == index,
                 child: TextAlignDisplayIcon(
-                  isSelected: isSelected,
                   icon: textAlignIcon,
                 ),
               );
@@ -53,7 +49,7 @@ class _QuoteTextAlignState extends State<QuoteTextAlign> {
             },
           ),
           Dimensions.kHorizontalSpaceLarge,
-          const QuoteTextStyleAndWeight()
+          const TextStyleAndWeightSelector()
         ],
       ),
     );

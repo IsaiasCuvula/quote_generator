@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 
-class SettingsDisplayTitle extends StatelessWidget {
-  const SettingsDisplayTitle({super.key, required this.title});
+class SettingTitle extends StatelessWidget {
+  const SettingTitle({
+    Key? key,
+    required this.title,
+  }) : super(key: key);
 
   final String title;
 

@@ -3,17 +3,18 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:quote_generator/theme/theme.dart';
 import 'package:quote_generator/widgets/widgets.dart';
 
-class QuoteTextStyleAndWeight extends StatefulWidget {
-  const QuoteTextStyleAndWeight({
-    super.key,
-  });
+class TextStyleAndWeightSelector extends StatefulWidget {
+  const TextStyleAndWeightSelector({
+    Key? key,
+  }) : super(key: key);
 
   @override
-  State<QuoteTextStyleAndWeight> createState() =>
-      _QuoteTextStyleAndWeightState();
+  State<TextStyleAndWeightSelector> createState() =>
+      _TextStyleAndWeightSelectorState();
 }
 
-class _QuoteTextStyleAndWeightState extends State<QuoteTextStyleAndWeight> {
+class _TextStyleAndWeightSelectorState
+    extends State<TextStyleAndWeightSelector> {
   int _isSelected = -1;
   final _textStyleIcons = const [
     FaIcon(

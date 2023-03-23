@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 
-class TextSettingsDivider extends StatelessWidget {
-  const TextSettingsDivider({super.key});
+class SettingsDivider extends StatelessWidget {
+  const SettingsDivider({
+    Key? key,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
