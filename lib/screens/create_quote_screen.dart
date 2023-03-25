@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
+import 'package:quote_generator/providers/text_settings_provider.dart';
 import 'package:quote_generator/theme/dimensions.dart';
 import 'package:quote_generator/translations/l10n.dart';
 import 'package:quote_generator/widgets/widgets.dart';
 
-class CreateQuoteScreen extends StatefulWidget {
+class CreateQuoteScreen extends ConsumerStatefulWidget {
   static CreateQuoteScreen builder(
     BuildContext context,
     GoRouterState state,
@@ -13,32 +15,17 @@ class CreateQuoteScreen extends StatefulWidget {
   const CreateQuoteScreen({super.key});
 
   @override
-  State<CreateQuoteScreen> createState() => _CreateQuoteScreenState();
+  ConsumerState<ConsumerStatefulWidget> createState() =>
+      _CreateQuoteScreenState();
 }
 
-class _CreateQuoteScreenState extends State<CreateQuoteScreen> {
-  late Color selectedColor;
+class _CreateQuoteScreenState extends ConsumerState<CreateQuoteScreen> {
   late TextEditingController _quoteTextController;
-  late TextAlign quoteTextAlign;
-  late Color quoteTextColor;
-  late double quoteTextFontSize;
-  late FontWeight quoteTextFontWeight;
-  late FontStyle quoteTextFontStyle;
-  late double quoteTextWordSpacing;
-  late double quoteTextLetterSpacing;
 
   @override
   void initState() {
     super.initState();
-    selectedColor = Colors.green;
     _quoteTextController = TextEditingController();
-    quoteTextAlign = TextAlign.center;
-    quoteTextColor = Colors.white;
-    quoteTextFontSize = Dimensions.quoteTextFontSizeMedium;
-    quoteTextFontWeight = FontWeight.bold;
-    quoteTextFontStyle = FontStyle.italic;
-    quoteTextWordSpacing = Dimensions.quoteTextWordSpacingSmall;
-    quoteTextLetterSpacing = Dimensions.quoteTextLetterSpacingNone;
   }
 
   @override
@@ -51,6 +38,16 @@ class _CreateQuoteScreenState extends State<CreateQuoteScreen> {
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     final textTheme = theme.textTheme;
+    final textSettings = ref.watch(textSettingsProvider);
+    final textAlign = textSettings.textAlign;
+    final backgroundColor = textSettings.backgroundColor;
+    const textColor = Colors.white;
+    final textFontSize = textSettings.fontSize;
+    final textFontWeight = textSettings.fontWeight;
+    final textFontStyle = textSettings.fontStyle;
+    final textWordSpacing = textSettings.wordSpacing;
+    final textLetterSpacing = textSettings.letterSpacing;
+
     return GestureDetector(
       onTap: () {
         FocusManager.instance.primaryFocus?.unfocus();
@@ -89,7 +86,7 @@ class _CreateQuoteScreenState extends State<CreateQuoteScreen> {
                   height: Dimensions.kScreenHeight40,
                   padding: Dimensions.kPaddingAllLarge,
                   decoration: BoxDecoration(
-                    color: selectedColor,
+                    color: textSettings.backgroundColor,
                     borderRadius: Dimensions.kBorderRadiusAllSmall,
                   ),
                   child: TextField(
@@ -106,23 +103,23 @@ class _CreateQuoteScreenState extends State<CreateQuoteScreen> {
                     scrollPadding: Dimensions.kPaddingAllLarge,
                     autofocus: true,
                     keyboardType: TextInputType.multiline,
-                    textAlign: quoteTextAlign,
+                    textAlign: textAlign,
                     style: TextStyle(
-                      color: quoteTextColor,
-                      fontSize: quoteTextFontSize,
-                      fontWeight: quoteTextFontWeight,
-                      fontStyle: quoteTextFontStyle,
-                      wordSpacing: quoteTextWordSpacing,
-                      letterSpacing: quoteTextLetterSpacing,
+                      color: textColor,
+                      fontSize: textFontSize,
+                      fontWeight: textFontWeight,
+                      fontStyle: textFontStyle,
+                      wordSpacing: textWordSpacing,
+                      letterSpacing: textLetterSpacing,
                     ),
                   ),
                 ),
               ),
-              const TextSettings(),
+              const DisplayTextSettings(),
               ColorPickerPalette(
-                selectedColor: selectedColor,
+                selectedColor: backgroundColor,
                 onColorChanged: (Color color) {
-                  setState(() => selectedColor = color);
+                  ref.read(textSettingsProvider.notifier).setColor(color);
                 },
               ),
               Dimensions.kVerticalSpaceLargest,

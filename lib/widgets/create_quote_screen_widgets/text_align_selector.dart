@@ -1,16 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:quote_generator/providers/text_settings_provider.dart';
 import 'package:quote_generator/theme/dimensions.dart';
 import 'package:quote_generator/widgets/widgets.dart';
 
-class TextAlignSelector extends StatefulWidget {
-  const TextAlignSelector({Key? key}) : super(key: key);
+class TextAlignSelector extends ConsumerStatefulWidget {
+  const TextAlignSelector({super.key});
 
   @override
-  State<TextAlignSelector> createState() => _TextAlignSelectorState();
+  ConsumerState<ConsumerStatefulWidget> createState() =>
+      _TextAlignSelectorState();
 }
 
-class _TextAlignSelectorState extends State<TextAlignSelector> {
+class _TextAlignSelectorState extends ConsumerState<TextAlignSelector> {
   int _isSelected = 0;
 
   final _textAlignListIcons = const [
@@ -18,6 +21,15 @@ class _TextAlignSelectorState extends State<TextAlignSelector> {
     FontAwesomeIcons.alignCenter,
     FontAwesomeIcons.alignRight,
   ];
+
+  TextAlign selectedTextAlign(int index) {
+    const textAlignList = [
+      TextAlign.start,
+      TextAlign.center,
+      TextAlign.end,
+    ];
+    return textAlignList[index];
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -34,6 +46,9 @@ class _TextAlignSelectorState extends State<TextAlignSelector> {
 
               return TextSettingItemContainer(
                 onTap: () {
+                  ref
+                      .read(textSettingsProvider.notifier)
+                      .setAlign(selectedTextAlign(index));
                   setState(() {
                     _isSelected = index;
                   });
