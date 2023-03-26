@@ -74,9 +74,9 @@ class Dimensions {
   static final double colorPaleteBorder = 22.h;
 
   //Quote Text Word Spacing
-  static final double quoteTextWordSpacingLarge = 9.w;
-  static final double quoteTextWordSpacingMedium = 6.w;
-  static final double quoteTextWordSpacingSmall = 3.w;
+  static final double quoteTextWordSpacingLarge = 12.w;
+  static final double quoteTextWordSpacingMedium = 9.w;
+  static final double quoteTextWordSpacingSmall = 6.w;
   static final double quoteTextWordSpacingNone = 0.w;
 
   //Quote Text letter Spacing

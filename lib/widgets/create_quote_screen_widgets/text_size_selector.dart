@@ -1,19 +1,29 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:quote_generator/providers/text_settings_provider.dart';
 import 'package:quote_generator/theme/dimensions.dart';
 import 'package:quote_generator/translations/translations.dart';
 import 'package:quote_generator/widgets/widgets.dart';
 
-class TextSizeSelector extends StatefulWidget {
-  const TextSizeSelector({
-    Key? key,
-  }) : super(key: key);
+class TextSizeSelector extends ConsumerStatefulWidget {
+  const TextSizeSelector({super.key});
 
   @override
-  State<TextSizeSelector> createState() => _TextSizeSelectorState();
+  ConsumerState<ConsumerStatefulWidget> createState() =>
+      _TextSizeSelectorState();
 }
 
-class _TextSizeSelectorState extends State<TextSizeSelector> {
+class _TextSizeSelectorState extends ConsumerState<TextSizeSelector> {
   int _isSelected = 0;
+
+  double _selectedTextSize(int index) {
+    final textSizeList = [
+      Dimensions.quoteTextFontSizeSmall,
+      Dimensions.quoteTextFontSizeMedium,
+      Dimensions.quoteTextFontSizeLarge,
+    ];
+    return textSizeList[index];
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -46,6 +56,9 @@ class _TextSizeSelectorState extends State<TextSizeSelector> {
               final fontSize = fontSizes[index];
               return TextSettingItemContainer(
                 onTap: () {
+                  ref
+                      .read(textSettingsProvider.notifier)
+                      .setFontSize(_selectedTextSize(index));
                   setState(() {
                     _isSelected = index;
                   });

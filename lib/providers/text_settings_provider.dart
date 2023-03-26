@@ -11,11 +11,12 @@ final textSettingsProvider =
 class TextSettings {
   TextAlign textAlign = TextAlign.start;
   Color backgroundColor = Colors.purple;
-  double fontSize = Dimensions.quoteTextFontSizeMedium;
-  FontWeight fontWeight = FontWeight.bold;
-  FontStyle fontStyle = FontStyle.italic;
-  double wordSpacing = Dimensions.quoteTextWordSpacingSmall;
+  double fontSize = Dimensions.quoteTextFontSizeSmall;
+  FontWeight fontWeight = FontWeight.normal;
+  FontStyle fontStyle = FontStyle.normal;
+  double wordSpacing = Dimensions.quoteTextWordSpacingNone;
   double letterSpacing = Dimensions.quoteTextLetterSpacingNone;
+  TextDecoration textDecoration = TextDecoration.none;
 }
 
 class TextSettingsNotifier extends StateNotifier<TextSettings> {
@@ -48,6 +49,10 @@ class TextSettingsNotifier extends StateNotifier<TextSettings> {
   void setLetterSpacing(double letterSpacing) {
     state = state.copyWith(letterSpacing: letterSpacing);
   }
+
+  void setTextDecoration(TextDecoration textDecoration) {
+    state = state.copyWith(textDecoration: textDecoration);
+  }
 }
 
 extension TextSettingsExtension on TextSettings {
@@ -59,6 +64,7 @@ extension TextSettingsExtension on TextSettings {
     FontStyle? fontStyle,
     double? wordSpacing,
     double? letterSpacing,
+    TextDecoration? textDecoration,
   }) {
     return TextSettings()
       ..textAlign = textAlign ?? this.textAlign
@@ -67,6 +73,7 @@ extension TextSettingsExtension on TextSettings {
       ..fontWeight = fontWeight ?? this.fontWeight
       ..fontStyle = fontStyle ?? this.fontStyle
       ..wordSpacing = wordSpacing ?? this.wordSpacing
-      ..letterSpacing = letterSpacing ?? this.letterSpacing;
+      ..letterSpacing = letterSpacing ?? this.letterSpacing
+      ..textDecoration = textDecoration ?? this.textDecoration;
   }
 }

@@ -1,19 +1,30 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:quote_generator/providers/text_settings_provider.dart';
 import 'package:quote_generator/theme/theme.dart';
 import 'package:quote_generator/translations/translations.dart';
 import 'package:quote_generator/widgets/widgets.dart';
 
-class WordSpacingSelector extends StatefulWidget {
-  const WordSpacingSelector({
-    Key? key,
-  }) : super(key: key);
+class WordSpacingSelector extends ConsumerStatefulWidget {
+  const WordSpacingSelector({super.key});
 
   @override
-  State<WordSpacingSelector> createState() => _WordSpacingSelectorState();
+  ConsumerState<ConsumerStatefulWidget> createState() =>
+      _WordSpacingSelectorState();
 }
 
-class _WordSpacingSelectorState extends State<WordSpacingSelector> {
+class _WordSpacingSelectorState extends ConsumerState<WordSpacingSelector> {
   int _isSelected = 0;
+
+  double _selectedWordSpacingSize(int index) {
+    final wordSpacingSize = [
+      Dimensions.quoteTextWordSpacingNone,
+      Dimensions.quoteTextWordSpacingSmall,
+      Dimensions.quoteTextWordSpacingMedium,
+      Dimensions.quoteTextWordSpacingLarge,
+    ];
+    return wordSpacingSize[index];
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -35,6 +46,9 @@ class _WordSpacingSelectorState extends State<WordSpacingSelector> {
               final space = wordSpaces[index];
               return TextSettingItemContainer(
                 onTap: () {
+                  ref
+                      .read(textSettingsProvider.notifier)
+                      .setWordSpacing(_selectedWordSpacingSize(index));
                   setState(() {
                     _isSelected = index;
                   });

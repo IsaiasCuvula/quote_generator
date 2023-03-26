@@ -22,7 +22,7 @@ class _TextAlignSelectorState extends ConsumerState<TextAlignSelector> {
     FontAwesomeIcons.alignRight,
   ];
 
-  TextAlign selectedTextAlign(int index) {
+  TextAlign _selectedTextAlign(int index) {
     const textAlignList = [
       TextAlign.start,
       TextAlign.center,
@@ -48,7 +48,7 @@ class _TextAlignSelectorState extends ConsumerState<TextAlignSelector> {
                 onTap: () {
                   ref
                       .read(textSettingsProvider.notifier)
-                      .setAlign(selectedTextAlign(index));
+                      .setAlign(_selectedTextAlign(index));
                   setState(() {
                     _isSelected = index;
                   });
@@ -64,7 +64,7 @@ class _TextAlignSelectorState extends ConsumerState<TextAlignSelector> {
             },
           ),
           Dimensions.kHorizontalSpaceLarge,
-          const TextStyleAndWeightSelector()
+          const TextStyleSelector()
         ],
       ),
     );

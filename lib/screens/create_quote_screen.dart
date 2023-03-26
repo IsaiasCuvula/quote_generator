@@ -47,6 +47,7 @@ class _CreateQuoteScreenState extends ConsumerState<CreateQuoteScreen> {
     final textFontStyle = textSettings.fontStyle;
     final textWordSpacing = textSettings.wordSpacing;
     final textLetterSpacing = textSettings.letterSpacing;
+    final textDecoration = textSettings.textDecoration;
 
     return GestureDetector(
       onTap: () {
@@ -111,6 +112,7 @@ class _CreateQuoteScreenState extends ConsumerState<CreateQuoteScreen> {
                       fontStyle: textFontStyle,
                       wordSpacing: textWordSpacing,
                       letterSpacing: textLetterSpacing,
+                      decoration: textDecoration,
                     ),
                   ),
                 ),

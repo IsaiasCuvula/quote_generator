@@ -1,19 +1,30 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:quote_generator/providers/text_settings_provider.dart';
 import 'package:quote_generator/theme/theme.dart';
 import 'package:quote_generator/translations/translations.dart';
 import 'package:quote_generator/widgets/widgets.dart';
 
-class LetterSpacingSelector extends StatefulWidget {
-  const LetterSpacingSelector({
-    Key? key,
-  }) : super(key: key);
+class LetterSpacingSelector extends ConsumerStatefulWidget {
+  const LetterSpacingSelector({super.key});
 
   @override
-  State<LetterSpacingSelector> createState() => _LetterSpacingSelectorState();
+  ConsumerState<ConsumerStatefulWidget> createState() =>
+      _LetterSpacingSelectorState();
 }
 
-class _LetterSpacingSelectorState extends State<LetterSpacingSelector> {
+class _LetterSpacingSelectorState extends ConsumerState<LetterSpacingSelector> {
   int _isSelected = 0;
+
+  double _selectedletterSpacingSize(int index) {
+    final letterSpacingSize = [
+      Dimensions.quoteTextLetterSpacingNone,
+      Dimensions.quoteTextLetterSpacingSmall,
+      Dimensions.quoteTextLetterSpacingMedium,
+      Dimensions.quoteTextLetterSpacingLarge,
+    ];
+    return letterSpacingSize[index];
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -53,6 +64,9 @@ class _LetterSpacingSelectorState extends State<LetterSpacingSelector> {
               final space = spaces[index];
               return TextSettingItemContainer(
                 onTap: () {
+                  ref
+                      .read(textSettingsProvider.notifier)
+                      .setLetterSpacing(_selectedletterSpacingSize(index));
                   setState(() {
                     _isSelected = index;
                   });
