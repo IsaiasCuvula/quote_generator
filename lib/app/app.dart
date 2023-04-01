@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:quote_generator/presentation/routers/routes_config.dart';
 import 'package:quote_generator/presentation/theme/theme.dart';
-import 'package:quote_generator/presentation/translations/translations.dart';
+import 'package:quote_generator/translations/translations.dart';
 
 class QuoteGeneratorApp extends StatelessWidget {
   const QuoteGeneratorApp({super.key});

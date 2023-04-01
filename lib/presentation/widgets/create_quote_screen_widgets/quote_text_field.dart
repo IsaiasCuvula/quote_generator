@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:quote_generator/presentation/providers/text_settings_provider.dart';
 import 'package:quote_generator/presentation/theme/theme.dart';
-import 'package:quote_generator/presentation/translations/translations.dart';
+import 'package:quote_generator/translations/translations.dart';
 
 class QuoteTextField extends ConsumerStatefulWidget {
   const QuoteTextField({super.key});

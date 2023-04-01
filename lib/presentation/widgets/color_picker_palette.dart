@@ -1,6 +1,6 @@
 import 'package:flex_color_picker/flex_color_picker.dart';
 import 'package:flutter/material.dart';
-import 'package:quote_generator/presentation/translations/translations.dart';
+import 'package:quote_generator/translations/translations.dart';
 import 'package:quote_generator/presentation/theme/theme.dart';
 
 class ColorPickerPalette extends StatelessWidget {

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:quote_generator/presentation/theme/dimensions.dart';
-import 'package:quote_generator/presentation/translations/l10n.dart';
+import 'package:quote_generator/translations/l10n.dart';
 import 'package:quote_generator/presentation/widgets/widgets.dart';
 
 class CreateQuoteScreen extends ConsumerWidget {
