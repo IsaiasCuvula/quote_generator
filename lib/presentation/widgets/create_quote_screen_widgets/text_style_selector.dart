@@ -2,11 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:quote_generator/presentation/providers/text_settings_provider.dart';
-import 'package:quote_generator/presentation/theme/theme.dart';
-import 'package:quote_generator/presentation/widgets/widgets.dart';
+import 'package:quote_generator/presentation/theme/dimensions.dart';
+import 'package:quote_generator/presentation/widgets/create_quote_screen_widgets/settings_item.dart';
 
 class TextStyleSelector extends ConsumerStatefulWidget {
-  const TextStyleSelector({super.key});
+  const TextStyleSelector({
+    Key? key,
+  }) : super(key: key);
 
   @override
   ConsumerState<ConsumerStatefulWidget> createState() =>
@@ -14,20 +16,9 @@ class TextStyleSelector extends ConsumerStatefulWidget {
 }
 
 class _TextStyleSelectorState extends ConsumerState<TextStyleSelector> {
-  int _isSelected = 0;
   final _textStyleIcons = const [
-    FaIcon(
-      FontAwesomeIcons.n,
-    ),
-    FaIcon(
-      FontAwesomeIcons.bold,
-    ),
-    FaIcon(
-      FontAwesomeIcons.italic,
-    ),
-    FaIcon(
-      FontAwesomeIcons.underline,
-    ),
+    FaIcon(FontAwesomeIcons.n),
+    FaIcon(FontAwesomeIcons.bold),
   ];
 
   FontWeight _selectedFontWeight(int index) {
@@ -38,6 +29,8 @@ class _TextStyleSelectorState extends ConsumerState<TextStyleSelector> {
     return fontWeightList[index];
   }
 
+  int _selectedIndex = 0;
+
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -47,25 +40,19 @@ class _TextStyleSelectorState extends ConsumerState<TextStyleSelector> {
         itemCount: _textStyleIcons.length,
         shrinkWrap: true,
         itemBuilder: (ctx, index) {
-          final icon = _textStyleIcons[index];
+          final textStyleIcon = _textStyleIcons[index];
+          final isSelected = index == _selectedIndex;
           return TextSettingItemContainer(
             onTap: () {
-              if (index < 2) {
-                ref
-                    .read(textSettingsProvider.notifier)
-                    .setFontWeight(_selectedFontWeight(index));
-              }
-              if (index == 2) {
-                ref
-                    .read(textSettingsProvider.notifier)
-                    .setFontStyle(FontStyle.italic);
-              }
+              ref
+                  .read(textSettingsProvider.notifier)
+                  .setFontWeight(_selectedFontWeight(index));
               setState(() {
-                _isSelected = index;
+                _selectedIndex = index;
               });
             },
-            isSelected: _isSelected == index,
-            child: icon,
+            isSelected: isSelected,
+            child: textStyleIcon,
           );
         },
         separatorBuilder: (ctx, index) {

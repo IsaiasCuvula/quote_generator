@@ -6,7 +6,7 @@ class TextSettingItemContainer extends StatelessWidget {
     Key? key,
     required this.child,
     this.onTap,
-    required this.isSelected,
+    this.isSelected = false,
   }) : super(key: key);
 
   final Widget child;
