@@ -1,1 +1,1 @@
-export 'quote_model.dart';
+export 'quote.dart';
