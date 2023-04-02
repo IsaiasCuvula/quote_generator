@@ -32,13 +32,12 @@ class _QuoteTextFieldState extends ConsumerState<QuoteTextField> {
     final textTheme = theme.textTheme;
     final textSettings = ref.watch(textSettingsProvider);
     final textAlign = textSettings.textAlign;
-    const textColor = Colors.white;
+    final textColor = theme.colorScheme.onBackground;
     final textFontSize = textSettings.fontSize;
     final textFontWeight = textSettings.fontWeight;
     final textFontStyle = textSettings.fontStyle;
     final textWordSpacing = textSettings.wordSpacing;
     final textLetterSpacing = textSettings.letterSpacing;
-    final textDecoration = textSettings.textDecoration;
     final backgroundColor = textSettings.backgroundColor;
 
     return Padding(
@@ -73,7 +72,6 @@ class _QuoteTextFieldState extends ConsumerState<QuoteTextField> {
             fontStyle: textFontStyle,
             wordSpacing: textWordSpacing,
             letterSpacing: textLetterSpacing,
-            decoration: textDecoration,
           ),
         ),
       ),
