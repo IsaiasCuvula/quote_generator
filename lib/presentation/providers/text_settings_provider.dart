@@ -16,7 +16,6 @@ class TextSettings {
   FontStyle fontStyle = FontStyle.normal;
   double wordSpacing = Dimensions.quoteTextWordSpacingNone;
   double letterSpacing = Dimensions.quoteTextLetterSpacingNone;
-  TextDecoration textDecoration = TextDecoration.none;
 }
 
 class TextSettingsNotifier extends StateNotifier<TextSettings> {
@@ -49,10 +48,6 @@ class TextSettingsNotifier extends StateNotifier<TextSettings> {
   void setLetterSpacing(double letterSpacing) {
     state = state.copyWith(letterSpacing: letterSpacing);
   }
-
-  void setTextDecoration(TextDecoration textDecoration) {
-    state = state.copyWith(textDecoration: textDecoration);
-  }
 }
 
 extension TextSettingsExtension on TextSettings {
@@ -73,7 +68,6 @@ extension TextSettingsExtension on TextSettings {
       ..fontWeight = fontWeight ?? this.fontWeight
       ..fontStyle = fontStyle ?? this.fontStyle
       ..wordSpacing = wordSpacing ?? this.wordSpacing
-      ..letterSpacing = letterSpacing ?? this.letterSpacing
-      ..textDecoration = textDecoration ?? this.textDecoration;
+      ..letterSpacing = letterSpacing ?? this.letterSpacing;
   }
 }

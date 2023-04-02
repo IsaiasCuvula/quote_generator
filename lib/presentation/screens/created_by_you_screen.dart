@@ -1,24 +1,23 @@
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:go_router/go_router.dart';
-import 'package:quote_generator/presentation/theme/theme.dart';
+import 'package:quote_generator/presentation/presentation.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:quote_generator/translations/translations.dart';
-import 'package:quote_generator/presentation/widgets/widgets.dart';
-import 'package:quote_generator/data/models/models.dart';
 
-class CreatedByYouScreen extends StatelessWidget {
-  static CreatedByYouScreen builder(
+class CreateByYouScreen extends StatelessWidget {
+  static CreateByYouScreen builder(
     BuildContext context,
     GoRouterState state,
   ) =>
-      const CreatedByYouScreen();
+      const CreateByYouScreen();
 
-  const CreatedByYouScreen({super.key});
+  const CreateByYouScreen({super.key});
+  static const List<QuoteCard> itemsFav = [];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: QuoteModel.itemsFav.isEmpty
+      body: itemsFav.isEmpty
           ? Center(
               child: Padding(
                 padding: Dimensions.kPaddingAllLarge,
@@ -30,7 +29,7 @@ class CreatedByYouScreen extends StatelessWidget {
             )
           : const ListOfQuotes(
               key: Key('CreatedByYouScreen'),
-              items: QuoteModel.items,
+              items: itemsFav,
             ),
     );
   }

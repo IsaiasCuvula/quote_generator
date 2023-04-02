@@ -20,38 +20,12 @@ final routes = [
             child: HomeScreen.builder(context, state),
           );
         },
-        routes: [
-          GoRoute(
-            path: 'favorites',
-            pageBuilder: (context, state) {
-              return NoTransitionPage(
-                child: FavoriteScreen.builder(context, state),
-              );
-            },
-          ),
-          GoRoute(
-            path: 'latest',
-            pageBuilder: (context, state) {
-              return NoTransitionPage(
-                child: LatestQuoteScreen.builder(context, state),
-              );
-            },
-          ),
-          GoRoute(
-            path: 'createdByYou',
-            pageBuilder: (context, state) {
-              return NoTransitionPage(
-                child: CreatedByYouScreen.builder(context, state),
-              );
-            },
-          ),
-        ],
       ),
       GoRoute(
-        path: '/createQuote',
+        path: '/createdByYou',
         pageBuilder: (context, state) {
           return NoTransitionPage(
-            child: CreateQuoteScreen.builder(context, state),
+            child: CreateByYouScreen.builder(context, state),
           );
         },
       ),
@@ -63,6 +37,22 @@ final routes = [
           );
         },
       ),
+      GoRoute(
+        path: '/favorites',
+        pageBuilder: (context, state) {
+          return NoTransitionPage(
+            child: FavoriteScreen.builder(context, state),
+          );
+        },
+      ),
     ],
-  )
+  ),
+  GoRoute(
+    path: '/createQuote',
+    pageBuilder: (context, state) {
+      return NoTransitionPage(
+        child: CreateQuoteScreen.builder(context, state),
+      );
+    },
+  ),
 ];

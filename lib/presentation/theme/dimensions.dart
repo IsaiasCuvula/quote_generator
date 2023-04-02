@@ -10,11 +10,6 @@ class Dimensions {
   static final kPaddingAllMedium = const EdgeInsets.all(10.0).w;
   static final kPaddingAllSmall = const EdgeInsets.all(8.0).w;
 
-  static final kPaddingBottomNavBar = const EdgeInsets.only(
-    bottom: 20.0,
-    top: 10,
-  ).w;
-
   static final kPaddingSymetricHorizontal = const EdgeInsets.symmetric(
     horizontal: 16.0,
   ).w;

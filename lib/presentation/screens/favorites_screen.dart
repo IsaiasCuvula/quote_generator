@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:go_router/go_router.dart';
-import 'package:quote_generator/data/models/models.dart';
-import 'package:quote_generator/presentation/theme/dimensions.dart';
 import 'package:quote_generator/translations/l10n.dart';
-import 'package:quote_generator/presentation/widgets/quotes/quotes.dart';
+import 'package:quote_generator/presentation/presentation.dart';
 
 class FavoriteScreen extends StatelessWidget {
   static FavoriteScreen builder(
@@ -14,11 +12,12 @@ class FavoriteScreen extends StatelessWidget {
       const FavoriteScreen();
 
   const FavoriteScreen({super.key});
+  static const itemsFav = <QuoteCard>[];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: QuoteModel.itemsFav.isEmpty
+      body: itemsFav.isEmpty
           ? Center(
               child: Padding(
                 padding: Dimensions.kPaddingAllLarge,
@@ -30,7 +29,7 @@ class FavoriteScreen extends StatelessWidget {
             )
           : const ListOfQuotes(
               key: Key('FavoriteScreen'),
-              items: QuoteModel.itemsFav,
+              items: itemsFav,
             ),
     );
   }
