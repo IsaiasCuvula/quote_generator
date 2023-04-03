@@ -17,20 +17,49 @@ class CreateByYouScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: itemsFav.isEmpty
-          ? Center(
-              child: Padding(
+      body: NestedScrollView(
+        headerSliverBuilder: (ctx, innerBoxIsScrolled) {
+          return [
+            SliverAppBar(
+              floating: true,
+              pinned: true,
+              centerTitle: false,
+              title: Padding(
                 padding: Dimensions.kPaddingAllLarge,
-                child: EmptyQuoteCard(
-                  displayIcon: FontAwesomeIcons.list,
-                  displayText: context.l10n.empty_card_created_by_you,
+                child: Text(
+                  context.l10n.app_bar_create_by_you,
+                  style: Theme.of(context).textTheme.displayMedium,
                 ),
               ),
+              actions: [
+                Padding(
+                  padding: Dimensions.kPaddingSymetricHorizontal,
+                  child: IconButton(
+                    onPressed: () => context.go('/createQuote'),
+                    icon: const FaIcon(
+                      FontAwesomeIcons.plus,
+                    ),
+                  ),
+                ),
+              ],
             )
-          : const ListOfQuotes(
-              key: Key('CreatedByYouScreen'),
-              items: itemsFav,
-            ),
+          ];
+        },
+        body: itemsFav.isEmpty
+            ? Center(
+                child: Padding(
+                  padding: Dimensions.kPaddingAllLarge,
+                  child: EmptyQuoteCard(
+                    displayIcon: FontAwesomeIcons.list,
+                    displayText: context.l10n.empty_card_created_by_you,
+                  ),
+                ),
+              )
+            : const ListOfQuotes(
+                key: Key('CreatedByYouScreen'),
+                items: itemsFav,
+              ),
+      ),
     );
   }
 }
