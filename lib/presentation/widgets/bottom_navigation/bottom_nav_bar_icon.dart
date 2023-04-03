@@ -15,7 +15,7 @@ class BottomNavBarIcon extends StatelessWidget {
   Widget build(BuildContext context) {
     final colorScheme = Theme.of(context).colorScheme;
     final Color displayIconColor =
-        isSelected ? colorScheme.primary : colorScheme.tertiaryContainer;
+        isSelected ? colorScheme.tertiaryContainer : colorScheme.primary;
     return Icon(
       displayIcon,
       size: Dimensions.iconSizeMedium,
