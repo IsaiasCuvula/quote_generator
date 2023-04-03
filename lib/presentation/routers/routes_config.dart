@@ -4,10 +4,10 @@ import 'package:quote_generator/presentation/routers/routes.dart';
 
 @immutable
 class RoutesConfig {
-  static final _navigationKey = GlobalKey<NavigatorState>();
+  static final navigationKey = GlobalKey<NavigatorState>();
   static final routeConfig = GoRouter(
     initialLocation: '/home',
-    navigatorKey: _navigationKey,
+    navigatorKey: navigationKey,
     routes: routes,
   );
 }

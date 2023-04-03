@@ -35,7 +35,7 @@ class CreateByYouScreen extends StatelessWidget {
                 Padding(
                   padding: Dimensions.kPaddingSymetricHorizontal,
                   child: IconButton(
-                    onPressed: () => context.go('/createQuote'),
+                    onPressed: () => context.push('/createQuote'),
                     icon: const FaIcon(
                       FontAwesomeIcons.plus,
                     ),
