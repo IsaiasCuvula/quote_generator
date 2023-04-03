@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:go_router/go_router.dart';
+import 'package:quote_generator/config/config.dart';
 import 'package:quote_generator/translations/l10n.dart';
 import 'package:quote_generator/presentation/presentation.dart';
 

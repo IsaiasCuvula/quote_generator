@@ -3,6 +3,7 @@ import 'package:go_router/go_router.dart';
 import 'package:quote_generator/presentation/presentation.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:quote_generator/translations/translations.dart';
+import 'package:quote_generator/config/config.dart';
 
 class CreateByYouScreen extends StatelessWidget {
   static CreateByYouScreen builder(

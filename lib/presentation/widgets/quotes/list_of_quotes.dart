@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
-import 'package:quote_generator/presentation/theme/theme.dart';
+import 'package:quote_generator/config/theme/theme.dart';
 import 'quotes.dart';
 
 class ListOfQuotes extends StatelessWidget {

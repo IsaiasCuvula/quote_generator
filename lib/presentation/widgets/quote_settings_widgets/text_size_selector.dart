@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:quote_generator/presentation/providers/text_settings_provider.dart';
-import 'package:quote_generator/presentation/theme/dimensions.dart';
+import 'package:quote_generator/config/theme/dimensions.dart';
 import 'package:quote_generator/translations/translations.dart';
 import 'package:quote_generator/presentation/widgets/widgets.dart';
 

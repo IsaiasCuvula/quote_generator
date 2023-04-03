@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:quote_generator/presentation/theme/theme.dart';
+import 'package:quote_generator/config/theme/theme.dart';
 import 'bottom_nav_bar_item.dart';
 
 class BottomNavBar extends StatelessWidget {
