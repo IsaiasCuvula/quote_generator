@@ -27,7 +27,7 @@ class HomeScreen extends StatelessWidget {
             SliverAppBar(
               floating: true,
               pinned: true,
-              centerTitle: false,
+              centerTitle: true,
               title: Padding(
                 padding: Dimensions.kPaddingAllLarge,
                 child: Text(

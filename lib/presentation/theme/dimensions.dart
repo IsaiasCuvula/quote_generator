@@ -11,11 +11,11 @@ class Dimensions {
   static final kPaddingAllSmall = const EdgeInsets.all(8.0).w;
 
   static final kPaddingSymetricHorizontal = const EdgeInsets.symmetric(
-    horizontal: 16.0,
+    horizontal: 20.0,
   ).w;
 
   static final kPaddingSymetricVertical = const EdgeInsets.symmetric(
-    vertical: 16.0,
+    vertical: 20.0,
   ).w;
 
   //BorderRadius

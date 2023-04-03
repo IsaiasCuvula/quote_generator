@@ -141,6 +141,12 @@ abstract class AppLocalizations {
   /// **'Latest'**
   String get app_bar_latest;
 
+  /// No description provided for @app_bar_search_quote.
+  ///
+  /// In en, this message translates to:
+  /// **'Search Quote'**
+  String get app_bar_search_quote;
+
   /// No description provided for @empty_card_created_by_you.
   ///
   /// In en, this message translates to:

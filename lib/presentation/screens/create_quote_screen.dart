@@ -41,7 +41,7 @@ class CreateQuoteScreen extends ConsumerWidget {
         ),
         body: SingleChildScrollView(
           physics: const AlwaysScrollableScrollPhysics(),
-          padding: Dimensions.kPaddingAllLarge,
+          padding: Dimensions.kPaddingSymetricHorizontal,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
