@@ -20,13 +20,13 @@ class AppLocalizationsPt extends AppLocalizations {
   String get nav_bar_search => 'Pesquisar';
 
   @override
-  String get tab_bar_create_by_you => 'Criado por você';
+  String get app_bar_create_by_you => 'Criado por Você';
 
   @override
-  String get tab_bar_favorite => 'Favoritos';
+  String get app_bar_favorite => 'Favoritos';
 
   @override
-  String get tab_bar_latest => 'Mais recente';
+  String get app_bar_latest => 'Mais recente';
 
   @override
   String get empty_card_created_by_you => 'Você ainda não criou nenhuma citação';

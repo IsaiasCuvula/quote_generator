@@ -20,13 +20,13 @@ class AppLocalizationsEn extends AppLocalizations {
   String get nav_bar_search => 'Search';
 
   @override
-  String get tab_bar_create_by_you => 'Created by you';
+  String get app_bar_create_by_you => 'Created by You';
 
   @override
-  String get tab_bar_favorite => 'Favorites';
+  String get app_bar_favorite => 'Favorites';
 
   @override
-  String get tab_bar_latest => 'Latest';
+  String get app_bar_latest => 'Latest';
 
   @override
   String get empty_card_created_by_you => 'You haven\'t created any quotes yet';
