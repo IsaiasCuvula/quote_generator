@@ -4,11 +4,13 @@ import 'package:quote_generator/presentation/theme/dimensions.dart';
 class BottomNavBarIcon extends StatelessWidget {
   const BottomNavBarIcon({
     Key? key,
-    required this.displayIcon,
+    required this.selectedIcon,
+    required this.unselectedIcon,
     required this.isSelected,
   }) : super(key: key);
 
-  final IconData displayIcon;
+  final IconData unselectedIcon;
+  final IconData selectedIcon;
   final bool isSelected;
 
   @override
@@ -16,6 +18,7 @@ class BottomNavBarIcon extends StatelessWidget {
     final colorScheme = Theme.of(context).colorScheme;
     final Color displayIconColor =
         isSelected ? colorScheme.tertiaryContainer : colorScheme.primary;
+    final IconData displayIcon = isSelected ? selectedIcon : unselectedIcon;
     return Icon(
       displayIcon,
       size: Dimensions.iconSizeMedium,

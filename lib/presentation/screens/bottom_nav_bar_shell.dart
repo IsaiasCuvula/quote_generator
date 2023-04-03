@@ -46,28 +46,32 @@ class BottomNavBarShell extends StatelessWidget {
                   items: [
                     BottomNavBarItem(
                       child: BottomNavBarIcon(
-                        displayIcon: FontAwesomeIcons.compass,
+                        selectedIcon: FontAwesomeIcons.solidCompass,
+                        unselectedIcon: FontAwesomeIcons.compass,
                         isSelected: _isItemSelected('/home'),
                       ),
                       onTap: () => context.go('/home'),
                     ),
                     BottomNavBarItem(
                       child: BottomNavBarIcon(
-                        displayIcon: FontAwesomeIcons.pencil,
+                        selectedIcon: FontAwesomeIcons.pencil,
+                        unselectedIcon: FontAwesomeIcons.pencil,
                         isSelected: _isItemSelected('/createdByYou'),
                       ),
                       onTap: () => context.go('/createdByYou'),
                     ),
                     BottomNavBarItem(
                       child: BottomNavBarIcon(
-                        displayIcon: FontAwesomeIcons.magnifyingGlass,
+                        selectedIcon: FontAwesomeIcons.magnifyingGlass,
+                        unselectedIcon: FontAwesomeIcons.magnifyingGlass,
                         isSelected: _isItemSelected('/search'),
                       ),
                       onTap: () => context.go('/search'),
                     ),
                     BottomNavBarItem(
                       child: BottomNavBarIcon(
-                        displayIcon: Icons.favorite,
+                        selectedIcon: FontAwesomeIcons.solidHeart,
+                        unselectedIcon: FontAwesomeIcons.heart,
                         isSelected: _isItemSelected('/favorites'),
                       ),
                       onTap: () => context.go('/favorites'),
