@@ -1,10 +1,11 @@
+import 'package:flutter/foundation.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-part 'quote.freezed.dart';
-part 'quote.g.dart';
+part 'quote_model.freezed.dart';
+part 'quote_model.g.dart';
 
 @freezed
-class Quote with _$Quote {
-  const factory Quote({
+class QuoteModel with _$QuoteModel {
+  const factory QuoteModel({
     required int id,
     required String text,
     required String author,
@@ -16,7 +17,8 @@ class Quote with _$Quote {
     required double wordSpacing,
     required double letterSpacing,
     @Default(false) bool isFavorite,
-  }) = _Quote;
+  }) = _QuoteModel;
 
-  factory Quote.fromJson(Map<String, dynamic> json) => _$QuoteFromJson(json);
+  factory QuoteModel.fromJson(Map<String, dynamic> json) =>
+      _$QuoteModelFromJson(json);
 }

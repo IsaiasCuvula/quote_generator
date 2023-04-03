@@ -1,12 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'quote.dart';
+part of 'quote_model.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_Quote _$$_QuoteFromJson(Map<String, dynamic> json) => _$_Quote(
+_$_QuoteModel _$$_QuoteModelFromJson(Map<String, dynamic> json) =>
+    _$_QuoteModel(
       id: json['id'] as int,
       text: json['text'] as String,
       author: json['author'] as String,
@@ -20,7 +21,8 @@ _$_Quote _$$_QuoteFromJson(Map<String, dynamic> json) => _$_Quote(
       isFavorite: json['isFavorite'] as bool? ?? false,
     );
 
-Map<String, dynamic> _$$_QuoteToJson(_$_Quote instance) => <String, dynamic>{
+Map<String, dynamic> _$$_QuoteModelToJson(_$_QuoteModel instance) =>
+    <String, dynamic>{
       'id': instance.id,
       'text': instance.text,
       'author': instance.author,

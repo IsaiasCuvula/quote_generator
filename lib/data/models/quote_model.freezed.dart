@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'quote.dart';
+part of 'quote_model.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -14,12 +14,12 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
-Quote _$QuoteFromJson(Map<String, dynamic> json) {
-  return _Quote.fromJson(json);
+QuoteModel _$QuoteModelFromJson(Map<String, dynamic> json) {
+  return _QuoteModel.fromJson(json);
 }
 
 /// @nodoc
-mixin _$Quote {
+mixin _$QuoteModel {
   int get id => throw _privateConstructorUsedError;
   String get text => throw _privateConstructorUsedError;
   String get author => throw _privateConstructorUsedError;
@@ -34,13 +34,15 @@ mixin _$Quote {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $QuoteCopyWith<Quote> get copyWith => throw _privateConstructorUsedError;
+  $QuoteModelCopyWith<QuoteModel> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $QuoteCopyWith<$Res> {
-  factory $QuoteCopyWith(Quote value, $Res Function(Quote) then) =
-      _$QuoteCopyWithImpl<$Res, Quote>;
+abstract class $QuoteModelCopyWith<$Res> {
+  factory $QuoteModelCopyWith(
+          QuoteModel value, $Res Function(QuoteModel) then) =
+      _$QuoteModelCopyWithImpl<$Res, QuoteModel>;
   @useResult
   $Res call(
       {int id,
@@ -57,9 +59,9 @@ abstract class $QuoteCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$QuoteCopyWithImpl<$Res, $Val extends Quote>
-    implements $QuoteCopyWith<$Res> {
-  _$QuoteCopyWithImpl(this._value, this._then);
+class _$QuoteModelCopyWithImpl<$Res, $Val extends QuoteModel>
+    implements $QuoteModelCopyWith<$Res> {
+  _$QuoteModelCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -131,9 +133,11 @@ class _$QuoteCopyWithImpl<$Res, $Val extends Quote>
 }
 
 /// @nodoc
-abstract class _$$_QuoteCopyWith<$Res> implements $QuoteCopyWith<$Res> {
-  factory _$$_QuoteCopyWith(_$_Quote value, $Res Function(_$_Quote) then) =
-      __$$_QuoteCopyWithImpl<$Res>;
+abstract class _$$_QuoteModelCopyWith<$Res>
+    implements $QuoteModelCopyWith<$Res> {
+  factory _$$_QuoteModelCopyWith(
+          _$_QuoteModel value, $Res Function(_$_QuoteModel) then) =
+      __$$_QuoteModelCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -151,9 +155,11 @@ abstract class _$$_QuoteCopyWith<$Res> implements $QuoteCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_QuoteCopyWithImpl<$Res> extends _$QuoteCopyWithImpl<$Res, _$_Quote>
-    implements _$$_QuoteCopyWith<$Res> {
-  __$$_QuoteCopyWithImpl(_$_Quote _value, $Res Function(_$_Quote) _then)
+class __$$_QuoteModelCopyWithImpl<$Res>
+    extends _$QuoteModelCopyWithImpl<$Res, _$_QuoteModel>
+    implements _$$_QuoteModelCopyWith<$Res> {
+  __$$_QuoteModelCopyWithImpl(
+      _$_QuoteModel _value, $Res Function(_$_QuoteModel) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -171,7 +177,7 @@ class __$$_QuoteCopyWithImpl<$Res> extends _$QuoteCopyWithImpl<$Res, _$_Quote>
     Object? letterSpacing = null,
     Object? isFavorite = null,
   }) {
-    return _then(_$_Quote(
+    return _then(_$_QuoteModel(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -222,8 +228,8 @@ class __$$_QuoteCopyWithImpl<$Res> extends _$QuoteCopyWithImpl<$Res, _$_Quote>
 
 /// @nodoc
 @JsonSerializable()
-class _$_Quote implements _Quote {
-  const _$_Quote(
+class _$_QuoteModel with DiagnosticableTreeMixin implements _QuoteModel {
+  const _$_QuoteModel(
       {required this.id,
       required this.text,
       required this.author,
@@ -236,8 +242,8 @@ class _$_Quote implements _Quote {
       required this.letterSpacing,
       this.isFavorite = false});
 
-  factory _$_Quote.fromJson(Map<String, dynamic> json) =>
-      _$$_QuoteFromJson(json);
+  factory _$_QuoteModel.fromJson(Map<String, dynamic> json) =>
+      _$$_QuoteModelFromJson(json);
 
   @override
   final int id;
@@ -264,15 +270,33 @@ class _$_Quote implements _Quote {
   final bool isFavorite;
 
   @override
-  String toString() {
-    return 'Quote(id: $id, text: $text, author: $author, textAlign: $textAlign, backgroundColor: $backgroundColor, fontSize: $fontSize, fontWeight: $fontWeight, fontStyle: $fontStyle, wordSpacing: $wordSpacing, letterSpacing: $letterSpacing, isFavorite: $isFavorite)';
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'QuoteModel(id: $id, text: $text, author: $author, textAlign: $textAlign, backgroundColor: $backgroundColor, fontSize: $fontSize, fontWeight: $fontWeight, fontStyle: $fontStyle, wordSpacing: $wordSpacing, letterSpacing: $letterSpacing, isFavorite: $isFavorite)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'QuoteModel'))
+      ..add(DiagnosticsProperty('id', id))
+      ..add(DiagnosticsProperty('text', text))
+      ..add(DiagnosticsProperty('author', author))
+      ..add(DiagnosticsProperty('textAlign', textAlign))
+      ..add(DiagnosticsProperty('backgroundColor', backgroundColor))
+      ..add(DiagnosticsProperty('fontSize', fontSize))
+      ..add(DiagnosticsProperty('fontWeight', fontWeight))
+      ..add(DiagnosticsProperty('fontStyle', fontStyle))
+      ..add(DiagnosticsProperty('wordSpacing', wordSpacing))
+      ..add(DiagnosticsProperty('letterSpacing', letterSpacing))
+      ..add(DiagnosticsProperty('isFavorite', isFavorite));
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_Quote &&
+            other is _$_QuoteModel &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.text, text) || other.text == text) &&
             (identical(other.author, author) || other.author == author) &&
@@ -313,19 +337,19 @@ class _$_Quote implements _Quote {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_QuoteCopyWith<_$_Quote> get copyWith =>
-      __$$_QuoteCopyWithImpl<_$_Quote>(this, _$identity);
+  _$$_QuoteModelCopyWith<_$_QuoteModel> get copyWith =>
+      __$$_QuoteModelCopyWithImpl<_$_QuoteModel>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_QuoteToJson(
+    return _$$_QuoteModelToJson(
       this,
     );
   }
 }
 
-abstract class _Quote implements Quote {
-  const factory _Quote(
+abstract class _QuoteModel implements QuoteModel {
+  const factory _QuoteModel(
       {required final int id,
       required final String text,
       required final String author,
@@ -336,9 +360,10 @@ abstract class _Quote implements Quote {
       required final String fontStyle,
       required final double wordSpacing,
       required final double letterSpacing,
-      final bool isFavorite}) = _$_Quote;
+      final bool isFavorite}) = _$_QuoteModel;
 
-  factory _Quote.fromJson(Map<String, dynamic> json) = _$_Quote.fromJson;
+  factory _QuoteModel.fromJson(Map<String, dynamic> json) =
+      _$_QuoteModel.fromJson;
 
   @override
   int get id;
@@ -364,6 +389,6 @@ abstract class _Quote implements Quote {
   bool get isFavorite;
   @override
   @JsonKey(ignore: true)
-  _$$_QuoteCopyWith<_$_Quote> get copyWith =>
+  _$$_QuoteModelCopyWith<_$_QuoteModel> get copyWith =>
       throw _privateConstructorUsedError;
 }
