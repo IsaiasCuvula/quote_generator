@@ -3,7 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:quote_generator/presentation/providers/text_settings_provider.dart';
 import 'package:quote_generator/presentation/theme/dimensions.dart';
-import 'package:quote_generator/presentation/widgets/create_quote_screen_widgets/settings_item.dart';
+import 'package:quote_generator/presentation/widgets/quote_settings_widgets/settings_item.dart';
 
 class TextStyleSelector extends ConsumerStatefulWidget {
   const TextStyleSelector({
