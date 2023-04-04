@@ -15,6 +15,9 @@ class TextSettings {
   FontWeight fontWeight = FontWeight.normal;
   double wordSpacing = Dimensions.quoteTextWordSpacingNone;
   double letterSpacing = Dimensions.quoteTextLetterSpacingNone;
+  String quoteText = '';
+  String quoteAuthor = 'unknown';
+  int isFavorite = 0;
 }
 
 class TextSettingsNotifier extends StateNotifier<TextSettings> {
@@ -47,6 +50,14 @@ class TextSettingsNotifier extends StateNotifier<TextSettings> {
   void setLetterSpacing(double letterSpacing) {
     state = state.copyWith(letterSpacing: letterSpacing);
   }
+
+  void setQuoteText(String text) {
+    state = state.copyWith(quoteText: text);
+  }
+
+  void setQuoteAuthor(String author) {
+    state = state.copyWith(quoteAuthor: author);
+  }
 }
 
 extension TextSettingsExtension on TextSettings {
@@ -59,6 +70,9 @@ extension TextSettingsExtension on TextSettings {
     double? wordSpacing,
     double? letterSpacing,
     TextDecoration? textDecoration,
+    String? quoteText,
+    String? quoteAuthor,
+    int? isFavorite,
   }) {
     return TextSettings()
       ..textAlign = textAlign ?? this.textAlign
@@ -66,6 +80,9 @@ extension TextSettingsExtension on TextSettings {
       ..fontSize = fontSize ?? this.fontSize
       ..fontWeight = fontWeight ?? this.fontWeight
       ..wordSpacing = wordSpacing ?? this.wordSpacing
-      ..letterSpacing = letterSpacing ?? this.letterSpacing;
+      ..letterSpacing = letterSpacing ?? this.letterSpacing
+      ..quoteText = quoteText ?? this.quoteText
+      ..quoteAuthor = quoteAuthor ?? this.quoteAuthor
+      ..isFavorite = isFavorite ?? this.isFavorite;
   }
 }

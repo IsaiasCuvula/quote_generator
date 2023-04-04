@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:quote_generator/presentation/providers/text_settings_provider.dart';
+import 'package:quote_generator/presentation/providers/providers.dart';
 import 'package:quote_generator/config/theme/theme.dart';
 import 'package:quote_generator/translations/translations.dart';
 
@@ -13,17 +13,20 @@ class QuoteTextField extends ConsumerStatefulWidget {
 
 class _QuoteTextFieldState extends ConsumerState<QuoteTextField> {
   late TextEditingController _quoteTextController;
+  //late FocusManager _focusManager;
 
   @override
   void initState() {
     super.initState();
     _quoteTextController = TextEditingController();
+    //_focusManager = FocusManager();
   }
 
   @override
   void dispose() {
     super.dispose();
     _quoteTextController.dispose();
+    //_focusManager.dispose();
   }
 
   @override
@@ -71,6 +74,9 @@ class _QuoteTextFieldState extends ConsumerState<QuoteTextField> {
             wordSpacing: textWordSpacing,
             letterSpacing: textLetterSpacing,
           ),
+          onChanged: (text) {
+            ref.read(textSettingsProvider.notifier).setQuoteText(text);
+          },
         ),
       ),
     );

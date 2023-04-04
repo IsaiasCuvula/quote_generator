@@ -22,27 +22,29 @@ class HomeScreen extends StatelessWidget {
 
     return Scaffold(
       body: NestedScrollView(
-        headerSliverBuilder: (ctx, innerBoxIsScrolled) {
-          return [
-            SliverAppBar(
-              floating: true,
-              pinned: true,
-              centerTitle: true,
-              title: Padding(
-                padding: Dimensions.kPaddingAllLarge,
-                child: Text(
-                  context.l10n.explore,
-                  style: theme.textTheme.displayMedium,
+          headerSliverBuilder: (ctx, innerBoxIsScrolled) {
+            return [
+              SliverAppBar(
+                floating: true,
+                pinned: true,
+                centerTitle: true,
+                title: Padding(
+                  padding: Dimensions.kPaddingAllLarge,
+                  child: Text(
+                    context.l10n.explore,
+                    style: theme.textTheme.displayMedium,
+                  ),
                 ),
-              ),
-            )
-          ];
-        },
-        body: const ListOfQuotes(
-          key: Key('HomeScreen'),
-          items: items,
-        ),
-      ),
+              )
+            ];
+          },
+          body: Container()
+
+          // const ListOfQuotes(
+          //   key: Key('HomeScreen'),
+          //   items: items,
+          // ),
+          ),
     );
   }
 }

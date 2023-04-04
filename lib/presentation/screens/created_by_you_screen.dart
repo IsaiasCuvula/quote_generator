@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:quote_generator/presentation/presentation.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -13,7 +14,6 @@ class CreateByYouScreen extends StatelessWidget {
       const CreateByYouScreen();
 
   const CreateByYouScreen({super.key});
-  static const List<QuoteCard> itemsFav = [];
 
   @override
   Widget build(BuildContext context) {
@@ -46,20 +46,25 @@ class CreateByYouScreen extends StatelessWidget {
             )
           ];
         },
-        body: itemsFav.isEmpty
-            ? Center(
-                child: Padding(
-                  padding: Dimensions.kPaddingAllLarge,
-                  child: EmptyQuoteCard(
-                    displayIcon: FontAwesomeIcons.list,
-                    displayText: context.l10n.empty_card_created_by_you,
-                  ),
-                ),
-              )
-            : const ListOfQuotes(
-                key: Key('CreatedByYouScreen'),
-                items: itemsFav,
-              ),
+        body: Consumer(
+          builder: ((context, ref, child) {
+            final quotes = ref.watch(quoteProvider);
+            return quotes.isEmpty
+                ? Center(
+                    child: Padding(
+                      padding: Dimensions.kPaddingAllLarge,
+                      child: EmptyQuoteCard(
+                        displayIcon: FontAwesomeIcons.list,
+                        displayText: context.l10n.empty_card_created_by_you,
+                      ),
+                    ),
+                  )
+                : ListOfQuotes(
+                    key: const Key('CreatedByYouScreen'),
+                    quotes: quotes,
+                  );
+          }),
+        ),
       ),
     );
   }

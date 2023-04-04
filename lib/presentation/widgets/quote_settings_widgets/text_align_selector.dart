@@ -4,6 +4,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:quote_generator/presentation/providers/text_settings_provider.dart';
 import 'package:quote_generator/config/theme/dimensions.dart';
 import 'package:quote_generator/presentation/widgets/widgets.dart';
+import 'package:quote_generator/utils/utils.dart';
 
 class TextAlignSelector extends ConsumerStatefulWidget {
   const TextAlignSelector({Key? key}) : super(key: key);
@@ -30,12 +31,7 @@ class _TextAlignSelectorState extends ConsumerState<TextAlignSelector> {
   ];
 
   TextAlign _selectedTextAlign(int index) {
-    const textAlignList = [
-      TextAlign.start,
-      TextAlign.center,
-      TextAlign.end,
-      TextAlign.justify,
-    ];
+    final List<TextAlign> textAlignList = Helpers.textAlignList.values.toList();
     return textAlignList[index];
   }
 

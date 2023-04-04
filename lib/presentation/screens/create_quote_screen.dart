@@ -20,17 +20,14 @@ class CreateQuoteScreen extends ConsumerWidget {
 
     return GestureDetector(
       onTap: () {
-        //FocusManager.instance.primaryFocus?.unfocus();
-        ref.read(quoteProvider.notifier).createQuote();
+        FocusManager.instance.primaryFocus?.unfocus();
       },
       child: Scaffold(
         appBar: AppBar(
           actions: [
             TextButton(
               onPressed: () {
-                //melhorar esse codigo adicionar dentro do method salvar
-                FocusManager.instance.primaryFocus?.unfocus();
-                ref.read(quoteProvider.notifier).createQuote();
+                _saveQuoteInDB(ref, context);
               },
               child: Text(
                 context.l10n.done.toUpperCase(),
@@ -60,5 +57,12 @@ class CreateQuoteScreen extends ConsumerWidget {
         ),
       ),
     );
+  }
+
+  Future<void> _saveQuoteInDB(WidgetRef ref, BuildContext ctx) async {
+    FocusManager.instance.primaryFocus?.unfocus();
+    await ref.read(quoteProvider.notifier).addQuote().then((value) {
+      ctx.go('/createdByYou');
+    });
   }
 }

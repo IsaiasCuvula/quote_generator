@@ -12,12 +12,12 @@ _$_QuoteModel _$$_QuoteModelFromJson(Map<String, dynamic> json) =>
       text: json['text'] as String,
       author: json['author'] as String,
       textAlign: json['textAlign'] as String,
-      backgroundColor: json['backgroundColor'] as String,
+      backgroundColor: json['backgroundColor'] as int,
       fontSize: (json['fontSize'] as num).toDouble(),
       fontWeight: json['fontWeight'] as String,
       wordSpacing: (json['wordSpacing'] as num).toDouble(),
       letterSpacing: (json['letterSpacing'] as num).toDouble(),
-      isFavorite: json['isFavorite'] as bool? ?? false,
+      isFavorite: json['isFavorite'] as int? ?? 0,
     );
 
 Map<String, dynamic> _$$_QuoteModelToJson(_$_QuoteModel instance) =>

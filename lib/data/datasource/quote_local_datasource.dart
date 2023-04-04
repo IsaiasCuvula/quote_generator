@@ -22,7 +22,7 @@ class QuoteLocalDatasource {
 
   Future<Database> _initDb() async {
     final dbPath = await getDatabasesPath();
-    final path = join(dbPath, 'quotes.db');
+    final path = join(dbPath, 'quotes_.db');
     return await openDatabase(
       path,
       version: 1,
@@ -37,7 +37,7 @@ class QuoteLocalDatasource {
         text TEXT,
         author TEXT,
         textAlign TEXT,
-        backgroundColor TEXT,
+        backgroundColor INTEGER,
         fontSize REAL,
         fontWeight TEXT,
         wordSpacing REAL,
@@ -49,7 +49,11 @@ class QuoteLocalDatasource {
 
   Future<int> addQuote(QuoteModel quote) async {
     final db = await database;
-    return db.insert(Constants.dbTable, quote.toJson());
+    return db.insert(
+      Constants.dbTable,
+      quote.toJson(),
+      conflictAlgorithm: ConflictAlgorithm.replace,
+    );
   }
 
   Future<QuoteList> getQuotes() async {

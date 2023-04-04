@@ -10,12 +10,12 @@ class QuoteModel with _$QuoteModel {
     required String text,
     required String author,
     required String textAlign,
-    required String backgroundColor,
+    required int backgroundColor,
     required double fontSize,
     required String fontWeight,
     required double wordSpacing,
     required double letterSpacing,
-    @Default(false) bool isFavorite,
+    @Default(0) int isFavorite,
   }) = _QuoteModel;
 
   factory QuoteModel.fromJson(Map<String, dynamic> json) =>

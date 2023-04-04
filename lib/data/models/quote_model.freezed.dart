@@ -24,12 +24,12 @@ mixin _$QuoteModel {
   String get text => throw _privateConstructorUsedError;
   String get author => throw _privateConstructorUsedError;
   String get textAlign => throw _privateConstructorUsedError;
-  String get backgroundColor => throw _privateConstructorUsedError;
+  int get backgroundColor => throw _privateConstructorUsedError;
   double get fontSize => throw _privateConstructorUsedError;
   String get fontWeight => throw _privateConstructorUsedError;
   double get wordSpacing => throw _privateConstructorUsedError;
   double get letterSpacing => throw _privateConstructorUsedError;
-  bool get isFavorite => throw _privateConstructorUsedError;
+  int get isFavorite => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -48,12 +48,12 @@ abstract class $QuoteModelCopyWith<$Res> {
       String text,
       String author,
       String textAlign,
-      String backgroundColor,
+      int backgroundColor,
       double fontSize,
       String fontWeight,
       double wordSpacing,
       double letterSpacing,
-      bool isFavorite});
+      int isFavorite});
 }
 
 /// @nodoc
@@ -100,7 +100,7 @@ class _$QuoteModelCopyWithImpl<$Res, $Val extends QuoteModel>
       backgroundColor: null == backgroundColor
           ? _value.backgroundColor
           : backgroundColor // ignore: cast_nullable_to_non_nullable
-              as String,
+              as int,
       fontSize: null == fontSize
           ? _value.fontSize
           : fontSize // ignore: cast_nullable_to_non_nullable
@@ -120,7 +120,7 @@ class _$QuoteModelCopyWithImpl<$Res, $Val extends QuoteModel>
       isFavorite: null == isFavorite
           ? _value.isFavorite
           : isFavorite // ignore: cast_nullable_to_non_nullable
-              as bool,
+              as int,
     ) as $Val);
   }
 }
@@ -138,12 +138,12 @@ abstract class _$$_QuoteModelCopyWith<$Res>
       String text,
       String author,
       String textAlign,
-      String backgroundColor,
+      int backgroundColor,
       double fontSize,
       String fontWeight,
       double wordSpacing,
       double letterSpacing,
-      bool isFavorite});
+      int isFavorite});
 }
 
 /// @nodoc
@@ -188,7 +188,7 @@ class __$$_QuoteModelCopyWithImpl<$Res>
       backgroundColor: null == backgroundColor
           ? _value.backgroundColor
           : backgroundColor // ignore: cast_nullable_to_non_nullable
-              as String,
+              as int,
       fontSize: null == fontSize
           ? _value.fontSize
           : fontSize // ignore: cast_nullable_to_non_nullable
@@ -208,7 +208,7 @@ class __$$_QuoteModelCopyWithImpl<$Res>
       isFavorite: null == isFavorite
           ? _value.isFavorite
           : isFavorite // ignore: cast_nullable_to_non_nullable
-              as bool,
+              as int,
     ));
   }
 }
@@ -226,7 +226,7 @@ class _$_QuoteModel with DiagnosticableTreeMixin implements _QuoteModel {
       required this.fontWeight,
       required this.wordSpacing,
       required this.letterSpacing,
-      this.isFavorite = false});
+      this.isFavorite = 0});
 
   factory _$_QuoteModel.fromJson(Map<String, dynamic> json) =>
       _$$_QuoteModelFromJson(json);
@@ -240,7 +240,7 @@ class _$_QuoteModel with DiagnosticableTreeMixin implements _QuoteModel {
   @override
   final String textAlign;
   @override
-  final String backgroundColor;
+  final int backgroundColor;
   @override
   final double fontSize;
   @override
@@ -251,7 +251,7 @@ class _$_QuoteModel with DiagnosticableTreeMixin implements _QuoteModel {
   final double letterSpacing;
   @override
   @JsonKey()
-  final bool isFavorite;
+  final int isFavorite;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -334,12 +334,12 @@ abstract class _QuoteModel implements QuoteModel {
       required final String text,
       required final String author,
       required final String textAlign,
-      required final String backgroundColor,
+      required final int backgroundColor,
       required final double fontSize,
       required final String fontWeight,
       required final double wordSpacing,
       required final double letterSpacing,
-      final bool isFavorite}) = _$_QuoteModel;
+      final int isFavorite}) = _$_QuoteModel;
 
   factory _QuoteModel.fromJson(Map<String, dynamic> json) =
       _$_QuoteModel.fromJson;
@@ -353,7 +353,7 @@ abstract class _QuoteModel implements QuoteModel {
   @override
   String get textAlign;
   @override
-  String get backgroundColor;
+  int get backgroundColor;
   @override
   double get fontSize;
   @override
@@ -363,7 +363,7 @@ abstract class _QuoteModel implements QuoteModel {
   @override
   double get letterSpacing;
   @override
-  bool get isFavorite;
+  int get isFavorite;
   @override
   @JsonKey(ignore: true)
   _$$_QuoteModelCopyWith<_$_QuoteModel> get copyWith =>

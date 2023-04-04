@@ -28,29 +28,34 @@ class QuoteNotifier extends StateNotifier<QuoteList> {
   @override
   QuoteList get state {
     if (super.state.isEmpty) {
-      loadQuotes();
+      _loadQuotes();
     }
     return super.state;
   }
 
-  Future<void> loadQuotes() async {
+  Future<void> _loadQuotes() async {
     state = await _quoteRepository.getQuotes();
   }
 
-  Future<void> createQuote() async {
-    final textSettings = _ref.read(textSettingsProvider);
-    // final newQuote = QuoteModel(
-    //   text: 'textSettings.text',
-    //   author: 'textSettings.author',
-    //   textAlign: textSettings.textAlign.toString(),
-    //   backgroundColor: textSettings.backgroundColor,
-    //   fontSize: textSettings.fontSize,
-    //   fontWeight: textSettings.fontWeight,
-    //   wordSpacing: textSettings.wordSpacing,
-    //   letterSpacing: textSettings.letterSpacing,
-    // );
+  Future<void> addQuote() async {
+    try {
+      final textSettings = _ref.read(textSettingsProvider);
 
-    print(textSettings.textAlign.toString());
-    print(textSettings.backgroundColor.toString());
+      final quote = QuoteModel(
+        text: textSettings.quoteText,
+        author: textSettings.quoteAuthor,
+        textAlign: textSettings.textAlign.toString().split('.').last,
+        backgroundColor: textSettings.backgroundColor.value,
+        fontSize: textSettings.fontSize,
+        fontWeight: textSettings.fontWeight.toString().split('.').last,
+        wordSpacing: textSettings.wordSpacing,
+        letterSpacing: textSettings.letterSpacing,
+      );
+      await _quoteRepository.addQuote(quote).then((value) async {
+        await _loadQuotes();
+      });
+    } catch (e) {
+      rethrow;
+    }
   }
 }

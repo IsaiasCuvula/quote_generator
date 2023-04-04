@@ -1,25 +1,30 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:quote_generator/config/theme/theme.dart';
+import 'package:quote_generator/data/data.dart';
 import 'quotes.dart';
 
 class ListOfQuotes extends StatelessWidget {
-  const ListOfQuotes({super.key, required this.items});
+  const ListOfQuotes({super.key, required this.quotes});
 
-  final List<QuoteCard> items;
+  final QuoteList quotes;
 
   @override
   Widget build(BuildContext context) {
-    int axisCount = items.length == 1 ? 1 : 2;
+    int axisCount = quotes.length == 1 ? 1 : 2;
     return MasonryGridView.count(
       padding: Dimensions.kPaddingAllLarge,
       crossAxisCount: axisCount,
       mainAxisSpacing: Dimensions.sizeSmall,
       crossAxisSpacing: Dimensions.sizeSmall,
-      itemCount: items.length,
+      itemCount: quotes.length,
       itemBuilder: (context, index) {
-        final item = items[index];
-        return item;
+        final quote = quotes[index];
+        return QuoteCard(
+          quoteText: quote.text,
+          backgroundColor: Color(quote.backgroundColor),
+          author: quote.author,
+        );
       },
     );
   }

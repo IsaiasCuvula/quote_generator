@@ -19,37 +19,38 @@ class FavoriteScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: NestedScrollView(
-        headerSliverBuilder: (ctx, innerBoxIsScrolled) {
-          return [
-            SliverAppBar(
-              floating: true,
-              pinned: true,
-              centerTitle: true,
-              title: Padding(
-                padding: Dimensions.kPaddingAllLarge,
-                child: Text(
-                  context.l10n.app_bar_favorite,
-                  style: Theme.of(context).textTheme.displayMedium,
-                ),
-              ),
-            )
-          ];
-        },
-        body: itemsFav.isEmpty
-            ? Center(
-                child: Padding(
+          headerSliverBuilder: (ctx, innerBoxIsScrolled) {
+            return [
+              SliverAppBar(
+                floating: true,
+                pinned: true,
+                centerTitle: true,
+                title: Padding(
                   padding: Dimensions.kPaddingAllLarge,
-                  child: EmptyQuoteCard(
-                    displayIcon: FontAwesomeIcons.heart,
-                    displayText: context.l10n.empty_card_favorite_quote,
+                  child: Text(
+                    context.l10n.app_bar_favorite,
+                    style: Theme.of(context).textTheme.displayMedium,
                   ),
                 ),
               )
-            : const ListOfQuotes(
-                key: Key('FavoriteScreen'),
-                items: itemsFav,
-              ),
-      ),
+            ];
+          },
+          body: itemsFav.isEmpty
+              ? Center(
+                  child: Padding(
+                    padding: Dimensions.kPaddingAllLarge,
+                    child: EmptyQuoteCard(
+                      displayIcon: FontAwesomeIcons.heart,
+                      displayText: context.l10n.empty_card_favorite_quote,
+                    ),
+                  ),
+                )
+              : Container()
+          // const ListOfQuotes(
+          //     key: Key('FavoriteScreen'),
+          //     items: itemsFav,
+          //   ),
+          ),
     );
   }
 }
