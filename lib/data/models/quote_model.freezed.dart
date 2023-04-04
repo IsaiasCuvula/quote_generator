@@ -20,14 +20,13 @@ QuoteModel _$QuoteModelFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$QuoteModel {
-  int get id => throw _privateConstructorUsedError;
+  int? get id => throw _privateConstructorUsedError;
   String get text => throw _privateConstructorUsedError;
   String get author => throw _privateConstructorUsedError;
   String get textAlign => throw _privateConstructorUsedError;
   String get backgroundColor => throw _privateConstructorUsedError;
   double get fontSize => throw _privateConstructorUsedError;
   String get fontWeight => throw _privateConstructorUsedError;
-  String get fontStyle => throw _privateConstructorUsedError;
   double get wordSpacing => throw _privateConstructorUsedError;
   double get letterSpacing => throw _privateConstructorUsedError;
   bool get isFavorite => throw _privateConstructorUsedError;
@@ -45,14 +44,13 @@ abstract class $QuoteModelCopyWith<$Res> {
       _$QuoteModelCopyWithImpl<$Res, QuoteModel>;
   @useResult
   $Res call(
-      {int id,
+      {int? id,
       String text,
       String author,
       String textAlign,
       String backgroundColor,
       double fontSize,
       String fontWeight,
-      String fontStyle,
       double wordSpacing,
       double letterSpacing,
       bool isFavorite});
@@ -71,23 +69,22 @@ class _$QuoteModelCopyWithImpl<$Res, $Val extends QuoteModel>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = null,
+    Object? id = freezed,
     Object? text = null,
     Object? author = null,
     Object? textAlign = null,
     Object? backgroundColor = null,
     Object? fontSize = null,
     Object? fontWeight = null,
-    Object? fontStyle = null,
     Object? wordSpacing = null,
     Object? letterSpacing = null,
     Object? isFavorite = null,
   }) {
     return _then(_value.copyWith(
-      id: null == id
+      id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
       text: null == text
           ? _value.text
           : text // ignore: cast_nullable_to_non_nullable
@@ -111,10 +108,6 @@ class _$QuoteModelCopyWithImpl<$Res, $Val extends QuoteModel>
       fontWeight: null == fontWeight
           ? _value.fontWeight
           : fontWeight // ignore: cast_nullable_to_non_nullable
-              as String,
-      fontStyle: null == fontStyle
-          ? _value.fontStyle
-          : fontStyle // ignore: cast_nullable_to_non_nullable
               as String,
       wordSpacing: null == wordSpacing
           ? _value.wordSpacing
@@ -141,14 +134,13 @@ abstract class _$$_QuoteModelCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {int id,
+      {int? id,
       String text,
       String author,
       String textAlign,
       String backgroundColor,
       double fontSize,
       String fontWeight,
-      String fontStyle,
       double wordSpacing,
       double letterSpacing,
       bool isFavorite});
@@ -165,23 +157,22 @@ class __$$_QuoteModelCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = null,
+    Object? id = freezed,
     Object? text = null,
     Object? author = null,
     Object? textAlign = null,
     Object? backgroundColor = null,
     Object? fontSize = null,
     Object? fontWeight = null,
-    Object? fontStyle = null,
     Object? wordSpacing = null,
     Object? letterSpacing = null,
     Object? isFavorite = null,
   }) {
     return _then(_$_QuoteModel(
-      id: null == id
+      id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
       text: null == text
           ? _value.text
           : text // ignore: cast_nullable_to_non_nullable
@@ -206,10 +197,6 @@ class __$$_QuoteModelCopyWithImpl<$Res>
           ? _value.fontWeight
           : fontWeight // ignore: cast_nullable_to_non_nullable
               as String,
-      fontStyle: null == fontStyle
-          ? _value.fontStyle
-          : fontStyle // ignore: cast_nullable_to_non_nullable
-              as String,
       wordSpacing: null == wordSpacing
           ? _value.wordSpacing
           : wordSpacing // ignore: cast_nullable_to_non_nullable
@@ -230,14 +217,13 @@ class __$$_QuoteModelCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_QuoteModel with DiagnosticableTreeMixin implements _QuoteModel {
   const _$_QuoteModel(
-      {required this.id,
+      {this.id,
       required this.text,
       required this.author,
       required this.textAlign,
       required this.backgroundColor,
       required this.fontSize,
       required this.fontWeight,
-      required this.fontStyle,
       required this.wordSpacing,
       required this.letterSpacing,
       this.isFavorite = false});
@@ -246,7 +232,7 @@ class _$_QuoteModel with DiagnosticableTreeMixin implements _QuoteModel {
       _$$_QuoteModelFromJson(json);
 
   @override
-  final int id;
+  final int? id;
   @override
   final String text;
   @override
@@ -260,8 +246,6 @@ class _$_QuoteModel with DiagnosticableTreeMixin implements _QuoteModel {
   @override
   final String fontWeight;
   @override
-  final String fontStyle;
-  @override
   final double wordSpacing;
   @override
   final double letterSpacing;
@@ -271,7 +255,7 @@ class _$_QuoteModel with DiagnosticableTreeMixin implements _QuoteModel {
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'QuoteModel(id: $id, text: $text, author: $author, textAlign: $textAlign, backgroundColor: $backgroundColor, fontSize: $fontSize, fontWeight: $fontWeight, fontStyle: $fontStyle, wordSpacing: $wordSpacing, letterSpacing: $letterSpacing, isFavorite: $isFavorite)';
+    return 'QuoteModel(id: $id, text: $text, author: $author, textAlign: $textAlign, backgroundColor: $backgroundColor, fontSize: $fontSize, fontWeight: $fontWeight, wordSpacing: $wordSpacing, letterSpacing: $letterSpacing, isFavorite: $isFavorite)';
   }
 
   @override
@@ -286,7 +270,6 @@ class _$_QuoteModel with DiagnosticableTreeMixin implements _QuoteModel {
       ..add(DiagnosticsProperty('backgroundColor', backgroundColor))
       ..add(DiagnosticsProperty('fontSize', fontSize))
       ..add(DiagnosticsProperty('fontWeight', fontWeight))
-      ..add(DiagnosticsProperty('fontStyle', fontStyle))
       ..add(DiagnosticsProperty('wordSpacing', wordSpacing))
       ..add(DiagnosticsProperty('letterSpacing', letterSpacing))
       ..add(DiagnosticsProperty('isFavorite', isFavorite));
@@ -308,8 +291,6 @@ class _$_QuoteModel with DiagnosticableTreeMixin implements _QuoteModel {
                 other.fontSize == fontSize) &&
             (identical(other.fontWeight, fontWeight) ||
                 other.fontWeight == fontWeight) &&
-            (identical(other.fontStyle, fontStyle) ||
-                other.fontStyle == fontStyle) &&
             (identical(other.wordSpacing, wordSpacing) ||
                 other.wordSpacing == wordSpacing) &&
             (identical(other.letterSpacing, letterSpacing) ||
@@ -329,7 +310,6 @@ class _$_QuoteModel with DiagnosticableTreeMixin implements _QuoteModel {
       backgroundColor,
       fontSize,
       fontWeight,
-      fontStyle,
       wordSpacing,
       letterSpacing,
       isFavorite);
@@ -350,14 +330,13 @@ class _$_QuoteModel with DiagnosticableTreeMixin implements _QuoteModel {
 
 abstract class _QuoteModel implements QuoteModel {
   const factory _QuoteModel(
-      {required final int id,
+      {final int? id,
       required final String text,
       required final String author,
       required final String textAlign,
       required final String backgroundColor,
       required final double fontSize,
       required final String fontWeight,
-      required final String fontStyle,
       required final double wordSpacing,
       required final double letterSpacing,
       final bool isFavorite}) = _$_QuoteModel;
@@ -366,7 +345,7 @@ abstract class _QuoteModel implements QuoteModel {
       _$_QuoteModel.fromJson;
 
   @override
-  int get id;
+  int? get id;
   @override
   String get text;
   @override
@@ -379,8 +358,6 @@ abstract class _QuoteModel implements QuoteModel {
   double get fontSize;
   @override
   String get fontWeight;
-  @override
-  String get fontStyle;
   @override
   double get wordSpacing;
   @override

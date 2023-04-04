@@ -24,6 +24,9 @@ class _TextAlignSelectorState extends ConsumerState<TextAlignSelector> {
     TextAlignDisplayIcon(
       icon: FontAwesomeIcons.alignRight,
     ),
+    TextAlignDisplayIcon(
+      icon: FontAwesomeIcons.alignJustify,
+    ),
   ];
 
   TextAlign _selectedTextAlign(int index) {
@@ -31,6 +34,7 @@ class _TextAlignSelectorState extends ConsumerState<TextAlignSelector> {
       TextAlign.start,
       TextAlign.center,
       TextAlign.end,
+      TextAlign.justify,
     ];
     return textAlignList[index];
   }
@@ -72,7 +76,7 @@ class _TextAlignSelectorState extends ConsumerState<TextAlignSelector> {
             ),
           ),
           Dimensions.kHorizontalSpaceLarge,
-          const TextStyleSelector(),
+          const TextFontWeightSelector(),
         ],
       ),
     );

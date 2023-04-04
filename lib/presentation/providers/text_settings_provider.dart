@@ -13,7 +13,6 @@ class TextSettings {
   Color backgroundColor = Colors.purple;
   double fontSize = Dimensions.quoteTextFontSizeSmall;
   FontWeight fontWeight = FontWeight.normal;
-  FontStyle fontStyle = FontStyle.normal;
   double wordSpacing = Dimensions.quoteTextWordSpacingNone;
   double letterSpacing = Dimensions.quoteTextLetterSpacingNone;
 }
@@ -66,7 +65,6 @@ extension TextSettingsExtension on TextSettings {
       ..backgroundColor = backgroundColor ?? this.backgroundColor
       ..fontSize = fontSize ?? this.fontSize
       ..fontWeight = fontWeight ?? this.fontWeight
-      ..fontStyle = fontStyle ?? this.fontStyle
       ..wordSpacing = wordSpacing ?? this.wordSpacing
       ..letterSpacing = letterSpacing ?? this.letterSpacing;
   }

@@ -1,0 +1,81 @@
+import 'package:path/path.dart';
+import 'package:quote_generator/data/data.dart';
+import 'package:quote_generator/utils/constants.dart';
+import 'package:sqflite/sqflite.dart';
+
+class QuoteLocalDatasource {
+  static final QuoteLocalDatasource _instance = QuoteLocalDatasource._();
+
+  factory QuoteLocalDatasource() => _instance;
+
+  QuoteLocalDatasource._() {
+    _initDb();
+  }
+
+  static Database? _database;
+
+  Future<Database> get database async {
+    if (_database != null) return _database!;
+    _database = await _initDb();
+    return _database!;
+  }
+
+  Future<Database> _initDb() async {
+    final dbPath = await getDatabasesPath();
+    final path = join(dbPath, 'quotes.db');
+    return await openDatabase(
+      path,
+      version: 1,
+      onCreate: _onCreate,
+    );
+  }
+
+  Future<void> _onCreate(Database db, int version) async {
+    await db.execute('''
+      CREATE TABLE quotes (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        text TEXT,
+        author TEXT,
+        textAlign TEXT,
+        backgroundColor TEXT,
+        fontSize REAL,
+        fontWeight TEXT,
+        wordSpacing REAL,
+        letterSpacing REAL,
+        isFavorite INTEGER
+      )
+    ''');
+  }
+
+  Future<int> addQuote(QuoteModel quote) async {
+    final db = await database;
+    return db.insert(Constants.dbTable, quote.toJson());
+  }
+
+  Future<QuoteList> getQuotes() async {
+    final db = await database;
+    final List<Map<String, dynamic>> maps = await db.query(Constants.dbTable);
+    return List.generate(maps.length, (index) {
+      return QuoteModel.fromJson(maps[index]);
+    });
+  }
+
+  Future<int> updateQuote(QuoteModel quote) async {
+    final db = await database;
+    return await db.update(
+      Constants.dbTable,
+      quote.toJson(),
+      where: 'id = ?',
+      whereArgs: [quote.id],
+    );
+  }
+
+  Future<int> deleteQuote(int id) async {
+    final db = await database;
+    return await db.delete(
+      Constants.dbTable,
+      where: 'id = ?',
+      whereArgs: [id],
+    );
+  }
+}

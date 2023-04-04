@@ -35,7 +35,6 @@ class _QuoteTextFieldState extends ConsumerState<QuoteTextField> {
     final textColor = theme.colorScheme.onBackground;
     final textFontSize = textSettings.fontSize;
     final textFontWeight = textSettings.fontWeight;
-    final textFontStyle = textSettings.fontStyle;
     final textWordSpacing = textSettings.wordSpacing;
     final textLetterSpacing = textSettings.letterSpacing;
     final backgroundColor = textSettings.backgroundColor;
@@ -69,7 +68,6 @@ class _QuoteTextFieldState extends ConsumerState<QuoteTextField> {
             color: textColor,
             fontSize: textFontSize,
             fontWeight: textFontWeight,
-            fontStyle: textFontStyle,
             wordSpacing: textWordSpacing,
             letterSpacing: textLetterSpacing,
           ),

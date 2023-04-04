@@ -1,3 +1,4 @@
+
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -5,8 +6,8 @@ import 'package:quote_generator/presentation/providers/text_settings_provider.da
 import 'package:quote_generator/config/theme/dimensions.dart';
 import 'package:quote_generator/presentation/widgets/quote_settings_widgets/settings_item.dart';
 
-class TextStyleSelector extends ConsumerStatefulWidget {
-  const TextStyleSelector({
+class TextFontWeightSelector extends ConsumerStatefulWidget {
+  const TextFontWeightSelector({
     Key? key,
   }) : super(key: key);
 
@@ -15,7 +16,7 @@ class TextStyleSelector extends ConsumerStatefulWidget {
       _TextStyleSelectorState();
 }
 
-class _TextStyleSelectorState extends ConsumerState<TextStyleSelector> {
+class _TextStyleSelectorState extends ConsumerState<TextFontWeightSelector> {
   final _textStyleIcons = const [
     FaIcon(FontAwesomeIcons.n),
     FaIcon(FontAwesomeIcons.bold),

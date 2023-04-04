@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:quote_generator/config/theme/dimensions.dart';
+import 'package:quote_generator/presentation/presentation.dart';
 import 'package:quote_generator/translations/l10n.dart';
-import 'package:quote_generator/presentation/widgets/widgets.dart';
 
 class CreateQuoteScreen extends ConsumerWidget {
   static CreateQuoteScreen builder(
@@ -20,7 +20,8 @@ class CreateQuoteScreen extends ConsumerWidget {
 
     return GestureDetector(
       onTap: () {
-        FocusManager.instance.primaryFocus?.unfocus();
+        //FocusManager.instance.primaryFocus?.unfocus();
+        ref.read(quoteProvider.notifier).createQuote();
       },
       child: Scaffold(
         appBar: AppBar(
@@ -29,6 +30,7 @@ class CreateQuoteScreen extends ConsumerWidget {
               onPressed: () {
                 //melhorar esse codigo adicionar dentro do method salvar
                 FocusManager.instance.primaryFocus?.unfocus();
+                ref.read(quoteProvider.notifier).createQuote();
               },
               child: Text(
                 context.l10n.done.toUpperCase(),

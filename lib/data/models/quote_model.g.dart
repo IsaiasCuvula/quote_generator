@@ -8,14 +8,13 @@ part of 'quote_model.dart';
 
 _$_QuoteModel _$$_QuoteModelFromJson(Map<String, dynamic> json) =>
     _$_QuoteModel(
-      id: json['id'] as int,
+      id: json['id'] as int?,
       text: json['text'] as String,
       author: json['author'] as String,
       textAlign: json['textAlign'] as String,
       backgroundColor: json['backgroundColor'] as String,
       fontSize: (json['fontSize'] as num).toDouble(),
       fontWeight: json['fontWeight'] as String,
-      fontStyle: json['fontStyle'] as String,
       wordSpacing: (json['wordSpacing'] as num).toDouble(),
       letterSpacing: (json['letterSpacing'] as num).toDouble(),
       isFavorite: json['isFavorite'] as bool? ?? false,
@@ -30,7 +29,6 @@ Map<String, dynamic> _$$_QuoteModelToJson(_$_QuoteModel instance) =>
       'backgroundColor': instance.backgroundColor,
       'fontSize': instance.fontSize,
       'fontWeight': instance.fontWeight,
-      'fontStyle': instance.fontStyle,
       'wordSpacing': instance.wordSpacing,
       'letterSpacing': instance.letterSpacing,
       'isFavorite': instance.isFavorite,

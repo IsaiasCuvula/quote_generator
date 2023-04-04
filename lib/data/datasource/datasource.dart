@@ -1,2 +1,3 @@
-export 'local_quote_datasource.dart';
-export 'remote_quote_datasource.dart';
+export 'quote_local_datasource.dart';
+export 'quote_remote_datasource.dart';
+export 'quote_local_datasource_provider.dart';

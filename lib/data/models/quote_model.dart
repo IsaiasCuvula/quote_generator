@@ -6,14 +6,13 @@ part 'quote_model.g.dart';
 @freezed
 class QuoteModel with _$QuoteModel {
   const factory QuoteModel({
-    required int id,
+    int? id,
     required String text,
     required String author,
     required String textAlign,
     required String backgroundColor,
     required double fontSize,
     required String fontWeight,
-    required String fontStyle,
     required double wordSpacing,
     required double letterSpacing,
     @Default(false) bool isFavorite,
