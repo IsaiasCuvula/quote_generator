@@ -20,11 +20,7 @@ class ListOfQuotes extends StatelessWidget {
       itemCount: quotes.length,
       itemBuilder: (context, index) {
         final quote = quotes[index];
-        return QuoteCard(
-          quoteText: quote.text,
-          backgroundColor: Color(quote.backgroundColor),
-          author: quote.author,
-        );
+        return QuoteCard(quote: quote);
       },
     );
   }

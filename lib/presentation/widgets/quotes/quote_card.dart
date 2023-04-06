@@ -1,25 +1,32 @@
 import 'package:flutter/material.dart';
 import 'package:quote_generator/config/theme/dimensions.dart';
+import 'package:quote_generator/data/data.dart';
+import 'package:quote_generator/utils/helpers.dart';
 
 class QuoteCard extends StatelessWidget {
   const QuoteCard({
     super.key,
-    required this.quoteText,
-    required this.backgroundColor,
-    required this.author,
+    required this.quote,
   });
 
-  final String quoteText;
-  final String author;
-  final Color backgroundColor;
+  final QuoteModel quote;
 
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context).textTheme;
     final autherTextStyle = theme.labelLarge?.copyWith(
-      letterSpacing: 3,
+      letterSpacing: quote.letterSpacing,
+      color: Colors.white,
     );
-    final quoteTextSyle = theme.bodyMedium;
+    final quoteTextSyle = TextStyle(
+      color: Colors.white,
+      fontSize: quote.fontSize,
+      wordSpacing: quote.wordSpacing,
+      letterSpacing: quote.letterSpacing,
+      fontWeight: Helpers.fontWeightList[quote.fontWeight],
+    );
+
+    final backgroundColor = Helpers.intToColor(quote.backgroundColor);
 
     return Container(
       width: double.infinity,
@@ -35,14 +42,14 @@ class QuoteCard extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Text(
-              quoteText,
-              textAlign: TextAlign.center,
+              quote.text,
+              textAlign: Helpers.textAlignList[quote.textAlign],
               style: quoteTextSyle,
             ),
             Dimensions.kVerticalSpaceMedium,
             Text(
-              '- $author',
-              textAlign: TextAlign.center,
+              '- ${quote.author}',
+              textAlign: Helpers.textAlignList[quote.textAlign],
               maxLines: 1,
               style: autherTextStyle,
             ),

@@ -2,19 +2,12 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:quote_generator/data/data.dart';
 import 'package:quote_generator/domain/domain.dart';
 import 'package:quote_generator/presentation/presentation.dart';
+import 'package:quote_generator/utils/helpers.dart';
 
 final quoteProvider = StateNotifierProvider<QuoteNotifier, QuoteList>((ref) {
   final quoteRepository = ref.read(quoteRepositoryProvider);
   return QuoteNotifier(quoteRepository, ref);
 });
-
-// final todosListState = StateNotifierProvider<TodosStateNotifier, Todos>(
-//   (ref) => QuoteNotifier(ref),
-// );
-
-// final quotesListModel = Provider<TodosStateNotifier>((ref) {
-//   return ref.watch(todosListState.notifier);
-// });
 
 class QuoteNotifier extends StateNotifier<QuoteList> {
   QuoteNotifier(this._quoteRepository, this._ref) : super([]);
@@ -44,10 +37,10 @@ class QuoteNotifier extends StateNotifier<QuoteList> {
       final quote = QuoteModel(
         text: textSettings.quoteText,
         author: textSettings.quoteAuthor,
-        textAlign: textSettings.textAlign.toString().split('.').last,
+        textAlign: Helpers.textAlignToString(textSettings.textAlign),
         backgroundColor: textSettings.backgroundColor.value,
         fontSize: textSettings.fontSize,
-        fontWeight: textSettings.fontWeight.toString().split('.').last,
+        fontWeight: Helpers.fontWeightToString(textSettings.fontWeight),
         wordSpacing: textSettings.wordSpacing,
         letterSpacing: textSettings.letterSpacing,
       );
