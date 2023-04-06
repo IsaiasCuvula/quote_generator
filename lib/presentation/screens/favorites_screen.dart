@@ -40,7 +40,7 @@ class FavoriteScreen extends StatelessWidget {
                   child: Padding(
                     padding: Dimensions.kPaddingAllLarge,
                     child: EmptyQuoteCard(
-                      displayIcon: FontAwesomeIcons.heart,
+                      displayIcon: FontAwesomeIcons.solidHeart,
                       displayText: context.l10n.empty_card_favorite_quote,
                     ),
                   ),
