@@ -17,19 +17,24 @@ class EmptyQuoteCard extends StatefulWidget {
 class _EmptyQuoteCardState extends State<EmptyQuoteCard>
     with SingleTickerProviderStateMixin {
   late AnimationController _controller;
-  late Animation<double> _animation;
+  late Animation<double> _opacityAnimation;
+  late Animation<double> _scaleAnimation;
 
   @override
   void initState() {
     super.initState();
     _controller = AnimationController(
+      duration: const Duration(seconds: 3),
       vsync: this,
-      duration: const Duration(seconds: 2),
     )..repeat(reverse: true);
-    _animation = CurvedAnimation(
-      parent: _controller,
-      curve: Curves.easeInOut,
-    );
+    _opacityAnimation = Tween<double>(
+      begin: 0.0,
+      end: 1.0,
+    ).animate(_controller);
+    _scaleAnimation = Tween<double>(
+      begin: 1.0,
+      end: 2.0,
+    ).animate(_controller);
   }
 
   @override
@@ -41,29 +46,60 @@ class _EmptyQuoteCardState extends State<EmptyQuoteCard>
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
-    return Card(
-      color: theme.colorScheme.secondary,
-      child: Padding(
-        padding: Dimensions.kPaddingAllLarge,
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            ScaleTransition(
-              scale: _animation,
-              child: Icon(
-                widget.displayIcon,
-                color: theme.colorScheme.primary,
-                size: Dimensions.iconSizeLargest,
+    final colors = theme.colorScheme;
+    return Scaffold(
+      body: Center(
+        child: AnimatedBuilder(
+          animation: _controller,
+          builder: (context, child) {
+            return Transform.scale(
+              scale: _scaleAnimation.value,
+              child: Opacity(
+                opacity: _opacityAnimation.value,
+                child: Container(
+                  decoration: BoxDecoration(
+                    gradient: LinearGradient(
+                      begin: Alignment.topLeft,
+                      end: Alignment.bottomRight,
+                      colors: [colors.primary, colors.secondary],
+                    ),
+                    borderRadius: Dimensions.kBorderRadiusAllMedium,
+                  ),
+                  width: 180,
+                  height: 180,
+                  child: Padding(
+                    padding: Dimensions.kPaddingAllLarge,
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Expanded(
+                          flex: 1,
+                          child: ScaleTransition(
+                            scale: _controller,
+                            child: Icon(
+                              widget.displayIcon,
+                              color: theme.colorScheme.tertiaryContainer,
+                              size: Dimensions.iconSizeLarge,
+                            ),
+                          ),
+                        ),
+                        Dimensions.kVerticalSpaceSmall,
+                        Expanded(
+                          flex: 2,
+                          child: Text(
+                            widget.displayText,
+                            textAlign: TextAlign.center,
+                            style: theme.textTheme.labelLarge,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
               ),
-            ),
-            Dimensions.kVerticalSpaceSmall,
-            Text(
-              widget.displayText,
-              textAlign: TextAlign.center,
-              style: theme.textTheme.bodyMedium,
-            ),
-          ],
+            );
+          },
         ),
       ),
     );

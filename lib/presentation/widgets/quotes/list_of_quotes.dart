@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
+import 'package:go_router/go_router.dart';
 import 'package:quote_generator/config/theme/theme.dart';
 import 'package:quote_generator/data/data.dart';
 import 'quotes.dart';
@@ -20,7 +21,12 @@ class ListOfQuotes extends StatelessWidget {
       itemCount: quotes.length,
       itemBuilder: (context, index) {
         final quote = quotes[index];
-        return QuoteCard(quote: quote);
+        return InkWell(
+          onTap: () {
+            context.push('/quoteDetail');
+          },
+          child: QuoteCard(quote: quote),
+        );
       },
     );
   }
