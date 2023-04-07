@@ -45,6 +45,7 @@ class QuoteCard extends StatelessWidget {
               quote.text,
               textAlign: Helpers.textAlignList[quote.textAlign],
               style: quoteTextSyle,
+              maxLines: 8,
             ),
             Dimensions.kVerticalSpaceMedium,
             Text(

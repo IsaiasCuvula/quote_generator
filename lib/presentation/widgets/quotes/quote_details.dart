@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:quote_generator/config/config.dart';
 import 'package:quote_generator/data/data.dart';
 import 'package:quote_generator/utils/utils.dart';
@@ -13,20 +14,30 @@ class QuoteDetails extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    final textColor = theme.colorScheme.surface;
+    final displFavoriteIcon = quote.isFavorite == 1
+        ? FontAwesomeIcons.solidHeart
+        : FontAwesomeIcons.heart;
+
     return Container(
-      color: Color(quote.backgroundColor),
+      margin: Dimensions.kPaddingAllLarge,
+      decoration: BoxDecoration(
+        color: Color(quote.backgroundColor),
+        borderRadius: Dimensions.kBorderRadiusAllLarge,
+      ),
       child: Center(
         child: Padding(
-          padding: Dimensions.kPaddingAllMedium,
+          padding: Dimensions.kPaddingAllLarge,
           child: IntrinsicWidth(
             child: Column(
-              crossAxisAlignment: CrossAxisAlignment.stretch,
+              mainAxisSize: MainAxisSize.min,
               children: [
                 Text(
                   quote.text,
                   textAlign: Helpers.textAlignList[quote.textAlign],
                   style: TextStyle(
-                    color: Colors.white,
+                    color: textColor,
                     fontSize: quote.fontSize,
                     fontWeight: Helpers.fontWeightList[quote.fontWeight],
                     wordSpacing: quote.wordSpacing,
@@ -37,19 +48,17 @@ class QuoteDetails extends StatelessWidget {
                 Text(
                   '- ${quote.author}',
                   textAlign: Helpers.textAlignList[quote.textAlign],
-                  style: const TextStyle(
-                    fontSize: 20,
-                    color: Colors.white,
+                  style: theme.textTheme.bodyMedium?.copyWith(
+                    color: textColor,
                   ),
                 ),
-                const SizedBox(height: 32),
+                Dimensions.kVerticalSpaceLarge,
                 IconButton(
                   icon: Icon(
-                    quote.isFavorite == 1
-                        ? Icons.favorite
-                        : Icons.favorite_border,
+                    displFavoriteIcon,
+                    size: Dimensions.iconSizeLarge,
                   ),
-                  color: Colors.red,
+                  color: textColor,
                   onPressed: () {},
                 ),
               ],

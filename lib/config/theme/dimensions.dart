@@ -18,6 +18,8 @@ class Dimensions {
     vertical: 20.0,
   ).w;
 
+  static final kPaddingNavBottom = const EdgeInsets.all(16.0).w;
+
   //BorderRadius
   static final kBorderRadiusAllLarger = BorderRadius.circular(50).w;
   static final kBorderRadiusAllLarge = BorderRadius.circular(30).w;

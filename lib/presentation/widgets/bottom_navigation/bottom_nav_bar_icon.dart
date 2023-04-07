@@ -21,7 +21,7 @@ class BottomNavBarIcon extends StatelessWidget {
     final IconData displayIcon = isSelected ? selectedIcon : unselectedIcon;
     return Icon(
       displayIcon,
-      size: Dimensions.iconSizeMedium,
+      size: Dimensions.iconSizeSmall,
       color: displayIconColor,
     );
   }

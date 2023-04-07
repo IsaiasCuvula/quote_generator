@@ -15,7 +15,7 @@ class BottomNavBar extends StatelessWidget {
       type: MaterialType.canvas,
       clipBehavior: Clip.hardEdge,
       child: Padding(
-        padding: Dimensions.kPaddingAllLarge,
+        padding: Dimensions.kPaddingNavBottom,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           crossAxisAlignment: CrossAxisAlignment.center,

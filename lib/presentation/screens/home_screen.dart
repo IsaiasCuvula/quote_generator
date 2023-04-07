@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:go_router/go_router.dart';
 import 'package:quote_generator/config/theme/theme.dart';
 import 'package:quote_generator/translations/translations.dart';
@@ -13,7 +14,7 @@ class HomeScreen extends StatelessWidget {
 
   const HomeScreen({super.key});
 
-  static const items = <QuoteCard>[];
+  static const items = [];
 
   @override
   Widget build(BuildContext context) {
@@ -38,7 +39,10 @@ class HomeScreen extends StatelessWidget {
               )
             ];
           },
-          body: Container()
+          body: EmptyQuoteCard(
+            displayIcon: FontAwesomeIcons.quoteLeft,
+            displayText: context.l10n.empty_card_created_by_you,
+          )
 
           // const ListOfQuotes(
           //   key: Key('HomeScreen'),

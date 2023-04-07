@@ -7,7 +7,7 @@ import 'package:quote_generator/presentation/presentation.dart';
 import 'package:quote_generator/translations/translations.dart';
 import 'package:quote_generator/utils/utils.dart';
 
-class QuoteCardDetails extends ConsumerStatefulWidget {
+class QuoteCardDetails extends StatelessWidget {
   static QuoteCardDetails builder(
     BuildContext context,
     GoRouterState state,
@@ -22,14 +22,8 @@ class QuoteCardDetails extends ConsumerStatefulWidget {
   final String? id;
 
   @override
-  ConsumerState<ConsumerStatefulWidget> createState() =>
-      _QuoteCardDetailsState();
-}
-
-class _QuoteCardDetailsState extends ConsumerState<QuoteCardDetails> {
-  @override
   Widget build(BuildContext context) {
-    final quoteId = Helpers.stringToInt('${widget.id}');
+    final quoteId = Helpers.stringToInt('$id');
 
     return Scaffold(
       body: NestedScrollView(
@@ -62,17 +56,24 @@ class _QuoteCardDetailsState extends ConsumerState<QuoteCardDetails> {
             )
           ];
         },
-        body: ref.watch(quoteByIdProvider(quoteId)).when(
-              loading: () => const Center(child: CircularProgressIndicator()),
-              error: (error, stackTrace) => Center(
-                child: Text(
-                  'The quote with ${widget.id} id do not exist. $error',
-                ),
-              ),
-              data: (quote) {
-                return quote != null ? QuoteDetails(quote: quote) : Container();
-              },
-            ),
+        body: Consumer(
+          builder: (ctx, ref, child) {
+            return ref.watch(quoteByIdProvider(quoteId)).when(
+                  loading: () =>
+                      const Center(child: CircularProgressIndicator()),
+                  error: (error, stackTrace) => Center(
+                    child: Text(
+                      'The quote with $id id do not exist. $error',
+                    ),
+                  ),
+                  data: (quote) {
+                    return quote != null
+                        ? QuoteDetails(quote: quote)
+                        : const SizedBox();
+                  },
+                );
+          },
+        ),
       ),
     );
   }

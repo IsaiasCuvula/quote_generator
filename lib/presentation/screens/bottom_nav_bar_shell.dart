@@ -41,7 +41,7 @@ class BottomNavBarShell extends StatelessWidget {
             child: Align(
               alignment: Alignment.bottomCenter,
               child: Container(
-                margin: Dimensions.kPaddingAllLarger,
+                margin: Dimensions.kPaddingAllLargest,
                 child: BottomNavBar(
                   items: [
                     BottomNavBarItem(
