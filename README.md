@@ -19,6 +19,7 @@ This app is a quote generator that displays quote by categories every time it's 
 - SQLite for local database 
 - Google Sign for login 
 - Internationalization (English & Portuguese)
+- And much more ...
 
 
-#The App is Under Construction 
+# The App is Under Construction ...
