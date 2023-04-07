@@ -29,7 +29,7 @@ class FavoriteScreen extends StatelessWidget {
                   padding: Dimensions.kPaddingAllLarge,
                   child: Text(
                     context.l10n.app_bar_favorite,
-                    style: Theme.of(context).textTheme.displayMedium,
+                    style: Theme.of(context).textTheme.headlineLarge,
                   ),
                 ),
               )

@@ -26,7 +26,7 @@ class SearchScreen extends StatelessWidget {
                 padding: Dimensions.kPaddingAllLarge,
                 child: Text(
                   context.l10n.app_bar_search_quote,
-                  style: Theme.of(context).textTheme.displayMedium,
+                  style: Theme.of(context).textTheme.headlineLarge,
                 ),
               ),
             )

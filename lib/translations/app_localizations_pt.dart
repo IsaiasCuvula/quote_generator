@@ -32,6 +32,9 @@ class AppLocalizationsPt extends AppLocalizations {
   String get app_bar_search_quote => 'Pesquisar Citação';
 
   @override
+  String get app_bar_quote_details => 'Detalhes da Citação';
+
+  @override
   String get empty_card_created_by_you => 'Você ainda não criou nenhuma citação';
 
   @override

@@ -32,6 +32,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get app_bar_search_quote => 'Search Quote';
 
   @override
+  String get app_bar_quote_details => 'Quote Details';
+
+  @override
   String get empty_card_created_by_you => 'You haven\'t created any quotes yet';
 
   @override

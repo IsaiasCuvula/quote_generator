@@ -4,3 +4,4 @@ export 'search_screen.dart';
 export 'created_by_you_screen.dart';
 export 'home_screen.dart';
 export 'favorites_screen.dart';
+export 'quote_details_screen.dart';

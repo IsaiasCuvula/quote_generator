@@ -22,8 +22,12 @@ class ListOfQuotes extends StatelessWidget {
       itemBuilder: (context, index) {
         final quote = quotes[index];
         return InkWell(
+          borderRadius: Dimensions.kBorderRadiusAllLarge,
           onTap: () {
-            context.push('/quoteDetail');
+            context.pushNamed(
+              '/quoteDetails',
+              params: {'id': '${quote.id}'},
+            );
           },
           child: QuoteCard(quote: quote),
         );

@@ -15,6 +15,21 @@ final routes = [
       );
     },
   ),
+  GoRoute(
+    name: '/quoteDetails',
+    path: '/quoteDetails/:id',
+    parentNavigatorKey: RoutesConfig.navigationKey,
+    pageBuilder: (context, state) {
+      return NoTransitionPage(
+        child: QuoteCardDetails.builder(
+          context,
+          state,
+          state.params['id'],
+        ),
+      );
+    },
+  ),
+  //Bottom Nav bar shell
   ShellRoute(
     navigatorKey: _shellNavigatorKey,
     pageBuilder: (context, state, child) {

@@ -10,6 +10,7 @@
     "app_bar_favorite": "Favorites",
     "app_bar_latest": "Latest",
     "app_bar_search_quote": "Search Quote",
+    "app_bar_quote_details": "Quote Details",
     "@EMPTYQUOTELIST": {},
     "empty_card_created_by_you": "You haven't created any quotes yet",
     "empty_card_favorite_quote": "You haven't added any quotes to your favorites yet",

@@ -29,7 +29,7 @@ class CreateByYouScreen extends StatelessWidget {
                 padding: Dimensions.kPaddingAllLarge,
                 child: Text(
                   context.l10n.app_bar_create_by_you,
-                  style: Theme.of(context).textTheme.displayMedium,
+                  style: Theme.of(context).textTheme.headlineLarge,
                 ),
               ),
               actions: [

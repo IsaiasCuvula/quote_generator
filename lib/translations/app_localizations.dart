@@ -147,6 +147,12 @@ abstract class AppLocalizations {
   /// **'Search Quote'**
   String get app_bar_search_quote;
 
+  /// No description provided for @app_bar_quote_details.
+  ///
+  /// In en, this message translates to:
+  /// **'Quote Details'**
+  String get app_bar_quote_details;
+
   /// No description provided for @empty_card_created_by_you.
   ///
   /// In en, this message translates to:

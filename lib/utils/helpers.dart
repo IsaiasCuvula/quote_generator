@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 class Helpers {
+  //Quote Text Settings
   static final Map<String, TextAlign> textAlignList = {
     'left': TextAlign.left,
     'center': TextAlign.center,
@@ -34,6 +35,15 @@ class Helpers {
       return fontWeight.toString().split('.').last;
     } catch (e) {
       return 'normal';
+    }
+  }
+
+  // //Others
+  static int stringToInt(String value) {
+    try {
+      return int.parse(value);
+    } catch (e) {
+      rethrow;
     }
   }
 }

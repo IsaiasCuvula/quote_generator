@@ -82,4 +82,14 @@ class QuoteLocalDatasource {
       whereArgs: [id],
     );
   }
+
+  Future<QuoteModel?> getQuoteById(int id) async {
+    final db = await database;
+    final result = await db.query(
+      Constants.dbTable,
+      where: 'id = ?',
+      whereArgs: [id],
+    );
+    return result.isNotEmpty ? QuoteModel.fromJson(result.first) : null;
+  }
 }

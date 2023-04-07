@@ -23,15 +23,15 @@ class QuoteRepositoryImpl implements QuoteRepository {
     }
   }
 
-  // @override
-  // Future<QuoteModel> getQuoteById(int id) async {
-  //   try {
-  //     //await ;
-
-  //   } catch (e) {
-  //     throw Exception('Failed to get quote by id: $e');
-  //   }
-  // }
+  @override
+  Future<QuoteModel?> getQuoteById(int id) async {
+    try {
+      final quote = await _localDatasource.getQuoteById(id);
+      return quote;
+    } catch (e) {
+      throw Exception('Failed to get quote with this: $id id, $e');
+    }
+  }
 
   @override
   Future<QuoteList> getQuotes() async {

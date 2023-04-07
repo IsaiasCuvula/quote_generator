@@ -32,7 +32,7 @@ class HomeScreen extends StatelessWidget {
                   padding: Dimensions.kPaddingAllLarge,
                   child: Text(
                     context.l10n.explore,
-                    style: theme.textTheme.displayMedium,
+                    style: theme.textTheme.headlineLarge,
                   ),
                 ),
               )

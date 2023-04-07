@@ -9,6 +9,12 @@ final quoteProvider = StateNotifierProvider<QuoteNotifier, QuoteList>((ref) {
   return QuoteNotifier(quoteRepository, ref);
 });
 
+final quoteByIdProvider =
+    FutureProvider.autoDispose.family<QuoteModel?, int>((ref, id) async {
+  final response = ref.watch(quoteProvider.notifier);
+  return response.getQuoteById(id);
+});
+
 class QuoteNotifier extends StateNotifier<QuoteList> {
   QuoteNotifier(this._quoteRepository, this._ref) : super([]);
 
@@ -47,6 +53,15 @@ class QuoteNotifier extends StateNotifier<QuoteList> {
       await _quoteRepository.addQuote(quote).then((value) async {
         await _loadQuotes();
       });
+    } catch (e) {
+      rethrow;
+    }
+  }
+
+  Future<QuoteModel?> getQuoteById(int id) async {
+    try {
+      final quote = await _quoteRepository.getQuoteById(id);
+      return quote;
     } catch (e) {
       rethrow;
     }
