@@ -62,7 +62,7 @@ class CreateQuoteScreen extends ConsumerWidget {
   Future<void> _saveQuoteInDB(WidgetRef ref, BuildContext ctx) async {
     FocusManager.instance.primaryFocus?.unfocus();
     await ref.read(quoteProvider.notifier).addQuote().then((value) {
-      ctx.go('/createdByYou');
+      ctx.pop();
     });
   }
 }

@@ -35,6 +35,18 @@ class AppLocalizationsPt extends AppLocalizations {
   String get app_bar_quote_details => 'Detalhes da Citação';
 
   @override
+  String get alert_title => 'Excluir esta citação?';
+
+  @override
+  String get alert_content => 'Tem certeza de que deseja excluir esta citação?';
+
+  @override
+  String get cancel => 'Cancelar';
+
+  @override
+  String get delete => 'Excluir';
+
+  @override
   String get empty_card_created_by_you => 'Você ainda não criou nenhuma citação';
 
   @override

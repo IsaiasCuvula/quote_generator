@@ -35,6 +35,18 @@ class AppLocalizationsEn extends AppLocalizations {
   String get app_bar_quote_details => 'Quote Details';
 
   @override
+  String get alert_title => 'Delete this quote?';
+
+  @override
+  String get alert_content => 'Are you sure you want to delete this quote?';
+
+  @override
+  String get cancel => 'Cancel';
+
+  @override
+  String get delete => 'Delete';
+
+  @override
   String get empty_card_created_by_you => 'You haven\'t created any quotes yet';
 
   @override

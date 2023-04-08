@@ -7,7 +7,7 @@ import 'package:quote_generator/presentation/presentation.dart';
 import 'package:quote_generator/translations/translations.dart';
 import 'package:quote_generator/utils/utils.dart';
 
-class QuoteCardDetails extends StatelessWidget {
+class QuoteCardDetails extends ConsumerWidget {
   static QuoteCardDetails builder(
     BuildContext context,
     GoRouterState state,
@@ -22,7 +22,7 @@ class QuoteCardDetails extends StatelessWidget {
   final String? id;
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     final quoteId = Helpers.stringToInt('$id');
 
     return Scaffold(
@@ -45,7 +45,17 @@ class QuoteCardDetails extends StatelessWidget {
                   padding: Dimensions.kPaddingSymetricHorizontal,
                   child: IconButton(
                     onPressed: () {
-                      //delete quote
+                      Helpers.showAlertDialog(
+                        context: context,
+                        onDelete: () async {
+                          await ref
+                              .read(quoteProvider.notifier)
+                              .deleteQuote(quoteId)
+                              .then((value) {
+                            context.pop();
+                          });
+                        },
+                      );
                     },
                     icon: const FaIcon(
                       FontAwesomeIcons.trash,
@@ -56,24 +66,19 @@ class QuoteCardDetails extends StatelessWidget {
             )
           ];
         },
-        body: Consumer(
-          builder: (ctx, ref, child) {
-            return ref.watch(quoteByIdProvider(quoteId)).when(
-                  loading: () =>
-                      const Center(child: CircularProgressIndicator()),
-                  error: (error, stackTrace) => Center(
-                    child: Text(
-                      'The quote with $id id do not exist. $error',
-                    ),
-                  ),
-                  data: (quote) {
-                    return quote != null
-                        ? QuoteDetails(quote: quote)
-                        : const SizedBox();
-                  },
-                );
-          },
-        ),
+        body: ref.watch(quoteByIdProvider(quoteId)).when(
+              loading: () => const Center(child: CircularProgressIndicator()),
+              error: (error, stackTrace) => Center(
+                child: Text(
+                  'The quote with $id id do not exist. $error',
+                ),
+              ),
+              data: (quote) {
+                return quote != null
+                    ? QuoteDetails(quote: quote)
+                    : const SizedBox();
+              },
+            ),
       ),
     );
   }

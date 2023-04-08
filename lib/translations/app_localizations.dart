@@ -153,6 +153,30 @@ abstract class AppLocalizations {
   /// **'Quote Details'**
   String get app_bar_quote_details;
 
+  /// No description provided for @alert_title.
+  ///
+  /// In en, this message translates to:
+  /// **'Delete this quote?'**
+  String get alert_title;
+
+  /// No description provided for @alert_content.
+  ///
+  /// In en, this message translates to:
+  /// **'Are you sure you want to delete this quote?'**
+  String get alert_content;
+
+  /// No description provided for @cancel.
+  ///
+  /// In en, this message translates to:
+  /// **'Cancel'**
+  String get cancel;
+
+  /// No description provided for @delete.
+  ///
+  /// In en, this message translates to:
+  /// **'Delete'**
+  String get delete;
+
   /// No description provided for @empty_card_created_by_you.
   ///
   /// In en, this message translates to:

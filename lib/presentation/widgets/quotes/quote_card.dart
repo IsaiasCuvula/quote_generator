@@ -13,13 +13,14 @@ class QuoteCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final theme = Theme.of(context).textTheme;
-    final autherTextStyle = theme.labelLarge?.copyWith(
+    final theme = Theme.of(context);
+    final textTheme = theme.textTheme;
+    final autherTextStyle = textTheme.labelLarge?.copyWith(
       letterSpacing: quote.letterSpacing,
-      color: Colors.white,
+      color: theme.colorScheme.surface,
     );
     final quoteTextSyle = TextStyle(
-      color: Colors.white,
+      color: theme.colorScheme.surface,
       fontSize: quote.fontSize,
       wordSpacing: quote.wordSpacing,
       letterSpacing: quote.letterSpacing,
@@ -45,7 +46,7 @@ class QuoteCard extends StatelessWidget {
               quote.text,
               textAlign: Helpers.textAlignList[quote.textAlign],
               style: quoteTextSyle,
-              maxLines: 8,
+              maxLines: 6,
             ),
             Dimensions.kVerticalSpaceMedium,
             Text(

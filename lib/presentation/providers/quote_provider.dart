@@ -66,4 +66,26 @@ class QuoteNotifier extends StateNotifier<QuoteList> {
       rethrow;
     }
   }
+
+  Future<void> updateFavorite(QuoteModel quote) async {
+    try {
+      final newFavorite = quote.isFavorite == 0 ? 1 : 0;
+      final newQuote = quote.copyWith(isFavorite: newFavorite);
+      await _quoteRepository.updateQuote(newQuote).then((value) async {
+        await _loadQuotes();
+      });
+    } catch (e) {
+      rethrow;
+    }
+  }
+
+  Future<void> deleteQuote(int id) async {
+    try {
+      await _quoteRepository.deleteQuote(id).then((value) async {
+        await _loadQuotes();
+      });
+    } catch (e) {
+      rethrow;
+    }
+  }
 }

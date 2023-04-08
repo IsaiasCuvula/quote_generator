@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+import 'package:quote_generator/translations/l10n.dart';
 
 class Helpers {
   //Quote Text Settings
@@ -45,5 +47,35 @@ class Helpers {
     } catch (e) {
       rethrow;
     }
+  }
+
+  static showAlertDialog({
+    required BuildContext context,
+    VoidCallback? onDelete,
+  }) {
+    Widget cancelButton = TextButton(
+      child: Text(context.l10n.cancel.toUpperCase()),
+      onPressed: () => context.pop(),
+    );
+    Widget continueButton = TextButton(
+      onPressed: onDelete,
+      child: Text(context.l10n.delete.toUpperCase()),
+    );
+
+    AlertDialog alert = AlertDialog(
+      title: Text(context.l10n.alert_title),
+      content: Text(context.l10n.alert_content),
+      actions: [
+        cancelButton,
+        continueButton,
+      ],
+    );
+
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return alert;
+      },
+    );
   }
 }

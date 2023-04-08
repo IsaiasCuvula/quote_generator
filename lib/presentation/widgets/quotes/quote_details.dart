@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:quote_generator/config/config.dart';
 import 'package:quote_generator/data/data.dart';
+import 'package:quote_generator/presentation/presentation.dart';
 import 'package:quote_generator/utils/utils.dart';
 
 class QuoteDetails extends StatelessWidget {
@@ -53,14 +55,20 @@ class QuoteDetails extends StatelessWidget {
                   ),
                 ),
                 Dimensions.kVerticalSpaceLarge,
-                IconButton(
-                  icon: Icon(
-                    displFavoriteIcon,
-                    size: Dimensions.iconSizeLarge,
-                  ),
-                  color: textColor,
-                  onPressed: () {},
-                ),
+                Consumer(builder: (context, ref, child) {
+                  return IconButton(
+                    icon: Icon(
+                      displFavoriteIcon,
+                      size: Dimensions.iconSizeLarge,
+                    ),
+                    color: textColor,
+                    onPressed: () async {
+                      await ref
+                          .read(quoteProvider.notifier)
+                          .updateFavorite(quote);
+                    },
+                  );
+                }),
               ],
             ),
           ),
