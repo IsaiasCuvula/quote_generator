@@ -4,19 +4,25 @@ import 'package:quote_generator/domain/domain.dart';
 import 'package:quote_generator/presentation/presentation.dart';
 import 'package:quote_generator/utils/helpers.dart';
 
-final quoteProvider = StateNotifierProvider<QuoteNotifier, QuoteList>((ref) {
+final quoteProvider = StateNotifierProvider<QuoteNotifier, QuoteState>((ref) {
   final quoteRepository = ref.read(quoteRepositoryProvider);
   return QuoteNotifier(quoteRepository, ref);
 });
 
-final quoteByIdProvider =
-    FutureProvider.autoDispose.family<QuoteModel?, int>((ref, id) async {
-  final response = ref.watch(quoteProvider.notifier);
-  return response.getQuoteById(id);
-});
+class QuoteState {
+  final QuoteList quotes;
+  final QuoteList favoritesQuotes;
+  final QuoteModel? quote;
+  const QuoteState(
+    this.quotes,
+    this.favoritesQuotes,
+    this.quote,
+  );
+}
 
-class QuoteNotifier extends StateNotifier<QuoteList> {
-  QuoteNotifier(this._quoteRepository, this._ref) : super([]);
+class QuoteNotifier extends StateNotifier<QuoteState> {
+  QuoteNotifier(this._quoteRepository, this._ref)
+      : super(const QuoteState([], [], null));
 
   final QuoteRepository _quoteRepository;
   final Ref _ref;
@@ -25,15 +31,27 @@ class QuoteNotifier extends StateNotifier<QuoteList> {
   //state getter is accessed, and subsequent
   // accesses will return the cached data.
   @override
-  QuoteList get state {
-    if (super.state.isEmpty) {
+  QuoteState get state {
+    if (super.state.quotes.isEmpty && super.state.quote == null) {
       _loadQuotes();
     }
     return super.state;
   }
 
   Future<void> _loadQuotes() async {
-    state = await _quoteRepository.getQuotes();
+    final quotes = await _quoteRepository.getQuotes();
+    final favQuotes = _getFavoritesQuotes(quotes);
+    state = QuoteState(quotes, favQuotes, state.quote);
+  }
+
+  QuoteList _getFavoritesQuotes(QuoteList quoteList) {
+    final QuoteList favQuotes = [];
+    for (QuoteModel quote in quoteList) {
+      if (quote.isFavorite == 1) {
+        favQuotes.insert(0, quote);
+      }
+    }
+    return favQuotes;
   }
 
   Future<void> addQuote() async {
@@ -58,22 +76,24 @@ class QuoteNotifier extends StateNotifier<QuoteList> {
     }
   }
 
-  Future<QuoteModel?> getQuoteById(int id) async {
+  Future<void> getQuoteById(int id) async {
     try {
       final quote = await _quoteRepository.getQuoteById(id);
-      return quote;
+      state = QuoteState(state.quotes, state.favoritesQuotes, quote);
     } catch (e) {
       rethrow;
     }
   }
 
-  Future<void> updateFavorite(QuoteModel quote) async {
+  Future<void> updateFavorite(QuoteModel oldQuote) async {
     try {
-      final newFavorite = quote.isFavorite == 0 ? 1 : 0;
-      final newQuote = quote.copyWith(isFavorite: newFavorite);
-      await _quoteRepository.updateQuote(newQuote).then((value) async {
-        await _loadQuotes();
+      final newFavorite = oldQuote.isFavorite == 0 ? 1 : 0;
+      final newQuote = oldQuote.copyWith(isFavorite: newFavorite);
+      await _quoteRepository.updateQuote(newQuote);
+      await _quoteRepository.getQuoteById(newQuote.id!).then((newQuote) {
+        state = QuoteState(state.quotes, state.favoritesQuotes, newQuote);
       });
+      _loadQuotes();
     } catch (e) {
       rethrow;
     }

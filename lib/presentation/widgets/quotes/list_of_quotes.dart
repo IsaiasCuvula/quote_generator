@@ -1,12 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:go_router/go_router.dart';
 import 'package:quote_generator/config/theme/theme.dart';
 import 'package:quote_generator/data/data.dart';
-import 'quotes.dart';
+import 'package:quote_generator/presentation/presentation.dart';
 
 class ListOfQuotes extends StatelessWidget {
-  const ListOfQuotes({super.key, required this.quotes});
+  const ListOfQuotes({
+    super.key,
+    required this.quotes,
+  });
 
   final QuoteList quotes;
 
@@ -21,16 +25,23 @@ class ListOfQuotes extends StatelessWidget {
       itemCount: quotes.length,
       itemBuilder: (context, index) {
         final quote = quotes[index];
-        return InkWell(
-          borderRadius: Dimensions.kBorderRadiusAllLarge,
-          onTap: () {
-            context.pushNamed(
-              '/quoteDetails',
-              params: {'id': '${quote.id}'},
-            );
-          },
-          child: QuoteCard(quote: quote),
-        );
+        return Consumer(builder: (ctx, ref, child) {
+          return InkWell(
+            borderRadius: Dimensions.kBorderRadiusAllLarge,
+            onTap: () async {
+              await ref
+                  .read(quoteProvider.notifier)
+                  .getQuoteById(quote.id!)
+                  .then((value) {
+                context.pushNamed(
+                  '/quoteDetails',
+                  params: {'id': '${quote.id}'},
+                );
+              });
+            },
+            child: QuoteCard(quote: quote),
+          );
+        });
       },
     );
   }

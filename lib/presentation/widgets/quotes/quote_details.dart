@@ -6,7 +6,7 @@ import 'package:quote_generator/data/data.dart';
 import 'package:quote_generator/presentation/presentation.dart';
 import 'package:quote_generator/utils/utils.dart';
 
-class QuoteDetails extends StatelessWidget {
+class QuoteDetails extends ConsumerWidget {
   const QuoteDetails({
     super.key,
     required this.quote,
@@ -15,7 +15,7 @@ class QuoteDetails extends StatelessWidget {
   final QuoteModel quote;
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     final theme = Theme.of(context);
     final textColor = theme.colorScheme.surface;
     final displFavoriteIcon = quote.isFavorite == 1
@@ -56,17 +56,42 @@ class QuoteDetails extends StatelessWidget {
                 ),
                 Dimensions.kVerticalSpaceLarge,
                 Consumer(builder: (context, ref, child) {
-                  return IconButton(
-                    icon: Icon(
-                      displFavoriteIcon,
-                      size: Dimensions.iconSizeLarge,
-                    ),
-                    color: textColor,
-                    onPressed: () async {
-                      await ref
-                          .read(quoteProvider.notifier)
-                          .updateFavorite(quote);
-                    },
+                  return Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      IconButton(
+                        icon: Icon(
+                          displFavoriteIcon,
+                          size: Dimensions.iconSizeLarge,
+                        ),
+                        color: textColor,
+                        onPressed: () async {
+                          await ref
+                              .read(quoteProvider.notifier)
+                              .updateFavorite(quote);
+                        },
+                      ),
+                      IconButton(
+                        icon: Icon(
+                          FontAwesomeIcons.share,
+                          size: Dimensions.iconSizeLarge,
+                        ),
+                        color: textColor,
+                        onPressed: () {
+                          //share quote
+                        },
+                      ),
+                      IconButton(
+                        icon: Icon(
+                          FontAwesomeIcons.rss,
+                          size: Dimensions.iconSizeLarge,
+                        ),
+                        color: textColor,
+                        onPressed: () {
+                          //post a quote
+                        },
+                      ),
+                    ],
                   );
                 }),
               ],

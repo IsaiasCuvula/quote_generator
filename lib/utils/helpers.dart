@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
+import 'package:quote_generator/presentation/presentation.dart';
 import 'package:quote_generator/translations/l10n.dart';
 
 class Helpers {
@@ -49,16 +51,24 @@ class Helpers {
     }
   }
 
-  static showAlertDialog({
+  static Future<void> showAlertDialog({
     required BuildContext context,
-    VoidCallback? onDelete,
-  }) {
+    required WidgetRef ref,
+    required int quoteId,
+  }) async {
     Widget cancelButton = TextButton(
       child: Text(context.l10n.cancel.toUpperCase()),
       onPressed: () => context.pop(),
     );
-    Widget continueButton = TextButton(
-      onPressed: onDelete,
+    Widget deleteButton = TextButton(
+      onPressed: () async {
+        await ref
+            .read(quoteProvider.notifier)
+            .deleteQuote(quoteId)
+            .then((value) {
+          context.pop();
+        });
+      },
       child: Text(context.l10n.delete.toUpperCase()),
     );
 
@@ -67,11 +77,11 @@ class Helpers {
       content: Text(context.l10n.alert_content),
       actions: [
         cancelButton,
-        continueButton,
+        deleteButton,
       ],
     );
 
-    showDialog(
+    await showDialog(
       context: context,
       builder: (BuildContext context) {
         return alert;
