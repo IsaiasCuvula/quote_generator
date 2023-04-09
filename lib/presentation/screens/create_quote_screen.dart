@@ -4,6 +4,7 @@ import 'package:go_router/go_router.dart';
 import 'package:quote_generator/config/theme/dimensions.dart';
 import 'package:quote_generator/presentation/presentation.dart';
 import 'package:quote_generator/translations/l10n.dart';
+import 'package:quote_generator/utils/utils.dart';
 
 class CreateQuoteScreen extends ConsumerWidget {
   static CreateQuoteScreen builder(
@@ -26,8 +27,8 @@ class CreateQuoteScreen extends ConsumerWidget {
         appBar: AppBar(
           actions: [
             TextButton(
-              onPressed: () {
-                _saveQuoteInDB(ref, context);
+              onPressed: () async {
+                await _saveQuoteInDB(ref, context);
               },
               child: Text(
                 context.l10n.done.toUpperCase(),
@@ -60,9 +61,26 @@ class CreateQuoteScreen extends ConsumerWidget {
   }
 
   Future<void> _saveQuoteInDB(WidgetRef ref, BuildContext ctx) async {
+    final quoteText = ref.watch(textSettingsProvider).quoteText;
     FocusManager.instance.primaryFocus?.unfocus();
-    await ref.read(quoteProvider.notifier).addQuote().then((value) {
-      ctx.pop();
-    });
+    if (quoteText.trim().isNotEmpty) {
+      await ref.read(quoteProvider.notifier).addQuote().then(
+        (value) {
+          ctx.pop();
+          Helpers.showSnackbar(
+            ctx,
+            ctx.l10n.quote_created_successfully,
+            true,
+          );
+        },
+      );
+    } else {
+      Helpers.showSnackbar(
+        ctx,
+        '${ctx.l10n.empty_quote_alert}'
+        '\n${ctx.l10n.enter_quote_to_save}',
+        false,
+      );
+    }
   }
 }

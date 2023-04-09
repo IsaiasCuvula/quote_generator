@@ -13,20 +13,17 @@ class QuoteTextField extends ConsumerStatefulWidget {
 
 class _QuoteTextFieldState extends ConsumerState<QuoteTextField> {
   late TextEditingController _quoteTextController;
-  //late FocusManager _focusManager;
 
   @override
   void initState() {
     super.initState();
     _quoteTextController = TextEditingController();
-    //_focusManager = FocusManager();
   }
 
   @override
   void dispose() {
     super.dispose();
     _quoteTextController.dispose();
-    //_focusManager.dispose();
   }
 
   @override

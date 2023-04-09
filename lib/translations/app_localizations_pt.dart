@@ -87,4 +87,22 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String get word_spacing => 'Espaçamento entre palavras';
+
+  @override
+  String get quote_created_successfully => 'Citação criada com sucesso!';
+
+  @override
+  String get quote_deleted_successfully => 'Citação excluída com sucesso';
+
+  @override
+  String get quote_removed_from_fav => 'Citação removida dos favoritos com sucesso';
+
+  @override
+  String get quote_added_to_fav => 'Citação adicionada aos favoritos com sucesso';
+
+  @override
+  String get empty_quote_alert => 'A citação não deve estar vazia!';
+
+  @override
+  String get enter_quote_to_save => 'Insira uma citação para salvá-la.';
 }

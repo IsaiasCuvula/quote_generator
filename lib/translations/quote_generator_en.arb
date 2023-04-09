@@ -32,5 +32,12 @@
     "letter_spacing": "Letter spacing",
     "font_size": "Font size",
     "word_spacing": "Word spacing",
+    "@ALERTMESSAGES": {},
+    "quote_created_successfully": "Quote created successfully!",
+    "quote_deleted_successfully": "Quote deleted successfully",
+    "quote_removed_from_fav": "Quote removed from favorites successfully",
+    "quote_added_to_fav": "Quote added to favorites successfully",
+    "empty_quote_alert": "Quote must not be empty!",
+    "enter_quote_to_save": "Please enter a quote to save this.",
     "@END_OF_FILE": {}
 }

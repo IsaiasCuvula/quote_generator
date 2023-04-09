@@ -32,5 +32,12 @@
     "letter_spacing": "Espaçamento entre letras",
     "font_size": "Tamanho da fonte",
     "word_spacing": "Espaçamento entre palavras",
+    "@ALERTMESSAGES": {},
+    "quote_created_successfully": "Citação criada com sucesso!",
+    "quote_deleted_successfully": "Citação excluída com sucesso",
+    "quote_removed_from_fav": "Citação removida dos favoritos com sucesso",
+    "quote_added_to_fav": "Citação adicionada aos favoritos com sucesso",
+    "empty_quote_alert": "A citação não deve estar vazia!",
+    "enter_quote_to_save": "Insira uma citação para salvá-la.",
     "@END_OF_FILE": {}
 }

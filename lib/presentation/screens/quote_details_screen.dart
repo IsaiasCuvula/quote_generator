@@ -50,7 +50,7 @@ class QuoteCardDetails extends ConsumerWidget {
                         context: context,
                         ref: ref,
                         quoteId: quoteId,
-                      ).then((value) => context.pop());
+                      );
                     },
                     icon: const FaIcon(
                       FontAwesomeIcons.trash,

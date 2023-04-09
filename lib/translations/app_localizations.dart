@@ -260,6 +260,42 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Word spacing'**
   String get word_spacing;
+
+  /// No description provided for @quote_created_successfully.
+  ///
+  /// In en, this message translates to:
+  /// **'Quote created successfully!'**
+  String get quote_created_successfully;
+
+  /// No description provided for @quote_deleted_successfully.
+  ///
+  /// In en, this message translates to:
+  /// **'Quote deleted successfully'**
+  String get quote_deleted_successfully;
+
+  /// No description provided for @quote_removed_from_fav.
+  ///
+  /// In en, this message translates to:
+  /// **'Quote removed from favorites successfully'**
+  String get quote_removed_from_fav;
+
+  /// No description provided for @quote_added_to_fav.
+  ///
+  /// In en, this message translates to:
+  /// **'Quote added to favorites successfully'**
+  String get quote_added_to_fav;
+
+  /// No description provided for @empty_quote_alert.
+  ///
+  /// In en, this message translates to:
+  /// **'Quote must not be empty!'**
+  String get empty_quote_alert;
+
+  /// No description provided for @enter_quote_to_save.
+  ///
+  /// In en, this message translates to:
+  /// **'Please enter a quote to save this.'**
+  String get enter_quote_to_save;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

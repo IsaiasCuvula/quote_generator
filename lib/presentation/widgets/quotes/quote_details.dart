@@ -4,6 +4,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:quote_generator/config/config.dart';
 import 'package:quote_generator/data/data.dart';
 import 'package:quote_generator/presentation/presentation.dart';
+import 'package:quote_generator/translations/l10n.dart';
 import 'package:quote_generator/utils/utils.dart';
 
 class QuoteDetails extends ConsumerWidget {
@@ -68,7 +69,10 @@ class QuoteDetails extends ConsumerWidget {
                         onPressed: () async {
                           await ref
                               .read(quoteProvider.notifier)
-                              .updateFavorite(quote);
+                              .updateFavorite(quote)
+                              .then((value) {
+                            _showSnackBar(context);
+                          });
                         },
                       ),
                       IconButton(
@@ -99,6 +103,21 @@ class QuoteDetails extends ConsumerWidget {
           ),
         ),
       ),
+    );
+  }
+
+  void _showSnackBar(BuildContext context) {
+    String msg = '';
+    final bool isfavorite = quote.isFavorite == 0 ? false : true;
+    if (isfavorite) {
+      msg = context.l10n.quote_removed_from_fav;
+    } else {
+      msg = context.l10n.quote_added_to_fav;
+    }
+    Helpers.showSnackbar(
+      context,
+      msg,
+      true,
     );
   }
 }

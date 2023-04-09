@@ -62,12 +62,17 @@ class Helpers {
     );
     Widget deleteButton = TextButton(
       onPressed: () async {
-        await ref
-            .read(quoteProvider.notifier)
-            .deleteQuote(quoteId)
-            .then((value) {
-          context.pop();
-        });
+        context.pop();
+        await ref.read(quoteProvider.notifier).deleteQuote(quoteId).then(
+          (value) {
+            showSnackbar(
+              context,
+              context.l10n.quote_deleted_successfully,
+              true,
+            );
+            context.pop();
+          },
+        );
       },
       child: Text(context.l10n.delete.toUpperCase()),
     );
@@ -86,6 +91,15 @@ class Helpers {
       builder: (BuildContext context) {
         return alert;
       },
+    );
+  }
+
+  static showSnackbar(BuildContext context, String message, bool isSucess) {
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(
+        content: Text(message),
+        backgroundColor: isSucess ? Colors.green : Colors.red,
+      ),
     );
   }
 }

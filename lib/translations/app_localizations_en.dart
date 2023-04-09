@@ -87,4 +87,22 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get word_spacing => 'Word spacing';
+
+  @override
+  String get quote_created_successfully => 'Quote created successfully!';
+
+  @override
+  String get quote_deleted_successfully => 'Quote deleted successfully';
+
+  @override
+  String get quote_removed_from_fav => 'Quote removed from favorites successfully';
+
+  @override
+  String get quote_added_to_fav => 'Quote added to favorites successfully';
+
+  @override
+  String get empty_quote_alert => 'Quote must not be empty!';
+
+  @override
+  String get enter_quote_to_save => 'Please enter a quote to save this.';
 }

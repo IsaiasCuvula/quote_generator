@@ -65,8 +65,8 @@ class _EmptyQuoteCardState extends State<EmptyQuoteCard>
                     ),
                     borderRadius: Dimensions.kBorderRadiusAllMedium,
                   ),
-                  width: 180,
-                  height: 180,
+                  width: 150,
+                  height: 150,
                   child: Padding(
                     padding: Dimensions.kPaddingAllLarge,
                     child: Column(
@@ -90,7 +90,7 @@ class _EmptyQuoteCardState extends State<EmptyQuoteCard>
                           child: Text(
                             widget.displayText,
                             textAlign: TextAlign.center,
-                            style: theme.textTheme.labelLarge,
+                            style: theme.textTheme.labelSmall,
                           ),
                         ),
                       ],
