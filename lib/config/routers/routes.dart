@@ -43,7 +43,7 @@ final routes = [
     },
     routes: [
       GoRoute(
-        path: '/home',
+        path: '/',
         parentNavigatorKey: _shellNavigatorKey,
         pageBuilder: (context, state) {
           return NoTransitionPage(

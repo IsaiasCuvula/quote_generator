@@ -48,9 +48,9 @@ class BottomNavBarShell extends StatelessWidget {
                       child: BottomNavBarIcon(
                         selectedIcon: FontAwesomeIcons.solidCompass,
                         unselectedIcon: FontAwesomeIcons.compass,
-                        isSelected: _isItemSelected('/home'),
+                        isSelected: _isItemSelected('/'),
                       ),
-                      onTap: () => context.go('/home'),
+                      onTap: () => context.go('/'),
                     ),
                     BottomNavBarItem(
                       child: BottomNavBarIcon(
