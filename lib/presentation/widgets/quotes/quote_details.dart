@@ -6,6 +6,7 @@ import 'package:quote_generator/data/data.dart';
 import 'package:quote_generator/presentation/presentation.dart';
 import 'package:quote_generator/translations/l10n.dart';
 import 'package:quote_generator/utils/utils.dart';
+import 'package:share_plus/share_plus.dart';
 
 class QuoteDetails extends ConsumerWidget {
   const QuoteDetails({
@@ -82,7 +83,9 @@ class QuoteDetails extends ConsumerWidget {
                         ),
                         color: textColor,
                         onPressed: () {
-                          //share quote
+                          final text = quote.text;
+                          final author = quote.author;
+                          _shareQuote(text, author);
                         },
                       ),
                       IconButton(
@@ -119,5 +122,9 @@ class QuoteDetails extends ConsumerWidget {
       msg,
       true,
     );
+  }
+
+  void _shareQuote(String quote, String author) async {
+    await Share.share('${quote.trim()} \n\n- $author');
   }
 }
