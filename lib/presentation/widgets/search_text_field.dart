@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:quote_generator/config/theme/theme.dart';
+import 'package:quote_generator/presentation/presentation.dart';
 import 'package:quote_generator/translations/l10n.dart';
 
 class SearchTextField extends StatelessWidget {
@@ -37,10 +39,15 @@ class SearchTextField extends StatelessWidget {
               FontAwesomeIcons.magnifyingGlass,
             ),
           ),
-          suffixIcon: IconButton(
-            onPressed: () => searchController.clear(),
-            icon: const FaIcon(FontAwesomeIcons.xmark),
-          ),
+          suffixIcon: Consumer(builder: (ctx, ref, child) {
+            return IconButton(
+              onPressed: () {
+                searchController.clear();
+                ref.read(quoteProvider.notifier).clearSearchedQuotesEvent();
+              },
+              icon: const FaIcon(FontAwesomeIcons.xmark),
+            );
+          }),
           border: OutlineInputBorder(
             borderRadius: Dimensions.kBorderRadiusAllLarge,
             borderSide: BorderSide.none,

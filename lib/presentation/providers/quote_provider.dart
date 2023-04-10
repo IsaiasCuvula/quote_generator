@@ -10,19 +10,21 @@ final quoteProvider = StateNotifierProvider<QuoteNotifier, QuoteState>((ref) {
 });
 
 class QuoteState {
-  final QuoteList quotes;
+  final QuoteList allQuotes;
   final QuoteList favoritesQuotes;
+  final QuoteList searcherdQuotes;
   final QuoteModel? quote;
   const QuoteState(
-    this.quotes,
+    this.allQuotes,
     this.favoritesQuotes,
+    this.searcherdQuotes,
     this.quote,
   );
 }
 
 class QuoteNotifier extends StateNotifier<QuoteState> {
   QuoteNotifier(this._quoteRepository, this._ref)
-      : super(const QuoteState([], [], null));
+      : super(const QuoteState([], [], [], null));
 
   final QuoteRepository _quoteRepository;
   final Ref _ref;
@@ -32,7 +34,7 @@ class QuoteNotifier extends StateNotifier<QuoteState> {
   // accesses will return the cached data.
   @override
   QuoteState get state {
-    if (super.state.quotes.isEmpty && super.state.quote == null) {
+    if (super.state.allQuotes.isEmpty && super.state.quote == null) {
       _loadQuotes();
     }
     return super.state;
@@ -41,7 +43,12 @@ class QuoteNotifier extends StateNotifier<QuoteState> {
   Future<void> _loadQuotes() async {
     final quotes = await _quoteRepository.getQuotes();
     final favQuotes = _getFavoritesQuotes(quotes);
-    state = QuoteState(quotes, favQuotes, state.quote);
+    state = QuoteState(
+      quotes,
+      favQuotes,
+      state.searcherdQuotes,
+      state.quote,
+    );
   }
 
   QuoteList _getFavoritesQuotes(QuoteList quoteList) {
@@ -79,7 +86,12 @@ class QuoteNotifier extends StateNotifier<QuoteState> {
   Future<void> getQuoteById(int id) async {
     try {
       final quote = await _quoteRepository.getQuoteById(id);
-      state = QuoteState(state.quotes, state.favoritesQuotes, quote);
+      state = QuoteState(
+        state.allQuotes,
+        state.favoritesQuotes,
+        state.searcherdQuotes,
+        quote,
+      );
     } catch (e) {
       rethrow;
     }
@@ -91,7 +103,12 @@ class QuoteNotifier extends StateNotifier<QuoteState> {
       final newQuote = oldQuote.copyWith(isFavorite: newFavorite);
       await _quoteRepository.updateQuote(newQuote);
       await _quoteRepository.getQuoteById(newQuote.id!).then((newQuote) {
-        state = QuoteState(state.quotes, state.favoritesQuotes, newQuote);
+        state = QuoteState(
+          state.allQuotes,
+          state.favoritesQuotes,
+          state.searcherdQuotes,
+          newQuote,
+        );
       });
       _loadQuotes();
     } catch (e) {
@@ -107,5 +124,33 @@ class QuoteNotifier extends StateNotifier<QuoteState> {
     } catch (e) {
       rethrow;
     }
+  }
+
+  Future<void> searchQuote(String query) async {
+    try {
+      await _quoteRepository
+          .searchQuote(query)
+          .then((newSearcherdQuotes) async {
+        state = QuoteState(
+          state.allQuotes,
+          state.favoritesQuotes,
+          newSearcherdQuotes,
+          state.quote,
+        );
+      });
+      await _loadQuotes();
+    } catch (e) {
+      rethrow;
+    }
+  }
+
+  void clearSearchedQuotesEvent() async {
+    state = QuoteState(
+      state.allQuotes,
+      state.favoritesQuotes,
+      [],
+      state.quote,
+    );
+    await _loadQuotes();
   }
 }

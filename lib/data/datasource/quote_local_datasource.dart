@@ -92,4 +92,16 @@ class QuoteLocalDatasource {
     );
     return result.isNotEmpty ? QuoteModel.fromJson(result.first) : null;
   }
+
+  Future<QuoteList> searchQuote(String query) async {
+    final db = await database;
+    final map = await db.query(
+      Constants.dbTable,
+      where: 'text LIKE ? OR author LIKE?',
+      whereArgs: ['%$query%', '%$query%'],
+    );
+    return List.generate(map.length, (index) {
+      return QuoteModel.fromJson(map[index]);
+    });
+  }
 }

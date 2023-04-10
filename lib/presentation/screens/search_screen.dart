@@ -35,42 +35,60 @@ class _SearchScreenState extends ConsumerState<SearchScreen> {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
+    final quoteState = ref.watch(quoteProvider);
+    final quotes = quoteState.searcherdQuotes;
     return Scaffold(
-      body: NestedScrollView(
-        headerSliverBuilder: (ctx, innerBoxIsScrolled) {
-          return [
-            SliverAppBar(
-              floating: true,
-              pinned: true,
-              centerTitle: true,
-              title: Padding(
-                padding: Dimensions.kPaddingAllLarge,
-                child: Text(
-                  context.l10n.app_bar_search_quote,
-                  style: theme.textTheme.headlineLarge,
-                ),
-              ),
-            )
-          ];
+      body: GestureDetector(
+        onTap: () {
+          FocusManager.instance.primaryFocus?.unfocus();
         },
-        body: GestureDetector(
-          onTap: () {
-            FocusManager.instance.primaryFocus?.unfocus();
+        child: NestedScrollView(
+          headerSliverBuilder: (ctx, innerBoxIsScrolled) {
+            return [
+              SliverAppBar(
+                floating: true,
+                pinned: true,
+                centerTitle: true,
+                title: Padding(
+                  padding: Dimensions.kPaddingAllLarge,
+                  child: Text(
+                    context.l10n.app_bar_search_quote,
+                    style: theme.textTheme.headlineLarge,
+                  ),
+                ),
+              )
+            ];
           },
-          child: Column(
+          body: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
               SearchTextField(
                 searchController: _searchController,
-                onChanged: (text) {},
-                onSubmitted: (text) {},
+                onChanged: (text) => _searchQuote(text),
+                onSubmitted: (text) => _searchQuote(text),
               ),
               Dimensions.kVerticalSpaceLarge,
-              const EmptySearchQuoteScreen(),
+              quotes.isEmpty
+                  ? const EmptySearchQuoteScreen()
+                  : Expanded(
+                      child: ListOfQuotes(
+                        key: const Key('SearchQuote'),
+                        quotes: quotes,
+                      ),
+                    )
             ],
           ),
         ),
       ),
     );
+  }
+
+  void _searchQuote(String text) async {
+    final query = text.trim();
+    if (query.isNotEmpty) {
+      await ref.read(quoteProvider.notifier).searchQuote(query);
+    } else {
+      ref.read(quoteProvider.notifier).clearSearchedQuotesEvent();
+    }
   }
 }

@@ -51,4 +51,14 @@ class QuoteRepositoryImpl implements QuoteRepository {
       throw Exception('Failed to update quote: $e');
     }
   }
+
+  @override
+  Future<QuoteList> searchQuote(String query) async {
+    try {
+      final quotes = await _localDatasource.searchQuote(query);
+      return quotes;
+    } catch (e) {
+      throw Exception('Failed to query in database quote: $e');
+    }
+  }
 }

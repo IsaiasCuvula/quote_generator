@@ -6,4 +6,5 @@ abstract class QuoteRepository {
   Future<QuoteList> getQuotes();
   Future<void> updateQuote(QuoteModel quote);
   Future<void> deleteQuote(int id);
+  Future<QuoteList> searchQuote(String query);
 }

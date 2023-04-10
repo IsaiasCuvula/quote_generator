@@ -8,9 +8,9 @@ import 'package:quote_generator/presentation/presentation.dart';
 
 class ListOfQuotes extends StatelessWidget {
   const ListOfQuotes({
-    super.key,
+    Key? key,
     required this.quotes,
-  });
+  }) : super(key: key);
 
   final QuoteList quotes;
 

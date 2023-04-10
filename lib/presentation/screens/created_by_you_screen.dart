@@ -49,7 +49,7 @@ class CreateByYouScreen extends StatelessWidget {
         body: Consumer(
           builder: ((context, ref, child) {
             final quoteState = ref.watch(quoteProvider);
-            final quotes = quoteState.quotes;
+            final quotes = quoteState.allQuotes;
             return quotes.isEmpty
                 ? Center(
                     child: Padding(
