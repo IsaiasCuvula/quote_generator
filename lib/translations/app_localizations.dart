@@ -296,6 +296,24 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Please enter a quote to save this.'**
   String get enter_quote_to_save;
+
+  /// No description provided for @search_quote_hintText.
+  ///
+  /// In en, this message translates to:
+  /// **'Find a quote here ...'**
+  String get search_quote_hintText;
+
+  /// No description provided for @search_quote_empty_screen_title.
+  ///
+  /// In en, this message translates to:
+  /// **'Search for a Quote'**
+  String get search_quote_empty_screen_title;
+
+  /// No description provided for @search_quote_empty_screen_descritpion.
+  ///
+  /// In en, this message translates to:
+  /// **'Start typing to see suggestions'**
+  String get search_quote_empty_screen_descritpion;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

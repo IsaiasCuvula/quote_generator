@@ -19,6 +19,7 @@ class Dimensions {
   ).w;
 
   static final kPaddingNavBottom = const EdgeInsets.all(16.0).w;
+  static const kPaddingSearchTextField = EdgeInsetsDirectional.all(12.0);
 
   //BorderRadius
   static final kBorderRadiusAllLarger = BorderRadius.circular(50).w;

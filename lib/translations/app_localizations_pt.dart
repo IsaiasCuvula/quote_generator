@@ -105,4 +105,13 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String get enter_quote_to_save => 'Insira uma citação para salvá-la.';
+
+  @override
+  String get search_quote_hintText => 'Pesquise uma citação aqui...';
+
+  @override
+  String get search_quote_empty_screen_title => 'Pesquisar uma citação';
+
+  @override
+  String get search_quote_empty_screen_descritpion => 'Comece a digitar para ver as sugestões';
 }

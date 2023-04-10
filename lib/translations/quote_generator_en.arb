@@ -39,5 +39,9 @@
     "quote_added_to_fav": "Quote added to favorites successfully",
     "empty_quote_alert": "Quote must not be empty!",
     "enter_quote_to_save": "Please enter a quote to save this.",
+    "@SEARCHQUOTESCREEN": {},
+    "search_quote_hintText": "Find a quote here ...",
+    "search_quote_empty_screen_title": "Search for a Quote",
+    "search_quote_empty_screen_descritpion": "Start typing to see suggestions",
     "@END_OF_FILE": {}
 }

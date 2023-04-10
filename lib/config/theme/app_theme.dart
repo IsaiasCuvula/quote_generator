@@ -59,7 +59,7 @@ class _TextTheme {
       color: _QuoteGeneratorColors.brown,
     ),
     displaySmall: TextStyle(
-      fontSize: 24.sp,
+      fontSize: 26.sp,
       fontWeight: FontWeight.w700,
       color: _QuoteGeneratorColors.brown,
     ),
@@ -71,7 +71,7 @@ class _TextTheme {
       color: _QuoteGeneratorColors.brown,
     ),
     headlineMedium: TextStyle(
-      fontSize: 21.sp,
+      fontSize: 20.sp,
       fontWeight: FontWeight.w700,
       color: _QuoteGeneratorColors.brown,
     ),
