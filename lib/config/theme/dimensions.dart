@@ -66,6 +66,8 @@ class Dimensions {
   static final double sizeSmaller = 8.h;
   static final double sizeSmallest = 6.h;
 
+  static final double kAuthorTextFieldSize = 35.h;
+
   //Color palette size
   static final double colorPaletteWidth = 44.w;
   static final double colorPaletteHight = 44.h;
