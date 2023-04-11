@@ -68,6 +68,9 @@ class AppLocalizationsPt extends AppLocalizations {
   String get write_your_quote_here => 'Comece a escrever sua citação aqui ...';
 
   @override
+  String get quote_auhtor => 'Autor da citação ...';
+
+  @override
   String get none => 'Nenhum';
 
   @override

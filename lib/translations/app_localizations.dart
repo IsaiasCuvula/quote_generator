@@ -219,6 +219,12 @@ abstract class AppLocalizations {
   /// **'Start writing your quote here ...'**
   String get write_your_quote_here;
 
+  /// No description provided for @quote_auhtor.
+  ///
+  /// In en, this message translates to:
+  /// **'Quote author ...'**
+  String get quote_auhtor;
+
   /// No description provided for @none.
   ///
   /// In en, this message translates to:

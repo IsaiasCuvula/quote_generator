@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:quote_generator/presentation/providers/providers.dart';
+import 'package:quote_generator/presentation/presentation.dart';
 import 'package:quote_generator/config/theme/theme.dart';
 import 'package:quote_generator/translations/translations.dart';
 
@@ -49,31 +49,39 @@ class _QuoteTextFieldState extends ConsumerState<QuoteTextField> {
           color: backgroundColor,
           borderRadius: Dimensions.kBorderRadiusAllSmall,
         ),
-        child: TextField(
-          controller: _quoteTextController,
-          decoration: InputDecoration.collapsed(
-            hintText: context.l10n.write_your_quote_here,
-            hintStyle: textTheme.bodyMedium?.copyWith(
-              color: theme.colorScheme.background,
+        child: Column(
+          children: [
+            Expanded(
+              child: TextField(
+                controller: _quoteTextController,
+                decoration: InputDecoration.collapsed(
+                  hintText: context.l10n.write_your_quote_here,
+                  hintStyle: textTheme.bodyMedium?.copyWith(
+                    color: textColor,
+                  ),
+                ),
+                expands: true,
+                maxLines: null,
+                textAlignVertical: TextAlignVertical.center,
+                scrollPadding: Dimensions.kPaddingAllLarge,
+                autofocus: true,
+                keyboardType: TextInputType.multiline,
+                textAlign: textAlign,
+                style: TextStyle(
+                  color: textColor,
+                  fontSize: textFontSize,
+                  fontWeight: textFontWeight,
+                  wordSpacing: textWordSpacing,
+                  letterSpacing: textLetterSpacing,
+                ),
+                onChanged: (text) {
+                  ref.read(textSettingsProvider.notifier).setQuoteText(text);
+                },
+              ),
             ),
-          ),
-          expands: true,
-          maxLines: null,
-          textAlignVertical: TextAlignVertical.center,
-          scrollPadding: Dimensions.kPaddingAllLarge,
-          autofocus: true,
-          keyboardType: TextInputType.multiline,
-          textAlign: textAlign,
-          style: TextStyle(
-            color: textColor,
-            fontSize: textFontSize,
-            fontWeight: textFontWeight,
-            wordSpacing: textWordSpacing,
-            letterSpacing: textLetterSpacing,
-          ),
-          onChanged: (text) {
-            ref.read(textSettingsProvider.notifier).setQuoteText(text);
-          },
+            const SettingsDivider(thickness: 0.5),
+            const AuthorTextField()
+          ],
         ),
       ),
     );

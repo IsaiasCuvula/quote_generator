@@ -25,6 +25,7 @@
     "background_color": "Selecione a cor de fundo",
     "select_color_shade": "Selecione a tonalidade da cor",
     "write_your_quote_here": "Comece a escrever sua citação aqui ...",
+    "quote_auhtor": "Autor da citação ...",
     "none": "Nenhum",
     "small": "Pequeno",
     "medium": "Médio",

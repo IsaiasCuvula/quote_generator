@@ -68,6 +68,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get write_your_quote_here => 'Start writing your quote here ...';
 
   @override
+  String get quote_auhtor => 'Quote author ...';
+
+  @override
   String get none => 'None';
 
   @override

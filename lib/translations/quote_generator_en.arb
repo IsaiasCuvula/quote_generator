@@ -25,6 +25,7 @@
     "background_color": "Select background color",
     "select_color_shade": "Select color shade",
     "write_your_quote_here": "Start writing your quote here ...",
+    "quote_auhtor": "Quote author ...",
     "none": "None",
     "small": "Small",
     "medium": "Medium",
