@@ -33,7 +33,6 @@ class QuoteDetails extends ConsumerWidget {
       ),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
-        //crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           FaIcon(
             FontAwesomeIcons.quoteLeft,
@@ -99,6 +98,21 @@ class QuoteDetails extends ConsumerWidget {
                 color: textColor,
                 onPressed: () {
                   //post a quote into the server
+                },
+              ),
+              IconButton(
+                icon: FaIcon(
+                  FontAwesomeIcons.trashCan,
+                  size: Dimensions.iconSizeLarge,
+                ),
+                color: textColor,
+                onPressed: () async {
+                  final quoteId = Helpers.stringToInt('${quote.id}');
+                  await Helpers.showAlertDialog(
+                    context: context,
+                    ref: ref,
+                    quoteId: quoteId,
+                  );
                 },
               ),
             ],

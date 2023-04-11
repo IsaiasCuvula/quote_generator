@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:go_router/go_router.dart';
 import 'package:quote_generator/config/config.dart';
 import 'package:quote_generator/presentation/presentation.dart';
 import 'package:quote_generator/translations/translations.dart';
-import 'package:quote_generator/utils/utils.dart';
 
 class QuoteCardDetails extends ConsumerWidget {
   static QuoteCardDetails builder(
@@ -23,7 +21,6 @@ class QuoteCardDetails extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final quoteId = Helpers.stringToInt('$id');
     final quote = ref.watch(quoteProvider).quote;
 
     return Scaffold(
@@ -33,7 +30,7 @@ class QuoteCardDetails extends ConsumerWidget {
             SliverAppBar(
               floating: true,
               pinned: true,
-              centerTitle: false,
+              centerTitle: true,
               title: Padding(
                 padding: Dimensions.kPaddingAllLarge,
                 child: Text(
@@ -41,23 +38,6 @@ class QuoteCardDetails extends ConsumerWidget {
                   style: Theme.of(context).textTheme.headlineLarge,
                 ),
               ),
-              actions: [
-                Padding(
-                  padding: Dimensions.kPaddingSymetricHorizontal,
-                  child: IconButton(
-                    onPressed: () async {
-                      await Helpers.showAlertDialog(
-                        context: context,
-                        ref: ref,
-                        quoteId: quoteId,
-                      );
-                    },
-                    icon: const FaIcon(
-                      FontAwesomeIcons.trash,
-                    ),
-                  ),
-                ),
-              ],
             )
           ];
         },
