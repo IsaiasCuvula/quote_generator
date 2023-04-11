@@ -58,7 +58,10 @@ class QuoteLocalDatasource {
 
   Future<QuoteList> getQuotes() async {
     final db = await database;
-    final List<Map<String, dynamic>> maps = await db.query(Constants.dbTable);
+    final List<Map<String, dynamic>> maps = await db.query(
+      Constants.dbTable,
+      orderBy: "id DESC",
+    );
     return List.generate(maps.length, (index) {
       return QuoteModel.fromJson(maps[index]);
     });
