@@ -66,7 +66,7 @@ class _EmptyQuoteCardState extends State<EmptyQuoteCard>
                     borderRadius: Dimensions.kBorderRadiusAllMedium,
                   ),
                   width: 150,
-                  height: 150,
+                  height: 160,
                   child: Padding(
                     padding: Dimensions.kPaddingAllLarge,
                     child: Column(
@@ -74,7 +74,7 @@ class _EmptyQuoteCardState extends State<EmptyQuoteCard>
                       mainAxisSize: MainAxisSize.min,
                       children: [
                         Expanded(
-                          flex: 1,
+                          //flex: 1,
                           child: ScaleTransition(
                             scale: _controller,
                             child: Icon(
@@ -86,6 +86,7 @@ class _EmptyQuoteCardState extends State<EmptyQuoteCard>
                         ),
                         Dimensions.kVerticalSpaceSmall,
                         Expanded(
+                          //fit: BoxFit.scaleDown,
                           flex: 2,
                           child: Text(
                             widget.displayText,

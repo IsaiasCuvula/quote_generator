@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:go_router/go_router.dart';
 import 'package:quote_generator/config/theme/theme.dart';
+import 'package:quote_generator/presentation/presentation.dart';
 import 'package:quote_generator/translations/translations.dart';
-import 'package:quote_generator/presentation/widgets/widgets.dart';
 
 class HomeScreen extends StatelessWidget {
   static HomeScreen builder(
@@ -19,7 +19,6 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
-    // final tabLabelTextStyle = theme.textTheme.bodyMedium;
 
     return Scaffold(
       body: NestedScrollView(
@@ -28,7 +27,7 @@ class HomeScreen extends StatelessWidget {
               SliverAppBar(
                 floating: true,
                 pinned: true,
-                centerTitle: true,
+                centerTitle: false,
                 title: Padding(
                   padding: Dimensions.kPaddingAllLarge,
                   child: Text(
@@ -36,6 +35,12 @@ class HomeScreen extends StatelessWidget {
                     style: theme.textTheme.headlineLarge,
                   ),
                 ),
+                actions: [
+                  Padding(
+                    padding: Dimensions.kPaddingSymetricHorizontal,
+                    child: const LanguageSelector(),
+                  ),
+                ],
               )
             ];
           },

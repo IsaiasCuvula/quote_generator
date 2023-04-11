@@ -5,3 +5,4 @@ export 'color_picker_palette.dart';
 export 'quote_settings_widgets/quote_settings_widgets.dart';
 export 'empty_search_quote.dart';
 export 'search_text_field.dart';
+export 'language_selector.dart';

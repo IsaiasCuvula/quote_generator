@@ -20,7 +20,7 @@ class AppLocalizationsPt extends AppLocalizations {
   String get nav_bar_search => 'Pesquisar';
 
   @override
-  String get app_bar_create_by_you => 'Criado por Você';
+  String get app_bar_create_by_you => 'Criado por você';
 
   @override
   String get app_bar_favorite => 'Favoritos';
@@ -29,10 +29,10 @@ class AppLocalizationsPt extends AppLocalizations {
   String get app_bar_latest => 'Mais recente';
 
   @override
-  String get app_bar_search_quote => 'Pesquisar Citação';
+  String get app_bar_search_quote => 'Pesquisar citação';
 
   @override
-  String get app_bar_quote_details => 'Detalhes da Citação';
+  String get app_bar_quote_details => 'Detalhes da citação';
 
   @override
   String get alert_title => 'Excluir esta citação?';
@@ -53,7 +53,7 @@ class AppLocalizationsPt extends AppLocalizations {
   String get empty_card_favorite_quote => 'Você ainda não adicionou nenhuma citação aos seus favoritos';
 
   @override
-  String get create_your_quote => 'Crie sua Citação';
+  String get create_your_quote => 'Crie citação';
 
   @override
   String get done => 'Feito';
