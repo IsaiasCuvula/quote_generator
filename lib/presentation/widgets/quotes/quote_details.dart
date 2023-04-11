@@ -26,85 +26,84 @@ class QuoteDetails extends ConsumerWidget {
 
     return Container(
       margin: Dimensions.kPaddingAllLarge,
+      padding: Dimensions.kPaddingAllLarge,
       decoration: BoxDecoration(
         color: Color(quote.backgroundColor),
         borderRadius: Dimensions.kBorderRadiusAllLarge,
       ),
-      child: Center(
-        child: Padding(
-          padding: Dimensions.kPaddingAllLarge,
-          child: IntrinsicWidth(
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                Text(
-                  quote.text,
-                  textAlign: Helpers.textAlignList[quote.textAlign],
-                  style: TextStyle(
-                    color: textColor,
-                    fontSize: quote.fontSize,
-                    fontWeight: Helpers.fontWeightList[quote.fontWeight],
-                    wordSpacing: quote.wordSpacing,
-                    letterSpacing: quote.letterSpacing,
-                  ),
-                ),
-                Dimensions.kVerticalSpaceSmall,
-                Text(
-                  '- ${quote.author}',
-                  textAlign: Helpers.textAlignList[quote.textAlign],
-                  style: theme.textTheme.bodyMedium?.copyWith(
-                    color: textColor,
-                  ),
-                ),
-                Dimensions.kVerticalSpaceLarge,
-                Consumer(builder: (context, ref, child) {
-                  return Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      IconButton(
-                        icon: Icon(
-                          displFavoriteIcon,
-                          size: Dimensions.iconSizeLarge,
-                        ),
-                        color: textColor,
-                        onPressed: () async {
-                          await ref
-                              .read(quoteProvider.notifier)
-                              .updateFavorite(quote)
-                              .then((value) {
-                            _showSnackBar(context);
-                          });
-                        },
-                      ),
-                      IconButton(
-                        icon: Icon(
-                          FontAwesomeIcons.share,
-                          size: Dimensions.iconSizeLarge,
-                        ),
-                        color: textColor,
-                        onPressed: () {
-                          final text = quote.text;
-                          final author = quote.author;
-                          _shareQuote(text, author);
-                        },
-                      ),
-                      IconButton(
-                        icon: Icon(
-                          FontAwesomeIcons.rss,
-                          size: Dimensions.iconSizeLarge,
-                        ),
-                        color: textColor,
-                        onPressed: () {
-                          //post a quote
-                        },
-                      ),
-                    ],
-                  );
-                }),
-              ],
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        //crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          FaIcon(
+            FontAwesomeIcons.quoteLeft,
+            size: Dimensions.iconSizeLarge,
+            color: textColor,
+          ),
+          Dimensions.kVerticalSpaceSmall,
+          Text(
+            quote.text,
+            textAlign: Helpers.textAlignList[quote.textAlign],
+            style: TextStyle(
+              color: textColor,
+              fontSize: quote.fontSize,
+              fontWeight: Helpers.fontWeightList[quote.fontWeight],
+              wordSpacing: quote.wordSpacing,
+              letterSpacing: quote.letterSpacing,
             ),
           ),
-        ),
+          Dimensions.kVerticalSpaceSmall,
+          Text(
+            '- ${quote.author}',
+            textAlign: Helpers.textAlignList[quote.textAlign],
+            style: theme.textTheme.bodyMedium?.copyWith(
+              color: textColor,
+            ),
+          ),
+          Dimensions.kVerticalSpaceLarge,
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              IconButton(
+                icon: Icon(
+                  displFavoriteIcon,
+                  size: Dimensions.iconSizeLarge,
+                ),
+                color: textColor,
+                onPressed: () async {
+                  await ref
+                      .read(quoteProvider.notifier)
+                      .updateFavorite(quote)
+                      .then((value) {
+                    _showSnackBar(context);
+                  });
+                },
+              ),
+              IconButton(
+                icon: Icon(
+                  FontAwesomeIcons.share,
+                  size: Dimensions.iconSizeLarge,
+                ),
+                color: textColor,
+                onPressed: () {
+                  final text = quote.text;
+                  final author = quote.author;
+                  _shareQuote(text, author);
+                },
+              ),
+              IconButton(
+                icon: Icon(
+                  FontAwesomeIcons.rss,
+                  size: Dimensions.iconSizeLarge,
+                ),
+                color: textColor,
+                onPressed: () {
+                  //post a quote into the server
+                },
+              ),
+            ],
+          ),
+        ],
       ),
     );
   }

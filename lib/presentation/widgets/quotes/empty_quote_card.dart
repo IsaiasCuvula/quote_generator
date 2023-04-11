@@ -74,7 +74,6 @@ class _EmptyQuoteCardState extends State<EmptyQuoteCard>
                       mainAxisSize: MainAxisSize.min,
                       children: [
                         Expanded(
-                          //flex: 1,
                           child: ScaleTransition(
                             scale: _controller,
                             child: Icon(

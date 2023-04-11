@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:quote_generator/config/theme/dimensions.dart';
 import 'package:quote_generator/data/data.dart';
 import 'package:quote_generator/utils/helpers.dart';
@@ -31,32 +32,32 @@ class QuoteCard extends StatelessWidget {
 
     return Container(
       width: double.infinity,
+      padding: Dimensions.kPaddingAllLarge,
       decoration: BoxDecoration(
         color: backgroundColor,
         borderRadius: Dimensions.kBorderRadiusAllSmall,
       ),
-      child: Padding(
-        padding: Dimensions.kPaddingAllLarge,
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            Text(
-              quote.text,
-              textAlign: Helpers.textAlignList[quote.textAlign],
-              style: quoteTextSyle,
-              maxLines: 6,
-            ),
-            Dimensions.kVerticalSpaceMedium,
-            Text(
-              '- ${quote.author}',
-              textAlign: Helpers.textAlignList[quote.textAlign],
-              maxLines: 1,
-              style: autherTextStyle,
-            ),
-          ],
-        ),
+      child: Column(
+        children: [
+          FaIcon(
+            FontAwesomeIcons.quoteRight,
+            size: Dimensions.iconSizeSmall,
+            color: theme.colorScheme.surface,
+          ),
+          Text(
+            quote.text,
+            textAlign: Helpers.textAlignList[quote.textAlign],
+            style: quoteTextSyle,
+            maxLines: 6,
+          ),
+          Dimensions.kVerticalSpaceMedium,
+          Text(
+            '- ${quote.author}',
+            textAlign: Helpers.textAlignList[quote.textAlign],
+            maxLines: 1,
+            style: autherTextStyle,
+          ),
+        ],
       ),
     );
   }

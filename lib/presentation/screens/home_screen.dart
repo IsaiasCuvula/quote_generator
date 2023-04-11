@@ -22,38 +22,34 @@ class HomeScreen extends StatelessWidget {
 
     return Scaffold(
       body: NestedScrollView(
-          headerSliverBuilder: (ctx, innerBoxIsScrolled) {
-            return [
-              SliverAppBar(
-                floating: true,
-                pinned: true,
-                centerTitle: false,
-                title: Padding(
-                  padding: Dimensions.kPaddingAllLarge,
-                  child: Text(
-                    context.l10n.explore,
-                    style: theme.textTheme.headlineLarge,
-                  ),
+        headerSliverBuilder: (ctx, innerBoxIsScrolled) {
+          return [
+            SliverAppBar(
+              floating: true,
+              pinned: true,
+              centerTitle: false,
+              title: Padding(
+                padding: Dimensions.kPaddingAllLarge,
+                child: Text(
+                  context.l10n.explore,
+                  style: theme.textTheme.headlineLarge,
                 ),
-                actions: [
-                  Padding(
-                    padding: Dimensions.kPaddingSymetricHorizontal,
-                    child: const LanguageSelector(),
-                  ),
-                ],
-              )
-            ];
-          },
-          body: EmptyQuoteCard(
-            displayIcon: FontAwesomeIcons.quoteLeft,
-            displayText: context.l10n.empty_card_created_by_you,
-          )
-
-          // const ListOfQuotes(
-          //   key: Key('HomeScreen'),
-          //   items: items,
-          // ),
-          ),
+              ),
+              actions: [
+                Padding(
+                  padding: Dimensions.kPaddingSymetricHorizontal,
+                  child: const LanguageSelector(),
+                ),
+              ],
+            )
+          ];
+        },
+        //TODO - waiting to load all quotes from server
+        body: EmptyQuoteCard(
+          displayIcon: FontAwesomeIcons.quoteLeft,
+          displayText: context.l10n.empty_card_created_by_you,
+        ),
+      ),
     );
   }
 }
