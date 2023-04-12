@@ -18,7 +18,8 @@ This app is a quote generator that displays quotes that you and others create ev
 - Clean Archicteture
 - Riverpod for State Managment
 - GoRoute for Navigation
-- SQLite for local database 
+- SQLite for local database
+- Shared Preferences 
 - Google Sign for login 
 - Internationalization (English & Portuguese)
 - And much more ...
