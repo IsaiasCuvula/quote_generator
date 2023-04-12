@@ -1,6 +1,6 @@
 # Quote Generator App
 
-This app is a quote generator that displays quote by categories every time it's opened. It also includes a feature where users can generate a new random quote by tapping a button.
+This app is a quote generator that displays quotes that you and others create every time it's opened. It also includes a feature where users can favorite and share any quote.
 
 
 
