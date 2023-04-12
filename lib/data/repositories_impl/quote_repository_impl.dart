@@ -1,5 +1,6 @@
 import 'package:quote_generator/data/data.dart';
 import 'package:quote_generator/domain/repositories/repositories.dart';
+import 'package:quote_generator/utils/utils.dart';
 
 class QuoteRepositoryImpl implements QuoteRepository {
   final QuoteLocalDatasource _localDatasource;

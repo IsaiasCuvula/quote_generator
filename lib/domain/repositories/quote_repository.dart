@@ -1,4 +1,5 @@
 import 'package:quote_generator/data/data.dart';
+import 'package:quote_generator/utils/utils.dart';
 
 abstract class QuoteRepository {
   Future<void> addQuote(QuoteModel quote);

@@ -2,7 +2,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:quote_generator/data/data.dart';
 import 'package:quote_generator/domain/domain.dart';
 import 'package:quote_generator/presentation/presentation.dart';
-import 'package:quote_generator/utils/helpers.dart';
+import 'package:quote_generator/utils/utils.dart';
 
 final quoteProvider = StateNotifierProvider<QuoteNotifier, QuoteState>((ref) {
   final quoteRepository = ref.read(quoteRepositoryProvider);

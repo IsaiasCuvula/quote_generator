@@ -3,7 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:go_router/go_router.dart';
 import 'package:quote_generator/config/theme/theme.dart';
-import 'package:quote_generator/data/data.dart';
+import 'package:quote_generator/utils/utils.dart';
 import 'package:quote_generator/presentation/presentation.dart';
 
 class ListOfQuotes extends StatelessWidget {

@@ -1,7 +1,7 @@
 import 'package:path/path.dart';
 import 'package:quote_generator/data/data.dart';
-import 'package:quote_generator/utils/constants.dart';
 import 'package:sqflite/sqflite.dart';
+import 'package:quote_generator/utils/utils.dart';
 
 class QuoteLocalDatasource {
   static final QuoteLocalDatasource _instance = QuoteLocalDatasource._();
