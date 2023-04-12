@@ -28,6 +28,7 @@ This app is a quote generator that displays quote by categories every time it's 
 # The App is Under Construction ...
 <img src="https://user-images.githubusercontent.com/68303716/231312751-bcaea9e9-b7c7-4ae7-aae8-2a8f8b24ef58.png" width="390" height="844"/>
 <img src="https://user-images.githubusercontent.com/68303716/231312747-52c74a14-811d-4007-903a-7a225d22eead.png" width="390" height="844"/>
+<img src="https://user-images.githubusercontent.com/68303716/231314539-62c26c74-2736-4d28-ba68-6d48fe34c288.png" width="390" height="844"/>
 <img src="https://user-images.githubusercontent.com/68303716/231312753-a8b8307f-a0c1-4ccf-8bd7-953ba65e552b.png" width="390" height="844"/>
 <img src="https://user-images.githubusercontent.com/68303716/231312754-2b038209-d625-473f-b9cf-808b05540de1.png" width="390" height="844"/>
 <img src="https://user-images.githubusercontent.com/68303716/231312755-28cb0479-05fd-48af-b184-aea0fd924fb3.png" width="390" height="844"/>
