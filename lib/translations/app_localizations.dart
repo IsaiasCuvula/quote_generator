@@ -126,7 +126,7 @@ abstract class AppLocalizations {
   /// No description provided for @app_bar_create_by_you.
   ///
   /// In en, this message translates to:
-  /// **'Created by You'**
+  /// **'Created by you'**
   String get app_bar_create_by_you;
 
   /// No description provided for @app_bar_favorite.
@@ -134,12 +134,6 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Favorites'**
   String get app_bar_favorite;
-
-  /// No description provided for @app_bar_latest.
-  ///
-  /// In en, this message translates to:
-  /// **'Latest'**
-  String get app_bar_latest;
 
   /// No description provided for @app_bar_search_quote.
   ///
@@ -152,6 +146,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Quote Details'**
   String get app_bar_quote_details;
+
+  /// No description provided for @app_bar_settings.
+  ///
+  /// In en, this message translates to:
+  /// **'Settings'**
+  String get app_bar_settings;
 
   /// No description provided for @alert_title.
   ///
@@ -320,6 +320,24 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Start typing to see suggestions'**
   String get search_quote_empty_screen_descritpion;
+
+  /// No description provided for @language.
+  ///
+  /// In en, this message translates to:
+  /// **'Language'**
+  String get language;
+
+  /// No description provided for @dark_mode.
+  ///
+  /// In en, this message translates to:
+  /// **'Dark'**
+  String get dark_mode;
+
+  /// No description provided for @light_mode.
+  ///
+  /// In en, this message translates to:
+  /// **'Light'**
+  String get light_mode;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

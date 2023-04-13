@@ -26,14 +26,17 @@ class CreateQuoteScreen extends ConsumerWidget {
       child: Scaffold(
         appBar: AppBar(
           actions: [
-            TextButton(
-              onPressed: () async {
-                await _saveQuoteInDB(ref, context);
-              },
-              child: Text(
-                context.l10n.done.toUpperCase(),
-                style: textTheme.titleLarge?.copyWith(
-                  color: theme.colorScheme.primary,
+            Padding(
+              padding: Dimensions.kPaddingHorizontalSmall,
+              child: TextButton(
+                onPressed: () async {
+                  await _saveQuoteInDB(ref, context);
+                },
+                child: Text(
+                  context.l10n.done.toUpperCase(),
+                  style: textTheme.titleLarge?.copyWith(
+                    color: theme.colorScheme.primary,
+                  ),
                 ),
               ),
             ),
@@ -41,7 +44,7 @@ class CreateQuoteScreen extends ConsumerWidget {
         ),
         body: SingleChildScrollView(
           physics: const AlwaysScrollableScrollPhysics(),
-          padding: Dimensions.kPaddingSymetricHorizontal,
+          padding: Dimensions.kPaddingHorizontalLarge,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [

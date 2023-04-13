@@ -40,7 +40,7 @@ class _QuoteTextFieldState extends ConsumerState<QuoteTextField> {
     final backgroundColor = textSettings.backgroundColor;
 
     return Padding(
-      padding: Dimensions.kPaddingSymetricVertical,
+      padding: Dimensions.kPaddingVerticalLarge,
       child: Container(
         width: Dimensions.kScreenWidth50,
         height: Dimensions.kScreenHeight40,

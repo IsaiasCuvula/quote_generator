@@ -11,6 +11,7 @@
     "app_bar_latest": "Mais recente",
     "app_bar_search_quote": "Pesquisar citação",
     "app_bar_quote_details": "Detalhes da citação",
+    "app_bar_settings": "Configurações",
     "@ALERTDIALOG": {},
     "alert_title": "Excluir esta citação?",
     "alert_content": "Tem certeza de que deseja excluir esta citação?",
@@ -44,5 +45,9 @@
     "search_quote_hintText": "Pesquise uma citação aqui...",
     "search_quote_empty_screen_title": "Pesquisar uma citação",
     "search_quote_empty_screen_descritpion": "Comece a digitar para ver as sugestões",
+    "@GENERAL": {},
+    "language": "Idioma",
+    "dark_mode": "Modo escuro",
+    "light_mode": "Modo claro ",
     "@END_OF_FILE": {}
 }

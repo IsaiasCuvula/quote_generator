@@ -6,11 +6,11 @@
     "nav_bar_create_quote": "Create Quote",
     "nav_bar_search": "Search",
     "@APPBAR": {},
-    "app_bar_create_by_you": "Created by You",
+    "app_bar_create_by_you": "Created by you",
     "app_bar_favorite": "Favorites",
-    "app_bar_latest": "Latest",
     "app_bar_search_quote": "Search Quote",
     "app_bar_quote_details": "Quote Details",
+    "app_bar_settings": "Settings",
     "@ALERTDIALOG": {},
     "alert_title": "Delete this quote?",
     "alert_content": "Are you sure you want to delete this quote?",
@@ -44,5 +44,9 @@
     "search_quote_hintText": "Find a quote here ...",
     "search_quote_empty_screen_title": "Search for a Quote",
     "search_quote_empty_screen_descritpion": "Start typing to see suggestions",
+    "@GENERAL": {},
+    "language": "Language",
+    "dark_mode": "Dark",
+    "light_mode": "Light",
     "@END_OF_FILE": {}
 }

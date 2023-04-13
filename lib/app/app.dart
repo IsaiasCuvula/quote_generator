@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:quote_generator/config/config.dart';
 import 'package:quote_generator/presentation/presentation.dart';
+import 'package:quote_generator/presentation/providers/theme_provider.dart';
 import 'package:quote_generator/translations/translations.dart';
 
 class QuoteGeneratorApp extends ConsumerWidget {
@@ -11,6 +12,7 @@ class QuoteGeneratorApp extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final appLocale = ref.watch(appLocaleProvider);
+    final theme = ref.watch(themeProvider);
     return ScreenUtilInit(
       designSize: const Size(375, 812),
       builder: (context, child) {
@@ -18,6 +20,8 @@ class QuoteGeneratorApp extends ConsumerWidget {
           debugShowCheckedModeBanner: false,
           title: 'Quote Generator App',
           theme: QuoteGeneratorTheme.lightTheme,
+          darkTheme: QuoteGeneratorTheme.darkTheme,
+          themeMode: theme,
           localizationsDelegates: AppLocalizations.localizationsDelegates,
           supportedLocales: AppLocalizations.supportedLocales,
           routerConfig: RoutesConfig.routeConfig,

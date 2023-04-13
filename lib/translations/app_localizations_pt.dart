@@ -26,13 +26,13 @@ class AppLocalizationsPt extends AppLocalizations {
   String get app_bar_favorite => 'Favoritos';
 
   @override
-  String get app_bar_latest => 'Mais recente';
-
-  @override
   String get app_bar_search_quote => 'Pesquisar citação';
 
   @override
   String get app_bar_quote_details => 'Detalhes da citação';
+
+  @override
+  String get app_bar_settings => 'Configurações';
 
   @override
   String get alert_title => 'Excluir esta citação?';
@@ -117,4 +117,13 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String get search_quote_empty_screen_descritpion => 'Comece a digitar para ver as sugestões';
+
+  @override
+  String get language => 'Idioma';
+
+  @override
+  String get dark_mode => 'Modo escuro';
+
+  @override
+  String get light_mode => 'Modo claro ';
 }

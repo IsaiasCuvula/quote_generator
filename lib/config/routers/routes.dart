@@ -29,6 +29,15 @@ final routes = [
       );
     },
   ),
+  GoRoute(
+    path: '/settings',
+    parentNavigatorKey: RoutesConfig.navigationKey,
+    pageBuilder: (context, state) {
+      return NoTransitionPage(
+        child: SettingsScreen.builder(context, state),
+      );
+    },
+  ),
   //Bottom Nav bar shell
   ShellRoute(
     navigatorKey: _shellNavigatorKey,

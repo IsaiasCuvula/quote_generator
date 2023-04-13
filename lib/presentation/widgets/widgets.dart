@@ -6,3 +6,4 @@ export 'quote_settings_widgets/quote_settings_widgets.dart';
 export 'empty_search_quote.dart';
 export 'search_text_field.dart';
 export 'language_selector.dart';
+export 'body_and_app_bar.dart';

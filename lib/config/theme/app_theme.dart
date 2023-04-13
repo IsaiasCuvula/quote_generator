@@ -5,11 +5,24 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 class QuoteGeneratorTheme {
   static final lightTheme = ThemeData(
     useMaterial3: true,
+    brightness: Brightness.light,
     colorScheme: _ColorScheme._lightColorScheme,
     textTheme: _TextTheme._textTheme,
     fontFamily: 'Dosis',
     appBarTheme: _AppBarTheme._appBarTheme,
     scaffoldBackgroundColor: _ColorScheme._lightColorScheme.background,
+  );
+
+  static final darkTheme = ThemeData(
+    brightness: Brightness.dark,
+    scaffoldBackgroundColor: Colors.grey.shade900,
+    useMaterial3: true,
+    textTheme: _TextTheme._textTheme,
+    fontFamily: 'Dosis',
+    appBarTheme: const AppBarTheme(
+        backgroundColor: Color(0x00049fb6),
+        titleTextStyle: TextStyle(color: Colors.white, fontSize: 18),
+        centerTitle: false),
   );
 }
 

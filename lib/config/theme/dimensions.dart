@@ -10,11 +10,19 @@ class Dimensions {
   static final kPaddingAllMedium = const EdgeInsets.all(10.0).w;
   static final kPaddingAllSmall = const EdgeInsets.all(8.0).w;
 
-  static final kPaddingSymetricHorizontal = const EdgeInsets.symmetric(
+  static final kPaddingHorizontalLarge = const EdgeInsets.symmetric(
     horizontal: 20.0,
   ).w;
 
-  static final kPaddingSymetricVertical = const EdgeInsets.symmetric(
+  static final kPaddingHorizontalMedium = const EdgeInsets.symmetric(
+    horizontal: 16.0,
+  ).w;
+
+  static final kPaddingHorizontalSmall = const EdgeInsets.symmetric(
+    horizontal: 10.0,
+  ).w;
+
+  static final kPaddingVerticalLarge = const EdgeInsets.symmetric(
     vertical: 20.0,
   ).w;
 

@@ -20,19 +20,19 @@ class AppLocalizationsEn extends AppLocalizations {
   String get nav_bar_search => 'Search';
 
   @override
-  String get app_bar_create_by_you => 'Created by You';
+  String get app_bar_create_by_you => 'Created by you';
 
   @override
   String get app_bar_favorite => 'Favorites';
-
-  @override
-  String get app_bar_latest => 'Latest';
 
   @override
   String get app_bar_search_quote => 'Search Quote';
 
   @override
   String get app_bar_quote_details => 'Quote Details';
+
+  @override
+  String get app_bar_settings => 'Settings';
 
   @override
   String get alert_title => 'Delete this quote?';
@@ -117,4 +117,13 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get search_quote_empty_screen_descritpion => 'Start typing to see suggestions';
+
+  @override
+  String get language => 'Language';
+
+  @override
+  String get dark_mode => 'Dark';
+
+  @override
+  String get light_mode => 'Light';
 }

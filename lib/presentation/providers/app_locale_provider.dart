@@ -18,10 +18,10 @@ enum AppLocale {
 
 class LocaleNotifier extends StateNotifier<Locale> {
   LocaleNotifier() : super(AppLocale.en.locale) {
-    _readInitialLocale();
+    _initializeLocaleFromSharedPrefs();
   }
 
-  void _readInitialLocale() {
+  void _initializeLocaleFromSharedPrefs() {
     try {
       final locale =
           SharedPrefs.instance.getString(Constants.kLocale) ?? 'en_US';
