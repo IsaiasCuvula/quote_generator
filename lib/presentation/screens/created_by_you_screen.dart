@@ -18,34 +18,19 @@ class CreateByYouScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: NestedScrollView(
-        headerSliverBuilder: (ctx, innerBoxIsScrolled) {
-          return [
-            SliverAppBar(
-              floating: true,
-              pinned: true,
-              centerTitle: false,
-              title: Padding(
-                padding: Dimensions.kPaddingAllLarge,
-                child: Text(
-                  context.l10n.app_bar_create_by_you,
-                  style: Theme.of(context).textTheme.headlineLarge,
-                ),
+      body: BodyAndAppBarNestedScrollView(
+        appBarTitle: context.l10n.app_bar_create_by_you,
+        actions: [
+          Padding(
+            padding: Dimensions.kPaddingHorizontalLarge,
+            child: IconButton(
+              onPressed: () => context.push('/createQuote'),
+              icon: const FaIcon(
+                FontAwesomeIcons.plus,
               ),
-              actions: [
-                Padding(
-                  padding: Dimensions.kPaddingSymetricHorizontal,
-                  child: IconButton(
-                    onPressed: () => context.push('/createQuote'),
-                    icon: const FaIcon(
-                      FontAwesomeIcons.plus,
-                    ),
-                  ),
-                ),
-              ],
-            )
-          ];
-        },
+            ),
+          ),
+        ],
         body: Consumer(
           builder: ((context, ref, child) {
             final quoteState = ref.watch(quoteProvider);

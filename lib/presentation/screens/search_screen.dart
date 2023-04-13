@@ -34,31 +34,17 @@ class _SearchScreenState extends ConsumerState<SearchScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final theme = Theme.of(context);
     final quoteState = ref.watch(quoteProvider);
     final quotes = quoteState.searcherdQuotes;
+
     return Scaffold(
       body: GestureDetector(
         onTap: () {
           FocusManager.instance.primaryFocus?.unfocus();
         },
-        child: NestedScrollView(
-          headerSliverBuilder: (ctx, innerBoxIsScrolled) {
-            return [
-              SliverAppBar(
-                floating: true,
-                pinned: true,
-                centerTitle: true,
-                title: Padding(
-                  padding: Dimensions.kPaddingAllLarge,
-                  child: Text(
-                    context.l10n.app_bar_search_quote,
-                    style: theme.textTheme.headlineLarge,
-                  ),
-                ),
-              )
-            ];
-          },
+        child: BodyAndAppBarNestedScrollView(
+          appBarTitle: context.l10n.app_bar_search_quote,
+          centerTitle: true,
           body: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
-import 'package:quote_generator/config/config.dart';
 import 'package:quote_generator/presentation/presentation.dart';
 import 'package:quote_generator/translations/translations.dart';
 
@@ -13,9 +12,9 @@ class QuoteCardDetails extends ConsumerWidget {
   ) =>
       QuoteCardDetails(id: id);
   const QuoteCardDetails({
-    super.key,
+    Key? key,
     this.id,
-  });
+  }) : super(key: key);
 
   final String? id;
 
@@ -24,23 +23,9 @@ class QuoteCardDetails extends ConsumerWidget {
     final quote = ref.watch(quoteProvider).quote;
 
     return Scaffold(
-      body: NestedScrollView(
-        headerSliverBuilder: (ctx, innerBoxIsScrolled) {
-          return [
-            SliverAppBar(
-              floating: true,
-              pinned: true,
-              centerTitle: true,
-              title: Padding(
-                padding: Dimensions.kPaddingAllLarge,
-                child: Text(
-                  context.l10n.app_bar_quote_details,
-                  style: Theme.of(context).textTheme.headlineLarge,
-                ),
-              ),
-            )
-          ];
-        },
+      body: BodyAndAppBarNestedScrollView(
+        appBarTitle: context.l10n.app_bar_quote_details,
+        centerTitle: true,
         body: quote != null ? QuoteDetails(quote: quote) : const SizedBox(),
       ),
     );
