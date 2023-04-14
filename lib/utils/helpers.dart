@@ -97,7 +97,10 @@ class Helpers {
   static showSnackbar(BuildContext context, String message, bool isSucess) {
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(
-        content: Text(message),
+        content: Text(
+          message,
+          style: Theme.of(context).textTheme.bodySmall,
+        ),
         backgroundColor: isSucess ? Colors.green : Colors.red,
       ),
     );

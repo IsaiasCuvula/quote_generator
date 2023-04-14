@@ -16,7 +16,7 @@ class TextSettingItemContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final colorScheme = Theme.of(context).colorScheme;
-    final color = isSelected ? colorScheme.secondary : colorScheme.onBackground;
+    final color = isSelected ? colorScheme.secondary : Colors.transparent;
     return InkWell(
       onTap: onTap,
       borderRadius: Dimensions.kBorderRadiusAllMedium,
