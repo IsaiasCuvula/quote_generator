@@ -15,7 +15,7 @@ class Helpers {
 
   static final Map<String, FontWeight> fontWeightList = {
     'normal': FontWeight.normal,
-    'bold': FontWeight.bold,
+    'w700': FontWeight.bold,
   };
 
   static Color intToColor(int intColor) {

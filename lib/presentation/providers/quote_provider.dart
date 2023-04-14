@@ -75,6 +75,9 @@ class QuoteNotifier extends StateNotifier<QuoteState> {
         wordSpacing: textSettings.wordSpacing,
         letterSpacing: textSettings.letterSpacing,
       );
+
+      print(textSettings.fontWeight);
+
       await _quoteRepository.addQuote(quote).then((value) async {
         await _loadQuotes();
       });
