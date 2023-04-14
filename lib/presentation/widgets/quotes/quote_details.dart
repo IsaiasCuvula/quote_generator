@@ -19,7 +19,7 @@ class QuoteDetails extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final theme = Theme.of(context);
-    final textColor = theme.colorScheme.surface;
+    final textColor = theme.colorScheme.onSurface;
     final displFavoriteIcon = quote.isFavorite == 1
         ? FontAwesomeIcons.solidHeart
         : FontAwesomeIcons.heart;

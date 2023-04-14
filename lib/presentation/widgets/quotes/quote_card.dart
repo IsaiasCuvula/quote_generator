@@ -16,12 +16,13 @@ class QuoteCard extends StatelessWidget {
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     final textTheme = theme.textTheme;
+    final colorScheme = theme.colorScheme;
     final autherTextStyle = textTheme.labelLarge?.copyWith(
       letterSpacing: quote.letterSpacing,
-      color: theme.colorScheme.surface,
+      color: colorScheme.onSurface,
     );
     final quoteTextSyle = TextStyle(
-      color: theme.colorScheme.surface,
+      color: colorScheme.onSurface,
       fontSize: quote.fontSize,
       wordSpacing: quote.wordSpacing,
       letterSpacing: quote.letterSpacing,
@@ -42,7 +43,7 @@ class QuoteCard extends StatelessWidget {
           FaIcon(
             FontAwesomeIcons.quoteRight,
             size: Dimensions.iconSizeSmall,
-            color: theme.colorScheme.surface,
+            color: colorScheme.onSurface,
           ),
           Text(
             quote.text,
