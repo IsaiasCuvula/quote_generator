@@ -78,7 +78,7 @@ class _EmptyQuoteCardState extends State<EmptyQuoteCard>
                             scale: _controller,
                             child: Icon(
                               widget.displayIcon,
-                              color: theme.colorScheme.tertiaryContainer,
+                              color: theme.colorScheme.onSurface,
                               size: Dimensions.iconSizeLarge,
                             ),
                           ),

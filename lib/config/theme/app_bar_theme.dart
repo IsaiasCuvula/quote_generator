@@ -9,6 +9,9 @@ class _AppBarTheme {
     shadowColor: Colors.transparent,
     titleSpacing: 1,
     actionsIconTheme: IconThemeData(color: _QuoteGeneratorColors.brown),
+    iconTheme: IconThemeData(
+      color: _QuoteGeneratorColors.brown,
+    ),
   );
 
   static const _appBarDarkTheme = AppBarTheme(

@@ -24,7 +24,7 @@ class _ColorScheme {
     onPrimary: _QuoteGeneratorColors.white,
     secondary: _QuoteGeneratorColors.lightOrange,
     onSecondary: _QuoteGeneratorColors.brown,
-    tertiaryContainer: _QuoteGeneratorColors.white,
+    tertiaryContainer: _QuoteGeneratorColors.brown,
     onTertiaryContainer: _QuoteGeneratorColors.black,
     error: _QuoteGeneratorColors.red,
     onError: _QuoteGeneratorColors.white,
