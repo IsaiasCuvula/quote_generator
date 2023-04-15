@@ -21,8 +21,12 @@ class CreateByYouScreen extends StatelessWidget {
       body: BodyAndAppBarNestedScrollView(
         appBarTitle: context.l10n.app_bar_create_by_you,
         actions: [
+          IconButton(
+            onPressed: () => context.push('/settings'),
+            icon: const FaIcon(FontAwesomeIcons.gear),
+          ),
           Padding(
-            padding: Dimensions.kPaddingHorizontalLarge,
+            padding: Dimensions.kPaddingHorizontalSmall,
             child: IconButton(
               onPressed: () => context.push('/createQuote'),
               icon: const FaIcon(

@@ -53,6 +53,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get empty_card_favorite_quote => 'You haven\'t added any quotes to your favorites yet';
 
   @override
+  String get empty_card_discovery => 'There is no quote from the server yet!';
+
+  @override
   String get create_your_quote => 'Create Your Quote';
 
   @override

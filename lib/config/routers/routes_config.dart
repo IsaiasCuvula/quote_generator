@@ -6,7 +6,7 @@ import 'package:quote_generator/config/routers/routes.dart';
 class RoutesConfig {
   static final navigationKey = GlobalKey<NavigatorState>();
   static final routeConfig = GoRouter(
-    initialLocation: '/home',
+    initialLocation: '/createdByYou',
     navigatorKey: navigationKey,
     routes: routes,
   );

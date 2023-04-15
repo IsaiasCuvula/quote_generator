@@ -52,20 +52,20 @@ final routes = [
     },
     routes: [
       GoRoute(
-        path: '/home',
-        parentNavigatorKey: _shellNavigatorKey,
-        pageBuilder: (context, state) {
-          return NoTransitionPage(
-            child: HomeScreen.builder(context, state),
-          );
-        },
-      ),
-      GoRoute(
         path: '/createdByYou',
         parentNavigatorKey: _shellNavigatorKey,
         pageBuilder: (context, state) {
           return NoTransitionPage(
             child: CreateByYouScreen.builder(context, state),
+          );
+        },
+      ),
+      GoRoute(
+        path: '/home',
+        parentNavigatorKey: _shellNavigatorKey,
+        pageBuilder: (context, state) {
+          return NoTransitionPage(
+            child: HomeScreen.builder(context, state),
           );
         },
       ),

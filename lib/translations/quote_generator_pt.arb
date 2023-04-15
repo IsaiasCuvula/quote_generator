@@ -20,6 +20,7 @@
     "@EMPTYQUOTELIST": {},
     "empty_card_created_by_you": "Você ainda não criou nenhuma citação",
     "empty_card_favorite_quote": "Você ainda não adicionou nenhuma citação aos seus favoritos",
+    "empty_card_discovery": "Ainda não há citação vindo do servidor!",
     "@CREATEQUOTE": {},
     "create_your_quote": "Crie uma citação",
     "done": "Feito",

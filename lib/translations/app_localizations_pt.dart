@@ -53,6 +53,9 @@ class AppLocalizationsPt extends AppLocalizations {
   String get empty_card_favorite_quote => 'Você ainda não adicionou nenhuma citação aos seus favoritos';
 
   @override
+  String get empty_card_discovery => 'Ainda não há citação vindo do servidor!';
+
+  @override
   String get create_your_quote => 'Crie uma citação';
 
   @override

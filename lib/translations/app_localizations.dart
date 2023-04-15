@@ -189,6 +189,12 @@ abstract class AppLocalizations {
   /// **'You haven\'t added any quotes to your favorites yet'**
   String get empty_card_favorite_quote;
 
+  /// No description provided for @empty_card_discovery.
+  ///
+  /// In en, this message translates to:
+  /// **'There is no quote from the server yet!'**
+  String get empty_card_discovery;
+
   /// No description provided for @create_your_quote.
   ///
   /// In en, this message translates to:
