@@ -5,7 +5,7 @@ This app is a quote generator that displays quotes that you and others create ev
 
 ## Technology Stack
 
-- Flutter & Dart
+- Flutter & Dart 💙
 - Clean Architecture
 - Riverpod for State Managment
 - GoRoute for Navigation
