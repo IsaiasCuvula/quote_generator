@@ -1,0 +1,47 @@
+name: deploy
+
+on:
+  push:
+    tags:
+      - "*"
+
+jobs:
+  build:
+    name: Build APK
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - uses: actions/setup-java@v1
+        with:
+          java-version: "12.x"
+     
+      - name: Setup Flutter SDK
+      - uses: subosito/flutter-action@v1
+        with:
+          channel: stable
+      - run: flutter pub get
+      #- run: flutter test
+      - run: flutter build apk --debug --split-per-abi
+      - name: Push APK to Releases
+        uses: ncipollo/release-action@v1
+        with:
+          artifacts: "build/app/outputs/apk/debug/*.apk"
+          token: ${{ secrets.GHUB_TOKEN }}
+      
+      - name: Build iOS App
+        run: flutter build ios --no-codesign
+      - name: Create IPA file
+        run: |
+            cd build/ios/iphoneos
+            mkdir Payload
+            cd Payload
+            ln -s ../Runner.app
+            cd ..
+            zip -r app.ipa Payload
+            
+      - name: Push to Releases
+        uses: ncipollo/release-action@v1
+        with: 
+            artifacts: "build/ios/iphoneos/app.ipa"
+            tag: "refs/tags/v1.0.${{ github.run_number }}"
+            token: ${{ secrets.GHUB_TOKEN }}
