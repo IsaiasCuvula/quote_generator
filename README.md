@@ -5,9 +5,8 @@ This app is a quote generator that displays quotes that you and others create ev
 
 ## Technology Stack
 
-- Flutter: a UI toolkit for building natively compiled applications for mobile, web, and desktop from a single codebase.
-- Dart: a client-optimized programming language for fast apps on multiple platforms.
-- Clean Architeture
+- Flutter & Dart
+- Clean Architecture
 - Riverpod for State Managment
 - GoRoute for Navigation
 - SQLite for local database
