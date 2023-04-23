@@ -3,14 +3,6 @@
 This app is a quote generator that displays quotes that you and others create every time it's opened. It also includes a feature where users can favorite and share any quote.
 
 
-
-## Features
-
-- All quotes(this feature is in progress): The app fetches all quotes from the API and displays it included the one you've created (if you post).
-- Create new quote: Users can tap a button to create a new quote if they want.
-- Add quotes to favorite: The app has a feature where users can save their favorite quotes to a list that they can refer back to later.
-- Share quotes: The app includes a share button that allows users to share the current quote on social media or through messaging apps.
-
 ## Technology Stack
 
 - Flutter: a UI toolkit for building natively compiled applications for mobile, web, and desktop from a single codebase.
@@ -25,6 +17,23 @@ This app is a quote generator that displays quotes that you and others create ev
 - And much more ...
 
 <a href="https://www.buymeacoffee.com/bersyteinf4"><img src="https://img.buymeacoffee.com/button-api/?text=Buy me a coffee&emoji=&slug=bersyteinf4&button_colour=FFDD00&font_colour=000000&font_family=Cookie&outline_colour=000000&coffee_colour=ffffff" /></a>
+
+## Installation
+- Clone the repo
+```sh
+git clone https://github.com/IsaiasCuvula/quote_generator
+```
+
+- And then you can use the normal build and run procedure 
+```sh
+flutter pub get
+flutter run
+```
+- Some files like *.freezed.dart, *.g.dart, *.iconfig.dart are auto generated. If there is any issue from these files just run these command to regenerate them.
+```sh
+flutter packages pub get
+flutter pub run build_runner build --delete-conflicting-outputs
+```
 
 # The App is Under Construction ...
 <img src="https://user-images.githubusercontent.com/68303716/231312751-bcaea9e9-b7c7-4ae7-aae8-2a8f8b24ef58.png" width="390" height="844"/>
