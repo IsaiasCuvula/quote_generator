@@ -3,7 +3,6 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:quote_generator/config/config.dart';
 import 'package:quote_generator/presentation/presentation.dart';
-import 'package:quote_generator/presentation/providers/theme_provider.dart';
 import 'package:quote_generator/translations/translations.dart';
 
 class QuoteGeneratorApp extends ConsumerWidget {
