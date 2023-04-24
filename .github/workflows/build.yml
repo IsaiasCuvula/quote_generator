@@ -13,6 +13,9 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - uses: subosito/flutter-action@v1
+
+      - name: Dart Format
+        run: "dart format --output=none --set-exit-if-changed."
       
       - name: Setup Flutter SDK
         uses: subosito/flutter-action@v1
@@ -20,5 +23,7 @@ jobs:
           channel: stable
           
       - run: flutter pub get
-      - run: flutter analyze
+
+      - name: Flutter Analyze
+      - run: flutter analyze --no-pub --no-concurrent-processing
       #- run: flutter test --coverage
