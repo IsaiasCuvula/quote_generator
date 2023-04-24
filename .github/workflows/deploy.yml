@@ -19,10 +19,13 @@ jobs:
         uses: subosito/flutter-action@v1
         with:
           channel: stable
+
       - run: flutter pub get
       #- run: flutter test
-      - run: flutter build apk --debug --split-per-abi
-        name: Push APK to Releases
+      - name: Build Android APK
+        run: flutter build apk --debug --split-per-abi
+      
+      - name: Push APK to Releases
         uses: ncipollo/release-action@v1
         with:
           artifacts: "build/app/outputs/apk/debug/*.apk"
