@@ -54,9 +54,12 @@ class Dimensions {
   static final kHorizontalSpaceSmaller = SizedBox(width: 8.w);
 
   //Screen Size
+  static final kScreenWidth60 = 0.6.sw;
   static final kScreenWidth50 = 0.5.sw;
+  static final kScreenWidth30 = 0.3.sw;
   static final kScreenHeight50 = 0.5.sh;
   static final kScreenHeight40 = 0.4.sh;
+  static final kScreenHeight30 = 0.3.sh;
   static final kQuoteTextSettingHeight = 0.055.sh;
 
   // Size

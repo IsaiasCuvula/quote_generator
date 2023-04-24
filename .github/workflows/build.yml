@@ -22,5 +22,5 @@ jobs:
       - run: flutter pub get
 
       - name: Flutter Analyze
-        run: flutter analyze --no-pub --no-concurrent-processing
+        run: flutter analyze
       #- run: flutter test --coverage

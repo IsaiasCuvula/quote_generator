@@ -61,11 +61,11 @@ final routes = [
         },
       ),
       GoRoute(
-        path: '/home',
+        path: '/discovery',
         parentNavigatorKey: _shellNavigatorKey,
         pageBuilder: (context, state) {
           return NoTransitionPage(
-            child: HomeScreen.builder(context, state),
+            child: DiscoveryScreen.builder(context, state),
           );
         },
       ),
