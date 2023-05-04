@@ -3,16 +3,11 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:quote_generator/utils/shared_prefs.dart';
 import 'package:quote_generator/utils/utils.dart';
 
-final appLocaleProvider = StateNotifierProvider<LocaleNotifier, Locale>((ref) {
-  return LocaleNotifier();
-});
-
 enum AppLocale {
   en(Locale('en', 'US')),
   pt(Locale('pt', 'BR'));
 
   final Locale locale;
-
   const AppLocale(this.locale);
 }
 

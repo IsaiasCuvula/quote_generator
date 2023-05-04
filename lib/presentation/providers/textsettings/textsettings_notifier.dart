@@ -1,27 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:quote_generator/config/theme/theme.dart';
+import 'textsettings_state.dart';
 
-final textSettingsProvider =
-    StateNotifierProvider.autoDispose<TextSettingsNotifier, TextSettings>(
-        (ref) {
-  return TextSettingsNotifier();
-});
-
-class TextSettings {
-  TextAlign textAlign = TextAlign.start;
-  Color backgroundColor = Colors.purple;
-  double fontSize = Dimensions.quoteTextFontSizeSmall;
-  FontWeight fontWeight = FontWeight.normal;
-  double wordSpacing = Dimensions.quoteTextWordSpacingNone;
-  double letterSpacing = Dimensions.quoteTextLetterSpacingNone;
-  String quoteText = '';
-  String quoteAuthor = 'unknown';
-  int isFavorite = 0;
-}
-
-class TextSettingsNotifier extends StateNotifier<TextSettings> {
-  TextSettingsNotifier() : super(TextSettings());
+class TextSettingsNotifier extends StateNotifier<TextSettingsState> {
+  TextSettingsNotifier() : super(TextSettingsState());
 
   void setAlign(TextAlign align) {
     state = state.copyWith(textAlign: align);
@@ -60,8 +42,8 @@ class TextSettingsNotifier extends StateNotifier<TextSettings> {
   }
 }
 
-extension TextSettingsExtension on TextSettings {
-  TextSettings copyWith({
+extension TextSettingsExtension on TextSettingsState {
+  TextSettingsState copyWith({
     TextAlign? textAlign,
     Color? backgroundColor,
     double? fontSize,
@@ -74,7 +56,7 @@ extension TextSettingsExtension on TextSettings {
     String? quoteAuthor,
     int? isFavorite,
   }) {
-    return TextSettings()
+    return TextSettingsState()
       ..textAlign = textAlign ?? this.textAlign
       ..backgroundColor = backgroundColor ?? this.backgroundColor
       ..fontSize = fontSize ?? this.fontSize

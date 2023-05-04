@@ -1,4 +1,4 @@
-export 'quote_provider.dart';
-export 'text_settings_provider.dart';
-export 'app_locale_provider.dart';
-export 'theme_provider.dart';
+export 'textsettings/textsettings.dart';
+export 'theme/theme.dart';
+export 'quote/quote.dart';
+export 'applocale/applocale.dart';

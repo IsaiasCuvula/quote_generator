@@ -4,24 +4,6 @@ import 'package:quote_generator/domain/domain.dart';
 import 'package:quote_generator/presentation/presentation.dart';
 import 'package:quote_generator/utils/utils.dart';
 
-final quoteProvider = StateNotifierProvider<QuoteNotifier, QuoteState>((ref) {
-  final quoteRepository = ref.read(quoteRepositoryProvider);
-  return QuoteNotifier(quoteRepository, ref);
-});
-
-class QuoteState {
-  final QuoteList allQuotes;
-  final QuoteList favoritesQuotes;
-  final QuoteList searcherdQuotes;
-  final QuoteModel? quote;
-  const QuoteState(
-    this.allQuotes,
-    this.favoritesQuotes,
-    this.searcherdQuotes,
-    this.quote,
-  );
-}
-
 class QuoteNotifier extends StateNotifier<QuoteState> {
   QuoteNotifier(this._quoteRepository, this._ref)
       : super(const QuoteState([], [], [], null));
