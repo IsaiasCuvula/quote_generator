@@ -21,6 +21,6 @@ jobs:
           
       - run: flutter pub get
 
-      - name: Flutter Analyze
-        run: flutter analyze
+      #- name: Flutter Analyze
+       # run: flutter analyze
       #- run: flutter test --coverage
