@@ -41,14 +41,12 @@ flutter pub run build_runner build --delete-conflicting-outputs
 ```
 
 # The App is Under Construction ...
-<img src="https://user-images.githubusercontent.com/68303716/231312751-bcaea9e9-b7c7-4ae7-aae8-2a8f8b24ef58.png" width="390" height="844"/>
-<img src="https://user-images.githubusercontent.com/68303716/231312747-52c74a14-811d-4007-903a-7a225d22eead.png" width="390" height="844"/>
-<img src="https://user-images.githubusercontent.com/68303716/231314539-62c26c74-2736-4d28-ba68-6d48fe34c288.png" width="390" height="844"/>
-<img src="https://user-images.githubusercontent.com/68303716/231312753-a8b8307f-a0c1-4ccf-8bd7-953ba65e552b.png" width="390" height="844"/>
-<img src="https://user-images.githubusercontent.com/68303716/231312754-2b038209-d625-473f-b9cf-808b05540de1.png" width="390" height="844"/>
-<img src="https://user-images.githubusercontent.com/68303716/231312755-28cb0479-05fd-48af-b184-aea0fd924fb3.png" width="390" height="844"/>
-<img src="https://user-images.githubusercontent.com/68303716/231312757-1aea64ef-ea20-4813-8af7-f3e8e3e62a31.png" width="390" height="844"/>
-<img src="https://user-images.githubusercontent.com/68303716/231312759-bafe4316-353a-4046-b7e6-5f9a0f923cf5.png" width="390" height="844"/>
+
+<p align="center">
+  <img width="200" alt="iPhone13Mockup1" src="https://user-images.githubusercontent.com/68303716/236710900-0eee7128-2cd5-432c-9fc5-ed54c144e445.png" />
+  <img width="200" alt="iPhone13Mockup2" src="https://user-images.githubusercontent.com/68303716/236710903-5748de13-e014-42d2-8094-e91232759e92.png" />
+  <img width="200" alt="iPhone13Mockup3" src="https://user-images.githubusercontent.com/68303716/236710906-ebb7f3c0-6faa-4b97-be5e-b7b2da757f9c.png" />
+</p>
 
 ## App Structure
 <img src="https://user-images.githubusercontent.com/68303716/230719344-cd3ef188-b465-4ea5-9d88-63fe48606b1d.png"/>
