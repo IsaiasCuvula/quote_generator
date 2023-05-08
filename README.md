@@ -42,11 +42,11 @@ flutter pub run build_runner build --delete-conflicting-outputs
 
 # The App is Under Construction ...
 
-<p align="center">
+<p align="left">
   <img width="200" alt="iPhone13Mockup1" src="https://user-images.githubusercontent.com/68303716/236710900-0eee7128-2cd5-432c-9fc5-ed54c144e445.png" />
   <img width="200" alt="iPhone13Mockup2" src="https://user-images.githubusercontent.com/68303716/236710903-5748de13-e014-42d2-8094-e91232759e92.png" />
   <img width="200" alt="iPhone13Mockup3" src="https://user-images.githubusercontent.com/68303716/236710906-ebb7f3c0-6faa-4b97-be5e-b7b2da757f9c.png" />
 </p>
 
 ## App Structure
-<img src="https://user-images.githubusercontent.com/68303716/230719344-cd3ef188-b465-4ea5-9d88-63fe48606b1d.png"/>
+<img width="350" height="350" alt="cleanCodeFolderOrg" src="https://user-images.githubusercontent.com/68303716/230719344-cd3ef188-b465-4ea5-9d88-63fe48606b1d.png"/>
