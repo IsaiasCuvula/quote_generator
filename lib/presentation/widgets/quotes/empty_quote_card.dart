@@ -58,12 +58,9 @@ class EmptyQuoteCard extends StatelessWidget {
               ),
             ]),
       ),
-    )
-        .animate()
-        .scale(
+    ).animate().scale(
           duration: 3.seconds,
           curve: Curves.easeInOut,
-        )
-        .shake();
+        );
   }
 }

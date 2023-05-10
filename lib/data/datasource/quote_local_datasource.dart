@@ -49,11 +49,13 @@ class QuoteLocalDatasource {
 
   Future<int> addQuote(QuoteModel quote) async {
     final db = await database;
-    return db.insert(
-      Constants.dbTable,
-      quote.toJson(),
-      conflictAlgorithm: ConflictAlgorithm.replace,
-    );
+    return db.transaction((txn) async {
+      return await txn.insert(
+        Constants.dbTable,
+        quote.toJson(),
+        conflictAlgorithm: ConflictAlgorithm.replace,
+      );
+    });
   }
 
   Future<QuoteList> getQuotes() async {
@@ -69,21 +71,25 @@ class QuoteLocalDatasource {
 
   Future<int> updateQuote(QuoteModel quote) async {
     final db = await database;
-    return await db.update(
-      Constants.dbTable,
-      quote.toJson(),
-      where: 'id = ?',
-      whereArgs: [quote.id],
-    );
+    return db.transaction((txn) async {
+      return await txn.update(
+        Constants.dbTable,
+        quote.toJson(),
+        where: 'id = ?',
+        whereArgs: [quote.id],
+      );
+    });
   }
 
   Future<int> deleteQuote(int id) async {
     final db = await database;
-    return await db.delete(
-      Constants.dbTable,
-      where: 'id = ?',
-      whereArgs: [id],
-    );
+    return db.transaction((txn) async {
+      return await txn.delete(
+        Constants.dbTable,
+        where: 'id = ?',
+        whereArgs: [id],
+      );
+    });
   }
 
   Future<QuoteModel?> getQuoteById(int id) async {

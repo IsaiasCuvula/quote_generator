@@ -6,21 +6,12 @@ import 'package:quote_generator/utils/utils.dart';
 
 class QuoteNotifier extends StateNotifier<QuoteState> {
   QuoteNotifier(this._quoteRepository, this._ref)
-      : super(const QuoteState([], [], [], null));
+      : super(const QuoteState([], [], [], null)) {
+    _loadQuotes();
+  }
 
   final QuoteRepository _quoteRepository;
   final Ref _ref;
-
-  // the quotes will be loaded from the repository the first time the
-  //state getter is accessed, and subsequent
-  // accesses will return the cached data.
-  @override
-  QuoteState get state {
-    if (super.state.allQuotes.isEmpty && super.state.quote == null) {
-      _loadQuotes();
-    }
-    return super.state;
-  }
 
   Future<void> _loadQuotes() async {
     final quotes = await _quoteRepository.getQuotes();
