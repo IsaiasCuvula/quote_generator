@@ -17,9 +17,9 @@ PODS:
 
 DEPENDENCIES:
   - Flutter (from `Flutter`)
-  - path_provider_foundation (from `.symlinks/plugins/path_provider_foundation/ios`)
+  - path_provider_foundation (from `.symlinks/plugins/path_provider_foundation/darwin`)
   - share_plus (from `.symlinks/plugins/share_plus/ios`)
-  - shared_preferences_foundation (from `.symlinks/plugins/shared_preferences_foundation/ios`)
+  - shared_preferences_foundation (from `.symlinks/plugins/shared_preferences_foundation/darwin`)
   - sqflite (from `.symlinks/plugins/sqflite/ios`)
 
 SPEC REPOS:
@@ -30,11 +30,11 @@ EXTERNAL SOURCES:
   Flutter:
     :path: Flutter
   path_provider_foundation:
-    :path: ".symlinks/plugins/path_provider_foundation/ios"
+    :path: ".symlinks/plugins/path_provider_foundation/darwin"
   share_plus:
     :path: ".symlinks/plugins/share_plus/ios"
   shared_preferences_foundation:
-    :path: ".symlinks/plugins/shared_preferences_foundation/ios"
+    :path: ".symlinks/plugins/shared_preferences_foundation/darwin"
   sqflite:
     :path: ".symlinks/plugins/sqflite/ios"
 
@@ -46,6 +46,6 @@ SPEC CHECKSUMS:
   shared_preferences_foundation: 986fc17f3d3251412d18b0265f9c64113a8c2472
   sqflite: 6d358c025f5b867b29ed92fc697fd34924e11904
 
-PODFILE CHECKSUM: fbc74206f818a0070ff747723fae141790a0f00f
+PODFILE CHECKSUM: efd43c12b0d50fe0ebc6ec0718d186c90c94e0f2
 
-COCOAPODS: 1.12.0
+COCOAPODS: 1.12.1
