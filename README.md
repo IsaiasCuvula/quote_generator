@@ -7,7 +7,7 @@ This app is a quote generator that displays quotes that you and others create ev
 
 - Flutter & Dart 💙
 - Clean Architecture
-- Riverpod for State Managment
+- Riverpod for State Management
 - GoRoute for Navigation
 - SQLite for local database
 - Shared Preferences 
