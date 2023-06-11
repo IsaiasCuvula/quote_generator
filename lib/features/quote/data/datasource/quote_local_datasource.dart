@@ -1,5 +1,6 @@
 import 'package:path/path.dart';
 import 'package:quote_generator/features/quote/quote.dart';
+import 'package:quote_generator/features/shared/shared.dart';
 import 'package:sqflite/sqflite.dart';
 
 class QuoteLocalDatasource {
@@ -56,7 +57,7 @@ class QuoteLocalDatasource {
     });
   }
 
-  Future<QuoteList> getQuotes() async {
+  Future<QuoteModelList> getQuotes() async {
     final db = await database;
     final List<Map<String, dynamic>> maps = await db.query(
       Constants.dbTable,
@@ -100,7 +101,7 @@ class QuoteLocalDatasource {
     return result.isNotEmpty ? QuoteModel.fromJson(result.first) : null;
   }
 
-  Future<QuoteList> searchQuote(String query) async {
+  Future<QuoteModelList> searchQuote(String query) async {
     final db = await database;
     final map = await db.query(
       Constants.dbTable,
