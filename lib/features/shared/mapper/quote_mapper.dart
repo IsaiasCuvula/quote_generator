@@ -13,4 +13,17 @@ class QuoteMapper {
       letterSpacing: model.letterSpacing,
     );
   }
+
+  static QuoteModel toModel(Quote entity) {
+    return QuoteModel(
+      text: entity.text,
+      author: entity.author,
+      textAlign: entity.textAlign,
+      backgroundColor: entity.backgroundColor,
+      fontSize: entity.fontSize,
+      fontWeight: entity.fontWeight,
+      wordSpacing: entity.wordSpacing,
+      letterSpacing: entity.letterSpacing,
+    );
+  }
 }

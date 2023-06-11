@@ -2,13 +2,12 @@ import 'package:dartz/dartz.dart';
 import 'package:quote_generator/features/quote/quote.dart';
 import 'package:quote_generator/features/shared/shared.dart';
 
-class AddQuote implements UseCase<int, Quote> {
+class GetQuotes implements UseCase<QuoteList, NoParams> {
   final QuoteRepository repository;
 
-  AddQuote(this.repository);
-
+  GetQuotes(this.repository);
   @override
-  Future<Either<Failure, int>> call(Quote params) async {
-    return await repository.addQuote(params);
+  Future<Either<Failure, QuoteList>> call(NoParams noParams) async {
+    return await repository.getQuotes();
   }
 }

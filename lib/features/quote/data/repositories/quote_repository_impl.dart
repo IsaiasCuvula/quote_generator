@@ -7,9 +7,11 @@ class QuoteRepositoryImpl implements QuoteRepository {
   QuoteRepositoryImpl(this._localDatasource);
 
   @override
-  Future<Either<Failure, int>> addQuote(QuoteModel quote) async {
+  Future<Either<Failure, int>> addQuote(Quote quote) async {
     try {
-      final results = await _localDatasource.addQuote(quote);
+      final results = await _localDatasource.addQuote(
+        QuoteMapper.toModel(quote),
+      );
       return Right(results);
     } catch (e) {
       return const Left(Failure(ErrorMessage.addQuoteError));
@@ -50,9 +52,11 @@ class QuoteRepositoryImpl implements QuoteRepository {
   }
 
   @override
-  Future<Either<Failure, int>> updateQuote(QuoteModel quote) async {
+  Future<Either<Failure, int>> updateQuote(Quote quote) async {
     try {
-      final result = await _localDatasource.updateQuote(quote);
+      final result = await _localDatasource.updateQuote(
+        QuoteMapper.toModel(quote),
+      );
       return Right(result);
     } catch (e) {
       return const Left(Failure(ErrorMessage.updateQuoteError));
