@@ -1,3 +1,3 @@
 export 'translations/translations.dart';
-export 'provider/provider.dart';
-export 'widget/widget.dart';
+export 'providers/providers.dart';
+export 'widgets/widgets.dart';
