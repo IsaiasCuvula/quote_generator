@@ -1,10 +1,12 @@
+import 'package:dartz/dartz.dart';
 import 'package:quote_generator/features/quote/quote.dart';
+import 'package:quote_generator/features/shared/shared.dart';
 
 abstract class QuoteRepository {
-  Future<void> addQuote(QuoteModel quote);
-  Future<QuoteModel?> getQuoteById(int id);
-  Future<QuoteList> getQuotes();
-  Future<void> updateQuote(QuoteModel quote);
-  Future<void> deleteQuote(int id);
-  Future<QuoteList> searchQuote(String query);
+  Future<Either<Failure, int>> addQuote(QuoteModel quote);
+  Future<Either<Failure, Quote?>> getQuoteById(int id);
+  Future<Either<Failure, QuoteList>> getQuotes();
+  Future<Either<Failure, int>> updateQuote(QuoteModel quote);
+  Future<Either<Failure, int>> deleteQuote(int id);
+  Future<Either<Failure, QuoteList>> searchQuote(String query);
 }

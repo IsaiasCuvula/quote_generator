@@ -1,63 +1,74 @@
+import 'package:dartz/dartz.dart';
 import 'package:quote_generator/features/quote/quote.dart';
+import 'package:quote_generator/features/shared/shared.dart';
 
 class QuoteRepositoryImpl implements QuoteRepository {
   final QuoteLocalDatasource _localDatasource;
   QuoteRepositoryImpl(this._localDatasource);
 
   @override
-  Future<void> addQuote(QuoteModel quote) async {
+  Future<Either<Failure, int>> addQuote(QuoteModel quote) async {
     try {
-      await _localDatasource.addQuote(quote);
+      final results = await _localDatasource.addQuote(quote);
+      return Right(results);
     } catch (e) {
-      throw Exception('Failed to add quote: $e');
+      return const Left(Failure(ErrorMessage.addQuoteError));
     }
   }
 
   @override
-  Future<void> deleteQuote(int id) async {
+  Future<Either<Failure, int>> deleteQuote(int id) async {
     try {
-      await _localDatasource.deleteQuote(id);
+      final quoteModelList = await _localDatasource.deleteQuote(id);
+      return Right(quoteModelList);
     } catch (e) {
-      throw Exception('Failed to delete quote: $e');
+      return const Left(Failure(ErrorMessage.deleteQuoteError));
     }
   }
 
   @override
-  Future<QuoteModel?> getQuoteById(int id) async {
+  Future<Either<Failure, Quote?>> getQuoteById(int id) async {
     try {
       final quote = await _localDatasource.getQuoteById(id);
-      return quote;
+      return Right(QuoteMapper.toEntity(quote!));
     } catch (e) {
-      throw Exception('Failed to get quote with this: $id id, $e');
+      return const Left(Failure(ErrorMessage.getQuoteByIdError));
     }
   }
 
   @override
-  Future<QuoteList> getQuotes() async {
+  Future<Either<Failure, QuoteList>> getQuotes() async {
     try {
-      final quotes = await _localDatasource.getQuotes();
-      return quotes;
+      final results = await _localDatasource.getQuotes();
+      final quotes = results.map((quote) {
+        return QuoteMapper.toEntity(quote);
+      });
+      return Right(quotes.toList());
     } catch (e) {
-      throw Exception('Failed to get quotes: $e');
+      return const Left(Failure(ErrorMessage.getQuoteError));
     }
   }
 
   @override
-  Future<void> updateQuote(QuoteModel quote) async {
+  Future<Either<Failure, int>> updateQuote(QuoteModel quote) async {
     try {
-      await _localDatasource.updateQuote(quote);
+      final result = await _localDatasource.updateQuote(quote);
+      return Right(result);
     } catch (e) {
-      throw Exception('Failed to update quote: $e');
+      return const Left(Failure(ErrorMessage.updateQuoteError));
     }
   }
 
   @override
-  Future<QuoteList> searchQuote(String query) async {
+  Future<Either<Failure, QuoteList>> searchQuote(String query) async {
     try {
-      final quotes = await _localDatasource.searchQuote(query);
-      return quotes;
+      final quoteModelList = await _localDatasource.searchQuote(query);
+      final quotes = quoteModelList.map((quote) {
+        return QuoteMapper.toEntity(quote);
+      });
+      return Right(quotes.toList());
     } catch (e) {
-      throw Exception('Failed to query in database quote: $e');
+      return const Left(Failure(ErrorMessage.searchQuoteError));
     }
   }
 }

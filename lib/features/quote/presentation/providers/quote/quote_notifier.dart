@@ -21,8 +21,8 @@ class QuoteNotifier extends StateNotifier<QuoteState> {
     );
   }
 
-  QuoteList _getFavoritesQuotes(QuoteList quoteList) {
-    final QuoteList favQuotes = [];
+  QuoteModelList _getFavoritesQuotes(QuoteModelList quoteList) {
+    final QuoteModelList favQuotes = [];
     for (QuoteModel quote in quoteList) {
       if (quote.isFavorite == 1) {
         favQuotes.insert(0, quote);

@@ -11,7 +11,7 @@ class ListOfQuotes extends StatelessWidget {
     required this.quotes,
   }) : super(key: key);
 
-  final QuoteList quotes;
+  final QuoteModelList quotes;
 
   @override
   Widget build(BuildContext context) {
