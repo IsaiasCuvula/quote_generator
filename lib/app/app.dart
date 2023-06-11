@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:quote_generator/config/config.dart';
-import 'package:quote_generator/presentation/presentation.dart';
-import 'package:quote_generator/translations/translations.dart';
+import 'package:quote_generator/common/common.dart';
+import 'package:quote_generator/features/quote/quote.dart';
 
 class QuoteGeneratorApp extends ConsumerWidget {
   const QuoteGeneratorApp({super.key});

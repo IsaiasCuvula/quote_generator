@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:quote_generator/utils/shared_prefs.dart';
+import 'package:quote_generator/features/quote/utils/shared_prefs.dart';
 import 'app/app.dart';
 
 void main() async {
