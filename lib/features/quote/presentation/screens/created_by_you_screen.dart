@@ -5,6 +5,7 @@ import 'package:quote_generator/features/quote/quote.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:quote_generator/common/common.dart';
 import 'package:quote_generator/features/shared/shared.dart';
+import 'package:quote_generator/features/shared/widgets/display_message_card.dart';
 
 class CreateByYouScreen extends StatelessWidget {
   static CreateByYouScreen builder(
@@ -41,20 +42,27 @@ class CreateByYouScreen extends StatelessWidget {
           builder: (ctx, ref, child) {
             final quoteState = ref.watch(getQuotesProvider);
             final quotes = quoteState.allQuotes;
-            return quotes.isEmpty
-                ? Center(
-                    child: Padding(
-                      padding: Dimensions.kPaddingAllLarge,
-                      child: EmptyQuoteCard(
-                        displayIcon: FontAwesomeIcons.list,
-                        displayText: l10n.empty_card_created_by_you,
-                      ),
-                    ),
-                  )
-                : ListOfQuotes(
-                    key: const Key('CreatedByYouScreen'),
-                    quotes: quotes,
-                  );
+            final isLoading = quoteState.isLoading;
+            final message = quoteState.message;
+
+            return isLoading
+                ? const LoadingView()
+                : message.isNotEmpty
+                    ? DisplayErrorMessage(message: message)
+                    : quotes.isEmpty
+                        ? Center(
+                            child: Padding(
+                              padding: Dimensions.kPaddingAllLarge,
+                              child: EmptyQuoteCard(
+                                displayIcon: FontAwesomeIcons.list,
+                                displayText: l10n.empty_card_created_by_you,
+                              ),
+                            ),
+                          )
+                        : ListOfQuotes(
+                            key: const Key('CreatedByYouScreen'),
+                            quotes: quotes,
+                          );
           },
         ),
       ),

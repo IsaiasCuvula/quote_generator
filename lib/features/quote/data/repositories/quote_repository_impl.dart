@@ -41,16 +41,10 @@ class QuoteRepositoryImpl implements QuoteRepository {
   @override
   Future<Either<Failure, QuoteList>> getQuotes() async {
     try {
-      final results = _localDatasource.getQuotes();
-      final quotesStream = results.map((quotes) {
-        final quotesList = <Quote>[];
-        for (QuoteModel quoteModel in quotes) {
-          final quote = QuoteMapper.toEntity(quoteModel);
-          quotesList.add(quote);
-        }
-        return quotesList;
-      });
-      final quotes = await quotesStream.first;
+      final results = await _localDatasource.getQuotes();
+      final quotes = results.map((quoteModel) {
+        return QuoteMapper.toEntity(quoteModel);
+      }).toList();
       return Right(quotes);
     } catch (e) {
       return const Left(Failure(ErrorMessage.getQuoteError));

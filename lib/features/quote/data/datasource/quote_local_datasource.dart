@@ -57,13 +57,13 @@ class QuoteLocalDatasource {
     });
   }
 
-  Stream<QuoteModelList> getQuotes() async* {
+  Future<QuoteModelList> getQuotes() async {
     final db = await database;
     final List<Map<String, dynamic>> maps = await db.query(
       Constants.dbTable,
       orderBy: "id DESC",
     );
-    yield List.generate(maps.length, (index) {
+    return List.generate(maps.length, (index) {
       return QuoteModel.fromJson(maps[index]);
     });
   }
