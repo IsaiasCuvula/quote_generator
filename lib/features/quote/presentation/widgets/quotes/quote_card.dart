@@ -10,7 +10,7 @@ class QuoteCard extends StatelessWidget {
     required this.quote,
   });
 
-  final QuoteModel quote;
+  final Quote quote;
 
   @override
   Widget build(BuildContext context) {

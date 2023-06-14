@@ -17,9 +17,11 @@ class CreateByYouScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = context.l10n;
+
     return Scaffold(
       body: BodyAndAppBarNestedScrollView(
-        appBarTitle: context.l10n.app_bar_create_by_you,
+        appBarTitle: l10n.app_bar_create_by_you,
         actions: [
           IconButton(
             onPressed: () => context.push('/settings'),
@@ -36,8 +38,8 @@ class CreateByYouScreen extends StatelessWidget {
           ),
         ],
         body: Consumer(
-          builder: ((context, ref, child) {
-            final quoteState = ref.watch(quoteProvider);
+          builder: (ctx, ref, child) {
+            final quoteState = ref.watch(getQuotesProvider);
             final quotes = quoteState.allQuotes;
             return quotes.isEmpty
                 ? Center(
@@ -45,7 +47,7 @@ class CreateByYouScreen extends StatelessWidget {
                       padding: Dimensions.kPaddingAllLarge,
                       child: EmptyQuoteCard(
                         displayIcon: FontAwesomeIcons.list,
-                        displayText: context.l10n.empty_card_created_by_you,
+                        displayText: l10n.empty_card_created_by_you,
                       ),
                     ),
                   )
@@ -53,7 +55,7 @@ class CreateByYouScreen extends StatelessWidget {
                     key: const Key('CreatedByYouScreen'),
                     quotes: quotes,
                   );
-          }),
+          },
         ),
       ),
     );

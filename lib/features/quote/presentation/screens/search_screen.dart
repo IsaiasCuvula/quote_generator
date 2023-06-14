@@ -34,7 +34,7 @@ class _SearchScreenState extends ConsumerState<SearchScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final quoteState = ref.watch(quoteProvider);
+    final quoteState = ref.watch(searchQuoteProvider);
     final quotes = quoteState.searcherdQuotes;
 
     return Scaffold(
@@ -72,9 +72,9 @@ class _SearchScreenState extends ConsumerState<SearchScreen> {
   void _searchQuote(String text) async {
     final query = text.trim();
     if (query.isNotEmpty) {
-      await ref.read(quoteProvider.notifier).searchQuote(query);
+      await ref.watch(searchQuoteProvider.notifier).searchQuote(query);
     } else {
-      ref.read(quoteProvider.notifier).clearSearchedQuotesEvent();
+      ref.read(searchQuoteProvider.notifier).clearSearchedQuotesEvent();
     }
   }
 }

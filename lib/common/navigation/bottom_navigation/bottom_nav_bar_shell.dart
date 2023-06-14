@@ -4,8 +4,6 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:go_router/go_router.dart';
 import 'package:quote_generator/common/common.dart';
 
-import 'bottom_navigation.dart';
-
 class BottomNavBarShell extends StatelessWidget {
   static BottomNavBarShell builder(
     BuildContext context,

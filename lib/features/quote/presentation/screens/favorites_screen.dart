@@ -14,12 +14,14 @@ class FavoriteScreen extends ConsumerWidget {
       const FavoriteScreen();
 
   const FavoriteScreen({super.key});
-  static const itemsFav = <QuoteCard>[];
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final l10n = context.l10n;
-    final favoritesQuotes = ref.watch(quoteProvider).favoritesQuotes;
+
+    final favoritesQuotes =
+        ref.watch(getFavoritesQuotesProvider).favoritesQuotes;
+
     return Scaffold(
       body: BodyAndAppBarNestedScrollView(
         appBarTitle: l10n.app_bar_favorite,

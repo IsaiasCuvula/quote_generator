@@ -28,6 +28,7 @@ class QuoteModel extends Equatable {
   @override
   List<Object> get props {
     return [
+      id!,
       text,
       author,
       textAlign,
@@ -42,6 +43,7 @@ class QuoteModel extends Equatable {
 
   Map<String, dynamic> toJson() {
     return <String, dynamic>{
+      'id': id,
       'text': text,
       'author': author,
       'textAlign': textAlign,
@@ -56,6 +58,7 @@ class QuoteModel extends Equatable {
 
   factory QuoteModel.fromJson(Map<String, dynamic> map) {
     return QuoteModel(
+      id: map['id'] as int,
       text: map['text'] as String,
       author: map['author'] as String,
       textAlign: map['textAlign'] as String,
@@ -78,8 +81,10 @@ class QuoteModel extends Equatable {
     double? wordSpacing,
     double? letterSpacing,
     int? isFavorite,
+    int? id,
   }) {
     return QuoteModel(
+      id: id ?? this.id,
       text: text ?? this.text,
       author: author ?? this.author,
       textAlign: textAlign ?? this.textAlign,

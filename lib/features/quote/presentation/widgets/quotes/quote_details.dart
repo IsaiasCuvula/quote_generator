@@ -3,7 +3,7 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:quote_generator/features/quote/quote.dart';
-import 'package:quote_generator/features/shared/shared_helpers.dart';
+import 'package:quote_generator/features/shared/shared.dart';
 import 'package:share_plus/share_plus.dart';
 import 'package:quote_generator/common/common.dart';
 
@@ -13,13 +13,13 @@ class QuoteDetails extends ConsumerWidget {
     required this.quote,
   });
 
-  final QuoteModel quote;
+  final Quote quote;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final theme = Theme.of(context);
     final textColor = theme.colorScheme.onSurface;
-    final displFavoriteIcon = quote.isFavorite == 1
+    final displayFavoriteIcon = quote.isFavorite == 1
         ? FontAwesomeIcons.solidHeart
         : FontAwesomeIcons.heart;
 
@@ -64,13 +64,13 @@ class QuoteDetails extends ConsumerWidget {
             children: [
               IconButton(
                 icon: Icon(
-                  displFavoriteIcon,
+                  displayFavoriteIcon,
                   size: Dimensions.iconSizeLarge,
                 ),
                 color: textColor,
                 onPressed: () async {
                   await ref
-                      .read(quoteProvider.notifier)
+                      .read(updateQuoteProvider.notifier)
                       .updateFavorite(quote)
                       .then((value) {
                     _showSnackBar(context);

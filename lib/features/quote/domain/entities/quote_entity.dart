@@ -1,3 +1,4 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:equatable/equatable.dart';
 
 class Quote extends Equatable {
@@ -22,12 +23,13 @@ class Quote extends Equatable {
     required this.fontWeight,
     required this.wordSpacing,
     required this.letterSpacing,
-    this.isFavorite = 0,
+    required this.isFavorite,
   });
 
   @override
   List<Object> get props {
     return [
+      id!,
       text,
       author,
       textAlign,
@@ -39,4 +41,33 @@ class Quote extends Equatable {
       isFavorite,
     ];
   }
+
+  Quote copyWith({
+    int? id,
+    String? text,
+    String? author,
+    String? textAlign,
+    int? backgroundColor,
+    double? fontSize,
+    String? fontWeight,
+    double? wordSpacing,
+    double? letterSpacing,
+    int? isFavorite,
+  }) {
+    return Quote(
+      id: id ?? this.id,
+      text: text ?? this.text,
+      author: author ?? this.author,
+      textAlign: textAlign ?? this.textAlign,
+      backgroundColor: backgroundColor ?? this.backgroundColor,
+      fontSize: fontSize ?? this.fontSize,
+      fontWeight: fontWeight ?? this.fontWeight,
+      wordSpacing: wordSpacing ?? this.wordSpacing,
+      letterSpacing: letterSpacing ?? this.letterSpacing,
+      isFavorite: isFavorite ?? this.isFavorite,
+    );
+  }
+
+  @override
+  bool get stringify => true;
 }

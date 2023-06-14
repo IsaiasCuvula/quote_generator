@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
-import 'package:quote_generator/features/quote/quote.dart';
 import 'package:quote_generator/common/common.dart';
+import 'package:quote_generator/features/quote/quote.dart';
 import 'package:quote_generator/features/shared/shared.dart';
 
 class Helpers {
@@ -65,7 +65,7 @@ class Helpers {
     Widget deleteButton = TextButton(
       onPressed: () async {
         context.pop();
-        await ref.read(quoteProvider.notifier).deleteQuote(quoteId).then(
+        await ref.read(deleteQuoteProvider.notifier).deleteQuote(quoteId).then(
           (value) {
             SharedHelpers.displaySnackbar(
               context,

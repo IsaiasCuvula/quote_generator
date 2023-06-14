@@ -44,7 +44,9 @@ class SearchTextField extends StatelessWidget {
             return IconButton(
               onPressed: () {
                 searchController.clear();
-                ref.read(quoteProvider.notifier).clearSearchedQuotesEvent();
+                ref
+                    .read(searchQuoteProvider.notifier)
+                    .clearSearchedQuotesEvent();
               },
               icon: const FaIcon(FontAwesomeIcons.xmark),
             );

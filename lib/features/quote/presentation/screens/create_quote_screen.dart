@@ -3,7 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:quote_generator/common/common.dart';
 import 'package:quote_generator/features/quote/quote.dart';
-import 'package:quote_generator/features/shared/shared_helpers.dart';
+import 'package:quote_generator/features/shared/shared.dart';
 
 class CreateQuoteScreen extends ConsumerWidget {
   static CreateQuoteScreen builder(
@@ -68,7 +68,7 @@ class CreateQuoteScreen extends ConsumerWidget {
     final l10n = ctx.l10n;
     FocusManager.instance.primaryFocus?.unfocus();
     if (quoteText.trim().isNotEmpty) {
-      await ref.read(quoteProvider.notifier).addQuote().then(
+      await ref.read(addQuoteProvider.notifier).addQuote().then(
         (value) {
           ctx.pop();
           SharedHelpers.displaySnackbar(

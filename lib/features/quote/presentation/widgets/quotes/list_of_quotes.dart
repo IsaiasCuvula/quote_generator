@@ -4,6 +4,7 @@ import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:go_router/go_router.dart';
 import 'package:quote_generator/common/common.dart';
 import 'package:quote_generator/features/quote/quote.dart';
+import 'package:quote_generator/features/shared/shared.dart';
 
 class ListOfQuotes extends StatelessWidget {
   const ListOfQuotes({
@@ -11,7 +12,7 @@ class ListOfQuotes extends StatelessWidget {
     required this.quotes,
   }) : super(key: key);
 
-  final QuoteModelList quotes;
+  final QuoteList quotes;
 
   @override
   Widget build(BuildContext context) {
@@ -30,16 +31,11 @@ class ListOfQuotes extends StatelessWidget {
               return Consumer(builder: (ctx, ref, child) {
                 return InkWell(
                   borderRadius: Dimensions.kBorderRadiusAllLarge,
-                  onTap: () async {
-                    await ref
-                        .read(quoteProvider.notifier)
-                        .getQuoteById(quote.id!)
-                        .then((value) {
-                      context.pushNamed(
-                        '/quoteDetails',
-                        params: {'id': '${quote.id}'},
-                      );
-                    });
+                  onTap: () {
+                    context.pushNamed(
+                      '/quoteDetails',
+                      params: {'id': '${quote.id}'},
+                    );
                   },
                   child: QuoteCard(quote: quote),
                 );
