@@ -31,13 +31,14 @@ class QuoteCard extends StatelessWidget {
     );
 
     final backgroundColor = Helpers.intToColor(quote.backgroundColor);
-    final unselectedIconsColor = colorScheme.onPrimary;
+
     final displayFavoriteIcon = quote.isFavorite == 1
         ? FontAwesomeIcons.solidHeart
         : FontAwesomeIcons.heart;
-    final selectedIconColor = quote.isFavorite == 1
-        ? colorScheme.tertiaryContainer
-        : unselectedIconsColor;
+    final unSelectedIconColor = colorScheme.onPrimary;
+    final selectedIconColor = colorScheme.onPrimary;
+    final iconsColor =
+        quote.isFavorite == 1 ? selectedIconColor : unSelectedIconColor;
 
     return Card(
       elevation: 2,
@@ -138,7 +139,7 @@ class QuoteCard extends StatelessWidget {
                       child: FaIcon(
                         FontAwesomeIcons.copy,
                         size: Dimensions.iconSizeSmallest,
-                        color: unselectedIconsColor,
+                        color: iconsColor,
                       ),
                       onPressed: () async {
                         await Clipboard.setData(
