@@ -123,13 +123,10 @@ class QuoteDetails extends ConsumerWidget {
 
   void _showSnackBar(BuildContext context) {
     final l10n = context.l10n;
-    String msg = '';
-    final bool isfavorite = quote.isFavorite == 0 ? false : true;
-    if (isfavorite) {
-      msg = l10n.quote_removed_from_fav;
-    } else {
-      msg = l10n.quote_added_to_fav;
-    }
+    final String msg = quote.isFavorite == 1
+        ? l10n.quote_removed_from_fav
+        : l10n.quote_added_to_fav;
+
     SharedHelpers.displaySnackbar(
       context,
       msg,

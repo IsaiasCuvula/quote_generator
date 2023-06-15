@@ -123,7 +123,14 @@ class QuoteCard extends StatelessWidget {
                       onPressed: () async {
                         await ref
                             .read(updateQuoteProvider.notifier)
-                            .updateFavorite(quote);
+                            .updateFavorite(quote)
+                            .then((value) async {
+                          await SharedHelpers.displaySnackbar(
+                            ctx,
+                            _addOrRemovefavMessage(ctx),
+                            true,
+                          );
+                        });
                       },
                     ),
                     Dimensions.kHorizontalSpaceLarge,
@@ -155,5 +162,12 @@ class QuoteCard extends StatelessWidget {
         ],
       ),
     );
+  }
+
+  String _addOrRemovefavMessage(BuildContext context) {
+    final l10n = context.l10n;
+    return quote.isFavorite == 1
+        ? l10n.quote_removed_from_fav
+        : l10n.quote_added_to_fav;
   }
 }
