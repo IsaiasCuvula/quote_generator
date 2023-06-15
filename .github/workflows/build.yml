@@ -12,7 +12,13 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
-      - uses: subosito/flutter-action@v2
+      - name: Setup Java
+        uses: actions/setup-java@v2
+        with:
+            java-version: '12.x' 
+            distribution: 'adopt'
+        env:
+            JAVA_HOME: ${{ env.JAVA_HOME }}
       
       - name: Setup Flutter SDK
         uses: subosito/flutter-action@v2
