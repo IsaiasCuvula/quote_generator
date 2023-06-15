@@ -25,20 +25,20 @@ class _TextSizeSelectorState extends ConsumerState<TextSizeSelector> {
 
   @override
   Widget build(BuildContext context) {
-    final theme = Theme.of(context);
+    final textTheme = context.textTheme;
 
     final fontSizes = [
       Text(
         context.l10n.small,
-        style: theme.textTheme.bodySmall,
+        style: textTheme.bodySmall,
       ),
       Text(
         context.l10n.medium,
-        style: theme.textTheme.bodyMedium,
+        style: textTheme.bodyMedium,
       ),
       Text(
         context.l10n.large,
-        style: theme.textTheme.bodyLarge,
+        style: textTheme.bodyLarge,
       ),
     ];
 

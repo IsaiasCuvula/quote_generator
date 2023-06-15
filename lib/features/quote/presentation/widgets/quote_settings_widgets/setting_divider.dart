@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:quote_generator/common/common.dart';
 
 class SettingsDivider extends StatelessWidget {
   const SettingsDivider({
@@ -10,7 +11,7 @@ class SettingsDivider extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final colorScheme = Theme.of(context).colorScheme;
+    final colorScheme = context.colorScheme;
     return Divider(
       color: colorScheme.secondary,
       thickness: thickness,

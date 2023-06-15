@@ -15,9 +15,8 @@ class QuoteCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final theme = Theme.of(context);
-    final textTheme = theme.textTheme;
-    final colorScheme = theme.colorScheme;
+    final textTheme = context.textTheme;
+    final colorScheme = context.colorScheme;
     final autherTextStyle = textTheme.labelLarge?.copyWith(
       letterSpacing: quote.letterSpacing,
       color: colorScheme.onSurface,

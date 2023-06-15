@@ -14,22 +14,21 @@ class SettingsScreen extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final theme = Theme.of(context);
+    final l10n = context.l10n;
     final themeState = ref.watch(themeProvider);
-    final switchColor = theme.colorScheme.primary;
-    final themeLabelDisplay = themeState == ThemeMode.dark
-        ? context.l10n.dark_mode
-        : context.l10n.light_mode;
+    final switchColor = context.colorScheme.primary;
+    final themeLabelDisplay =
+        themeState == ThemeMode.dark ? l10n.dark_mode : l10n.light_mode;
     return Scaffold(
       body: BodyAndAppBarNestedScrollView(
-        appBarTitle: context.l10n.app_bar_settings,
+        appBarTitle: l10n.app_bar_settings,
         centerTitle: true,
         body: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
             Dimensions.kVerticalSpaceLarge,
             ListTile(
-              leading: Text(context.l10n.language),
+              leading: Text(l10n.language),
               trailing: Padding(
                 padding: Dimensions.kPaddingAllSmall,
                 child: const LanguageSelector(),

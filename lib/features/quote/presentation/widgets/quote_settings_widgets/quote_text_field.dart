@@ -27,11 +27,10 @@ class _QuoteTextFieldState extends ConsumerState<QuoteTextField> {
 
   @override
   Widget build(BuildContext context) {
-    final theme = Theme.of(context);
-    final textTheme = theme.textTheme;
+    final textTheme = context.textTheme;
     final textSettings = ref.watch(textSettingsProvider);
     final textAlign = textSettings.textAlign;
-    final textColor = theme.colorScheme.onBackground;
+    final textColor = context.colorScheme.onBackground;
     final textFontSize = textSettings.fontSize;
     final textFontWeight = textSettings.fontWeight;
     final textWordSpacing = textSettings.wordSpacing;

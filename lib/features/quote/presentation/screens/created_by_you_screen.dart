@@ -25,13 +25,13 @@ class CreateByYouScreen extends StatelessWidget {
         appBarTitle: l10n.app_bar_create_by_you,
         actions: [
           IconButton(
-            onPressed: () => context.push('/settings'),
+            onPressed: () => context.push(RoutesName.settings),
             icon: const FaIcon(FontAwesomeIcons.gear),
           ),
           Padding(
             padding: Dimensions.kPaddingHorizontalSmall,
             child: IconButton(
-              onPressed: () => context.push('/createQuote'),
+              onPressed: () => context.push(RoutesName.createQuote),
               icon: const FaIcon(
                 FontAwesomeIcons.plus,
               ),

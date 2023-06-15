@@ -15,10 +15,8 @@ class CreateQuoteScreen extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final theme = Theme.of(context);
-    final textTheme = theme.textTheme;
+    final textTheme = context.textTheme;
     final l10n = context.l10n;
-
     return GestureDetector(
       onTap: () {
         FocusManager.instance.primaryFocus?.unfocus();
@@ -35,7 +33,7 @@ class CreateQuoteScreen extends ConsumerWidget {
                 child: Text(
                   l10n.done.toUpperCase(),
                   style: textTheme.titleLarge?.copyWith(
-                    color: theme.colorScheme.primary,
+                    color: context.colorScheme.primary,
                   ),
                 ),
               ),
