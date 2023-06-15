@@ -29,5 +29,6 @@ class UpdateQuoteNotifier extends StateNotifier<QuoteState> {
       ),
     );
     await _ref.read(getFavoritesQuotesProvider.notifier).getFavoritesQuotes();
+    await _ref.read(getQuotesProvider.notifier).getQuotes();
   }
 }

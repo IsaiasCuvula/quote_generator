@@ -43,7 +43,7 @@ class Helpers {
     }
   }
 
-  // //Others
+  //Others
   static int stringToInt(String value) {
     try {
       return int.parse(value);

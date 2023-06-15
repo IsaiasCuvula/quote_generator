@@ -34,7 +34,8 @@ class Dimensions {
   static final kBorderRadiusAllLarge = BorderRadius.circular(30).w;
   static final kBorderRadiusAllMedium = BorderRadius.circular(20).w;
   static final kBorderRadiusAllSmall = BorderRadius.circular(16).w;
-  static final kBorderRadiusAllSmallest = BorderRadius.circular(10).w;
+  static final kBorderRadiusAllSmallest = BorderRadius.circular(6).w;
+  static final kRadiusAllSmallest = const Radius.circular(6).w;
 
   //VerticalSpace
   static final kVerticalSpaceLargest = SizedBox(height: 100.h);
@@ -62,12 +63,16 @@ class Dimensions {
   static final kScreenHeight30 = 0.3.sh;
   static final kQuoteTextSettingHeight = 0.055.sh;
 
+  //Quote card
+  static final double kQuoteCardFooterHigh = 50.h;
+
   // Size
   static final double iconSizeLargest = 80.h;
   static final double iconSizeLarger = 48.h;
   static final double iconSizeLarge = 36.h;
   static final double iconSizeMedium = 30.h;
   static final double iconSizeSmall = 24.h;
+  static final double iconSizeSmallest = 16.h;
 
   static final double sizeLargest = 50.h;
   static final double sizeLarger = 20.h;
