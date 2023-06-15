@@ -129,4 +129,7 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String get light_mode => 'Modo claro ';
+
+  @override
+  String get copied_to_clipboard => 'citação copiada';
 }

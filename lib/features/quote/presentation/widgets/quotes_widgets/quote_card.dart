@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:go_router/go_router.dart';
 import 'package:quote_generator/features/quote/quote.dart';
 import 'package:quote_generator/common/common.dart';
+import 'package:quote_generator/features/shared/util/shared_helpers.dart';
 
 class QuoteCard extends StatelessWidget {
   const QuoteCard({super.key, required this.quote});
@@ -132,7 +134,17 @@ class QuoteCard extends StatelessWidget {
                         color: unselectedIconsColor,
                       ),
                       onPressed: () async {
-                        //copy to clipboard
+                        await Clipboard.setData(
+                          ClipboardData(
+                            text: '${quote.text}\n${quote.author}',
+                          ),
+                        ).then((value) async {
+                          await SharedHelpers.displaySnackbar(
+                            ctx,
+                            ctx.l10n.copied_to_clipboard,
+                            true,
+                          );
+                        });
                       },
                     ),
                   ],

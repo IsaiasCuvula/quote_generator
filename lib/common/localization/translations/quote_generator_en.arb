@@ -49,5 +49,7 @@
     "language": "Language",
     "dark_mode": "Dark",
     "light_mode": "Light",
+    "@CLIPBOARD": {},
+    "copied_to_clipboard": "quote copied to clipboard",
     "@END_OF_FILE": {}
 }

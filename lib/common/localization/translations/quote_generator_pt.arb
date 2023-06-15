@@ -50,5 +50,7 @@
     "language": "Idioma",
     "dark_mode": "Modo escuro",
     "light_mode": "Modo claro ",
+    "@CLIPBOARD": {},
+    "copied_to_clipboard": "citação copiada",
     "@END_OF_FILE": {}
 }
