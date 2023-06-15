@@ -9,7 +9,7 @@ final _shellNavigatorKey = GlobalKey<NavigatorState>();
 
 final routes = [
   GoRoute(
-    path: '/createQuote',
+    path: RoutesName.createQuote,
     parentNavigatorKey: RoutesConfig.navigationKey,
     pageBuilder: (context, state) {
       return NoTransitionPage(
@@ -18,8 +18,8 @@ final routes = [
     },
   ),
   GoRoute(
-    name: '/quoteDetails',
-    path: '/quoteDetails/:id',
+    name: RoutesName.detailScreen,
+    path: '${RoutesName.detailScreen}/:id',
     parentNavigatorKey: RoutesConfig.navigationKey,
     pageBuilder: (context, state) {
       return NoTransitionPage(
@@ -32,7 +32,7 @@ final routes = [
     },
   ),
   GoRoute(
-    path: '/settings',
+    path: RoutesName.settings,
     parentNavigatorKey: RoutesConfig.navigationKey,
     pageBuilder: (context, state) {
       return NoTransitionPage(
@@ -54,7 +54,7 @@ final routes = [
     },
     routes: [
       GoRoute(
-        path: '/createdByYou',
+        path: RoutesName.createByYou,
         parentNavigatorKey: _shellNavigatorKey,
         pageBuilder: (context, state) {
           return NoTransitionPage(
@@ -63,7 +63,7 @@ final routes = [
         },
       ),
       GoRoute(
-        path: '/discovery',
+        path: RoutesName.discovery,
         parentNavigatorKey: _shellNavigatorKey,
         pageBuilder: (context, state) {
           return NoTransitionPage(
@@ -72,7 +72,7 @@ final routes = [
         },
       ),
       GoRoute(
-        path: '/search',
+        path: RoutesName.search,
         parentNavigatorKey: _shellNavigatorKey,
         pageBuilder: (context, state) {
           return NoTransitionPage(
@@ -81,7 +81,7 @@ final routes = [
         },
       ),
       GoRoute(
-        path: '/favorites',
+        path: RoutesName.favorites,
         parentNavigatorKey: _shellNavigatorKey,
         pageBuilder: (context, state) {
           return NoTransitionPage(
