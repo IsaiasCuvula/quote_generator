@@ -3,12 +3,12 @@ import 'package:quote_generator/features/quote/quote.dart';
 import 'package:quote_generator/features/shared/shared.dart';
 
 class UpdateQuote implements UseCase<int, Quote> {
-  final QuoteRepository repository;
+  final QuoteRepository _repository;
 
-  UpdateQuote(this.repository);
+  UpdateQuote(this._repository);
 
   @override
   Future<Either<Failure, int>> call(Quote params) async {
-    return await repository.updateQuote(params);
+    return await _repository.updateQuote(params);
   }
 }

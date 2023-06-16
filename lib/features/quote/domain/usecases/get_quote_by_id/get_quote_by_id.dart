@@ -4,11 +4,11 @@ import 'package:quote_generator/features/shared/errors/failure.dart';
 import 'package:quote_generator/features/shared/usecases/usecase.dart';
 
 class GetQuoteById implements UseCase<Quote?, int> {
-  final QuoteRepository repository;
+  final QuoteRepository _repository;
 
-  GetQuoteById(this.repository);
+  GetQuoteById(this._repository);
   @override
   Future<Either<Failure, Quote?>> call(int params) async {
-    return await repository.getQuoteById(params);
+    return await _repository.getQuoteById(params);
   }
 }
