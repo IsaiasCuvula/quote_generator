@@ -33,6 +33,10 @@ dependencies:
   dartz: ^0.10.1
   uuid: ^3.0.7
   image_gallery_saver: ^2.0.2
+  google_sign_in: ^6.1.4
+  firebase_auth: ^4.6.3
+  firebase_core: ^2.14.0
+  cloud_firestore: ^4.8.1
 
 dev_dependencies:
   flutter_test:
