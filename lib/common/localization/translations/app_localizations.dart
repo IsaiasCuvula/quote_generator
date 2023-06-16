@@ -356,6 +356,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'quote copied to clipboard'**
   String get copied_to_clipboard;
+
+  /// No description provided for @sign_in_google.
+  ///
+  /// In en, this message translates to:
+  /// **'Sign In with Google'**
+  String get sign_in_google;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

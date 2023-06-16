@@ -53,5 +53,7 @@
     "image_saved": "Foto salva na biblioteca",
     "@CLIPBOARD": {},
     "copied_to_clipboard": "citação copiada",
+    "@AUTH": {},
+    "sign_in_google": "Faça login no Google",
     "@END_OF_FILE": {}
 }

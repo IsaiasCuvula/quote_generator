@@ -135,4 +135,7 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String get copied_to_clipboard => 'citação copiada';
+
+  @override
+  String get sign_in_google => 'Faça login no Google';
 }

@@ -135,4 +135,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get copied_to_clipboard => 'quote copied to clipboard';
+
+  @override
+  String get sign_in_google => 'Sign In with Google';
 }
