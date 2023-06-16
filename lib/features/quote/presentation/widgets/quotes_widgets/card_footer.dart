@@ -25,8 +25,8 @@ class CardFooter extends StatelessWidget {
         ? FontAwesomeIcons.solidHeart
         : FontAwesomeIcons.heart;
 
-    final unSelectedIconColor = colorScheme.onPrimary;
-    final selectedIconColor = colorScheme.onPrimary;
+    final unSelectedIconColor = colorScheme.primary;
+    final selectedIconColor = colorScheme.primary;
 
     final iconsColor =
         quote.isFavorite == 1 ? selectedIconColor : unSelectedIconColor;
