@@ -15,6 +15,7 @@ class SettingsScreen extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final l10n = context.l10n;
+    final textTheme = context.textTheme;
     final themeState = ref.watch(themeProvider);
     final switchColor = context.colorScheme.primary;
     final themeLabelDisplay =
@@ -28,14 +29,20 @@ class SettingsScreen extends ConsumerWidget {
           children: [
             Dimensions.kVerticalSpaceLarge,
             ListTile(
-              leading: Text(l10n.language),
+              leading: Text(
+                l10n.language,
+                style: textTheme.bodyMedium,
+              ),
               trailing: Padding(
                 padding: Dimensions.kPaddingAllSmall,
                 child: const LanguageSelector(),
               ),
             ),
             ListTile(
-              leading: Text(themeLabelDisplay),
+              leading: Text(
+                themeLabelDisplay,
+                style: textTheme.bodyMedium,
+              ),
               trailing: Switch(
                 value: themeState == ThemeMode.dark,
                 activeColor: switchColor,
