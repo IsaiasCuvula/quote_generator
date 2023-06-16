@@ -50,6 +50,7 @@
     "language": "Idioma",
     "dark_mode": "Modo escuro",
     "light_mode": "Modo claro ",
+    "image_saved": "Foto salva na biblioteca",
     "@CLIPBOARD": {},
     "copied_to_clipboard": "citação copiada",
     "@END_OF_FILE": {}

@@ -131,5 +131,8 @@ class AppLocalizationsPt extends AppLocalizations {
   String get light_mode => 'Modo claro ';
 
   @override
+  String get image_saved => 'Foto salva na biblioteca';
+
+  @override
   String get copied_to_clipboard => 'citação copiada';
 }

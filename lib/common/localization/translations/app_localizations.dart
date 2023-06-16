@@ -345,6 +345,12 @@ abstract class AppLocalizations {
   /// **'Light'**
   String get light_mode;
 
+  /// No description provided for @image_saved.
+  ///
+  /// In en, this message translates to:
+  /// **'Photo Saved on Library'**
+  String get image_saved;
+
   /// No description provided for @copied_to_clipboard.
   ///
   /// In en, this message translates to:

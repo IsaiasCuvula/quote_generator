@@ -6,4 +6,9 @@ class ErrorMessage {
   static const String searchQuoteError = "Oops, we couldn't find this quote";
   static const String getQuoteByIdError =
       "Oops, we couldn't fetch quote with this id";
+
+  static const String failToDownload =
+      "Oops, we couldn't download this quote as image";
+  static const String failToCreateImge =
+      "Oops, we couldn't create an image from this quote";
 }

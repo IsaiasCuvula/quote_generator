@@ -4,7 +4,6 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:quote_generator/features/quote/quote.dart';
 import 'package:quote_generator/features/shared/shared.dart';
-import 'package:share_plus/share_plus.dart';
 import 'package:quote_generator/common/common.dart';
 
 class QuoteDetails extends ConsumerWidget {
@@ -79,14 +78,14 @@ class QuoteDetails extends ConsumerWidget {
               ),
               IconButton(
                 icon: Icon(
-                  FontAwesomeIcons.share,
+                  FontAwesomeIcons.shareNodes,
                   size: Dimensions.iconSizeLarge,
                 ),
                 color: textColor,
                 onPressed: () {
                   final text = quote.text;
                   final author = quote.author;
-                  _shareQuote(text, author);
+                  Helpers.shareQuote(text, author);
                 },
               ),
               IconButton(
@@ -132,9 +131,5 @@ class QuoteDetails extends ConsumerWidget {
       msg,
       true,
     );
-  }
-
-  void _shareQuote(String quote, String author) async {
-    await Share.share('${quote.trim()} \n\n- $author');
   }
 }
