@@ -47,5 +47,9 @@
 	<true/>
 	<key>UIApplicationSupportsIndirectInputEvents</key>
 	<true/>
+
+	<key>NSPhotoLibraryUsageDescription</key>
+		<string>Access to the photo library is required to save images to gallery.</string>
+
 </dict>
 </plist>

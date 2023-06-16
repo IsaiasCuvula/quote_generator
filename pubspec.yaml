@@ -31,6 +31,8 @@ dependencies:
   flutter_animate: ^4.1.1+1
   equatable: ^2.0.5
   dartz: ^0.10.1
+  uuid: ^3.0.7
+  image_gallery_saver: ^2.0.2
 
 dev_dependencies:
   flutter_test:
