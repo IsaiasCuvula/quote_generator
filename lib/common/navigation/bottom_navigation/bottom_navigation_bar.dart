@@ -7,9 +7,8 @@ class BottomNavBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final theme = Theme.of(context);
     return Material(
-      color: theme.colorScheme.secondary,
+      color: context.theme.colorScheme.secondary,
       borderRadius: Dimensions.kBorderRadiusAllLarge,
       type: MaterialType.canvas,
       clipBehavior: Clip.hardEdge,

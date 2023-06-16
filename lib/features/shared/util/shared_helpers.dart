@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:quote_generator/common/common.dart';
 import 'package:uuid/uuid.dart';
 
 class SharedHelpers {
   static displaySnackbar(BuildContext context, String message, bool isSucess) {
-    final theme = Theme.of(context);
+    final colorScheme = context.colorScheme;
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(
         content: Text(
           message,
-          style: theme.textTheme.bodySmall?.copyWith(
-            color: theme.colorScheme.onSurface,
-          ),
+          style: context.textTheme.bodyMedium,
         ),
-        backgroundColor: isSucess ? Colors.green : Colors.red,
+        backgroundColor:
+            isSucess ? colorScheme.onSecondary : colorScheme.onError,
       ),
     );
   }
