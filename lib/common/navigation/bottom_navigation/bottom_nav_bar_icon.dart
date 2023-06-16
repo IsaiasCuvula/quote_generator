@@ -15,7 +15,7 @@ class BottomNavBarIcon extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final colorScheme = Theme.of(context).colorScheme;
+    final colorScheme = context.colorScheme;
     final Color displayIconColor =
         isSelected ? colorScheme.tertiaryContainer : colorScheme.primary;
     final IconData displayIcon = isSelected ? selectedIcon : unselectedIcon;
