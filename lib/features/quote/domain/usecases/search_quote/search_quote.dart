@@ -3,11 +3,11 @@ import 'package:quote_generator/features/quote/quote.dart';
 import 'package:quote_generator/features/shared/shared.dart';
 
 class SearchQuote implements UseCase<QuoteList, String> {
-  final QuoteRepository repository;
+  final QuoteRepository _repository;
 
-  SearchQuote(this.repository);
+  SearchQuote(this._repository);
   @override
   Future<Either<Failure, QuoteList>> call(String params) async {
-    return await repository.searchQuote(params);
+    return await _repository.searchQuote(params);
   }
 }
