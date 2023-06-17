@@ -7,14 +7,14 @@ import 'package:quote_generator/common/common.dart';
 import 'package:quote_generator/features/shared/shared.dart';
 import 'package:quote_generator/features/shared/widgets/display_message_card.dart';
 
-class CreateByYouScreen extends StatelessWidget {
-  static CreateByYouScreen builder(
+class CreatedByYouScreen extends StatelessWidget {
+  static CreatedByYouScreen builder(
     BuildContext context,
     GoRouterState state,
   ) =>
-      const CreateByYouScreen();
+      const CreatedByYouScreen();
 
-  const CreateByYouScreen({super.key});
+  const CreatedByYouScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -25,13 +25,13 @@ class CreateByYouScreen extends StatelessWidget {
         appBarTitle: l10n.app_bar_create_by_you,
         actions: [
           IconButton(
-            onPressed: () => context.push(RoutesName.settings),
+            onPressed: () => context.push(RouteLocation.settings),
             icon: const FaIcon(FontAwesomeIcons.gear),
           ),
           Padding(
             padding: Dimensions.kPaddingHorizontalSmall,
             child: IconButton(
-              onPressed: () => context.push(RoutesName.createQuote),
+              onPressed: () => context.push(RouteLocation.createQuote),
               icon: const FaIcon(
                 FontAwesomeIcons.plus,
               ),
@@ -46,7 +46,7 @@ class CreateByYouScreen extends StatelessWidget {
             final message = quoteState.message;
 
             return isLoading
-                ? const LoadingView()
+                ? const LoadingScreen()
                 : message.isNotEmpty
                     ? DisplayErrorMessage(message: message)
                     : quotes.isEmpty

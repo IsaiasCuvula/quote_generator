@@ -42,7 +42,7 @@ class QuoteCard extends StatelessWidget {
             borderRadius: Dimensions.kBorderRadiusAllSmallest,
             onTap: () {
               context.pushNamed(
-                RoutesName.detailScreen,
+                RouteLocation.detailScreen,
                 params: {'id': '${quote.id}'},
               );
             },

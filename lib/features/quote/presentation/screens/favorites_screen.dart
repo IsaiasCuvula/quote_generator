@@ -30,7 +30,7 @@ class FavoriteScreen extends ConsumerWidget {
         appBarTitle: l10n.app_bar_favorite,
         centerTitle: true,
         body: isLoading
-            ? const LoadingView()
+            ? const LoadingScreen()
             : message.isNotEmpty
                 ? DisplayErrorMessage(message: message)
                 : favoritesQuotes.isEmpty
