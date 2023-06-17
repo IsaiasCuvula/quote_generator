@@ -17,20 +17,13 @@ class LanguageSelector extends ConsumerWidget {
           ref.read(appLocaleProvider.notifier).setLocale(locale);
         }
       },
-      items:
-          _getSupportedLocale().map<DropdownMenuItem<Locale>>((Locale locale) {
+      items: AppLocalizations.supportedLocales
+          .map<DropdownMenuItem<Locale>>((Locale locale) {
         return DropdownMenuItem<Locale>(
           value: locale,
           child: Text(locale.languageCode.toUpperCase()),
         );
       }).toList(),
-    );
-  }
-
-  List<Locale> _getSupportedLocale() {
-    return List.generate(
-      AppLocale.values.length,
-      (index) => AppLocale.values[index].locale,
     );
   }
 }

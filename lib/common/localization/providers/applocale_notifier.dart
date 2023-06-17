@@ -3,38 +3,29 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:quote_generator/common/shared_prefs/shared_prefs.dart';
 import 'package:quote_generator/features/quote/presentation/utils/utils.dart';
 
-enum AppLocale {
-  en(Locale('en', 'US')),
-  pt(Locale('pt', 'BR'));
+import '../translations/app_localizations.dart';
 
-  final Locale locale;
-  const AppLocale(this.locale);
-}
+const _defaultLocale = Locale('en');
 
 class LocaleNotifier extends StateNotifier<Locale> {
-  LocaleNotifier() : super(AppLocale.en.locale) {
+  LocaleNotifier() : super(_defaultLocale) {
     _initializeLocaleFromSharedPrefs();
   }
 
   void _initializeLocaleFromSharedPrefs() {
-    try {
-      final locale =
-          SharedPrefs.instance.getString(Constants.kLocale) ?? 'en_US';
-      if (locale == 'en_US') {
-        state = AppLocale.en.locale;
-      } else {
-        state = AppLocale.pt.locale;
-      }
-    } catch (e) {
-      state = AppLocale.en.locale;
-    }
+    final languageCode = SharedPrefs.instance.getString(Constants.kLocale) ??
+        _defaultLocale.languageCode;
+
+    state = AppLocalizations.supportedLocales.firstWhere(
+        (l) => l.languageCode == languageCode,
+        orElse: () => _defaultLocale);
   }
 
   void setLocale(Locale locale) async {
     state = locale;
     await SharedPrefs.instance.setString(
       Constants.kLocale,
-      locale.toString(),
+      locale.languageCode,
     );
   }
 }
