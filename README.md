@@ -10,7 +10,8 @@ This app is a quote generator that displays quotes that you and others create ev
 - Riverpod for State Management
 - GoRoute for Navigation
 - SQLite for local database
-- Shared Preferences 
+- Shared Preferences
+- Dark & Light Mode
 - Google Sign for login 
 - Internationalization (English & Portuguese)
 - And much more ...
