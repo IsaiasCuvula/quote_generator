@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:quote_generator/common/common.dart';
-import 'package:quote_generator/common/navigation/routers/error_screen.dart';
 import 'package:quote_generator/features/auth/auth.dart';
 
 final navigationKey = GlobalKey<NavigatorState>();
