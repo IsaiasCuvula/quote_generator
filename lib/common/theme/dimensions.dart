@@ -9,6 +9,10 @@ class Dimensions {
   static final kPaddingAllLarge = const EdgeInsets.all(20.0).w;
   static final kPaddingAllMedium = const EdgeInsets.all(10.0).w;
   static final kPaddingAllSmall = const EdgeInsets.all(8.0).w;
+  static final kBottomNavBarMargin = const EdgeInsets.symmetric(
+    horizontal: 50.0,
+    vertical: 20.0,
+  ).w;
 
   static final kPaddingHorizontalLarge = const EdgeInsets.symmetric(
     horizontal: 20.0,
