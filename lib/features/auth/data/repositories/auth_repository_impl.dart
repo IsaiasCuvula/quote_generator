@@ -33,14 +33,4 @@ class AuthRepositoryImpl implements AuthRepository {
   Future<void> signOut() async {
     return await _authRemoteDataSource.googleSignOut();
   }
-
-  @override
-  Future<Either<Failure, AppUser?>> getCurrentUser() async {
-    try {
-      final result = await _authRemoteDataSource.getCurrentUser();
-      return Right(result);
-    } catch (e) {
-      return const Left(Failure('something went wrong'));
-    }
-  }
 }

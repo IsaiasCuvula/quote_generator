@@ -6,8 +6,9 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:quote_generator/common/common.dart';
 import 'package:quote_generator/features/shared/shared.dart';
 import 'package:quote_generator/features/shared/widgets/display_message_card.dart';
+import 'package:quote_generator/features/user_profile/presentation/presentation.dart';
 
-class CreatedByYouScreen extends StatelessWidget {
+class CreatedByYouScreen extends ConsumerWidget {
   static CreatedByYouScreen builder(
     BuildContext context,
     GoRouterState state,
@@ -17,54 +18,53 @@ class CreatedByYouScreen extends StatelessWidget {
   const CreatedByYouScreen({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     final l10n = context.l10n;
+    final user = ref.watch(userProvider).appUser;
+    final quoteState = ref.watch(getQuotesProvider);
+    final quotes = quoteState.allQuotes;
+    final isLoading = quoteState.isLoading;
+    final message = quoteState.message;
 
     return Scaffold(
       body: BodyAndAppBarNestedScrollView(
         appBarTitle: l10n.app_bar_create_by_you,
         actions: [
           IconButton(
-            onPressed: () => context.push(RouteLocation.settings),
-            icon: const FaIcon(FontAwesomeIcons.gear),
+            onPressed: () => context.push(RouteLocation.createQuote),
+            icon: const FaIcon(
+              FontAwesomeIcons.plus,
+            ),
           ),
           Padding(
             padding: Dimensions.kPaddingHorizontalSmall,
             child: IconButton(
-              onPressed: () => context.push(RouteLocation.createQuote),
-              icon: const FaIcon(
-                FontAwesomeIcons.plus,
+              onPressed: () => context.push(RouteLocation.profile),
+              icon: DisplayUserImage(
+                radius: 14.0,
+                imageUrl: '${user?.profileImage}',
               ),
             ),
           ),
         ],
-        body: Consumer(
-          builder: (ctx, ref, child) {
-            final quoteState = ref.watch(getQuotesProvider);
-            final quotes = quoteState.allQuotes;
-            final isLoading = quoteState.isLoading;
-            final message = quoteState.message;
-
-            return isLoading
-                ? const LoadingScreen()
-                : message.isNotEmpty
-                    ? DisplayErrorMessage(message: message)
-                    : quotes.isEmpty
-                        ? Center(
-                            child: Padding(
-                              padding: Dimensions.kPaddingAllLarge,
-                              child: EmptyQuoteCard(
-                                displayIcon: FontAwesomeIcons.list,
-                                displayText: l10n.empty_card_created_by_you,
-                              ),
-                            ),
-                          )
-                        : ListOfQuotes(
-                            key: const Key('CreatedByYouScreen'),
-                            quotes: quotes,
-                          );
-          },
-        ),
+        body: isLoading
+            ? const LoadingScreen()
+            : message.isNotEmpty
+                ? DisplayErrorMessage(message: message)
+                : quotes.isEmpty
+                    ? Center(
+                        child: Padding(
+                          padding: Dimensions.kPaddingAllLarge,
+                          child: EmptyQuoteCard(
+                            displayIcon: FontAwesomeIcons.list,
+                            displayText: l10n.empty_card_created_by_you,
+                          ),
+                        ),
+                      )
+                    : ListOfQuotes(
+                        key: const Key('CreatedByYouScreen'),
+                        quotes: quotes,
+                      ),
       ),
     );
   }

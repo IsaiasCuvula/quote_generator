@@ -363,6 +363,12 @@ abstract class AppLocalizations {
   /// **'Go to home screen'**
   String get go_to_home;
 
+  /// No description provided for @email.
+  ///
+  /// In en, this message translates to:
+  /// **'Email'**
+  String get email;
+
   /// No description provided for @copied_to_clipboard.
   ///
   /// In en, this message translates to:

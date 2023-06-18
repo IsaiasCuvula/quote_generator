@@ -1,38 +1,37 @@
 import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
-
-import 'package:quote_generator/features/auth/auth.dart';
+import 'package:quote_generator/features/user_profile/user_profile.dart';
 
 @immutable
-class AuthState extends Equatable {
-  final AuthResult authResult;
+class UserProfileState extends Equatable {
+  final AppUser? appUser;
   final bool isLoading;
 
-  const AuthState({
-    required this.authResult,
+  const UserProfileState({
+    this.appUser,
     required this.isLoading,
   });
 
-  const AuthState.initial({
-    this.authResult = AuthResult.none,
+  const UserProfileState.initial({
+    this.appUser,
     this.isLoading = false,
   });
 
   @override
   List<Object> get props => [
-        authResult,
+        appUser!,
         isLoading,
       ];
 
   @override
   bool get stringify => true;
 
-  AuthState copyWith({
-    AuthResult? authResult,
+  UserProfileState copyWith({
+    AppUser? appUser,
     bool? isLoading,
   }) {
-    return AuthState(
-      authResult: authResult ?? this.authResult,
+    return UserProfileState(
+      appUser: appUser ?? this.appUser,
       isLoading: isLoading ?? this.isLoading,
     );
   }

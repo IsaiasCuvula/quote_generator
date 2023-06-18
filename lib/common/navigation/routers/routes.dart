@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:quote_generator/common/common.dart';
-import 'package:quote_generator/common/screens/profile_screen.dart';
+import 'package:quote_generator/features/user_profile/presentation/screens/profile_screen.dart';
 import 'package:quote_generator/features/auth/auth.dart';
 import 'package:quote_generator/features/discovery/discovery.dart';
 import 'package:quote_generator/features/quote/quote.dart';

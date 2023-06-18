@@ -140,6 +140,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get go_to_home => 'Go to home screen';
 
   @override
+  String get email => 'Email';
+
+  @override
   String get copied_to_clipboard => 'quote copied to clipboard';
 
   @override

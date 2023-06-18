@@ -5,5 +5,4 @@ abstract class AuthRemoteDataSource {
   Future<AuthResult> googleSignIn();
   Future<void> googleSignOut();
   Stream<User?> authStateChanges();
-  Future<AppUser?> getCurrentUser();
 }

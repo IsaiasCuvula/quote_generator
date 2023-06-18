@@ -1,11 +1,11 @@
 import 'package:dartz/dartz.dart';
-import 'package:quote_generator/features/auth/auth.dart';
 import 'package:quote_generator/features/shared/shared.dart';
+import 'package:quote_generator/features/user_profile/domain/domain.dart';
 
-class GetCurrentUserUseCase implements UseCase<AppUser?, NoParams> {
-  final AuthRepository _repository;
+class UserProfileUseCase implements UseCase<AppUser?, NoParams> {
+  final UserProfileRepository _repository;
 
-  GetCurrentUserUseCase(this._repository);
+  UserProfileUseCase(this._repository);
 
   @override
   Future<Either<Failure, AppUser?>> call(NoParams params) async {

@@ -140,6 +140,9 @@ class AppLocalizationsPt extends AppLocalizations {
   String get go_to_home => 'Ir para a tela inicial';
 
   @override
+  String get email => 'Email';
+
+  @override
   String get copied_to_clipboard => 'citação copiada';
 
   @override

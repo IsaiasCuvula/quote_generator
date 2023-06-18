@@ -7,5 +7,4 @@ abstract class AuthRepository {
   Future<Either<Failure, AuthResult>> signIn();
   Future<void> signOut();
   Stream<User?> authStateChanges();
-  Future<Either<Failure, AppUser?>> getCurrentUser();
 }
