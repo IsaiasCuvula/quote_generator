@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:quote_generator/common/common.dart';
+import 'package:quote_generator/common/screens/profile_screen.dart';
 import 'package:quote_generator/features/auth/auth.dart';
 import 'package:quote_generator/features/discovery/discovery.dart';
 import 'package:quote_generator/features/quote/quote.dart';
@@ -32,11 +33,13 @@ final routes = [
       );
     },
   ),
+
   GoRoute(
-    path: RouteLocation.settings,
+    path: RouteLocation.profile,
     parentNavigatorKey: navigationKey,
-    builder: SettingsScreen.builder,
+    builder: ProfileScreen.builder,
   ),
+
   GoRoute(
     path: RouteLocation.auth,
     parentNavigatorKey: navigationKey,
@@ -89,6 +92,15 @@ final routes = [
         pageBuilder: (context, state) {
           return NoTransitionPage(
             child: FavoriteScreen.builder(context, state),
+          );
+        },
+      ),
+      GoRoute(
+        path: RouteLocation.settings,
+        parentNavigatorKey: _shellNavigatorKey,
+        pageBuilder: (context, state) {
+          return NoTransitionPage(
+            child: SettingsScreen.builder(context, state),
           );
         },
       ),

@@ -13,4 +13,5 @@ class RouteLocation {
   static String get search => '/search';
   static String get favorites => '/favorites';
   static String get auth => '/auth';
+  static String get profile => '/profile';
 }

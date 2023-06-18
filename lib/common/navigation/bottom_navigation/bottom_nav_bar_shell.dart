@@ -47,33 +47,41 @@ class BottomNavBarShell extends StatelessWidget {
                       child: BottomNavBarIcon(
                         selectedIcon: FontAwesomeIcons.pencil,
                         unselectedIcon: FontAwesomeIcons.pencil,
-                        isSelected: _isItemSelected('/createdByYou'),
+                        isSelected: _isItemSelected(RouteLocation.createdByYou),
                       ),
-                      onTap: () => context.go('/createdByYou'),
+                      onTap: () => context.go(RouteLocation.createdByYou),
                     ),
                     BottomNavBarItem(
                       child: BottomNavBarIcon(
                         selectedIcon: FontAwesomeIcons.solidCompass,
                         unselectedIcon: FontAwesomeIcons.compass,
-                        isSelected: _isItemSelected('/discovery'),
+                        isSelected: _isItemSelected(RouteLocation.discovery),
                       ),
-                      onTap: () => context.go('/discovery'),
+                      onTap: () => context.go(RouteLocation.discovery),
                     ),
                     BottomNavBarItem(
                       child: BottomNavBarIcon(
                         selectedIcon: FontAwesomeIcons.magnifyingGlass,
                         unselectedIcon: FontAwesomeIcons.magnifyingGlass,
-                        isSelected: _isItemSelected('/search'),
+                        isSelected: _isItemSelected(RouteLocation.search),
                       ),
-                      onTap: () => context.go('/search'),
+                      onTap: () => context.go(RouteLocation.search),
                     ),
                     BottomNavBarItem(
                       child: BottomNavBarIcon(
                         selectedIcon: FontAwesomeIcons.solidHeart,
                         unselectedIcon: FontAwesomeIcons.heart,
-                        isSelected: _isItemSelected('/favorites'),
+                        isSelected: _isItemSelected(RouteLocation.favorites),
                       ),
-                      onTap: () => context.go('/favorites'),
+                      onTap: () => context.go(RouteLocation.favorites),
+                    ),
+                    BottomNavBarItem(
+                      child: BottomNavBarIcon(
+                        selectedIcon: FontAwesomeIcons.gear,
+                        unselectedIcon: FontAwesomeIcons.gear,
+                        isSelected: _isItemSelected(RouteLocation.settings),
+                      ),
+                      onTap: () => context.go(RouteLocation.settings),
                     ),
                   ],
                 ),
