@@ -2,7 +2,7 @@
 [![Flutter version](https://img.shields.io/badge/flutter-stable-blue?logo=flutter)](https://flutter.dev/docs/development/tools/sdk/releases)
 [![License: MIT](https://img.shields.io/badge/license-MIT-purple.svg)](https://opensource.org/licenses/MIT)
 
-This app is a quote generator that displays quotes that you and others create every time it's opened. It also includes a feature where users can favorite and share any quote.
+The Quote Generator App is an application that allows you to create quotes, add the author's name, and customize the style of the quote text. You can add spacing between words and letters, make it bold, and change the text font. Additionally, you have the option to mark a quote as a favorite, copy the quote text to the clipboard, and share it with other users. It also includes a feature that enables users to download the quote as an image.
 
 
 ## Technologies
