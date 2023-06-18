@@ -50,9 +50,12 @@
     "dark_mode": "Dark",
     "light_mode": "Light",
     "image_saved": "Photo Saved on Library",
+    "something_went_wrong": "Oops, Something went wrong!",
+    "go_to_home": "Go to home screen",
     "@CLIPBOARD": {},
     "copied_to_clipboard": "quote copied to clipboard",
     "@AUTH": {},
     "sign_in_google": "Sign In with Google",
+    "sign_out": "Sign Out",
     "@END_OF_FILE": {}
 }

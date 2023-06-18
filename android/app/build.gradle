@@ -47,10 +47,11 @@ android {
 
     defaultConfig {
         applicationId "com.bersyte.quote_generator"
-        minSdkVersion flutter.minSdkVersion
+        minSdkVersion 19
         targetSdkVersion flutter.targetSdkVersion
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName
+        multiDexEnabled true
     }
 
     buildTypes {

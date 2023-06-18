@@ -351,6 +351,18 @@ abstract class AppLocalizations {
   /// **'Photo Saved on Library'**
   String get image_saved;
 
+  /// No description provided for @something_went_wrong.
+  ///
+  /// In en, this message translates to:
+  /// **'Oops, Something went wrong!'**
+  String get something_went_wrong;
+
+  /// No description provided for @go_to_home.
+  ///
+  /// In en, this message translates to:
+  /// **'Go to home screen'**
+  String get go_to_home;
+
   /// No description provided for @copied_to_clipboard.
   ///
   /// In en, this message translates to:
@@ -362,6 +374,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Sign In with Google'**
   String get sign_in_google;
+
+  /// No description provided for @sign_out.
+  ///
+  /// In en, this message translates to:
+  /// **'Sign Out'**
+  String get sign_out;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

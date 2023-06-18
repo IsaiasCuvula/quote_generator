@@ -134,8 +134,17 @@ class AppLocalizationsPt extends AppLocalizations {
   String get image_saved => 'Foto salva na biblioteca';
 
   @override
+  String get something_went_wrong => 'Oops, algo deu errado!';
+
+  @override
+  String get go_to_home => 'Ir para a tela inicial';
+
+  @override
   String get copied_to_clipboard => 'citação copiada';
 
   @override
   String get sign_in_google => 'Faça login no Google';
+
+  @override
+  String get sign_out => 'Sair';
 }

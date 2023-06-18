@@ -10,6 +10,8 @@ class QuoteGeneratorApp extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final appLocale = ref.watch(appLocaleProvider);
     final theme = ref.watch(themeProvider);
+    final routeConfig = ref.watch(routerProvider);
+
     return ScreenUtilInit(
       designSize: const Size(375, 812),
       builder: (context, child) {
@@ -21,7 +23,9 @@ class QuoteGeneratorApp extends ConsumerWidget {
           themeMode: theme,
           localizationsDelegates: AppLocalizations.localizationsDelegates,
           supportedLocales: AppLocalizations.supportedLocales,
-          routerConfig: RoutesConfig.routeConfig,
+          routerDelegate: routeConfig.routerDelegate,
+          routeInformationParser: routeConfig.routeInformationParser,
+          routeInformationProvider: routeConfig.routeInformationProvider,
           locale: appLocale,
         );
       },

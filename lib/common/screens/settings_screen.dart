@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:go_router/go_router.dart';
 import 'package:quote_generator/common/common.dart';
+import 'package:quote_generator/features/auth/auth.dart';
 import 'package:quote_generator/features/shared/shared.dart';
 
 class SettingsScreen extends ConsumerWidget {
@@ -16,8 +18,9 @@ class SettingsScreen extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final l10n = context.l10n;
     final textTheme = context.textTheme;
+    final colorScheme = context.colorScheme;
     final themeState = ref.watch(themeProvider);
-    final switchColor = context.colorScheme.primary;
+    final switchColor = colorScheme.primary;
     final themeLabelDisplay =
         themeState == ThemeMode.dark ? l10n.dark_mode : l10n.light_mode;
     return Scaffold(
@@ -50,6 +53,21 @@ class SettingsScreen extends ConsumerWidget {
                 onChanged: (value) {
                   ref.read(themeProvider.notifier).changeTheme(value);
                 },
+              ),
+            ),
+            ListTile(
+              leading: Text(
+                l10n.sign_out,
+                style: textTheme.bodyMedium,
+              ),
+              trailing: IconButton(
+                onPressed: () async {
+                  await ref.read(authProvider.notifier).signOut();
+                },
+                icon: FaIcon(
+                  FontAwesomeIcons.arrowRightFromBracket,
+                  color: colorScheme.primary,
+                ),
               ),
             ),
           ],
