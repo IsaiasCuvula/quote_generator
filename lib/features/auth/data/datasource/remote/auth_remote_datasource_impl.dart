@@ -39,4 +39,16 @@ class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
     await FirebaseAuth.instance.signOut();
     await GoogleSignIn().signOut();
   }
+
+  @override
+  Future<AppUser?> getCurrentUser() async {
+    final currentUser = FirebaseAuth.instance.currentUser;
+    final appUser = AppUser(
+      userId: '${currentUser?.uid}',
+      displayName: '${currentUser?.displayName}',
+      email: '${currentUser?.email}',
+      profileImage: '${currentUser?.photoURL}',
+    );
+    return appUser;
+  }
 }
