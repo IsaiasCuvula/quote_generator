@@ -1,4 +1,6 @@
 # Quote Generator App
+[![Flutter version](https://img.shields.io/badge/flutter-stable-blue?logo=flutter)](https://flutter.dev/docs/development/tools/sdk/releases)
+[![License: MIT](https://img.shields.io/badge/license-MIT-purple.svg)](https://opensource.org/licenses/MIT)
 
 This app is a quote generator that displays quotes that you and others create every time it's opened. It also includes a feature where users can favorite and share any quote.
 
