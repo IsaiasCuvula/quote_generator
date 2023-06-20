@@ -1,6 +1,5 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:quote_generator/features/quote/quote.dart';
-import 'package:quote_generator/features/shared/shared.dart';
 
 class AddQuoteNotifier extends StateNotifier<QuoteState> {
   AddQuoteNotifier(this._addQuote, this._ref)

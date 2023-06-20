@@ -6,3 +6,4 @@ export 'get_quote_by_id/get_quote_by_id.dart';
 export 'update_quote/update_quote.dart';
 export 'search_quote/search_quote.dart';
 export 'get_favorites/get_favorites.dart';
+export 'quote_state.dart';

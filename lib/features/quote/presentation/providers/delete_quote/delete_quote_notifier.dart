@@ -1,6 +1,5 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:quote_generator/features/quote/quote.dart';
-import 'package:quote_generator/features/shared/shared.dart';
 
 class DeleteQuoteNotifier extends StateNotifier<QuoteState> {
   DeleteQuoteNotifier(this._deleteQuote, this._ref)

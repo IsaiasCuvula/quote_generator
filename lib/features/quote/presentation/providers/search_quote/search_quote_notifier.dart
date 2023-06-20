@@ -1,6 +1,5 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:quote_generator/features/quote/quote.dart';
-import 'package:quote_generator/features/shared/shared.dart';
 
 class SearchQuoteNotifier extends StateNotifier<QuoteState> {
   SearchQuoteNotifier(this._searchQuote) : super(const QuoteState.initial());
