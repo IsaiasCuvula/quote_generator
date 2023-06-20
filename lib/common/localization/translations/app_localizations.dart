@@ -279,6 +279,12 @@ abstract class AppLocalizations {
   /// **'Quote created successfully!'**
   String get quote_created_successfully;
 
+  /// No description provided for @quote_posted_successfully.
+  ///
+  /// In en, this message translates to:
+  /// **'Quote posted successfully!'**
+  String get quote_posted_successfully;
+
   /// No description provided for @quote_deleted_successfully.
   ///
   /// In en, this message translates to:

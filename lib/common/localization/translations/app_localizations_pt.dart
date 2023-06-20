@@ -98,6 +98,9 @@ class AppLocalizationsPt extends AppLocalizations {
   String get quote_created_successfully => 'Citação criada com sucesso!';
 
   @override
+  String get quote_posted_successfully => 'Citação publicada com sucesso!';
+
+  @override
   String get quote_deleted_successfully => 'Citação excluída com sucesso';
 
   @override

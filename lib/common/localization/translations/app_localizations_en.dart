@@ -98,6 +98,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get quote_created_successfully => 'Quote created successfully!';
 
   @override
+  String get quote_posted_successfully => 'Quote posted successfully!';
+
+  @override
   String get quote_deleted_successfully => 'Quote deleted successfully';
 
   @override

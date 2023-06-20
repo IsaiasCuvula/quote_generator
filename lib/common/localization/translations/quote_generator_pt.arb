@@ -37,6 +37,7 @@
     "word_spacing": "Espaçamento entre palavras",
     "@ALERTMESSAGES": {},
     "quote_created_successfully": "Citação criada com sucesso!",
+    "quote_posted_successfully": "Citação publicada com sucesso!",
     "quote_deleted_successfully": "Citação excluída com sucesso",
     "quote_removed_from_fav": "Citação removida dos favoritos com sucesso",
     "quote_added_to_fav": "Citação adicionada aos favoritos com sucesso",

@@ -36,6 +36,7 @@
     "word_spacing": "Word spacing",
     "@ALERTMESSAGES": {},
     "quote_created_successfully": "Quote created successfully!",
+    "quote_posted_successfully": "Quote posted successfully!",
     "quote_deleted_successfully": "Quote deleted successfully",
     "quote_removed_from_fav": "Quote removed from favorites successfully",
     "quote_added_to_fav": "Quote added to favorites successfully",
