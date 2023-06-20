@@ -28,7 +28,7 @@ class BodyAndAppBarNestedScrollView extends StatelessWidget {
               padding: Dimensions.kPaddingAllLarge,
               child: Text(
                 appBarTitle,
-                style: Theme.of(context).textTheme.headlineLarge,
+                style: context.textTheme.headlineLarge,
               ),
             ),
             actions: actions,
