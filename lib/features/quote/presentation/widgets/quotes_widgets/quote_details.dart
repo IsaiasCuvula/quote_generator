@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:quote_generator/features/discovery/discovery.dart';
 import 'package:quote_generator/features/quote/quote.dart';
 import 'package:quote_generator/features/shared/shared.dart';
 import 'package:quote_generator/common/common.dart';
@@ -16,8 +17,7 @@ class QuoteDetails extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final theme = Theme.of(context);
-    final textColor = theme.colorScheme.onSurface;
+    final textColor = context.colorScheme.onSurface;
     final displayFavoriteIcon = quote.isFavorite == 1
         ? FontAwesomeIcons.solidHeart
         : FontAwesomeIcons.heart;
@@ -53,7 +53,7 @@ class QuoteDetails extends ConsumerWidget {
           Text(
             '- ${quote.author}',
             textAlign: Helpers.textAlignList[quote.textAlign],
-            style: theme.textTheme.bodyMedium?.copyWith(
+            style: context.textTheme.bodyMedium?.copyWith(
               color: textColor,
             ),
           ),
@@ -94,8 +94,24 @@ class QuoteDetails extends ConsumerWidget {
                   size: Dimensions.iconSizeLarge,
                 ),
                 color: textColor,
-                onPressed: () {
-                  //post a quote into the server
+                onPressed: () async {
+                  ref.read(postQuoteProvider.call(quote)).when(
+                        data: (result) {
+                          return SharedHelpers.displaySnackbar(
+                            context,
+                            context.l10n.quote_posted_successfully,
+                            false,
+                          );
+                        },
+                        error: (error, trace) {
+                          return SharedHelpers.displaySnackbar(
+                            context,
+                            context.l10n.something_went_wrong,
+                            false,
+                          );
+                        },
+                        loading: () => const LoadingScreen(),
+                      );
                 },
               ),
               IconButton(
@@ -106,7 +122,7 @@ class QuoteDetails extends ConsumerWidget {
                 color: textColor,
                 onPressed: () async {
                   final quoteId = Helpers.stringToInt('${quote.id}');
-                  await Helpers.showAlertDialog(
+                  await Helpers.showAlertDeleteDialog(
                     context: context,
                     ref: ref,
                     quoteId: quoteId,
