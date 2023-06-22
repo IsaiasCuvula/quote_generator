@@ -53,14 +53,14 @@ class Helpers {
     }
   }
 
-  static Future<void> showAlertDialog({
+  static Future<void> showAlertDeleteDialog({
     required BuildContext context,
     required WidgetRef ref,
     required int quoteId,
   }) async {
     final l10n = context.l10n;
     Widget cancelButton = TextButton(
-      child: Text(context.l10n.cancel.toUpperCase()),
+      child: Text(l10n.cancel.toUpperCase()),
       onPressed: () => context.pop(),
     );
     Widget deleteButton = TextButton(

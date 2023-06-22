@@ -1,4 +1,3 @@
-// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
 
@@ -8,13 +7,13 @@ import 'package:quote_generator/features/download/download.dart';
 class SaveQuoteImageState extends Equatable {
   final QuoteImage? quoteImage;
   final String errorMessage;
-  final bool isSuccess;
+  final String successMessage;
   final bool isLoading;
 
   const SaveQuoteImageState(
     this.quoteImage,
     this.errorMessage,
-    this.isSuccess,
+    this.successMessage,
     this.isLoading,
   );
 
@@ -22,27 +21,27 @@ class SaveQuoteImageState extends Equatable {
     this.quoteImage,
     this.isLoading = false,
     this.errorMessage = '',
-    this.isSuccess = false,
+    this.successMessage = '',
   });
 
   @override
   List<Object> get props => [
         quoteImage!,
         errorMessage,
-        isSuccess,
+        successMessage,
         isLoading,
       ];
 
   SaveQuoteImageState copyWith({
     QuoteImage? quoteImage,
     String? errorMessage,
-    bool? isSuccess,
+    String? successMessage,
     bool? isLoading,
   }) {
     return SaveQuoteImageState(
       quoteImage ?? this.quoteImage,
       errorMessage ?? this.errorMessage,
-      isSuccess ?? this.isSuccess,
+      successMessage ?? this.successMessage,
       isLoading ?? this.isLoading,
     );
   }

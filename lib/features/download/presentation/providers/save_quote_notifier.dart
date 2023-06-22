@@ -20,7 +20,7 @@ class SaveQuoteImageNotifier extends StateNotifier<SaveQuoteImageState> {
         ),
         (result) {
           return state.copyWith(
-            isSuccess: result.entries.first.value,
+            successMessage: result.entries.first.value,
             isLoading: false,
           );
         },
