@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:quote_generator/common/common.dart';
-import 'package:quote_generator/features/quote/quote.dart';
 import 'package:quote_generator/features/shared/shared.dart';
 
 class ListOfQuotes extends StatelessWidget {
