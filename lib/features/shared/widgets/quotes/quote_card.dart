@@ -4,6 +4,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:go_router/go_router.dart';
 import 'package:quote_generator/features/quote/quote.dart';
 import 'package:quote_generator/common/common.dart';
+import 'package:quote_generator/features/shared/shared.dart';
 
 class QuoteCard extends StatelessWidget {
   QuoteCard({super.key, required this.quote});

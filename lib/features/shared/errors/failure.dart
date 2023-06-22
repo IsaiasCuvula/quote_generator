@@ -1,5 +1,5 @@
 import 'package:equatable/equatable.dart';
-import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:flutter/foundation.dart' show immutable;
 
 @immutable
 class Failure extends Equatable {
