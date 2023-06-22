@@ -21,9 +21,6 @@ class CardFooter extends StatelessWidget {
   Widget build(BuildContext context) {
     final l10n = context.l10n;
     final colorScheme = context.colorScheme;
-    final displayFavoriteIcon = quote.isFavorite == 1
-        ? FontAwesomeIcons.solidHeart
-        : FontAwesomeIcons.heart;
 
     final unSelectedIconColor = colorScheme.primary;
     final selectedIconColor = colorScheme.primary;
@@ -41,24 +38,9 @@ class CardFooter extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Dimensions.kHorizontalSpaceLarge,
-              QuoteCardButton(
-                child: FaIcon(
-                  displayFavoriteIcon,
-                  size: Dimensions.iconSizeSmallest,
-                  color: selectedIconColor,
-                ),
-                onPressed: () async {
-                  await ref
-                      .read(updateQuoteProvider.notifier)
-                      .updateFavorite(quote)
-                      .then((value) async {
-                    await SharedHelpers.displaySnackbar(
-                      ctx,
-                      _addOrRemovefavMessage(ctx),
-                      true,
-                    );
-                  });
-                },
+              FavoriteButton(
+                quote: quote,
+                selectedIconColor: selectedIconColor,
               ),
               Dimensions.kHorizontalSpaceLarge,
               QuoteCardButton(
@@ -102,12 +84,5 @@ class CardFooter extends StatelessWidget {
         );
       },
     );
-  }
-
-  String _addOrRemovefavMessage(BuildContext context) {
-    final l10n = context.l10n;
-    return quote.isFavorite == 1
-        ? l10n.quote_removed_from_fav
-        : l10n.quote_added_to_fav;
   }
 }
