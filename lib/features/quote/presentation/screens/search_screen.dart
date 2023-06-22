@@ -38,32 +38,27 @@ class _SearchScreenState extends ConsumerState<SearchScreen> {
     final quotes = quoteState.searcherdQuotes;
 
     return Scaffold(
-      body: GestureDetector(
-        onTap: () {
-          FocusManager.instance.primaryFocus?.unfocus();
-        },
-        child: BodyAndAppBarNestedScrollView(
-          appBarTitle: context.l10n.app_bar_search_quote,
-          centerTitle: true,
-          body: Column(
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: [
-              SearchTextField(
-                searchController: _searchController,
-                onChanged: (text) => _searchQuote(text),
-                onSubmitted: (text) => _searchQuote(text),
-              ),
-              Dimensions.kVerticalSpaceLarge,
-              quotes.isEmpty
-                  ? const EmptySearchQuoteScreen()
-                  : Expanded(
-                      child: ListOfQuotes(
-                        key: const Key('SearchQuote'),
-                        quotes: quotes,
-                      ),
-                    )
-            ],
-          ),
+      body: BodyAndAppBarNestedScrollView(
+        appBarTitle: context.l10n.app_bar_search_quote,
+        centerTitle: true,
+        body: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: [
+            SearchTextField(
+              searchController: _searchController,
+              onChanged: (text) => _searchQuote(text),
+              onSubmitted: (text) => _searchQuote(text),
+            ),
+            Dimensions.kVerticalSpaceLarge,
+            quotes.isEmpty
+                ? const EmptySearchQuoteScreen()
+                : Expanded(
+                    child: ListOfQuotes(
+                      key: const Key('SearchQuote'),
+                      quotes: quotes,
+                    ),
+                  )
+          ],
         ),
       ),
     );

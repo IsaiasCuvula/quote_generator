@@ -18,13 +18,15 @@ class SearchTextField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final theme = Theme.of(context);
     final l10n = context.l10n;
 
     return Container(
       height: Dimensions.sizeLargest,
       margin: Dimensions.kPaddingAllLarger,
       child: TextField(
+        onTapOutside: (event) {
+          FocusManager.instance.primaryFocus?.unfocus();
+        },
         controller: searchController,
         textInputAction: TextInputAction.search,
         textAlignVertical: TextAlignVertical.center,
@@ -56,7 +58,7 @@ class SearchTextField extends StatelessWidget {
             borderSide: BorderSide.none,
           ),
           filled: true,
-          fillColor: theme.colorScheme.onSecondary,
+          fillColor: context.colorScheme.onSecondary,
         ),
       ),
     );
