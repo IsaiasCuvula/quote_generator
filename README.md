@@ -12,6 +12,7 @@ The Quote Generator App is an application that allows you to create quotes, add 
 - Riverpod for State Management
 - GoRoute for Navigation
 - SQLite for local database
+- Firebase
 - Shared Preferences
 - Dark & Light Mode
 - Google Sign for login 
@@ -41,9 +42,13 @@ flutter run
 # The App is Under Construction ...
 
 <p align="left">
-  <img width="200" alt="iPhone13Mockup1" src="https://github.com/IsaiasCuvula/quote_generator/assets/68303716/c38fa311-4394-4a51-a4fe-5997f035e7a2" />
+  <img width="200" alt="iPhone13Mockup1" src="https://github.com/IsaiasCuvula/quote_generator/assets/68303716/bdf9a0d4-8a7c-4b0c-8331-a9c42684d020" />
+
+   <img width="200" alt="iPhone13Mockup5" src="https://github.com/IsaiasCuvula/quote_generator/assets/68303716/fdd344a1-c26f-48c8-bfd8-d636d6ca32cd" />
+   
   <img width="200" alt="iPhone13Mockup2" src="https://user-images.githubusercontent.com/68303716/236710903-5748de13-e014-42d2-8094-e91232759e92.png" />
   <img width="200" alt="iPhone13Mockup3" src="https://user-images.githubusercontent.com/68303716/236710906-ebb7f3c0-6faa-4b97-be5e-b7b2da757f9c.png" />
-  <img width="200" alt="iPhone13Mockup3" src="https://github.com/IsaiasCuvula/quote_generator/assets/68303716/479bbe66-ef22-415e-86f6-ffc8b8bd2885" />
-</p>
+ 
+  <img width="200" alt="iPhone13Mockup6" src="https://github.com/IsaiasCuvula/quote_generator/assets/68303716/cbad0a9b-c545-418c-bc53-8ab6c465f39f" />
+   <img width="200" alt="iPhone13Mockup4" src="https://github.com/IsaiasCuvula/quote_generator/assets/68303716/479bbe66-ef22-415e-86f6-ffc8b8bd2885" />
 </p>
