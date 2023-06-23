@@ -33,7 +33,7 @@ class QuoteLocalDatasource {
     await db.execute('''
       CREATE TABLE quotes (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
-        text TEXT,
+        quoteText TEXT,
         author TEXT,
         textAlign TEXT,
         backgroundColor INTEGER,
@@ -105,7 +105,7 @@ class QuoteLocalDatasource {
     final db = await database;
     final map = await db.query(
       Constants.dbTable,
-      where: 'text LIKE ? OR author LIKE?',
+      where: 'quoteText LIKE ? OR author LIKE?',
       whereArgs: ['%$query%', '%$query%'],
     );
     return List.generate(map.length, (index) {

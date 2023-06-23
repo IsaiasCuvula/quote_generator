@@ -2,7 +2,7 @@ import 'package:equatable/equatable.dart';
 
 class QuoteModel extends Equatable {
   final int? id;
-  final String text;
+  final String quoteText;
   final String author;
   final String textAlign;
   final int backgroundColor;
@@ -14,7 +14,7 @@ class QuoteModel extends Equatable {
 
   const QuoteModel({
     this.id,
-    required this.text,
+    required this.quoteText,
     required this.author,
     required this.textAlign,
     required this.backgroundColor,
@@ -29,7 +29,7 @@ class QuoteModel extends Equatable {
   List<Object> get props {
     return [
       id!,
-      text,
+      quoteText,
       author,
       textAlign,
       backgroundColor,
@@ -44,7 +44,7 @@ class QuoteModel extends Equatable {
   Map<String, dynamic> toJson() {
     return <String, dynamic>{
       'id': id,
-      'text': text,
+      'quoteText': quoteText,
       'author': author,
       'textAlign': textAlign,
       'backgroundColor': backgroundColor,
@@ -59,7 +59,7 @@ class QuoteModel extends Equatable {
   factory QuoteModel.fromJson(Map<String, dynamic> map) {
     return QuoteModel(
       id: map['id'] as int,
-      text: map['text'] as String,
+      quoteText: map['quoteText'] as String,
       author: map['author'] as String,
       textAlign: map['textAlign'] as String,
       backgroundColor: map['backgroundColor'] as int,
@@ -72,7 +72,7 @@ class QuoteModel extends Equatable {
   }
 
   QuoteModel copyWith({
-    String? text,
+    String? quoteText,
     String? author,
     String? textAlign,
     int? backgroundColor,
@@ -85,7 +85,7 @@ class QuoteModel extends Equatable {
   }) {
     return QuoteModel(
       id: id ?? this.id,
-      text: text ?? this.text,
+      quoteText: quoteText ?? this.quoteText,
       author: author ?? this.author,
       textAlign: textAlign ?? this.textAlign,
       backgroundColor: backgroundColor ?? this.backgroundColor,

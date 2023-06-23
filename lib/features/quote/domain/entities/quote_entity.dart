@@ -2,7 +2,7 @@ import 'package:equatable/equatable.dart';
 
 class Quote extends Equatable {
   final int? id;
-  final String text;
+  final String quoteText;
   final String author;
   final String textAlign;
   final int backgroundColor;
@@ -14,7 +14,7 @@ class Quote extends Equatable {
 
   const Quote({
     this.id,
-    required this.text,
+    required this.quoteText,
     required this.author,
     required this.textAlign,
     required this.backgroundColor,
@@ -29,7 +29,7 @@ class Quote extends Equatable {
   List<Object> get props {
     return [
       id!,
-      text,
+      quoteText,
       author,
       textAlign,
       backgroundColor,
@@ -43,7 +43,7 @@ class Quote extends Equatable {
 
   Quote copyWith({
     int? id,
-    String? text,
+    String? quoteText,
     String? author,
     String? textAlign,
     int? backgroundColor,
@@ -55,7 +55,7 @@ class Quote extends Equatable {
   }) {
     return Quote(
       id: id ?? this.id,
-      text: text ?? this.text,
+      quoteText: quoteText ?? this.quoteText,
       author: author ?? this.author,
       textAlign: textAlign ?? this.textAlign,
       backgroundColor: backgroundColor ?? this.backgroundColor,

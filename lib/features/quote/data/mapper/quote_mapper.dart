@@ -4,7 +4,7 @@ class QuoteMapper {
   static Quote toEntity(QuoteModel model) {
     return Quote(
       id: model.id,
-      text: model.text,
+      quoteText: model.quoteText,
       author: model.author,
       textAlign: model.textAlign,
       backgroundColor: model.backgroundColor,
@@ -18,7 +18,7 @@ class QuoteMapper {
 
   static QuoteModel toModel(Quote entity) {
     return QuoteModel(
-      text: entity.text,
+      quoteText: entity.quoteText,
       id: entity.id,
       author: entity.author,
       textAlign: entity.textAlign,

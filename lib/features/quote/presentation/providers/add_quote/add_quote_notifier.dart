@@ -26,7 +26,7 @@ class AddQuoteNotifier extends StateNotifier<QuoteState> {
   Quote _createdQuote() {
     final textSettings = _ref.read(textSettingsProvider);
     return Quote(
-      text: textSettings.quoteText,
+      quoteText: textSettings.quoteText,
       author: textSettings.quoteAuthor,
       textAlign: Helpers.textAlignToString(textSettings.textAlign),
       backgroundColor: textSettings.backgroundColor.value,

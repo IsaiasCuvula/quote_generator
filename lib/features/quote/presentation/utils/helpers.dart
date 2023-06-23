@@ -4,7 +4,6 @@ import 'package:go_router/go_router.dart';
 import 'package:quote_generator/common/common.dart';
 import 'package:quote_generator/features/quote/quote.dart';
 import 'package:quote_generator/features/shared/shared.dart';
-import 'package:share_plus/share_plus.dart';
 
 class Helpers {
   //Quote Text Settings
@@ -95,9 +94,5 @@ class Helpers {
         return alert;
       },
     );
-  }
-
-  static void shareQuote(String quoteDescription, String author) async {
-    await Share.share('${quoteDescription.trim()} \n\n- $author');
   }
 }
