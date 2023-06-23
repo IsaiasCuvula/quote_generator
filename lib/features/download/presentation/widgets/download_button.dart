@@ -7,12 +7,10 @@ import 'package:quote_generator/features/download/download.dart';
 
 class DownloadButton extends ConsumerWidget {
   const DownloadButton({
-    required this.iconsColor,
     required this.widgetKey,
     Key? key,
   }) : super(key: key);
 
-  final Color iconsColor;
   final GlobalKey widgetKey;
 
   @override
@@ -21,7 +19,7 @@ class DownloadButton extends ConsumerWidget {
       child: FaIcon(
         FontAwesomeIcons.download,
         size: Dimensions.iconSizeSmallest,
-        color: iconsColor,
+        color: context.colorScheme.primary,
       ),
       onPressed: () async {
         await ref
