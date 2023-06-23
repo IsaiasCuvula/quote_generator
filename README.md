@@ -50,5 +50,5 @@ flutter run
   <img width="200" alt="iPhone13Mockup3" src="https://user-images.githubusercontent.com/68303716/236710906-ebb7f3c0-6faa-4b97-be5e-b7b2da757f9c.png" />
  
   <img width="200" alt="iPhone13Mockup6" src="https://github.com/IsaiasCuvula/quote_generator/assets/68303716/cbad0a9b-c545-418c-bc53-8ab6c465f39f" />
-   <img width="200" alt="iPhone13Mockup4" src="https://github.com/IsaiasCuvula/quote_generator/assets/68303716/479bbe66-ef22-415e-86f6-ffc8b8bd2885" />
+    <img width="200" alt="iPhone13Mockup4" src="https://github.com/IsaiasCuvula/quote_generator/assets/68303716/a353ad30-0fa7-47a4-91a5-03df06778a7a" />
 </p>
