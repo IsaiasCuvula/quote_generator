@@ -5,14 +5,14 @@ import 'package:quote_generator/common/common.dart';
 import 'package:quote_generator/features/quote/quote.dart';
 import 'package:quote_generator/features/shared/shared.dart';
 
-class QuoteCardDetails extends ConsumerWidget {
-  static QuoteCardDetails builder(
+class QuoteDetailScreen extends ConsumerWidget {
+  static QuoteDetailScreen builder(
     BuildContext context,
     GoRouterState state,
     String? id,
   ) =>
-      QuoteCardDetails(id: id);
-  const QuoteCardDetails({
+      QuoteDetailScreen(id: id);
+  const QuoteDetailScreen({
     Key? key,
     this.id,
   }) : super(key: key);
@@ -29,7 +29,7 @@ class QuoteCardDetails extends ConsumerWidget {
       body: BodyAndAppBarNestedScrollView(
         appBarTitle: context.l10n.app_bar_quote_details,
         centerTitle: true,
-        body: quote != null ? QuoteDetails(quote: quote) : const SizedBox(),
+        body: quote != null ? QuoteDetailBody(quote: quote) : const SizedBox(),
       ),
     );
   }

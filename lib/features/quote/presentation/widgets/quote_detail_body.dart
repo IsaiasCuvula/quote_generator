@@ -7,8 +7,8 @@ import 'package:quote_generator/features/quote/quote.dart';
 import 'package:quote_generator/features/shared/shared.dart';
 import 'package:quote_generator/common/common.dart';
 
-class QuoteDetails extends ConsumerWidget {
-  const QuoteDetails({
+class QuoteDetailBody extends ConsumerWidget {
+  const QuoteDetailBody({
     super.key,
     required this.quote,
   });
@@ -18,6 +18,7 @@ class QuoteDetails extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final textColor = context.colorScheme.onSurface;
+    final l10n = context.l10n;
     final displayFavoriteIcon = quote.isFavorite == 1
         ? FontAwesomeIcons.solidHeart
         : FontAwesomeIcons.heart;
@@ -39,7 +40,7 @@ class QuoteDetails extends ConsumerWidget {
           ),
           Dimensions.kVerticalSpaceSmall,
           Text(
-            quote.text,
+            quote.quoteText,
             textAlign: Helpers.textAlignList[quote.textAlign],
             style: TextStyle(
               color: textColor,
@@ -82,10 +83,13 @@ class QuoteDetails extends ConsumerWidget {
                   size: Dimensions.iconSizeLarge,
                 ),
                 color: textColor,
-                onPressed: () {
-                  final text = quote.text;
-                  final author = quote.author;
-                  Helpers.shareQuote(text, author);
+                onPressed: () async {
+                  final quoteText = quote.quoteText;
+                  final quoteAuthor = quote.author;
+                  await SharedHelpers.shareQuote(
+                    quoteText,
+                    quoteAuthor,
+                  );
                 },
               ),
               IconButton(
@@ -99,14 +103,14 @@ class QuoteDetails extends ConsumerWidget {
                         data: (result) {
                           return SharedHelpers.displaySnackbar(
                             context,
-                            context.l10n.quote_posted_successfully,
+                            l10n.quote_posted_successfully,
                             false,
                           );
                         },
                         error: (error, trace) {
                           return SharedHelpers.displaySnackbar(
                             context,
-                            context.l10n.something_went_wrong,
+                            l10n.something_went_wrong,
                             false,
                           );
                         },
@@ -142,10 +146,6 @@ class QuoteDetails extends ConsumerWidget {
         ? l10n.quote_removed_from_fav
         : l10n.quote_added_to_fav;
 
-    SharedHelpers.displaySnackbar(
-      context,
-      msg,
-      true,
-    );
+    SharedHelpers.displaySnackbar(context, msg, true);
   }
 }

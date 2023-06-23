@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:quote_generator/common/common.dart';
+import 'package:share_plus/share_plus.dart';
 import 'package:uuid/uuid.dart';
 
 class SharedHelpers {
@@ -20,5 +21,9 @@ class SharedHelpers {
   static String generateUUID() {
     const uuid = Uuid();
     return uuid.v4();
+  }
+
+  static Future<void> shareQuote(String quoteDescription, String author) async {
+    await Share.share('${quoteDescription.trim()} \n\n- $author');
   }
 }
