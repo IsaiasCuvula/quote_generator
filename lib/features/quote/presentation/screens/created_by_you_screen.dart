@@ -61,10 +61,7 @@ class CreatedByYouScreen extends ConsumerWidget {
                           ),
                         ),
                       )
-                    : ListOfQuotes(
-                        key: const Key('CreatedByYouScreen'),
-                        quotes: quotes,
-                      ),
+                    : ListOfQuotes(quotes: quotes),
       ),
     );
   }

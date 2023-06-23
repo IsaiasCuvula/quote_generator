@@ -6,14 +6,9 @@ import 'package:quote_generator/features/quote/quote.dart';
 import 'package:quote_generator/features/shared/shared.dart';
 
 class FavoriteButton extends ConsumerWidget {
-  const FavoriteButton({
-    super.key,
-    required this.quote,
-    required this.selectedIconColor,
-  });
+  const FavoriteButton({super.key, required this.quote});
 
   final Quote quote;
-  final Color selectedIconColor;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -24,7 +19,7 @@ class FavoriteButton extends ConsumerWidget {
       child: FaIcon(
         displayFavoriteIcon,
         size: Dimensions.iconSizeSmallest,
-        color: selectedIconColor,
+        color: context.colorScheme.primary,
       ),
       onPressed: () async {
         await ref
