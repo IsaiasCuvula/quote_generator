@@ -26,7 +26,9 @@ class RemoteCardHeader extends ConsumerWidget {
               Dimensions.kHorizontalSpaceLarge,
               Text(
                 userInfo.displayName,
-                style: context.textTheme.headlineSmall,
+                style: context.textTheme.headlineSmall?.copyWith(
+                  color: context.colorScheme.tertiaryContainer,
+                ),
               ),
               Dimensions.kHorizontalSpaceLarge,
             ],
