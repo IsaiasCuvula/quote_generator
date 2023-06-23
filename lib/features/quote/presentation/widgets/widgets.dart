@@ -4,3 +4,4 @@ export 'empty_search_quote.dart';
 export 'search_text_field.dart';
 export 'favorite_button.dart';
 export 'list_of_quotes.dart';
+export 'quote_detail_body.dart';
