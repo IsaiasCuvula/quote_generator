@@ -16,9 +16,8 @@ class RemoteCardFooter extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       height: Dimensions.kQuoteCardFooterHigh,
-      padding: Dimensions.kPaddingAllSmall,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.center,

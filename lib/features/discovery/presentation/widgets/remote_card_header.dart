@@ -16,9 +16,8 @@ class RemoteCardHeader extends ConsumerWidget {
     final userInfo = ref.watch(getUserInfoProvider(quote.userId));
     return userInfo.when(
       data: (userInfo) {
-        return Container(
+        return SizedBox(
           height: Dimensions.kQuoteCardFooterHigh,
-          padding: Dimensions.kPaddingAllSmall,
           child: Row(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.center,
