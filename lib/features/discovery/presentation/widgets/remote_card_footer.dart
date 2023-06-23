@@ -24,6 +24,8 @@ class RemoteCardFooter extends StatelessWidget {
         children: [
           Dimensions.kHorizontalSpaceLarge,
           SaveToFavoriteButton(quote: quote),
+          Dimensions.kHorizontalSpaceSmall,
+          FavoriteCounter(quoteId: quote.quoteId),
           Dimensions.kHorizontalSpaceLarge,
           CopyToClipboardButton(
             quoteText: quote.quoteText,

@@ -25,10 +25,25 @@ final routes = [
     parentNavigatorKey: navigationKey,
     pageBuilder: (context, state) {
       return NoTransitionPage(
-        child: QuoteCardDetails.builder(
+        child: QuoteDetailScreen.builder(
           context,
           state,
           state.params['id'],
+        ),
+      );
+    },
+  ),
+
+  GoRoute(
+    name: RouteLocation.remoteQuoteDetailScreen,
+    path: '${RouteLocation.remoteQuoteDetailScreen}/:quoteId',
+    parentNavigatorKey: navigationKey,
+    pageBuilder: (context, state) {
+      return NoTransitionPage(
+        child: RemoteQuoteDetailScreen.builder(
+          context,
+          state,
+          '${state.params['quoteId']}',
         ),
       );
     },

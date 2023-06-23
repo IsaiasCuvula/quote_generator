@@ -14,4 +14,5 @@ class RouteLocation {
   static String get favorites => '/favorites';
   static String get auth => '/auth';
   static String get profile => '/profile';
+  static String get remoteQuoteDetailScreen => '/remoteQuoteDetailScreen';
 }

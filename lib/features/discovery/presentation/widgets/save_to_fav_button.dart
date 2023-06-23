@@ -27,7 +27,9 @@ class SaveToFavoriteButton extends ConsumerWidget {
             color: context.colorScheme.primary,
           ),
           onPressed: () async {
-            ref.read(saveQuoteToFavoritesProvider(quote));
+            ref.read(
+              favoriteAndUnforiteQuoteProvider(quote),
+            );
             if (context.mounted) {
               await SharedHelpers.displaySnackbar(
                 context,

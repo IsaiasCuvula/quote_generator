@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:quote_generator/features/discovery/discovery.dart';
 import 'package:quote_generator/features/quote/quote.dart';
 import 'package:quote_generator/common/common.dart';
@@ -41,10 +42,10 @@ class RemoteQuoteCard extends StatelessWidget {
           InkWell(
             borderRadius: Dimensions.kBorderRadiusAllSmallest,
             onTap: () {
-              // context.pushNamed(
-              //   RouteLocation.detailScreen,
-              //   params: {'id': quote.quoteId},
-              // );
+              context.pushNamed(
+                RouteLocation.remoteQuoteDetailScreen,
+                params: {'quoteId': quote.quoteId},
+              );
             },
             child: RepaintBoundary(
               key: widgetKey,
