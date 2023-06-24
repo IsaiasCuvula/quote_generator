@@ -40,10 +40,12 @@ class CreatedByYouScreen extends ConsumerWidget {
             padding: Dimensions.kPaddingHorizontalSmall,
             child: IconButton(
               onPressed: () => context.push(RouteLocation.profile),
-              icon: DisplayUserImage(
-                radius: 14.0,
-                imageUrl: '${user?.profileImage}',
-              ),
+              icon: user?.profileImage == null
+                  ? const FaIcon(FontAwesomeIcons.user)
+                  : DisplayUserImage(
+                      radius: 14.0,
+                      imageUrl: '${user?.profileImage}',
+                    ),
             ),
           ),
         ],
