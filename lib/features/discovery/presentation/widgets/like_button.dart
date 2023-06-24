@@ -6,19 +6,19 @@ import 'package:quote_generator/features/discovery/discovery.dart';
 import 'package:quote_generator/features/shared/shared.dart';
 import 'package:quote_generator/features/shared/widgets/display_message_card.dart';
 
-class SaveToFavoriteButton extends ConsumerWidget {
-  const SaveToFavoriteButton({super.key, required this.quote});
+class LikeDislikeButton extends ConsumerWidget {
+  const LikeDislikeButton({super.key, required this.quote});
 
   final RemoteQuote quote;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final isFavorite = ref.watch(hasFavoritedQuoteProvider(quote));
+    final isLiked = ref.watch(hasLikedQuoteProvider(quote.quoteId));
 
-    return isFavorite.when(
-      data: (isFavorite) {
+    return isLiked.when(
+      data: (isLiked) {
         final displayFavIcon =
-            isFavorite ? FontAwesomeIcons.solidHeart : FontAwesomeIcons.heart;
+            isLiked ? FontAwesomeIcons.solidHeart : FontAwesomeIcons.heart;
 
         return QuoteCardButton(
           child: FaIcon(
@@ -28,18 +28,10 @@ class SaveToFavoriteButton extends ConsumerWidget {
           ),
           onPressed: () async {
             ref.read(
-              favoriteAndUnforiteQuoteProvider(quote.quoteId),
+              likeDislikeQuoteProvider(
+                quote.quoteId,
+              ),
             );
-            if (context.mounted) {
-              await SharedHelpers.displaySnackbar(
-                context,
-                _addOrRemovefavMessage(
-                  context,
-                  isFavorite,
-                ),
-                true,
-              );
-            }
           },
         );
       },
@@ -48,10 +40,5 @@ class SaveToFavoriteButton extends ConsumerWidget {
           )),
       loading: () => const LoadingScreen(),
     );
-  }
-
-  String _addOrRemovefavMessage(BuildContext context, bool isFavorite) {
-    final l10n = context.l10n;
-    return isFavorite ? l10n.quote_removed_from_fav : l10n.quote_added_to_fav;
   }
 }

@@ -11,7 +11,7 @@ class FavoriteCounter extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final favoritesCount = ref.watch(quoteFavoritesCountProvider(quoteId));
+    final favoritesCount = ref.watch(quoteLikesCountProvider(quoteId));
     return favoritesCount.when(
       data: (int favoritesCount) {
         return Text(

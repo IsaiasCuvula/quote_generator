@@ -14,7 +14,7 @@ class FirebaseFieldName {
   static const fontWeight = 'fontWeight';
   static const wordSpacing = 'wordSpacing';
   static const letterSpacing = 'letterSpacing';
-  static const favorites = 'favorites';
+  static const likes = 'likes';
 
   //users
   static const displayName = 'displayName';

@@ -23,7 +23,7 @@ class RemoteCardFooter extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Dimensions.kHorizontalSpaceLarge,
-          SaveToFavoriteButton(quote: quote),
+          LikeDislikeButton(quote: quote),
           Dimensions.kHorizontalSpaceSmall,
           FavoriteCounter(quoteId: quote.quoteId),
           Dimensions.kHorizontalSpaceLarge,

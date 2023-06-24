@@ -2,9 +2,9 @@ import 'dart:async';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:quote_generator/features/discovery/discovery.dart';
 
-final quoteFavoritesCountProvider =
+final quoteLikesCountProvider =
     StreamProvider.family.autoDispose<int, String>((ref, String quoteId) {
-  final counterUseCase = ref.watch(quoteFavoritesCountUsecaseProvider);
+  final counterUseCase = ref.watch(likesCountUsecaseProvider);
   final controller = StreamController<int>.broadcast();
 
   controller.onListen = () {

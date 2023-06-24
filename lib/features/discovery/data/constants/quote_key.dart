@@ -13,6 +13,6 @@ class QuoteKey {
   static const fontWeight = 'fontWeight';
   static const wordSpacing = 'wordSpacing';
   static const letterSpacing = 'letterSpacing';
-  static const favorites = 'favorites';
+  static const likes = 'likes';
   const QuoteKey._();
 }

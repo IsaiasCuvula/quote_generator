@@ -2,18 +2,22 @@ import 'dart:async';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:quote_generator/features/discovery/discovery.dart';
 import 'package:quote_generator/features/shared/shared.dart';
+import 'package:quote_generator/features/user_profile/user_profile.dart';
 
-final hasFavoritedQuoteProvider = StreamProvider.family
-    .autoDispose<bool, RemoteQuote>((ref, RemoteQuote quote) {
-  final hasFavoriteUseCase = ref.watch(hasFavoritedQuoteUsecaseProvider);
+final hasLikedQuoteProvider = StreamProvider.family.autoDispose<bool, String>((
+  ref,
+  String quoteId,
+) {
+  final usecase = ref.watch(hasLikedQuoteUseCaseProvider);
+  final String userId = ref.watch(userProvider).appUser?.userId ?? '';
 
   final controller = StreamController<bool>();
 
   final MapString info = {
-    QuoteKey.quoteId: quote.quoteId,
-    QuoteKey.userId: quote.userId,
+    QuoteKey.quoteId: quoteId,
+    QuoteKey.userId: userId,
   };
-  final sub = hasFavoriteUseCase(info).listen((snapshot) {
+  final sub = usecase(info).listen((snapshot) {
     snapshot.fold(
       (failure) => null,
       (isFavorite) {

@@ -24,21 +24,21 @@ class QuoteRemoteDatasourceImpl implements QuoteRemoteDatasource {
   }
 
   @override
-  Future<void> favoriteAndUnfavoriteQuote(String quoteId, String userId) async {
+  Future<void> likeDislike(String quoteId, String userId) async {
     final quoteRef = _quotesCollectionRef().doc(quoteId);
     final quoteSnapshot = await quoteRef.get();
     if (quoteSnapshot.exists) {
       final quote = quoteSnapshot.data() as Map<String, dynamic>;
       if (quote.isNotEmpty) {
-        final favorites = quote[FirebaseFieldName.favorites] ?? [];
-        final isFavorite = favorites?.contains(userId);
-        if (isFavorite) {
+        final likes = quote[FirebaseFieldName.likes] ?? [];
+        final isLiked = likes?.contains(userId);
+        if (isLiked) {
           await _quotesCollectionRef().doc(quoteId).update({
-            FirebaseFieldName.favorites: FieldValue.arrayRemove([userId]),
+            FirebaseFieldName.likes: FieldValue.arrayRemove([userId]),
           });
         } else {
           await _quotesCollectionRef().doc(quoteId).update({
-            FirebaseFieldName.favorites: FieldValue.arrayUnion([userId]),
+            FirebaseFieldName.likes: FieldValue.arrayUnion([userId]),
           });
         }
       }
@@ -46,13 +46,13 @@ class QuoteRemoteDatasourceImpl implements QuoteRemoteDatasource {
   }
 
   @override
-  Stream<DocumentSnapshot<Object?>> hasFavoritedPost(
+  Stream<DocumentSnapshot<Object?>> hasLiked(
       String quoteId, String userId) async* {
     yield* _quotesCollectionRef().doc(quoteId).snapshots();
   }
 
   @override
-  Stream<DocumentSnapshot<Object?>> quoteFavoritesCount(String quoteId) async* {
+  Stream<DocumentSnapshot<Object?>> likesCount(String quoteId) async* {
     yield* _quotesCollectionRef().doc(quoteId).snapshots();
   }
 

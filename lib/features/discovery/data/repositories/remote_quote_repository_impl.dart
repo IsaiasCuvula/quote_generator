@@ -41,13 +41,13 @@ class RemoteQuoteRepositoryImpl implements RemoteQuoteRepository {
   }
 
   @override
-  Stream<Either<Failure, bool>> hasFavoritedPost(
+  Stream<Either<Failure, bool>> hasLikedQuote(
       String quoteId, String userId) async* {
     try {
-      final result = _datasource.hasFavoritedPost(quoteId, userId);
+      final result = _datasource.hasLiked(quoteId, userId);
       yield* result.map(
         (snapshot) {
-          final favorites = snapshot.get(FirebaseFieldName.favorites);
+          final favorites = snapshot.get(FirebaseFieldName.likes);
           if (favorites?.contains(userId)) {
             return const Right(true);
           } else {
@@ -61,12 +61,12 @@ class RemoteQuoteRepositoryImpl implements RemoteQuoteRepository {
   }
 
   @override
-  Stream<Either<Failure, int>> quoteFavoritesCount(String quoteId) async* {
+  Stream<Either<Failure, int>> quotelikesCount(String quoteId) async* {
     try {
-      final result = _datasource.quoteFavoritesCount(quoteId);
+      final result = _datasource.likesCount(quoteId);
       yield* result.map((snapshot) {
-        final favorites = snapshot.get(FirebaseFieldName.favorites);
-        final int total = favorites?.length;
+        final likes = snapshot.get(FirebaseFieldName.likes);
+        final int total = likes?.length;
         return Right(total);
       });
     } catch (e) {
@@ -75,10 +75,10 @@ class RemoteQuoteRepositoryImpl implements RemoteQuoteRepository {
   }
 
   @override
-  Future<Either<Failure, bool>> favoriteAndUnfavoriteQuote(
+  Future<Either<Failure, bool>> likeDislikeQuote(
       String quoteId, String userId) async {
     try {
-      await _datasource.favoriteAndUnfavoriteQuote(quoteId, userId);
+      await _datasource.likeDislike(quoteId, userId);
       return const Right(true);
     } catch (e) {
       return const Left(Failure("Oops, something went wrong"));
