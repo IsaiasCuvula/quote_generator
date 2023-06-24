@@ -57,5 +57,5 @@ jobs:
         uses: ncipollo/release-action@v1
         with: 
             artifacts: "build/ios/iphoneos/app.ipa"
-            tag: "refs/tags/v1.0.${{ github.run_number }}"
+            tag: "refs/tags/v1.0.${{ github.quote_generator }}"
             token: ${{ secrets.GHUB_TOKEN }}
