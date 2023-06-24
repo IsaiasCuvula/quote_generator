@@ -99,23 +99,12 @@ class QuoteDetailBody extends ConsumerWidget {
                 ),
                 color: textColor,
                 onPressed: () async {
-                  ref.read(postQuoteProvider.call(quote)).when(
-                        data: (result) {
-                          return SharedHelpers.displaySnackbar(
-                            context,
-                            l10n.quote_posted_successfully,
-                            false,
-                          );
-                        },
-                        error: (error, trace) {
-                          return SharedHelpers.displaySnackbar(
-                            context,
-                            l10n.something_went_wrong,
-                            false,
-                          );
-                        },
-                        loading: () => const LoadingScreen(),
-                      );
+                  ref.read(postQuoteProvider(quote));
+                  await SharedHelpers.displaySnackbar(
+                    context,
+                    l10n.quote_posted_successfully,
+                    false,
+                  );
                 },
               ),
               IconButton(
