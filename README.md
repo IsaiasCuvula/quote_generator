@@ -33,7 +33,7 @@ The Quote Generator App is an application that allows you to create quotes, add 
 git clone https://github.com/IsaiasCuvula/quote_generator
 ```
 
-- [Add Firebase to the project](https://firebase.google.com/docs/flutter/setup?platform=ios)
+- Add Firebase to the project
 - And then you can use the normal build & run procedure 
 ```sh
 flutter pub get
