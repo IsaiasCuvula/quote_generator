@@ -33,7 +33,8 @@ The Quote Generator App is an application that allows you to create quotes, add 
 git clone https://github.com/IsaiasCuvula/quote_generator
 ```
 
-- And then you can use the normal build and run procedure 
+- [Add Firebase to the project](https://firebase.google.com/docs/flutter/setup?platform=ios)
+- And then you can use the normal build & run procedure 
 ```sh
 flutter pub get
 flutter run
@@ -47,7 +48,7 @@ flutter run
    <img width="200" alt="iPhone13Mockup5" src="https://github.com/IsaiasCuvula/quote_generator/assets/68303716/fdd344a1-c26f-48c8-bfd8-d636d6ca32cd" />
    
   <img width="200" alt="iPhone13Mockup2" src="https://user-images.githubusercontent.com/68303716/236710903-5748de13-e014-42d2-8094-e91232759e92.png" />
-  <img width="200" alt="iPhone13Mockup3" src="https://user-images.githubusercontent.com/68303716/236710906-ebb7f3c0-6faa-4b97-be5e-b7b2da757f9c.png" />
+  <img width="200" alt="iPhone13Mockup3" src="https://github.com/IsaiasCuvula/quote_generator/assets/68303716/c7f633e7-31a8-43e5-8312-48ec1799a5d5" />
  
   <img width="200" alt="iPhone13Mockup6" src="https://github.com/IsaiasCuvula/quote_generator/assets/68303716/cbad0a9b-c545-418c-bc53-8ab6c465f39f" />
     <img width="200" alt="iPhone13Mockup4" src="https://github.com/IsaiasCuvula/quote_generator/assets/68303716/a353ad30-0fa7-47a4-91a5-03df06778a7a" />
