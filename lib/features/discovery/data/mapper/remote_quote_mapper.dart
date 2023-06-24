@@ -16,6 +16,7 @@ class RemoteQuoteMapper {
       fontWeight: model.fontWeight,
       wordSpacing: model.wordSpacing,
       letterSpacing: model.letterSpacing,
+      favorites: model.favorites,
     );
   }
 
@@ -32,6 +33,7 @@ class RemoteQuoteMapper {
       fontWeight: entity.fontWeight,
       wordSpacing: entity.wordSpacing,
       letterSpacing: entity.letterSpacing,
+      favorites: entity.favorites,
     );
   }
 
@@ -62,6 +64,7 @@ class RemoteQuoteMapper {
       fontWeight: quote.fontWeight,
       wordSpacing: quote.wordSpacing,
       letterSpacing: quote.letterSpacing,
+      favorites: const [],
     );
   }
 }

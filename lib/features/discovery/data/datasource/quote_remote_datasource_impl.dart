@@ -3,6 +3,8 @@ import 'package:quote_generator/features/discovery/data/data.dart';
 import 'package:quote_generator/features/shared/shared.dart';
 
 class QuoteRemoteDatasourceImpl implements QuoteRemoteDatasource {
+  final FirebaseFirestore _firestore = FirebaseFirestore.instance;
+
   @override
   Future<void> postQuote(RemoteQuoteModel quote) async {
     final result = await _quotesCollectionRef().add(quote.toJson());
@@ -22,66 +24,36 @@ class QuoteRemoteDatasourceImpl implements QuoteRemoteDatasource {
   }
 
   @override
-  Future<bool> favoriteAndUnfavoriteQuote(RemoteQuoteModel quote) async {
-    final query = _favoritesCollectionRef()
-        .where(
-          FirebaseFieldName.quoteId,
-          isEqualTo: quote.quoteId,
-        )
-        .where(
-          FirebaseFieldName.userId,
-          isEqualTo: quote.userId,
-        )
-        .get();
-
-    bool hasFavorite = await query.then(
-      (snapshot) => snapshot.docs.isNotEmpty,
-    );
-    if (hasFavorite) {
-      //remove favorite
-      try {
-        await query.then((snapshot) async {
-          for (final doc in snapshot.docs) {
-            await doc.reference.delete();
-          }
-        });
-        return true;
-      } catch (_) {
-        return false;
-      }
-    } else {
-      try {
-        await _favoritesCollectionRef().add(quote.toJson());
-        return true;
-      } catch (e) {
-        return false;
+  Future<void> favoriteAndUnfavoriteQuote(String quoteId, String userId) async {
+    final quoteRef = _quotesCollectionRef().doc(quoteId);
+    final quoteSnapshot = await quoteRef.get();
+    if (quoteSnapshot.exists) {
+      final quote = quoteSnapshot.data() as Map<String, dynamic>;
+      if (quote.isNotEmpty) {
+        final favorites = quote[FirebaseFieldName.favorites] ?? [];
+        final isFavorite = favorites?.contains(userId);
+        if (isFavorite) {
+          await _quotesCollectionRef().doc(quoteId).update({
+            FirebaseFieldName.favorites: FieldValue.arrayRemove([userId]),
+          });
+        } else {
+          await _quotesCollectionRef().doc(quoteId).update({
+            FirebaseFieldName.favorites: FieldValue.arrayUnion([userId]),
+          });
+        }
       }
     }
   }
 
   @override
-  Stream<QuerySnapshot<Object?>> hasFavoritedPost(
+  Stream<DocumentSnapshot<Object?>> hasFavoritedPost(
       String quoteId, String userId) async* {
-    yield* _favoritesCollectionRef()
-        .where(
-          FirebaseFieldName.quoteId,
-          isEqualTo: quoteId,
-        )
-        .where(
-          FirebaseFieldName.userId,
-          isEqualTo: userId,
-        )
-        .snapshots();
+    yield* _quotesCollectionRef().doc(quoteId).snapshots();
   }
 
   @override
-  Stream<QuerySnapshot<Object?>> quoteFavoritesCount(String quoteId) async* {
-    yield* _favoritesCollectionRef()
-        .where(
-          FirebaseFieldName.quoteId,
-          isEqualTo: quoteId,
-        )
-        .snapshots();
+  Stream<DocumentSnapshot<Object?>> quoteFavoritesCount(String quoteId) async* {
+    yield* _quotesCollectionRef().doc(quoteId).snapshots();
   }
 
   @override
@@ -127,19 +99,13 @@ class QuoteRemoteDatasourceImpl implements QuoteRemoteDatasource {
   }
 
   CollectionReference _quotesCollectionRef() {
-    return FirebaseFirestore.instance.collection(
+    return _firestore.collection(
       FirebaseCollectionName.quotes,
     );
   }
 
-  CollectionReference _favoritesCollectionRef() {
-    return FirebaseFirestore.instance.collection(
-      FirebaseCollectionName.favorites,
-    );
-  }
-
   CollectionReference _usersCollectionRef() {
-    return FirebaseFirestore.instance.collection(
+    return _firestore.collection(
       FirebaseCollectionName.users,
     );
   }

@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:equatable/equatable.dart';
 import 'package:quote_generator/features/discovery/discovery.dart';
 
@@ -13,6 +14,7 @@ class RemoteQuoteModel extends Equatable {
   final String fontWeight;
   final double wordSpacing;
   final double letterSpacing;
+  final List<String> favorites;
 
   const RemoteQuoteModel({
     required this.quoteId,
@@ -26,6 +28,7 @@ class RemoteQuoteModel extends Equatable {
     required this.fontWeight,
     required this.wordSpacing,
     required this.letterSpacing,
+    required this.favorites,
   });
 
   @override
@@ -42,6 +45,7 @@ class RemoteQuoteModel extends Equatable {
       fontWeight,
       wordSpacing,
       letterSpacing,
+      favorites,
     ];
   }
 
@@ -61,10 +65,13 @@ class RemoteQuoteModel extends Equatable {
       QuoteKey.fontWeight: fontWeight,
       QuoteKey.wordSpacing: wordSpacing,
       QuoteKey.letterSpacing: letterSpacing,
+      QuoteKey.favorites: favorites,
     };
   }
 
-  factory RemoteQuoteModel.fromJson(Map<String, dynamic> map) {
+  factory RemoteQuoteModel.fromSnapshot(DocumentSnapshot snap) {
+    final map = snap.data() as Map<String, dynamic>;
+
     return RemoteQuoteModel(
       quoteId: map[QuoteKey.quoteId] as String,
       userId: map[QuoteKey.userId] as String,
@@ -79,6 +86,7 @@ class RemoteQuoteModel extends Equatable {
       fontWeight: map[QuoteKey.fontWeight] as String,
       wordSpacing: map[QuoteKey.wordSpacing] as double,
       letterSpacing: map[QuoteKey.letterSpacing] as double,
+      favorites: List.from(snap[QuoteKey.favorites]),
     );
   }
 }

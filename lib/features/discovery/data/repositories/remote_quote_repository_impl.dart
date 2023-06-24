@@ -1,5 +1,6 @@
 import 'package:dartz/dartz.dart';
 import 'package:quote_generator/features/discovery/discovery.dart';
+import 'package:quote_generator/features/shared/constants/firebase_field_name.dart';
 import 'package:quote_generator/features/shared/errors/failure.dart';
 import 'package:quote_generator/features/user_profile/domain/entities/app_user.dart';
 
@@ -15,11 +16,9 @@ class RemoteQuoteRepositoryImpl implements RemoteQuoteRepository {
       yield* quotesDoc.map(
         (snapshot) => Right(
           snapshot.docs
-              .map(
-                (doc) => RemoteQuoteMapper.toRemoteQuoteEntity(
-                  RemoteQuoteModel.fromJson(doc.data() as Map<String, dynamic>),
-                ),
-              )
+              .map((doc) => RemoteQuoteMapper.toRemoteQuoteEntity(
+                    RemoteQuoteModel.fromSnapshot(doc),
+                  ))
               .toList(),
         ),
       );
@@ -48,7 +47,8 @@ class RemoteQuoteRepositoryImpl implements RemoteQuoteRepository {
       final result = _datasource.hasFavoritedPost(quoteId, userId);
       yield* result.map(
         (snapshot) {
-          if (snapshot.docs.isNotEmpty) {
+          final favorites = snapshot.get(FirebaseFieldName.favorites);
+          if (favorites?.contains(userId)) {
             return const Right(true);
           } else {
             return const Right(false);
@@ -64,11 +64,11 @@ class RemoteQuoteRepositoryImpl implements RemoteQuoteRepository {
   Stream<Either<Failure, int>> quoteFavoritesCount(String quoteId) async* {
     try {
       final result = _datasource.quoteFavoritesCount(quoteId);
-      yield* result.map(
-        (snapshot) {
-          return Right(snapshot.docs.length);
-        },
-      );
+      yield* result.map((snapshot) {
+        final favorites = snapshot.get(FirebaseFieldName.favorites);
+        final int total = favorites?.length;
+        return Right(total);
+      });
     } catch (e) {
       const Left(Failure("Oops, something went wrong"));
     }
@@ -76,11 +76,10 @@ class RemoteQuoteRepositoryImpl implements RemoteQuoteRepository {
 
   @override
   Future<Either<Failure, bool>> favoriteAndUnfavoriteQuote(
-      RemoteQuote quote) async {
+      String quoteId, String userId) async {
     try {
-      final quoteModel = RemoteQuoteMapper.toRemoteQuoteModel(quote);
-      final result = await _datasource.favoriteAndUnfavoriteQuote(quoteModel);
-      return Right(result);
+      await _datasource.favoriteAndUnfavoriteQuote(quoteId, userId);
+      return const Right(true);
     } catch (e) {
       return const Left(Failure("Oops, something went wrong"));
     }
@@ -98,7 +97,7 @@ class RemoteQuoteRepositoryImpl implements RemoteQuoteRepository {
 
         return Right(
           RemoteQuoteMapper.toRemoteQuoteEntity(
-            RemoteQuoteModel.fromJson(doc.data() as Map<String, dynamic>),
+            RemoteQuoteModel.fromSnapshot(doc),
           ),
         );
       });

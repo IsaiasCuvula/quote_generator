@@ -28,7 +28,7 @@ class SaveToFavoriteButton extends ConsumerWidget {
           ),
           onPressed: () async {
             ref.read(
-              favoriteAndUnforiteQuoteProvider(quote),
+              favoriteAndUnforiteQuoteProvider(quote.quoteId),
             );
             if (context.mounted) {
               await SharedHelpers.displaySnackbar(

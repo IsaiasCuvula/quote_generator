@@ -12,6 +12,7 @@ class RemoteQuote extends Equatable {
   final String fontWeight;
   final double wordSpacing;
   final double letterSpacing;
+  final List<String> favorites;
   const RemoteQuote({
     required this.quoteId,
     required this.userId,
@@ -24,6 +25,7 @@ class RemoteQuote extends Equatable {
     required this.fontWeight,
     required this.wordSpacing,
     required this.letterSpacing,
+    required this.favorites,
   });
 
   @override
@@ -40,6 +42,7 @@ class RemoteQuote extends Equatable {
       fontWeight,
       wordSpacing,
       letterSpacing,
+      favorites,
     ];
   }
 
@@ -58,6 +61,7 @@ class RemoteQuote extends Equatable {
     String? fontWeight,
     double? wordSpacing,
     double? letterSpacing,
+    List<String>? favorites,
   }) {
     return RemoteQuote(
       quoteId: quoteId ?? this.quoteId,
@@ -71,6 +75,7 @@ class RemoteQuote extends Equatable {
       fontWeight: fontWeight ?? this.fontWeight,
       wordSpacing: wordSpacing ?? this.wordSpacing,
       letterSpacing: letterSpacing ?? this.letterSpacing,
+      favorites: favorites ?? this.favorites,
     );
   }
 }
