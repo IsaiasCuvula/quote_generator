@@ -17,16 +17,16 @@ class QuoteGeneratorApp extends ConsumerWidget {
       builder: (context, child) {
         return MaterialApp.router(
           debugShowCheckedModeBanner: false,
-          title: 'Quote Generator App',
+          title: context.l10n.app_title,
           theme: QuoteGeneratorTheme.lightTheme,
           darkTheme: QuoteGeneratorTheme.darkTheme,
           themeMode: theme,
+          locale: appLocale,
           localizationsDelegates: AppLocalizations.localizationsDelegates,
           supportedLocales: AppLocalizations.supportedLocales,
           routerDelegate: routeConfig.routerDelegate,
           routeInformationParser: routeConfig.routeInformationParser,
           routeInformationProvider: routeConfig.routeInformationProvider,
-          locale: appLocale,
         );
       },
     );
