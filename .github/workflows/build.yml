@@ -36,8 +36,8 @@ jobs:
       - run: flutter pub get
         #- run: flutter test
         #- run: flutter test --coverage
-        #- name: Flutter Analyze
-        # run: flutter analyze
+      - name: Flutter Analyze
+        run: flutter analyze
 
       - name: Build Android App
         run: flutter build appbundle
@@ -57,5 +57,5 @@ jobs:
         uses: ncipollo/release-action@v1
         with: 
             artifacts: "build/ios/iphoneos/app.ipa"
-            tag: "refs/tags/v1.0.${{ github.quote_generator }}"
+            tag: "refs/tags/v1.0.${{ github.sha }}"
             token: ${{ secrets.GHUB_TOKEN }}

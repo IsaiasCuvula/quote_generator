@@ -4,6 +4,7 @@ import 'package:go_router/go_router.dart';
 import 'package:quote_generator/common/common.dart';
 import 'package:quote_generator/features/quote/quote.dart';
 import 'package:quote_generator/features/shared/shared.dart';
+import 'package:quote_generator/common/l10n/l10n.dart';
 
 class SearchScreen extends ConsumerStatefulWidget {
   static SearchScreen builder(
@@ -39,7 +40,7 @@ class _SearchScreenState extends ConsumerState<SearchScreen> {
 
     return Scaffold(
       body: BodyAndAppBarNestedScrollView(
-        appBarTitle: context.l10n.app_bar_search_quote,
+        appBarTitle: context.l10n.appBarSearchQuote,
         centerTitle: true,
         body: Column(
           mainAxisAlignment: MainAxisAlignment.start,

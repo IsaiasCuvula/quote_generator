@@ -6,6 +6,7 @@ import 'package:quote_generator/common/common.dart';
 import 'package:quote_generator/features/discovery/discovery.dart';
 import 'package:quote_generator/features/shared/shared.dart';
 import 'package:quote_generator/features/shared/widgets/display_message_card.dart';
+import 'package:quote_generator/common/l10n/l10n.dart';
 
 class DiscoveryScreen extends ConsumerWidget {
   static DiscoveryScreen builder(
@@ -47,7 +48,7 @@ class DiscoveryScreen extends ConsumerWidget {
                   padding: Dimensions.kPaddingAllLarge,
                   child: EmptyQuoteCard(
                     displayIcon: FontAwesomeIcons.quoteLeft,
-                    displayText: l10n.empty_card_discovery,
+                    displayText: l10n.emptyCardDiscovery,
                   ),
                 ),
               );

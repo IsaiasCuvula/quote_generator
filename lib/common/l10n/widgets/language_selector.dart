@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:quote_generator/common/common.dart';
+import 'package:quote_generator/common/l10n/providers/providers.dart';
 
 class LanguageSelector extends ConsumerWidget {
   const LanguageSelector({Key? key}) : super(key: key);

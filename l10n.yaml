@@ -1,4 +1,4 @@
-arb-dir: lib/common/localization/translations
+arb-dir: lib/common/l10n/arb
 template-arb-file: quote_generator_en.arb
 output-localization-file: app_localizations.dart
 nullable-getter: false

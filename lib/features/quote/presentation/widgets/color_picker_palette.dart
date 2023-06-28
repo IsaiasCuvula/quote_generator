@@ -1,6 +1,7 @@
 import 'package:flex_color_picker/flex_color_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:quote_generator/common/common.dart';
+import 'package:quote_generator/common/l10n/l10n.dart';
 
 class ColorPickerPalette extends StatelessWidget {
   const ColorPickerPalette({
@@ -28,11 +29,11 @@ class ColorPickerPalette extends StatelessWidget {
           height: Dimensions.colorPaletteHight,
           borderRadius: Dimensions.colorPaleteBorder,
           heading: Text(
-            l10n.background_color,
+            l10n.backgroundColor,
             style: textTheme.headlineSmall,
           ),
           subheading: Text(
-            l10n.select_color_shade,
+            l10n.selectColorShade,
             style: textTheme.titleSmall,
           ),
         ),

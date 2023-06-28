@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:quote_generator/common/common.dart';
+import 'package:quote_generator/common/l10n/l10n.dart';
 
 class ErrorScreen extends StatelessWidget {
   const ErrorScreen({super.key});
@@ -13,7 +14,7 @@ class ErrorScreen extends StatelessWidget {
       appBar: AppBar(
         centerTitle: true,
         title: Text(
-          l10n.something_went_wrong,
+          l10n.somethingWentWrong,
           style: textTheme.headlineMedium,
         ),
       ),
@@ -21,7 +22,7 @@ class ErrorScreen extends StatelessWidget {
         child: ElevatedButton(
           onPressed: () => context.go(RouteLocation.createdByYou),
           child: Text(
-            l10n.go_to_home,
+            l10n.goToHome,
             style: textTheme.bodyMedium,
           ),
         ),

@@ -4,6 +4,7 @@ import 'package:go_router/go_router.dart';
 import 'package:quote_generator/common/common.dart';
 import 'package:quote_generator/features/quote/quote.dart';
 import 'package:quote_generator/features/shared/shared.dart';
+import 'package:quote_generator/common/l10n/l10n.dart';
 
 class CreateQuoteScreen extends ConsumerWidget {
   static CreateQuoteScreen builder(
@@ -47,7 +48,7 @@ class CreateQuoteScreen extends ConsumerWidget {
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               Text(
-                l10n.create_your_quote,
+                l10n.createYourQuote,
                 style: textTheme.displayMedium,
               ),
               const QuoteTextField(),
@@ -71,7 +72,7 @@ class CreateQuoteScreen extends ConsumerWidget {
           ctx.pop();
           SharedHelpers.displaySnackbar(
             ctx,
-            l10n.quote_created_successfully,
+            l10n.quoteCreatedSuccessfully,
             true,
           );
         },
@@ -79,8 +80,8 @@ class CreateQuoteScreen extends ConsumerWidget {
     } else {
       SharedHelpers.displaySnackbar(
         ctx,
-        '${l10n.empty_quote_alert}'
-        '\n${l10n.enter_quote_to_save}',
+        '${l10n.emptyQuoteAlert}'
+        '\n${l10n.enterQuoteToSave}',
         false,
       );
     }

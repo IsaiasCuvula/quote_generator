@@ -4,6 +4,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:go_router/go_router.dart';
 import 'package:quote_generator/common/common.dart';
+import 'package:quote_generator/common/l10n/l10n.dart';
 import 'package:quote_generator/features/auth/auth.dart';
 
 class AuthScreen extends ConsumerWidget {
@@ -24,7 +25,7 @@ class AuthScreen extends ConsumerWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
-              context.l10n.app_title,
+              context.l10n.appTitle,
               style: textTheme.headlineLarge,
             ).animate().fade(duration: 1500.ms).fadeIn(),
             Dimensions.kVerticalSpaceLarge,
@@ -41,7 +42,7 @@ class AuthScreen extends ConsumerWidget {
                   ),
                   Dimensions.kHorizontalSpaceSmall,
                   Text(
-                    context.l10n.sign_in_google,
+                    context.l10n.signInGoogle,
                     style: textTheme.bodyMedium,
                   )
                 ],

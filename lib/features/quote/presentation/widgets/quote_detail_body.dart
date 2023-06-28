@@ -6,6 +6,7 @@ import 'package:quote_generator/features/discovery/discovery.dart';
 import 'package:quote_generator/features/quote/quote.dart';
 import 'package:quote_generator/features/shared/shared.dart';
 import 'package:quote_generator/common/common.dart';
+import 'package:quote_generator/common/l10n/l10n.dart';
 
 class QuoteDetailBody extends ConsumerWidget {
   const QuoteDetailBody({
@@ -102,7 +103,7 @@ class QuoteDetailBody extends ConsumerWidget {
                   ref.read(postQuoteProvider(quote));
                   await SharedHelpers.displaySnackbar(
                     context,
-                    l10n.quote_posted_successfully,
+                    l10n.quotePostedSuccessfully,
                     false,
                   );
                 },
@@ -131,9 +132,8 @@ class QuoteDetailBody extends ConsumerWidget {
 
   void _showSnackBar(BuildContext context) {
     final l10n = context.l10n;
-    final String msg = quote.isFavorite == 1
-        ? l10n.quote_removed_from_fav
-        : l10n.quote_added_to_fav;
+    final String msg =
+        quote.isFavorite == 1 ? l10n.quoteRemovedFromFav : l10n.quoteAddedToFav;
 
     SharedHelpers.displaySnackbar(context, msg, true);
   }

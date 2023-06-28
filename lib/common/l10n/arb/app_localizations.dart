@@ -16,7 +16,7 @@ import 'app_localizations_pt.dart';
 /// `supportedLocales` list. For example:
 ///
 /// ```dart
-/// import 'translations/app_localizations.dart';
+/// import 'arb/app_localizations.dart';
 ///
 /// return MaterialApp(
 ///   localizationsDelegates: AppLocalizations.localizationsDelegates,
@@ -93,11 +93,11 @@ abstract class AppLocalizations {
     Locale('pt')
   ];
 
-  /// No description provided for @app_title.
+  /// No description provided for @appTitle.
   ///
   /// In en, this message translates to:
   /// **'Quote Generator'**
-  String get app_title;
+  String get appTitle;
 
   /// No description provided for @explore.
   ///
@@ -105,65 +105,65 @@ abstract class AppLocalizations {
   /// **'Explore'**
   String get explore;
 
-  /// No description provided for @nav_bar_home.
+  /// No description provided for @navBarHome.
   ///
   /// In en, this message translates to:
   /// **'Home'**
-  String get nav_bar_home;
+  String get navBarHome;
 
-  /// No description provided for @nav_bar_create_quote.
+  /// No description provided for @navBarCreateQuote.
   ///
   /// In en, this message translates to:
   /// **'Create Quote'**
-  String get nav_bar_create_quote;
+  String get navBarCreateQuote;
 
-  /// No description provided for @nav_bar_search.
+  /// No description provided for @navBarSearch.
   ///
   /// In en, this message translates to:
   /// **'Search'**
-  String get nav_bar_search;
+  String get navBarSearch;
 
-  /// No description provided for @app_bar_create_by_you.
+  /// No description provided for @appBarCreateByYou.
   ///
   /// In en, this message translates to:
   /// **'Created by you'**
-  String get app_bar_create_by_you;
+  String get appBarCreateByYou;
 
-  /// No description provided for @app_bar_favorite.
+  /// No description provided for @appBarFavorite.
   ///
   /// In en, this message translates to:
   /// **'Favorites'**
-  String get app_bar_favorite;
+  String get appBarFavorite;
 
-  /// No description provided for @app_bar_search_quote.
+  /// No description provided for @appBarSearchQuote.
   ///
   /// In en, this message translates to:
   /// **'Search Quote'**
-  String get app_bar_search_quote;
+  String get appBarSearchQuote;
 
-  /// No description provided for @app_bar_quote_details.
+  /// No description provided for @appBarQuoteDetails.
   ///
   /// In en, this message translates to:
   /// **'Quote Details'**
-  String get app_bar_quote_details;
+  String get appBarQuoteDetails;
 
-  /// No description provided for @app_bar_settings.
+  /// No description provided for @appBarSettings.
   ///
   /// In en, this message translates to:
   /// **'Settings'**
-  String get app_bar_settings;
+  String get appBarSettings;
 
-  /// No description provided for @alert_title.
+  /// No description provided for @alertTitle.
   ///
   /// In en, this message translates to:
   /// **'Delete this quote?'**
-  String get alert_title;
+  String get alertTitle;
 
-  /// No description provided for @alert_content.
+  /// No description provided for @alertContent.
   ///
   /// In en, this message translates to:
   /// **'Are you sure you want to delete this quote?'**
-  String get alert_content;
+  String get alertContent;
 
   /// No description provided for @cancel.
   ///
@@ -177,29 +177,29 @@ abstract class AppLocalizations {
   /// **'Delete'**
   String get delete;
 
-  /// No description provided for @empty_card_created_by_you.
+  /// No description provided for @emptyCardCreatedByYou.
   ///
   /// In en, this message translates to:
   /// **'You haven\'t created any quotes yet'**
-  String get empty_card_created_by_you;
+  String get emptyCardCreatedByYou;
 
-  /// No description provided for @empty_card_favorite_quote.
+  /// No description provided for @emptyCardFavoriteQuote.
   ///
   /// In en, this message translates to:
   /// **'You haven\'t added any quotes to your favorites yet'**
-  String get empty_card_favorite_quote;
+  String get emptyCardFavoriteQuote;
 
-  /// No description provided for @empty_card_discovery.
+  /// No description provided for @emptyCardDiscovery.
   ///
   /// In en, this message translates to:
   /// **'There is no quote from the server yet!'**
-  String get empty_card_discovery;
+  String get emptyCardDiscovery;
 
-  /// No description provided for @create_your_quote.
+  /// No description provided for @createYourQuote.
   ///
   /// In en, this message translates to:
   /// **'Create Your Quote'**
-  String get create_your_quote;
+  String get createYourQuote;
 
   /// No description provided for @done.
   ///
@@ -207,29 +207,29 @@ abstract class AppLocalizations {
   /// **'Done'**
   String get done;
 
-  /// No description provided for @background_color.
+  /// No description provided for @backgroundColor.
   ///
   /// In en, this message translates to:
   /// **'Select background color'**
-  String get background_color;
+  String get backgroundColor;
 
-  /// No description provided for @select_color_shade.
+  /// No description provided for @selectColorShade.
   ///
   /// In en, this message translates to:
   /// **'Select color shade'**
-  String get select_color_shade;
+  String get selectColorShade;
 
-  /// No description provided for @write_your_quote_here.
+  /// No description provided for @writeYourQuoteHere.
   ///
   /// In en, this message translates to:
   /// **'Start writing your quote here ...'**
-  String get write_your_quote_here;
+  String get writeYourQuoteHere;
 
-  /// No description provided for @quote_auhtor.
+  /// No description provided for @quoteAuhtor.
   ///
   /// In en, this message translates to:
   /// **'Quote author ...'**
-  String get quote_auhtor;
+  String get quoteAuhtor;
 
   /// No description provided for @none.
   ///
@@ -255,83 +255,83 @@ abstract class AppLocalizations {
   /// **'Large'**
   String get large;
 
-  /// No description provided for @letter_spacing.
+  /// No description provided for @letterSpacing.
   ///
   /// In en, this message translates to:
   /// **'Letter spacing'**
-  String get letter_spacing;
+  String get letterSpacing;
 
-  /// No description provided for @font_size.
+  /// No description provided for @fontSize.
   ///
   /// In en, this message translates to:
   /// **'Font size'**
-  String get font_size;
+  String get fontSize;
 
-  /// No description provided for @word_spacing.
+  /// No description provided for @wordSpacing.
   ///
   /// In en, this message translates to:
   /// **'Word spacing'**
-  String get word_spacing;
+  String get wordSpacing;
 
-  /// No description provided for @quote_created_successfully.
+  /// No description provided for @quoteCreatedSuccessfully.
   ///
   /// In en, this message translates to:
   /// **'Quote created successfully!'**
-  String get quote_created_successfully;
+  String get quoteCreatedSuccessfully;
 
-  /// No description provided for @quote_posted_successfully.
+  /// No description provided for @quotePostedSuccessfully.
   ///
   /// In en, this message translates to:
   /// **'Quote posted successfully!'**
-  String get quote_posted_successfully;
+  String get quotePostedSuccessfully;
 
-  /// No description provided for @quote_deleted_successfully.
+  /// No description provided for @quoteDeletedSuccessfully.
   ///
   /// In en, this message translates to:
   /// **'Quote deleted successfully'**
-  String get quote_deleted_successfully;
+  String get quoteDeletedSuccessfully;
 
-  /// No description provided for @quote_removed_from_fav.
+  /// No description provided for @quoteRemovedFromFav.
   ///
   /// In en, this message translates to:
   /// **'Quote removed from favorites successfully'**
-  String get quote_removed_from_fav;
+  String get quoteRemovedFromFav;
 
-  /// No description provided for @quote_added_to_fav.
+  /// No description provided for @quoteAddedToFav.
   ///
   /// In en, this message translates to:
   /// **'Quote added to favorites successfully'**
-  String get quote_added_to_fav;
+  String get quoteAddedToFav;
 
-  /// No description provided for @empty_quote_alert.
+  /// No description provided for @emptyQuoteAlert.
   ///
   /// In en, this message translates to:
   /// **'Quote must not be empty!'**
-  String get empty_quote_alert;
+  String get emptyQuoteAlert;
 
-  /// No description provided for @enter_quote_to_save.
+  /// No description provided for @enterQuoteToSave.
   ///
   /// In en, this message translates to:
   /// **'Please enter a quote to save this.'**
-  String get enter_quote_to_save;
+  String get enterQuoteToSave;
 
-  /// No description provided for @search_quote_hintText.
+  /// No description provided for @searchQuoteHintText.
   ///
   /// In en, this message translates to:
   /// **'Find a quote here ...'**
-  String get search_quote_hintText;
+  String get searchQuoteHintText;
 
-  /// No description provided for @search_quote_empty_screen_title.
+  /// No description provided for @searchQuoteEmptyScreenTitle.
   ///
   /// In en, this message translates to:
   /// **'Search for a Quote'**
-  String get search_quote_empty_screen_title;
+  String get searchQuoteEmptyScreenTitle;
 
-  /// No description provided for @search_quote_empty_screen_descritpion.
+  /// No description provided for @searchQuoteEmptyScreenDescritpion.
   ///
   /// In en, this message translates to:
   /// **'Start typing to see suggestions'**
-  String get search_quote_empty_screen_descritpion;
+  String get searchQuoteEmptyScreenDescritpion;
 
   /// No description provided for @language.
   ///
@@ -339,35 +339,35 @@ abstract class AppLocalizations {
   /// **'Language'**
   String get language;
 
-  /// No description provided for @dark_mode.
+  /// No description provided for @darkMode.
   ///
   /// In en, this message translates to:
   /// **'Dark'**
-  String get dark_mode;
+  String get darkMode;
 
-  /// No description provided for @light_mode.
+  /// No description provided for @lightMode.
   ///
   /// In en, this message translates to:
   /// **'Light'**
-  String get light_mode;
+  String get lightMode;
 
-  /// No description provided for @image_saved.
+  /// No description provided for @imageSaved.
   ///
   /// In en, this message translates to:
   /// **'Photo Saved on Library'**
-  String get image_saved;
+  String get imageSaved;
 
-  /// No description provided for @something_went_wrong.
+  /// No description provided for @somethingWentWrong.
   ///
   /// In en, this message translates to:
   /// **'Oops, Something went wrong!'**
-  String get something_went_wrong;
+  String get somethingWentWrong;
 
-  /// No description provided for @go_to_home.
+  /// No description provided for @goToHome.
   ///
   /// In en, this message translates to:
   /// **'Go to home screen'**
-  String get go_to_home;
+  String get goToHome;
 
   /// No description provided for @email.
   ///
@@ -375,23 +375,23 @@ abstract class AppLocalizations {
   /// **'Email'**
   String get email;
 
-  /// No description provided for @copied_to_clipboard.
+  /// No description provided for @copiedToClipboard.
   ///
   /// In en, this message translates to:
   /// **'quote copied to clipboard'**
-  String get copied_to_clipboard;
+  String get copiedToClipboard;
 
-  /// No description provided for @sign_in_google.
+  /// No description provided for @signInGoogle.
   ///
   /// In en, this message translates to:
   /// **'Sign In with Google'**
-  String get sign_in_google;
+  String get signInGoogle;
 
-  /// No description provided for @sign_out.
+  /// No description provided for @signOut.
   ///
   /// In en, this message translates to:
   /// **'Sign Out'**
-  String get sign_out;
+  String get signOut;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

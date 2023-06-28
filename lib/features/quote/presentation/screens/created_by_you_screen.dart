@@ -7,6 +7,7 @@ import 'package:quote_generator/common/common.dart';
 import 'package:quote_generator/features/shared/shared.dart';
 import 'package:quote_generator/features/shared/widgets/display_message_card.dart';
 import 'package:quote_generator/features/user_profile/presentation/presentation.dart';
+import 'package:quote_generator/common/l10n/l10n.dart';
 
 class CreatedByYouScreen extends ConsumerWidget {
   static CreatedByYouScreen builder(
@@ -28,7 +29,7 @@ class CreatedByYouScreen extends ConsumerWidget {
 
     return Scaffold(
       body: BodyAndAppBarNestedScrollView(
-        appBarTitle: l10n.app_bar_create_by_you,
+        appBarTitle: l10n.appBarCreateByYou,
         actions: [
           IconButton(
             onPressed: () => context.push(RouteLocation.createQuote),
@@ -59,7 +60,7 @@ class CreatedByYouScreen extends ConsumerWidget {
                           padding: Dimensions.kPaddingAllLarge,
                           child: EmptyQuoteCard(
                             displayIcon: FontAwesomeIcons.list,
-                            displayText: l10n.empty_card_created_by_you,
+                            displayText: l10n.emptyCardCreatedByYou,
                           ),
                         ),
                       )

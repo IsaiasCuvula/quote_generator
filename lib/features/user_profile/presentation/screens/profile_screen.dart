@@ -5,6 +5,7 @@ import 'package:go_router/go_router.dart';
 import 'package:quote_generator/common/common.dart';
 import 'package:quote_generator/features/auth/auth.dart';
 import 'package:quote_generator/features/user_profile/presentation/presentation.dart';
+import 'package:quote_generator/common/l10n/l10n.dart';
 
 class ProfileScreen extends ConsumerWidget {
   static ProfileScreen builder(
@@ -56,7 +57,7 @@ class ProfileScreen extends ConsumerWidget {
                   FittedBox(
                     fit: BoxFit.fitWidth,
                     child: BodyInfo(
-                      displayTitle: l10n.sign_out,
+                      displayTitle: l10n.signOut,
                       displayLabel: '',
                       iconData: FontAwesomeIcons.arrowRightFromBracket,
                       onTap: () async {

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:quote_generator/features/quote/quote.dart';
 import 'package:quote_generator/common/common.dart';
+import 'package:quote_generator/common/l10n/l10n.dart';
 
 class WordSpacingSelector extends ConsumerStatefulWidget {
   const WordSpacingSelector({super.key});
@@ -37,7 +38,7 @@ class _WordSpacingSelectorState extends ConsumerState<WordSpacingSelector> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        SettingTitle(title: l10n.word_spacing),
+        SettingTitle(title: l10n.wordSpacing),
         SizedBox(
           height: Dimensions.kQuoteTextSettingHeight,
           child: ListView.separated(

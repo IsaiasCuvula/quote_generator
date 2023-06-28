@@ -4,6 +4,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:quote_generator/common/common.dart';
 import 'package:flutter/services.dart';
 import 'package:quote_generator/features/shared/shared.dart';
+import 'package:quote_generator/common/l10n/l10n.dart';
 
 class CopyToClipboardButton extends ConsumerWidget {
   const CopyToClipboardButton({
@@ -31,7 +32,7 @@ class CopyToClipboardButton extends ConsumerWidget {
         ).then((value) async {
           await SharedHelpers.displaySnackbar(
             context,
-            context.l10n.copied_to_clipboard,
+            context.l10n.copiedToClipboard,
             true,
           );
         });

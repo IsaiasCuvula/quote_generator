@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:quote_generator/common/common.dart';
+import 'package:quote_generator/common/l10n/l10n.dart';
+import 'package:quote_generator/common/l10n/widgets/widgets.dart';
 import 'package:quote_generator/features/shared/shared.dart';
 
 class SettingsScreen extends ConsumerWidget {
@@ -20,10 +22,10 @@ class SettingsScreen extends ConsumerWidget {
     final themeState = ref.watch(themeProvider);
     final switchColor = colorScheme.primary;
     final themeLabelDisplay =
-        themeState == ThemeMode.dark ? l10n.dark_mode : l10n.light_mode;
+        themeState == ThemeMode.dark ? l10n.darkMode : l10n.lightMode;
     return Scaffold(
       body: BodyAndAppBarNestedScrollView(
-        appBarTitle: l10n.app_bar_settings,
+        appBarTitle: l10n.appBarSettings,
         centerTitle: true,
         body: Column(
           mainAxisAlignment: MainAxisAlignment.start,

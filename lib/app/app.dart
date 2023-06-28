@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:quote_generator/common/common.dart';
+import 'package:quote_generator/common/l10n/arb/translations.dart';
+import 'package:quote_generator/common/l10n/providers/providers.dart';
 
 class QuoteGeneratorApp extends ConsumerWidget {
   const QuoteGeneratorApp({super.key});
@@ -14,10 +16,10 @@ class QuoteGeneratorApp extends ConsumerWidget {
 
     return ScreenUtilInit(
       designSize: const Size(375, 812),
-      builder: (context, child) {
+      builder: (ctx, child) {
         return MaterialApp.router(
           debugShowCheckedModeBanner: false,
-          title: context.l10n.app_title,
+          title: 'Quote Generator',
           theme: QuoteGeneratorTheme.lightTheme,
           darkTheme: QuoteGeneratorTheme.darkTheme,
           themeMode: theme,

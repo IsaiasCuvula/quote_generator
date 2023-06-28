@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:quote_generator/features/quote/quote.dart';
+import 'package:quote_generator/common/l10n/l10n.dart';
 import 'package:quote_generator/common/common.dart';
 
 class TextSizeSelector extends ConsumerStatefulWidget {
@@ -45,7 +46,7 @@ class _TextSizeSelectorState extends ConsumerState<TextSizeSelector> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        SettingTitle(title: context.l10n.font_size),
+        SettingTitle(title: context.l10n.fontSize),
         SizedBox(
           height: Dimensions.kQuoteTextSettingHeight,
           child: ListView.separated(

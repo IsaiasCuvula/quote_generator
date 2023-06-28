@@ -6,6 +6,7 @@ import 'package:quote_generator/common/common.dart';
 import 'package:quote_generator/features/quote/quote.dart';
 import 'package:quote_generator/features/shared/shared.dart';
 import 'package:quote_generator/features/shared/widgets/display_message_card.dart';
+import 'package:quote_generator/common/l10n/l10n.dart';
 
 class FavoriteScreen extends ConsumerWidget {
   static FavoriteScreen builder(
@@ -27,7 +28,7 @@ class FavoriteScreen extends ConsumerWidget {
 
     return Scaffold(
       body: BodyAndAppBarNestedScrollView(
-        appBarTitle: l10n.app_bar_favorite,
+        appBarTitle: l10n.appBarFavorite,
         centerTitle: true,
         body: isLoading
             ? const LoadingScreen()
@@ -39,7 +40,7 @@ class FavoriteScreen extends ConsumerWidget {
                           padding: Dimensions.kPaddingAllLarge,
                           child: EmptyQuoteCard(
                             displayIcon: FontAwesomeIcons.solidHeart,
-                            displayText: l10n.empty_card_favorite_quote,
+                            displayText: l10n.emptyCardFavoriteQuote,
                           ),
                         ),
                       )

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:quote_generator/features/quote/quote.dart';
 import 'package:quote_generator/common/common.dart';
+import 'package:quote_generator/common/l10n/l10n.dart';
 
 class AuthorTextField extends StatelessWidget {
   const AuthorTextField({
@@ -17,7 +18,7 @@ class AuthorTextField extends StatelessWidget {
       child: Consumer(builder: (ctx, ref, child) {
         return TextField(
           decoration: InputDecoration.collapsed(
-            hintText: context.l10n.quote_auhtor,
+            hintText: context.l10n.quoteAuhtor,
             hintStyle: theme.textTheme.bodySmall?.copyWith(
               color: hintColor,
             ),
