@@ -35,6 +35,7 @@ dependencies:
   firebase_core: ^2.14.0
   cloud_firestore: ^4.8.1
   cached_network_image: ^3.2.3
+  google_fonts: ^5.1.0
 
 dev_dependencies:
   flutter_test:
@@ -45,15 +46,3 @@ dev_dependencies:
 flutter:
   generate: true
   uses-material-design: true
-
-  fonts:
-    - family: Dosis
-      fonts:
-        - asset: assets/fonts/Dosis-Bold.ttf
-        - asset: assets/fonts/Dosis-ExtraBold.ttf
-        - asset: assets/fonts/Dosis-Light.ttf
-        - asset: assets/fonts/Dosis-ExtraLight.ttf
-        - asset: assets/fonts/Dosis-Medium.ttf
-        - asset: assets/fonts/Dosis-Regular.ttf
-        - asset: assets/fonts/Dosis-SemiBold.ttf
-      

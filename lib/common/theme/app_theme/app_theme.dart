@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:google_fonts/google_fonts.dart';
 part 'app_bar_theme.dart';
 part 'color_scheme.dart';
 part 'text_theme.dart';
@@ -13,7 +14,7 @@ class QuoteGeneratorTheme {
     brightness: Brightness.light,
     colorScheme: _ColorScheme._lightColorScheme,
     textTheme: _TextTheme._textLightTheme,
-    fontFamily: 'Dosis',
+    fontFamily: GoogleFonts.dosis().fontFamily,
     appBarTheme: _AppBarTheme._appBarLightTheme,
     scaffoldBackgroundColor: _ColorScheme._lightColorScheme.background,
   );
