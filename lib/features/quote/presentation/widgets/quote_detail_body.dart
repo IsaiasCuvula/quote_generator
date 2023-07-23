@@ -2,11 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:quote_generator/config/config.dart';
+import 'package:quote_generator/core/utils/utils.dart';
 import 'package:quote_generator/features/discovery/discovery.dart';
 import 'package:quote_generator/features/quote/quote.dart';
-import 'package:quote_generator/features/shared/shared.dart';
-import 'package:quote_generator/common/common.dart';
-import 'package:quote_generator/common/l10n/l10n.dart';
 
 class QuoteDetailBody extends ConsumerWidget {
   const QuoteDetailBody({
@@ -42,11 +41,11 @@ class QuoteDetailBody extends ConsumerWidget {
           Dimensions.kVerticalSpaceSmall,
           Text(
             quote.quoteText,
-            textAlign: Helpers.textAlignList[quote.textAlign],
+            textAlign: AppHelpers.textAlignList[quote.textAlign],
             style: TextStyle(
               color: textColor,
               fontSize: quote.fontSize,
-              fontWeight: Helpers.fontWeightList[quote.fontWeight],
+              fontWeight: AppHelpers.fontWeightList[quote.fontWeight],
               wordSpacing: quote.wordSpacing,
               letterSpacing: quote.letterSpacing,
             ),
@@ -54,7 +53,7 @@ class QuoteDetailBody extends ConsumerWidget {
           Dimensions.kVerticalSpaceSmall,
           Text(
             '- ${quote.author}',
-            textAlign: Helpers.textAlignList[quote.textAlign],
+            textAlign: AppHelpers.textAlignList[quote.textAlign],
             style: context.textTheme.bodyMedium?.copyWith(
               color: textColor,
             ),
@@ -87,7 +86,7 @@ class QuoteDetailBody extends ConsumerWidget {
                 onPressed: () async {
                   final quoteText = quote.quoteText;
                   final quoteAuthor = quote.author;
-                  await SharedHelpers.shareQuote(
+                  await AppHelpers.shareQuote(
                     quoteText,
                     quoteAuthor,
                   );
@@ -101,7 +100,7 @@ class QuoteDetailBody extends ConsumerWidget {
                 color: textColor,
                 onPressed: () async {
                   ref.read(postQuoteProvider(quote));
-                  await SharedHelpers.displaySnackbar(
+                  await AppAlerts.displaySnackbar(
                     context,
                     l10n.quotePostedSuccessfully,
                     false,
@@ -115,8 +114,8 @@ class QuoteDetailBody extends ConsumerWidget {
                 ),
                 color: textColor,
                 onPressed: () async {
-                  final quoteId = Helpers.stringToInt('${quote.id}');
-                  await Helpers.showAlertDeleteDialog(
+                  final quoteId = AppHelpers.stringToInt('${quote.id}');
+                  await AppAlerts.showAlertDeleteDialog(
                     context: context,
                     ref: ref,
                     quoteId: quoteId,
@@ -135,6 +134,6 @@ class QuoteDetailBody extends ConsumerWidget {
     final String msg =
         quote.isFavorite == 1 ? l10n.quoteRemovedFromFav : l10n.quoteAddedToFav;
 
-    SharedHelpers.displaySnackbar(context, msg, true);
+    AppAlerts.displaySnackbar(context, msg, true);
   }
 }

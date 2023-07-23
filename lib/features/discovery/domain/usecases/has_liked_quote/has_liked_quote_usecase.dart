@@ -1,6 +1,6 @@
 import 'package:dartz/dartz.dart';
 import 'package:quote_generator/features/discovery/discovery.dart';
-import 'package:quote_generator/features/shared/shared.dart';
+import 'package:quote_generator/core/core.dart';
 
 class HasLikedQuote implements StreamUseCase<bool, MapString> {
   final RemoteQuoteRepository _repository;

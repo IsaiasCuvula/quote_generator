@@ -1,6 +1,6 @@
 import 'package:dartz/dartz.dart';
 import 'package:quote_generator/features/download/download.dart';
-import 'package:quote_generator/features/shared/shared.dart';
+import 'package:quote_generator/core/core.dart';
 
 class SaveImageUseCase implements UseCase<dynamic, QuoteImage> {
   final DownloadRepository _repository;

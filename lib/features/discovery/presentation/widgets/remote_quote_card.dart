@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:quote_generator/features/discovery/discovery.dart';
-import 'package:quote_generator/features/quote/quote.dart';
-import 'package:quote_generator/common/common.dart';
-import 'package:quote_generator/features/shared/shared.dart';
+import 'package:quote_generator/config/config.dart';
+import 'package:quote_generator/features/features.dart';
+import 'package:quote_generator/core/core.dart';
 
 class RemoteQuoteCard extends StatelessWidget {
   RemoteQuoteCard({super.key, required this.quote});
@@ -24,10 +23,10 @@ class RemoteQuoteCard extends StatelessWidget {
       fontSize: quote.fontSize,
       wordSpacing: quote.wordSpacing,
       letterSpacing: quote.letterSpacing,
-      fontWeight: Helpers.fontWeightList[quote.fontWeight],
+      fontWeight: AppHelpers.fontWeightList[quote.fontWeight],
     );
 
-    final backgroundColor = Helpers.intToColor(quote.backgroundColor);
+    final backgroundColor = AppHelpers.intToColor(quote.backgroundColor);
 
     return Card(
       elevation: 2,
@@ -44,7 +43,7 @@ class RemoteQuoteCard extends StatelessWidget {
             onTap: () {
               context.pushNamed(
                 RouteLocation.remoteQuoteDetailScreen,
-                params: {'quoteId': quote.quoteId},
+                params: {AppKeys.quoteId: quote.quoteId},
               );
             },
             child: RepaintBoundary(

@@ -1,6 +1,6 @@
 import 'package:dartz/dartz.dart';
 import 'package:quote_generator/features/auth/auth.dart';
-import 'package:quote_generator/features/shared/shared.dart';
+import 'package:quote_generator/core/core.dart';
 
 class GoogleSignInUseCase implements UseCase<AuthResult, NoParams> {
   final AuthRepository _authRepository;

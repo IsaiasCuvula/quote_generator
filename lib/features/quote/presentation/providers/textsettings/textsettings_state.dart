@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:quote_generator/common/common.dart';
+import 'package:quote_generator/config/config.dart';
 
 class TextSettingsState {
   TextAlign textAlign = TextAlign.start;

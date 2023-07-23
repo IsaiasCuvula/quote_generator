@@ -1,6 +1,6 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:quote_generator/features/quote/quote.dart';
-import 'package:quote_generator/features/shared/shared.dart';
+import 'package:quote_generator/core/core.dart';
 
 class GetQuotesNotifier extends StateNotifier<QuoteState> {
   GetQuotesNotifier(this._getQuotesUsecase)

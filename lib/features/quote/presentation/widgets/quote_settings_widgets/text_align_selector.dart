@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:quote_generator/common/common.dart';
+import 'package:quote_generator/config/config.dart';
+import 'package:quote_generator/core/core.dart';
 import 'package:quote_generator/features/quote/quote.dart';
 
 class TextAlignSelector extends ConsumerStatefulWidget {
@@ -29,7 +30,8 @@ class _TextAlignSelectorState extends ConsumerState<TextAlignSelector> {
   ];
 
   TextAlign _selectedTextAlign(int index) {
-    final List<TextAlign> textAlignList = Helpers.textAlignList.values.toList();
+    final List<TextAlign> textAlignList =
+        AppHelpers.textAlignList.values.toList();
     return textAlignList[index];
   }
 

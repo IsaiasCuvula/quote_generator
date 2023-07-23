@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:image_gallery_saver/image_gallery_saver.dart';
 import 'package:quote_generator/features/download/download.dart';
-import 'package:quote_generator/features/shared/shared.dart';
+import 'package:quote_generator/core/core.dart';
 import 'package:dartz/dartz.dart';
 
 class DownloadRepositoryImpl implements DownloadRepository {
@@ -22,7 +22,7 @@ class DownloadRepositoryImpl implements DownloadRepository {
 
       final Uint8List pngBytes = byteData!.buffer.asUint8List();
       final quoteImage = QuoteImage(
-        id: SharedHelpers.generateUUID(),
+        id: AppHelpers.generateUUID(),
         imageData: pngBytes,
       );
       return Right(quoteImage);

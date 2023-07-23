@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:quote_generator/core/core.dart';
 import 'package:quote_generator/features/quote/quote.dart';
-import 'package:quote_generator/common/common.dart';
+import 'package:quote_generator/config/config.dart';
 
 class TextFontWeightSelector extends ConsumerStatefulWidget {
   const TextFontWeightSelector({
@@ -22,7 +23,7 @@ class _TextStyleSelectorState extends ConsumerState<TextFontWeightSelector> {
 
   FontWeight _selectedFontWeight(int index) {
     final List<FontWeight> fontWeightList =
-        Helpers.fontWeightList.values.toList();
+        AppHelpers.fontWeightList.values.toList();
     return fontWeightList[index];
   }
 

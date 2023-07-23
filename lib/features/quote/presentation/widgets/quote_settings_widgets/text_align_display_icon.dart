@@ -11,8 +11,6 @@ class TextAlignDisplayIcon extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return FaIcon(
-      icon,
-    );
+    return FaIcon(icon);
   }
 }

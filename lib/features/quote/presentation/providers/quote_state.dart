@@ -1,8 +1,6 @@
-// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:equatable/equatable.dart';
-
 import 'package:quote_generator/features/quote/quote.dart';
-import 'package:quote_generator/features/shared/shared.dart';
+import 'package:quote_generator/core/core.dart';
 
 class QuoteState extends Equatable {
   final QuoteList allQuotes;

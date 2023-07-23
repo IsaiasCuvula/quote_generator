@@ -2,7 +2,7 @@ import 'dart:async';
 
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:quote_generator/features/discovery/discovery.dart';
-import 'package:quote_generator/features/shared/shared.dart';
+import 'package:quote_generator/core/core.dart';
 
 final allQuotesProvider = StreamProvider.autoDispose<Iterable<RemoteQuote>>(
   (ref) {

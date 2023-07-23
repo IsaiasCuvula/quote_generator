@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
-import 'package:quote_generator/common/l10n/l10n.dart';
+import 'package:quote_generator/config/config.dart';
+import 'package:quote_generator/features/features.dart';
 import 'package:quote_generator/features/quote/quote.dart';
-import 'package:quote_generator/features/shared/shared.dart';
+import 'package:quote_generator/core/core.dart';
 
 class QuoteDetailScreen extends ConsumerWidget {
   static QuoteDetailScreen builder(
@@ -35,7 +36,7 @@ class QuoteDetailScreen extends ConsumerWidget {
   }
 
   void _getQuoteById(WidgetRef ref) async {
-    final int quoteId = Helpers.stringToInt('$id');
+    final int quoteId = AppHelpers.stringToInt('$id');
     await ref.read(getQuoteByIdProvider.notifier).getQuoteById(quoteId);
   }
 }

@@ -1,15 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:quote_generator/common/common.dart';
-import 'package:quote_generator/common/l10n/l10n.dart';
+import 'package:quote_generator/config/config.dart';
 
 class EmptySearchQuoteScreen extends StatelessWidget {
   const EmptySearchQuoteScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    final theme = Theme.of(context);
     final l10n = context.l10n;
 
     return Center(
@@ -30,12 +28,12 @@ class EmptySearchQuoteScreen extends StatelessWidget {
           Dimensions.kVerticalSpaceSmall,
           Text(
             l10n.searchQuoteEmptyScreenTitle,
-            style: theme.textTheme.headlineSmall,
+            style: context.textTheme.headlineSmall,
           ),
           Dimensions.kVerticalSpaceSmallest,
           Text(
             l10n.searchQuoteEmptyScreenDescritpion,
-            style: theme.textTheme.labelLarge,
+            style: context.textTheme.labelLarge,
           ),
         ],
       ),

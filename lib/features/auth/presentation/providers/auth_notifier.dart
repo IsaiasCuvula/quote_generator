@@ -1,6 +1,6 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:quote_generator/features/auth/auth.dart';
-import 'package:quote_generator/features/shared/shared.dart';
+import 'package:quote_generator/core/core.dart';
 
 class AuthNotifier extends StateNotifier<AuthState> {
   final GoogleSignInUseCase _googleSignInUseCase;

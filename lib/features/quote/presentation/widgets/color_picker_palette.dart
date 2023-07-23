@@ -1,7 +1,6 @@
 import 'package:flex_color_picker/flex_color_picker.dart';
 import 'package:flutter/material.dart';
-import 'package:quote_generator/common/common.dart';
-import 'package:quote_generator/common/l10n/l10n.dart';
+import 'package:quote_generator/config/config.dart';
 
 class ColorPickerPalette extends StatelessWidget {
   const ColorPickerPalette({
@@ -15,7 +14,7 @@ class ColorPickerPalette extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final textTheme = Theme.of(context).textTheme;
+    final textTheme = context.textTheme;
     final l10n = context.l10n;
 
     return SizedBox(

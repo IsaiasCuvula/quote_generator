@@ -1,6 +1,6 @@
 import 'package:dartz/dartz.dart';
 import 'package:quote_generator/features/discovery/discovery.dart';
-import 'package:quote_generator/features/shared/shared.dart';
+import 'package:quote_generator/core/core.dart';
 
 class GetRemoteQuoteById implements StreamUseCase<RemoteQuote, String> {
   final RemoteQuoteRepository _repository;

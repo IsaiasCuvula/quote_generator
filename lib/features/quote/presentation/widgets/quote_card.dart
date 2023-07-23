@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:quote_generator/config/config.dart';
 import 'package:quote_generator/features/quote/quote.dart';
-import 'package:quote_generator/common/common.dart';
-import 'package:quote_generator/features/shared/shared.dart';
-
+import 'package:quote_generator/core/core.dart';
 import 'card_footer.dart';
 
 class QuoteCard extends StatelessWidget {
@@ -16,7 +15,7 @@ class QuoteCard extends StatelessWidget {
   Widget build(BuildContext context) {
     final textTheme = context.textTheme;
     final colorScheme = context.colorScheme;
-    final autherTextStyle = textTheme.labelLarge?.copyWith(
+    final authorTextStyle = textTheme.labelLarge?.copyWith(
       letterSpacing: quote.letterSpacing,
       color: colorScheme.onSurface,
     );
@@ -25,10 +24,10 @@ class QuoteCard extends StatelessWidget {
       fontSize: quote.fontSize,
       wordSpacing: quote.wordSpacing,
       letterSpacing: quote.letterSpacing,
-      fontWeight: Helpers.fontWeightList[quote.fontWeight],
+      fontWeight: AppHelpers.fontWeightList[quote.fontWeight],
     );
 
-    final backgroundColor = Helpers.intToColor(quote.backgroundColor);
+    final backgroundColor = AppHelpers.intToColor(quote.backgroundColor);
 
     return Card(
       elevation: 2,
@@ -44,7 +43,7 @@ class QuoteCard extends StatelessWidget {
             onTap: () {
               context.pushNamed(
                 RouteLocation.detailScreen,
-                params: {'id': '${quote.id}'},
+                params: {AppKeys.id: '${quote.id}'},
               );
             },
             child: RepaintBoundary(
@@ -63,7 +62,7 @@ class QuoteCard extends StatelessWidget {
                   colorScheme: colorScheme,
                   quote: quote,
                   quoteTextSyle: quoteTextSyle,
-                  autherTextStyle: autherTextStyle,
+                  autherTextStyle: authorTextStyle,
                 ),
               ),
             ),

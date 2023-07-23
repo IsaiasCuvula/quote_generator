@@ -1,9 +1,7 @@
 import 'package:dartz/dartz.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:quote_generator/features/auth/data/datasource/datasource.dart';
-import 'package:quote_generator/features/auth/data/models/auth_result.dart';
-import 'package:quote_generator/features/auth/domain/domain.dart';
-import 'package:quote_generator/features/shared/errors/failure.dart';
+import 'package:quote_generator/features/features.dart';
+import 'package:quote_generator/core/core.dart';
 
 class AuthRepositoryImpl implements AuthRepository {
   final AuthRemoteDataSource _authRemoteDataSource;

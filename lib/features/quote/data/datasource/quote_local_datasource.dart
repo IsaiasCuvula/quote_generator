@@ -1,6 +1,6 @@
 import 'package:path/path.dart';
 import 'package:quote_generator/features/quote/quote.dart';
-import 'package:quote_generator/features/shared/shared.dart';
+import 'package:quote_generator/core/core.dart';
 import 'package:sqflite/sqflite.dart';
 
 class QuoteLocalDatasource {
@@ -50,7 +50,7 @@ class QuoteLocalDatasource {
     final db = await database;
     return db.transaction((txn) async {
       return await txn.insert(
-        Constants.dbTable,
+        AppKeys.dbTable,
         quote.toJson(),
         conflictAlgorithm: ConflictAlgorithm.replace,
       );
@@ -60,7 +60,7 @@ class QuoteLocalDatasource {
   Future<QuoteModelList> getQuotes() async {
     final db = await database;
     final List<Map<String, dynamic>> maps = await db.query(
-      Constants.dbTable,
+      AppKeys.dbTable,
       orderBy: "id DESC",
     );
     return List.generate(maps.length, (index) {
@@ -72,7 +72,7 @@ class QuoteLocalDatasource {
     final db = await database;
     return db.transaction((txn) async {
       return await txn.update(
-        Constants.dbTable,
+        AppKeys.dbTable,
         quote.toJson(),
         where: 'id = ?',
         whereArgs: [quote.id],
@@ -84,7 +84,7 @@ class QuoteLocalDatasource {
     final db = await database;
     return db.transaction((txn) async {
       return await txn.delete(
-        Constants.dbTable,
+        AppKeys.dbTable,
         where: 'id = ?',
         whereArgs: [id],
       );
@@ -94,7 +94,7 @@ class QuoteLocalDatasource {
   Future<QuoteModel?> getQuoteById(int id) async {
     final db = await database;
     final result = await db.query(
-      Constants.dbTable,
+      AppKeys.dbTable,
       where: 'id = ?',
       whereArgs: [id],
     );
@@ -104,7 +104,7 @@ class QuoteLocalDatasource {
   Future<QuoteModelList> searchQuote(String query) async {
     final db = await database;
     final map = await db.query(
-      Constants.dbTable,
+      AppKeys.dbTable,
       where: 'quoteText LIKE ? OR author LIKE?',
       whereArgs: ['%$query%', '%$query%'],
     );

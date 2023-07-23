@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:quote_generator/common/common.dart';
+import 'package:quote_generator/config/config.dart';
+import 'package:quote_generator/features/features.dart';
 import 'package:quote_generator/features/discovery/discovery.dart';
-import 'package:quote_generator/features/shared/widgets/display_message_card.dart';
-import 'package:quote_generator/features/shared/widgets/widgets.dart';
+import 'package:quote_generator/core/core.dart';
 
 class FavoriteCounter extends ConsumerWidget {
   final String quoteId;
@@ -12,6 +12,7 @@ class FavoriteCounter extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final favoritesCount = ref.watch(quoteLikesCountProvider(quoteId));
+
     return favoritesCount.when(
       data: (int favoritesCount) {
         return Text(

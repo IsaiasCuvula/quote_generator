@@ -1,8 +1,8 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:quote_generator/core/core.dart';
 import 'package:quote_generator/features/auth/auth.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
-import 'package:quote_generator/features/shared/shared.dart';
 
 class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
   @override
@@ -13,7 +13,7 @@ class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
   @override
   Future<AuthResult> googleSignIn() async {
     final GoogleSignIn googleSignIn = GoogleSignIn(scopes: [
-      Constants.emailScope,
+      AppKeys.emailScope,
     ]);
     final signInAccount = await googleSignIn.signIn();
     if (signInAccount == null) {

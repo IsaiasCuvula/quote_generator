@@ -1,7 +1,7 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:quote_generator/features/discovery/discovery.dart';
 import 'package:quote_generator/features/quote/quote.dart';
-import 'package:quote_generator/features/user_profile/presentation/presentation.dart';
+import 'package:quote_generator/features/profile/presentation/presentation.dart';
 
 final postQuoteProvider = FutureProviderFamily(
   (ref, Quote quote) async {

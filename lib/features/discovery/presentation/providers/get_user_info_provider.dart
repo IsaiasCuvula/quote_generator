@@ -1,7 +1,7 @@
 import 'dart:async';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:quote_generator/features/discovery/discovery.dart';
-import 'package:quote_generator/features/user_profile/user_profile.dart';
+import 'package:quote_generator/features/profile/profile.dart';
 
 final getUserInfoProvider = StreamProvider.family.autoDispose<AppUser, String>(
   (

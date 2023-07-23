@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:quote_generator/features/shared/shared.dart';
+import 'package:quote_generator/core/core.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:quote_generator/common/common.dart';
-import 'package:quote_generator/features/download/download.dart';
-import 'package:quote_generator/common/l10n/l10n.dart';
+import 'package:quote_generator/config/config.dart';
+import 'package:quote_generator/features/features.dart';
 
 class DownloadButton extends ConsumerWidget {
   const DownloadButton({
@@ -28,7 +27,7 @@ class DownloadButton extends ConsumerWidget {
             .captureQuoteWidgetAsImage(widgetKey)
             .then(
           (value) async {
-            await SharedHelpers.displaySnackbar(
+            await AppAlerts.displaySnackbar(
               context,
               context.l10n.imageSaved,
               true,

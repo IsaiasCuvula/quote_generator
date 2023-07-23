@@ -3,11 +3,9 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:go_router/go_router.dart';
-import 'package:quote_generator/features/discovery/discovery.dart';
-import 'package:quote_generator/features/quote/quote.dart';
-import 'package:quote_generator/features/shared/shared.dart';
-import 'package:quote_generator/common/common.dart';
-import 'package:quote_generator/features/user_profile/presentation/presentation.dart';
+import 'package:quote_generator/config/config.dart';
+import 'package:quote_generator/core/core.dart';
+import 'package:quote_generator/features/features.dart';
 
 class DetailBody extends ConsumerWidget {
   const DetailBody({
@@ -22,10 +20,7 @@ class DetailBody extends ConsumerWidget {
     final user = ref.watch(userProvider);
     final userId = user.appUser?.userId;
     final textColor = context.colorScheme.onSurface;
-    //final l10n = context.l10n;
-    // final displayFavoriteIcon = quote.isFavorite == 1
-    //     ? FontAwesomeIcons.solidHeart
-    //     : FontAwesomeIcons.heart;
+
     const displayFavoriteIcon = FontAwesomeIcons.heart;
     return Container(
       margin: Dimensions.kPaddingAllLarge,
@@ -45,11 +40,11 @@ class DetailBody extends ConsumerWidget {
           Dimensions.kVerticalSpaceSmall,
           Text(
             quote.quoteText,
-            textAlign: Helpers.textAlignList[quote.textAlign],
+            textAlign: AppHelpers.textAlignList[quote.textAlign],
             style: TextStyle(
               color: textColor,
               fontSize: quote.fontSize,
-              fontWeight: Helpers.fontWeightList[quote.fontWeight],
+              fontWeight: AppHelpers.fontWeightList[quote.fontWeight],
               wordSpacing: quote.wordSpacing,
               letterSpacing: quote.letterSpacing,
             ),
@@ -57,7 +52,7 @@ class DetailBody extends ConsumerWidget {
           Dimensions.kVerticalSpaceSmall,
           Text(
             '- ${quote.author}',
-            textAlign: Helpers.textAlignList[quote.textAlign],
+            textAlign: AppHelpers.textAlignList[quote.textAlign],
             style: context.textTheme.bodyMedium?.copyWith(
               color: textColor,
             ),
@@ -90,7 +85,7 @@ class DetailBody extends ConsumerWidget {
                 onPressed: () async {
                   final quoteText = quote.quoteText;
                   final quoteAuthor = quote.author;
-                  await SharedHelpers.shareQuote(
+                  await AppHelpers.shareQuote(
                     quoteText,
                     quoteAuthor,
                   );

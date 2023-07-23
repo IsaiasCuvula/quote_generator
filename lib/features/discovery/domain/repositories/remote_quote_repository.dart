@@ -1,7 +1,7 @@
 import 'package:dartz/dartz.dart';
 import 'package:quote_generator/features/discovery/discovery.dart';
-import 'package:quote_generator/features/shared/shared.dart';
-import 'package:quote_generator/features/user_profile/user_profile.dart';
+import 'package:quote_generator/core/core.dart';
+import 'package:quote_generator/features/profile/profile.dart';
 
 abstract class RemoteQuoteRepository {
   Stream<Either<Failure, RemoteQuoteList>> getAllQuotes();

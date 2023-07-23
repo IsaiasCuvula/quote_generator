@@ -1,8 +1,7 @@
 import 'package:dartz/dartz.dart';
 import 'package:quote_generator/features/discovery/discovery.dart';
-import 'package:quote_generator/features/shared/constants/firebase_field_name.dart';
-import 'package:quote_generator/features/shared/errors/failure.dart';
-import 'package:quote_generator/features/user_profile/domain/entities/app_user.dart';
+import 'package:quote_generator/core/core.dart';
+import 'package:quote_generator/features/profile/domain/entities/app_user.dart';
 
 class RemoteQuoteRepositoryImpl implements RemoteQuoteRepository {
   final QuoteRemoteDatasource _datasource;

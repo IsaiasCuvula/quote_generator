@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:quote_generator/config/config.dart';
 
 class SettingTitle extends StatelessWidget {
   const SettingTitle({
@@ -10,10 +11,9 @@ class SettingTitle extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final theme = Theme.of(context);
     return Text(
       title,
-      style: theme.textTheme.headlineSmall,
+      style: context.textTheme.headlineSmall,
     );
   }
 }

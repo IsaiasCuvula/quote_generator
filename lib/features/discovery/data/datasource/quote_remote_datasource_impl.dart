@@ -1,6 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:quote_generator/features/discovery/data/data.dart';
-import 'package:quote_generator/features/shared/shared.dart';
+import 'package:quote_generator/core/core.dart';
 
 class QuoteRemoteDatasourceImpl implements QuoteRemoteDatasource {
   final FirebaseFirestore _firestore = FirebaseFirestore.instance;

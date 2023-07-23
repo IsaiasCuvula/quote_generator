@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:quote_generator/common/common.dart';
-import 'package:quote_generator/features/download/download.dart';
-import 'package:quote_generator/features/quote/quote.dart';
-import 'package:quote_generator/features/shared/shared.dart';
+import 'package:quote_generator/config/config.dart';
+import 'package:quote_generator/features/features.dart';
+import 'package:quote_generator/core/core.dart';
 
 class CardFooter extends StatelessWidget {
   const CardFooter({

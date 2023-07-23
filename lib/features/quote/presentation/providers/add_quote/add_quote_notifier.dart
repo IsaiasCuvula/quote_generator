@@ -1,4 +1,5 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:quote_generator/core/core.dart';
 import 'package:quote_generator/features/quote/quote.dart';
 
 class AddQuoteNotifier extends StateNotifier<QuoteState> {
@@ -28,10 +29,10 @@ class AddQuoteNotifier extends StateNotifier<QuoteState> {
     return Quote(
       quoteText: textSettings.quoteText,
       author: textSettings.quoteAuthor,
-      textAlign: Helpers.textAlignToString(textSettings.textAlign),
+      textAlign: AppHelpers.textAlignToString(textSettings.textAlign),
       backgroundColor: textSettings.backgroundColor.value,
       fontSize: textSettings.fontSize,
-      fontWeight: Helpers.fontWeightToString(textSettings.fontWeight),
+      fontWeight: AppHelpers.fontWeightToString(textSettings.fontWeight),
       wordSpacing: textSettings.wordSpacing,
       letterSpacing: textSettings.letterSpacing,
       isFavorite: 0,

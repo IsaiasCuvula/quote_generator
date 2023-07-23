@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
-import 'package:quote_generator/common/common.dart';
+import 'package:quote_generator/core/utils/utils.dart';
 import 'package:quote_generator/features/quote/quote.dart';
-import 'package:quote_generator/features/shared/shared.dart';
-import 'package:quote_generator/common/l10n/l10n.dart';
+import 'package:quote_generator/config/config.dart';
+import 'package:quote_generator/features/features.dart';
 
 class CreateQuoteScreen extends ConsumerWidget {
   static CreateQuoteScreen builder(
@@ -70,7 +70,7 @@ class CreateQuoteScreen extends ConsumerWidget {
       await ref.read(addQuoteProvider.notifier).addQuote().then(
         (value) {
           ctx.pop();
-          SharedHelpers.displaySnackbar(
+          AppAlerts.displaySnackbar(
             ctx,
             l10n.quoteCreatedSuccessfully,
             true,
@@ -78,7 +78,7 @@ class CreateQuoteScreen extends ConsumerWidget {
         },
       );
     } else {
-      SharedHelpers.displaySnackbar(
+      AppAlerts.displaySnackbar(
         ctx,
         '${l10n.emptyQuoteAlert}'
         '\n${l10n.enterQuoteToSave}',

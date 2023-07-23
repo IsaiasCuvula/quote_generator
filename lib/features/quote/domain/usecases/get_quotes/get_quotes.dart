@@ -1,6 +1,6 @@
 import 'package:dartz/dartz.dart';
 import 'package:quote_generator/features/quote/quote.dart';
-import 'package:quote_generator/features/shared/shared.dart';
+import 'package:quote_generator/core/core.dart';
 
 class GetQuotes implements UseCase<QuoteList, NoParams> {
   final QuoteRepository _repository;
