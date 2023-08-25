@@ -26,7 +26,7 @@ class RemoteQuoteDetailScreen extends ConsumerWidget {
           centerTitle: true,
           body: remoteQuote.when(
             data: (quote) => DetailBody(quote: quote),
-            error: (error, traceTranck) => DisplayErrorMessage(
+            error: (error, _) => DisplayErrorMessage(
               message: error.toString(),
             ),
             loading: () => const LoadingScreen(),

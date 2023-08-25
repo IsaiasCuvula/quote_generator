@@ -7,16 +7,16 @@ import 'package:quote_generator/features/features.dart';
 class AppAlerts {
   const AppAlerts._();
 
-  static displaySnackbar(BuildContext context, String message, bool isSucess) {
-    final colorScheme = context.colorScheme;
+  static displaySnackbar(BuildContext context, String message, bool isSuccess) {
+    final colors = context.colorScheme;
+
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(
         content: Text(
           message,
           style: context.textTheme.bodyMedium,
         ),
-        backgroundColor:
-            isSucess ? colorScheme.onSecondary : colorScheme.onError,
+        backgroundColor: isSuccess ? colors.onSecondary : colors.onError,
       ),
     );
   }

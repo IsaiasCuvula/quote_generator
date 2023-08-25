@@ -67,14 +67,7 @@ class DetailBody extends ConsumerWidget {
                   size: Dimensions.iconSizeLarge,
                 ),
                 color: textColor,
-                onPressed: () async {
-                  // await ref
-                  //     .read(updateQuoteProvider.notifier)
-                  //     .updateFavorite(quote)
-                  //     .then((value) {
-                  //   _showSnackBar(context);
-                  // });
-                },
+                onPressed: () {},
               ),
               IconButton(
                 icon: Icon(
@@ -109,12 +102,4 @@ class DetailBody extends ConsumerWidget {
       ),
     );
   }
-
-  // void _showSnackBar(BuildContext context) {
-  //   // final l10n = context.l10n;
-  //   // final String msg = quote.isFavorite == 1
-  //   //     ? l10n.quote_removed_from_fav
-  //   //     : l10n.quote_added_to_fav;
-  //   // SharedHelpers.displaySnackbar(context, msg, true);
-  // }
 }

@@ -14,11 +14,11 @@ class RemoteQuoteCard extends StatelessWidget {
   Widget build(BuildContext context) {
     final textTheme = context.textTheme;
     final colorScheme = context.colorScheme;
-    final autherTextStyle = textTheme.labelLarge?.copyWith(
+    final authorTextStyle = textTheme.labelLarge?.copyWith(
       letterSpacing: quote.letterSpacing,
       color: colorScheme.onSurface,
     );
-    final quoteTextSyle = TextStyle(
+    final quoteTextStyle = TextStyle(
       color: colorScheme.onSurface,
       fontSize: quote.fontSize,
       wordSpacing: quote.wordSpacing,
@@ -57,8 +57,8 @@ class RemoteQuoteCard extends StatelessWidget {
                 child: QuoteCardBodyText(
                   colorScheme: colorScheme,
                   quote: RemoteQuoteMapper.fromRemoteToLocalQuote(quote),
-                  quoteTextSyle: quoteTextSyle,
-                  autherTextStyle: autherTextStyle,
+                  quoteTextStyle: quoteTextStyle,
+                  authorTextStyle: authorTextStyle,
                 ),
               ),
             ),
