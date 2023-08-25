@@ -26,7 +26,7 @@ class ColorPickerPalette extends StatelessWidget {
           onColorChanged: (Color color) => onColorChanged(color),
           width: Dimensions.colorPaletteWidth,
           height: Dimensions.colorPaletteHight,
-          borderRadius: Dimensions.colorPaleteBorder,
+          borderRadius: Dimensions.colorPaletteBorder,
           heading: Text(
             l10n.backgroundColor,
             style: textTheme.headlineSmall,
