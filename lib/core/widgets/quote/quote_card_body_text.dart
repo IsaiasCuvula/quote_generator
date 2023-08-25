@@ -10,14 +10,14 @@ class QuoteCardBodyText extends StatelessWidget {
     super.key,
     required this.colorScheme,
     required this.quote,
-    required this.quoteTextSyle,
-    required this.autherTextStyle,
+    required this.quoteTextStyle,
+    required this.authorTextStyle,
   });
 
   final ColorScheme colorScheme;
   final Quote quote;
-  final TextStyle quoteTextSyle;
-  final TextStyle? autherTextStyle;
+  final TextStyle quoteTextStyle;
+  final TextStyle? authorTextStyle;
 
   @override
   Widget build(BuildContext context) {
@@ -31,7 +31,7 @@ class QuoteCardBodyText extends StatelessWidget {
         Text(
           quote.quoteText,
           textAlign: AppHelpers.textAlignList[quote.textAlign],
-          style: quoteTextSyle,
+          style: quoteTextStyle,
           maxLines: 5,
         )
             .animate()
@@ -43,7 +43,7 @@ class QuoteCardBodyText extends StatelessWidget {
         Text(
           '- ${quote.author}',
           maxLines: 1,
-          style: autherTextStyle,
+          style: authorTextStyle,
         )
             .animate()
             .fade(

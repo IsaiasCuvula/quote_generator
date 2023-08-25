@@ -61,8 +61,8 @@ class QuoteCard extends StatelessWidget {
                 child: QuoteCardBodyText(
                   colorScheme: colorScheme,
                   quote: quote,
-                  quoteTextSyle: quoteTextSyle,
-                  autherTextStyle: authorTextStyle,
+                  quoteTextStyle: quoteTextSyle,
+                  authorTextStyle: authorTextStyle,
                 ),
               ),
             ),
