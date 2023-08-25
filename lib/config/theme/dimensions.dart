@@ -91,7 +91,7 @@ class Dimensions {
   //Color palette size
   static final double colorPaletteWidth = 44.w;
   static final double colorPaletteHight = 44.h;
-  static final double colorPaleteBorder = 22.h;
+  static final double colorPaletteBorder = 22.h;
 
   //Quote Text Word Spacing
   static final double quoteTextWordSpacingLarge = 12.w;
