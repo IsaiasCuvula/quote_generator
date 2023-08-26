@@ -60,7 +60,7 @@ class RemoteQuoteRepositoryImpl implements RemoteQuoteRepository {
   }
 
   @override
-  Stream<Either<Failure, int>> quotelikesCount(String quoteId) async* {
+  Stream<Either<Failure, int>> quoteLikesCount(String quoteId) async* {
     try {
       final result = _datasource.likesCount(quoteId);
       yield* result.map((snapshot) {

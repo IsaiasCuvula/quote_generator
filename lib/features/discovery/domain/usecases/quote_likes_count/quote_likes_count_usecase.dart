@@ -8,6 +8,6 @@ class QuoteLikesCount implements StreamUseCase<int, String> {
 
   @override
   Stream<Either<Failure, int>> call(String quoteId) async* {
-    yield* _repository.quotelikesCount(quoteId);
+    yield* _repository.quoteLikesCount(quoteId);
   }
 }
